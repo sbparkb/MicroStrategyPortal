@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"  
+  	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+       xmlns:p="http://www.springframework.org/schema/p"  
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+  	   xmlns:context="http://www.springframework.org/schema/context"  
+       xsi:schemaLocation="http://www.springframework.org/schema/beans   
+	   					   http://www.springframework.org/schema/beans/spring-beans-3.2.xsd   
+						   http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context-3.2.xsd
+                           http://www.springframework.org/schema/mvc 
+						   http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd"
+	default-lazy-init="true"> 
+
+	<mvc:annotation-driven>
+	    <mvc:message-converters>
+	        <bean class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
+	            <property name="supportedMediaTypes" value="text/plain;charset=UTF-8"/>
+	        </bean>       
+	    </mvc:message-converters>
+	</mvc:annotation-driven>
+	
+    
+    <context:component-scan base-package="com" use-default-filters="true">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+    </context:component-scan>
+    
+	 <mvc:interceptors>
+ 
+	    <bean class="com.groto.cmm.interceptor.SessionInterceptor">
+			<property name="noCheckUri">
+				<map key-type="java.lang.String" 	value-type="java.lang.String">
+					<entry key="/index.do"			value="Index URL" />
+ 					<entry key="/login/login"	    value="Login Procced URL3" />
+					<entry key="/login/logout.do"	value="Logout URL" />
+					<entry key="/login/pass"	value="Password Modify" />
+					<entry key="/login/passCheck.do"	value="Password Modify" />
+					<entry key="/login/passChangePrc.do"	value="Password Modify" />
+					<entry key="/login/popSessionCheck.ajax"	value="PopUp SessionCheck" />
+					<entry key="/error/"	value="ERROR URL" />
+				</map>
+			</property>			
+	    </bean>
+	</mvc:interceptors>
+	
+	<!-- ViewResolver 설정 -->
+	<bean id="beanNameViewResolver" class="org.springframework.web.servlet.view.BeanNameViewResolver"/>
+	
+  	<bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">  
+    	<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />  
+    	<property name="prefix" value="/WEB-INF/views/" />  
+    	<property name="suffix" value=".jsp" />  
+    	<property name="contentType" value="text/html; charset=UTF-8" />  
+  	</bean>
+	
+    <!-- Exception Resolver -->
+    <bean id="exceptionResolver" class="com.groto.cmm.handler.SeExceptionResolver">
+        <property name="exceptionMappings">
+            <props>
+                <prop key="com.groto.cmm.exception.LoginRuntimeException">redirect:/login/login.do</prop>
+                <prop key="com.groto.cmm.exception.PermissionDeniedException">redirect:/error/permission.do</prop>
+                <prop key="com.groto.cmm.exception.PageNotFoundException">redirect:/error/404.do</prop>
+                <prop key="com.groto.cmm.exception.SystemException">redirect:/error/500.do</prop>
+            </props>
+        </property>
+        <property name="exceptionAttribute" value="exception"/>
+        <property name="defaultErrorView" value="redirect:/error/error.do"/> 
+    </bean>
+
+	<bean id="textJsonView" class="org.springframework.web.servlet.view.json.MappingJacksonJsonView" >
+		<property name="contentType" value="text/html" />
+	</bean>
+	
+</beans>  
