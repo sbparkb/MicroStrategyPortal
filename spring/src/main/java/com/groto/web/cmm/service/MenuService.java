@@ -17,6 +17,7 @@ import com.groto.cmm.util.CmmUtil;
 import com.groto.cmm.util.SystemMessage;
 import com.groto.service.AbstractSessionUserService;
 import com.groto.service.InstanceCreation;
+import com.groto.session.MSTRSessionUser;
 import com.groto.session.MSTRSessionUserImpl;
 import com.microstrategy.web.objects.WebFolder;
 import com.microstrategy.web.objects.WebIServerSession;
@@ -28,7 +29,6 @@ import com.microstrategy.web.objects.WebShortcut;
 import com.microstrategy.webapi.EnumDSSXMLFolderNames;
 import com.microstrategy.webapi.EnumDSSXMLObjectTypes;
 import com.mstr.business.model.TreeBean;
-import com.shinsegae_inc.ssgdf.http.HttpSessionUtils;
 
 /**
  *  Class Name  :  MenuService
@@ -98,7 +98,7 @@ public class MenuService extends AbstractSessionUserService implements Serializa
 
       result.put("folderName1", objInfo.getDisplayName().substring(objInfo.getDisplayName().indexOf(".") + 1));
       
-      HttpSessionUtils.setAttribute(request.getSession(), "folderName1", objInfo.getDisplayName().substring(objInfo.getDisplayName().indexOf(".") + 1));
+      request.setAttribute( "folderName1", objInfo.getDisplayName().substring(objInfo.getDisplayName().indexOf(".") + 1));
       
       WebFolder subObj2 = folderToSearch1.findTypedObjects(objTypes1);
 
@@ -117,7 +117,7 @@ public class MenuService extends AbstractSessionUserService implements Serializa
       result.put("lnbMenuList", menuList);
       result.put("forderId1", folderId);
       
-      HttpSessionUtils.setAttribute(request.getSession(), "lnbMenuParam", result);
+      request.setAttribute("lnbMenuParam", result);
 
     } catch (WebObjectsException ex) {
       LOGGER.error("[ " + this.getClass().getName().replaceAll("[\r\n]","") + " , ERROR METHOD : " + ex.getStackTrace()[1].getMethodName().replaceAll("[\r\n]","") + " ]");

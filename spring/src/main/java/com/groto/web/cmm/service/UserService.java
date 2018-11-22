@@ -25,7 +25,6 @@ import com.microstrategy.web.beans.UserGroupBean;
 import com.microstrategy.web.beans.WebBeanException;
 import com.microstrategy.web.objects.WebIServerSession;
 import com.microstrategy.web.objects.WebObjectsException;
-import com.shinsegae_inc.ssgdf.http.HttpSessionUtils;
 
 /**
  * Class Name : UserService Description : 사용자 패스워드 관리 서비스
@@ -157,7 +156,7 @@ public class UserService extends AbstractSessionUserService {
         userA.setMstrUserPW(newPass);
         String usgSmgr = serverInfo.saveState(EnumWebPersistableState.MAXIMAL_STATE_INFO);
         userA.setMstrSessionState(usgSmgr);        
-        HttpSessionUtils.setAttribute(request.getSession(), MSTRSessionUserImpl.ATTRIBUTE_NAME, userA);
+        request.setAttribute(MSTRSessionUserImpl.ATTRIBUTE_NAME, userA);
       }
       serverInfo.closeSession();
     } catch (WebObjectsException e1) {

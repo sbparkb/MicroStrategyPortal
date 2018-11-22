@@ -35,7 +35,6 @@ import com.microstrategy.web.beans.UserEntityBean;
 import com.microstrategy.web.beans.WebBeanException;
 import com.microstrategy.web.objects.WebIServerSession;
 import com.microstrategy.web.objects.WebObjectsException;
-import com.shinsegae_inc.ssgdf.http.HttpSessionUtils;
 
 /**
  *  Class Name  :  LoginController
@@ -420,7 +419,7 @@ public class LoginController extends AbstractSessionUserService{
         logger.debug(String.valueOf(ret));
       }
 
-      HttpSessionUtils.setAttribute(request.getSession(), MSTRSessionUserImpl.ATTRIBUTE_NAME, user);
+      request.setAttribute(MSTRSessionUserImpl.ATTRIBUTE_NAME, user);
 
       server.closeSession();
       mav.setViewName("redirect:/login/main.do");
@@ -626,7 +625,7 @@ public class LoginController extends AbstractSessionUserService{
     user.setMstrUserID(portalId);
     user.setPortalId(portalId);
       
-    HttpSessionUtils.setAttribute(request.getSession(), MSTRSessionUserImpl.ATTRIBUTE_NAME, user);
+    request.setAttribute( MSTRSessionUserImpl.ATTRIBUTE_NAME, user);
     return userService.userPassCheck(request, response, nowPass);
   }
   
@@ -673,8 +672,8 @@ public class LoginController extends AbstractSessionUserService{
         rtn.put("message", "인증번호 발송 실패했습니다.");     
       } else {
          rtn.put("result", "success");
-         HttpSessionUtils.setAttribute(request.getSession(), "encOtp", rtnSms.get("EncOtp"));
-         HttpSessionUtils.setAttribute(request.getSession(), "startTime", System.currentTimeMillis());         
+         request.setAttribute( "encOtp", rtnSms.get("EncOtp"));
+         request.setAttribute( "startTime", System.currentTimeMillis());         
       }
     } catch (SQLException e) {
       logger.error(CmmUtil.exMessage(e));

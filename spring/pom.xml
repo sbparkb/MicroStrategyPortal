@@ -19,31 +19,6 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<webcontent-dir>${project.basedir}/src/main/webapp/WEB-INF/lib</webcontent-dir>
 	</properties>
-	<repositories>
-		<repository>
-			<id>nexus</id>
-			<url>http://10.102.96.26:8081/nexus/content/groups/public/</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-	</repositories>
-	   <pluginRepositories>
-        <pluginRepository>
-            <id>nexus</id>
-            <name>nexus</name>
-            <url>http://10.102.96.26:8081/nexus/content/groups/public/</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </pluginRepository>
-    </pluginRepositories>
 	<dependencies>
 		<!-- Spring -->
 		<dependency>
@@ -419,13 +394,6 @@
 			<artifactId>jasypt-spring3</artifactId>
 			<version>1.9.2</version>
 		</dependency>
-
-		<!-- custom jar for findbugs -->
-		<dependency>
-			<groupId>com.shinsegae-inc.ssgdf</groupId>
-			<artifactId>ssgdf-web</artifactId>
-			<version>1.1.0</version>
-		</dependency>		
 
 		<!-- Test -->
 		<dependency>

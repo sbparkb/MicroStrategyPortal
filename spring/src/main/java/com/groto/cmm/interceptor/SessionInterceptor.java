@@ -22,7 +22,6 @@ import com.groto.session.MSTRSessionUserImpl;
 import com.microstrategy.utils.serialization.EnumWebPersistableState;
 import com.microstrategy.web.objects.WebIServerSession;
 import com.microstrategy.web.objects.WebObjectsFactory;
-import com.shinsegae_inc.ssgdf.http.HttpSessionUtils;
 
 /**
  *  Class Name  :  SessionInterceptor
@@ -114,8 +113,8 @@ public class SessionInterceptor extends HandlerInterceptorAdapter {
         String usrSmgr1 = serverSession.saveState(EnumWebPersistableState.MAXIMAL_STATE_INFO);
         user.setMstrSessionState(usrSmgr1);
         
-        HttpSessionUtils.setAttribute(request.getSession(), "usrSmgr1", usrSmgr1);
-        HttpSessionUtils.setAttribute(request.getSession(), MSTRSessionUserImpl.ATTRIBUTE_NAME, user);
+        request.setAttribute("usrSmgr1", usrSmgr1);
+        request.setAttribute(MSTRSessionUserImpl.ATTRIBUTE_NAME, user);
       }
       return true;
     }      

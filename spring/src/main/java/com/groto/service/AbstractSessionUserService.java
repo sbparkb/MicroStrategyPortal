@@ -35,7 +35,6 @@ import com.microstrategy.web.objects.admin.users.WebUserSearch;
 import com.microstrategy.webapi.EnumDSSXMLApplicationType;
 import com.microstrategy.webapi.EnumDSSXMLObjectTypes;
 import com.mstr.business.model.PromptInfo;
-import com.shinsegae_inc.ssgdf.http.HttpSessionUtils;
 
 /**
  *  Class Name : AbstractSessionUserService.java 
@@ -165,8 +164,8 @@ public abstract class AbstractSessionUserService implements BaseSessionService, 
   public void setMstrSessionUser(MSTRSessionUser mstrSessionUser){
 
     HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
-    if (request != null) {            
-      HttpSessionUtils.setAttribute(request.getSession(),MSTRSessionUser.ATTRIBUTE_NAME, mstrSessionUser);
+    if (request != null) {                  
+      request.setAttribute(MSTRSessionUser.ATTRIBUTE_NAME, mstrSessionUser);
     }
 
   }
