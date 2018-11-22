@@ -1,0 +1,21 @@
+<framework>
+  <pages>
+  <!-- 
+    <page name="report">
+      <addons>
+        <addon XMLmerge_id="50" name="com.mstr.Addon.CustomReportFlags"/>
+      </addons>
+    </page>
+   -->
+    <page name="exportBinary">
+      <addons>
+        <addon XMLmerge_id="50" name="com.mstr.Addon.ModifyReportExportAddOn"/>
+      </addons>
+    </page>
+    <page name="pdfDisplay">
+      <addons>
+        <addon XMLmerge_id="50" name="com.mstr.Addon.ModifyReportExportAddOn"/>
+      </addons>
+    </page>
+  </pages>
+</framework>
