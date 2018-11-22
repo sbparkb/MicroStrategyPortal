@@ -1,0 +1,2267 @@
+<dbProperties>
+    <dbPreferences>
+        <dbPreference n="dbVLDBProperties">
+            <dbVLDBProperties>
+                <dbVLDBProperty propset="VLDB Select" prop="Data Retrieval Mode"/>
+                <dbVLDBProperty propset="VLDB Select" prop="Data Retrieval Parameters"/>
+            </dbVLDBProperties>
+        </dbPreference>
+        <dbPreference n="driverNameSuffix">
+            <dbPreferenceItems>
+                <dbPreferenceItem n="DesktopWin" value=" Desktop"/>
+                <dbPreferenceItem n="DesktopMac" value=""/>
+                <dbPreferenceItem n="Platform" value=""/>
+            </dbPreferenceItems>
+        </dbPreference>
+    </dbPreferences>
+
+    <!--
+        for display flag we use a bitwise value to allow future options:
+        relational = 1
+        MDX = 2
+        SearchEngine = 4
+        web services = 8
+        Pig/Hive/Impala = 16
+        Hadoop = 32
+     -->
+    <dbTypes>
+        <dbType n="Reserved" v="0" disp="0" catSQL="0"/>
+        <dbType n="Access" v="100" disp="1" catSQL="0"/>
+        <dbType n="Oracle" v="200" disp="1" catSQL="1"/>
+        <dbType n="SQLServer" v="300" disp="1" catSQL="1"/>
+        <dbType n="Informix" v="400" disp="1" catSQL="1"/>
+        <dbType n="Sybase" v="500" disp="1" catSQL="1"/>
+        <!--<dbType n="RedBrick" v="600" disp="1" catSQL="1"/>-->
+        <dbType n="DB2" v="700" disp="1" catSQL="1"/>
+        <!-- <dbType n="Tandem" v="800" disp="1" catSQL="1"/> -->
+        <dbType n="Teradata" v="900" disp="1" catSQL="1"/>
+        <!-- <dbType n="Unknown" v="1000" disp="1" catSQL="1"/> -->
+        <dbType n="Generic" v="1100" disp="63" catSQL="0"/>
+        <dbType n="SAP" v="1200" disp="2" catSQL="0"/> <!-- MDX -->
+        <dbType n="Netezza" v="1300" disp="1" catSQL="1"/>
+        <dbType n="Excel" v="1400" disp="1" catSQL="0"/>
+        <dbType n="MicrosoftAS" v="1500" disp="2" catSQL="0"/> <!-- MDX -->
+        <dbType n="EssBase" v="1600" disp="2" catSQL="0"/> <!-- MDX -->
+        <dbType n="MySQL" v="1700" disp="1" catSQL="1"/>
+        <dbType n="PostgreSQL" v="1800" disp="1" catSQL="1"/>
+        <!-- <dbType n="Neoview" v="1900" disp="1" catSQL="1"/> -->
+        <!-- <dbType n="Metamatrix" v="2000" disp="1" catSQL="1"/> -->
+        <!-- <dbType n="DATAllegro" v="2100" disp="1" catSQL="1"/> -->
+        <dbType n="CiscoDataVirtualization" v="2200" disp="1" catSQL="0"/>
+        <dbType n="Aster" v="2300" disp="1" catSQL="0"/>
+        <dbType n="Vertica" v="2400" disp="1" catSQL="1"/>
+        <!-- <dbType n="OpenAccess" v="2500" disp="1" catSQL="1"/> -->
+        <!-- <dbType n="SybaseSQLAny" v="2600" disp="1" catSQL="1"/> -->
+        <dbType n="ParAccel" v="2800" disp="1" catSQL="1"/>
+        <dbType n="TM1" v="2900" disp="2" catSQL="0"/> <!-- MDX -->
+        <dbType n="XQuery" v="3000" disp="9" catSQL="0"/>
+        <dbType n="Hive" v="3100" disp="16" catSQL="0"/>
+        <dbType n="SalesForce" v="3300" disp="1" catSQL="1"/>
+        <!-- <dbType n="HiveThrift" v="3400" disp="1" catSQL="1"/> -->
+        <dbType n="VectorWise" v="3500" disp="1" catSQL="0"/>
+        <dbType n="EnterpriseDB" v="3600" disp="1" catSQL="1"/>
+        <dbType n="KOGNITIOWX2" v="3700" disp="1" catSQL="1" />
+        <dbType n="EXASolution" v="3800" disp="1" catSQL="1"/>
+        <dbType n="Informatica" v="3900" disp="1" catSQL="0"/>
+        <dbType n="SAPHana" v="4000" disp="1" catSQL="1"/>
+        <dbType n="Impala" v="4100" disp="16" catSQL="0"/>
+        <dbType n="AmazonRedShift" v="4200" disp="1" catSQL="1"/>
+        <dbType n="Denodo" v="4300" disp="1" catSQL="1"/>
+        <dbType n="GoogleDrive" v="4400" disp="0" catSQL="0"/>
+        <dbType n="DropBox" v="4500" disp="0" catSQL="0"/>
+        <dbType n="GoogleAnalytics" v="4600" disp="0" catSQL="0"/>
+        <dbType n="GoogleBigQuery" v="4700" disp="1" catSQL="0"/>
+        <dbType n="ConnectionCloud" v="4800" disp="1" catSQL="0"/>
+        <dbType n="GoogleBigQueryFFSQL" v="4900" disp="0" catSQL="0"/>
+        <dbType n="ParStream" v="5100" disp="1" catSQL="1"/>
+        <dbType n="MongoDB" v="5200" disp="1" catSQL="0"/>
+        <dbType n="MarkLogic" v="5300" disp="1" catSQL="1"/>
+        <dbType n="Hadoop" v="5400" disp="32" catSQL="0"/>
+        <dbType n="SearchEngine" v="5500" disp="4" catSQL="0"/> <!-- Search Engine -->
+        <dbType n="Splunk" v="5600" disp="1" catSQL="0"/>
+        <dbType n="Twitter" v="5700" disp="0" catSQL="0"/>
+        <dbType n="Facebook" v="5800" disp="0" catSQL="0"/>
+        <dbType n="Pig" v="6400" disp="16" catSQL="0"/> <!-- Search Engine -->
+        <dbType n="DataDirectCloud" v="6500" disp="1" catSQL="0"/>
+        <dbType n="ArcadiaPlatform" v="6600" disp="1" catSQL="0"/>
+        <dbType n="MemSQL" v="6700" disp="1" catSQL="1"/>
+        <dbType n="PHOENIX" v="6800" disp="16" catSQL="0"/>
+        <dbType n="PIVOTALHAWQ" v="6900" disp="1" catSQL="1"/>
+        <dbType n="Altibase" v="7000" disp="1" catSQL="0"/>
+        <dbType n="IBMBigInsights" v="700" disp="16" catSQL="1"/>
+        <dbType n="Cassandra" v="7100" disp="1" catSQL="1"/>
+        <dbType n="Presto" v="7200" disp="1" catSQL="1"/>
+        <dbType n="Drill" v="7300" disp="16" catSQL="1"/>
+		<dbType n="Cirro" v="7500" disp="1" catSQL="1"/>
+		<dbType n="Snowflake" v="7600" disp="1" catSQL="0"/>
+    </dbTypes>
+
+    <dbIDs>
+        <dbID n="Undefined" v="0"/>
+        <dbID n="DB2Wire" v="1"/>
+        <dbID n="DB2iSeries" v="2"/>
+        <dbID n="DB2ZOS" v="3"/>
+        <dbID n="InformixWire" v="4"/>
+        <dbID n="InformixXPS" v="5"/>
+        <dbID n="PostgreSQL" v="6"/>
+        <dbID n="SybaseASE" v="7"/>
+        <dbID n="SybaseIQ" v="8"/>
+        <dbID n="Oracle" v="9"/>
+        <dbID n="SQLServer" v="10"/>
+        <dbID n="Teradata" v="11"/>
+        <dbID n="MySQL" v="12"/>
+        <dbID n="GreenPlum" v="13"/>
+        <dbID n="Netezza" v="14"/>
+        <dbID n="WebServices" v="15"/>
+        <dbID n="Hive" v="16"/>
+        <dbID n="InfoBright" v="17"/>
+        <dbID n="SalesForce" v="18"/>
+        <dbID n="Access" v="19"/>
+        <dbID n="ParAccel" v="20"/>
+        <dbID n="AmazonRedShift" v="21"/>
+        <dbID n="Impala" v="22"/>
+        <dbID n="Aster" v="23"/>
+        <!--<dbID n="RedBrick" v="24"/> removed support -->
+        <dbID n="VectorWise" v="25"/>
+        <dbID n="EnterpriseDB" v="26"/>
+        <dbID n="Vertica" v="27"/>
+        <dbID n="Denodo" v="28"/>
+        <dbID n="CiscoDataVirtualization" v="29"/>
+        <!--  <dbID n="MySQLCommunityEdition" v="30"/> removed support -->
+        <dbID n="Excel" v="31"/>
+        <dbID n="GoogleBigQuery" v="32"/>
+        <dbID n="SapHana" v="33"/>
+        <dbID n="ConnectionCloud" v="34"/>
+        <dbID n="IBMBigInsights" v="35"/>
+        <dbID n="SAP" v="36"/> <!-- MDX -->
+        <dbID n="MicrosoftAS" v="37"/> <!-- MDX -->
+        <dbID n="EssBase" v="38"/> <!-- MDX -->
+        <dbID n="TM1" v="39"/> <!-- MDX -->
+        <dbID n="SearchEngine" v="40"/> <!-- Search Engine -->
+        <dbID n="WebServicesBI" v="41"/>
+        <dbID n="Hadoop" v="42"/>
+        <dbID n="AmazonElasticMapReduce" v="43"/>
+        <dbID n="ApacheHive" v="44"/>
+        <dbID n="ClouderaHive" v="45"/>
+        <dbID n="HortonworksHive" v="46"/>
+        <dbID n="MapRHive" v="47"/>
+        <dbID n="Pig" v="48"/>
+        <dbID n="SharkSpark" v="49"/>
+        <dbID n="MongoDB" v="50"/>
+        <dbID n="MarkLogic" v="51"/>
+        <dbID n="MariaDB" v="52"/>
+        <!-- <dbID n="InfiniDB" v="53"/> removed support -->
+        <dbID n="Splunk" v="54"/>
+        <dbID n="DataDirectCloud" v="55"/>
+        <dbID n="ParStream" v="56"/>
+        <dbID n="PivotalHive" v="57"/>
+        <dbID n="Phoenix" v="58"/>
+        <dbID n="SQLServerJDBC" v="59"/>
+        <dbID n="DB2WireJDBC" v="60"/>
+        <dbID n="OracleJDBC" v="61"/>
+        <dbID n="TeradataJDBC" v="62"/>
+        <dbID n="SapHanaJDBC" v="63"/>
+        <dbID n="SalesForceJDBC" v="64"/>
+        <dbID n="PostgreSQLJDBC" v="65"/>
+        <dbID n="MySQLJDBC" v="66"/>
+        <dbID n="MariaDBJDBC" v="67"/>
+        <dbID n="AmazonElasticMapReduceJDBC" v="68"/>
+        <dbID n="ApacheHiveJDBC" v="69"/>
+        <dbID n="ClouderaHiveJDBC" v="70"/>
+        <dbID n="HortonworksHiveJDBC" v="71"/>
+        <dbID n="MapRHiveJDBC" v="72"/>
+        <dbID n="SharkSparkJDBC" v="73"/>
+        <dbID n="PivotalHiveJDBC" v="74"/>
+        <dbID n="AmazonRedShiftJDBC" v="75"/>
+        <dbID n="PIVOTALHAWQ" v="76"/>
+        <dbID n="MemSQL" v="77"/>
+        <dbID n="ArcadiaPlatform" v="78"/>
+        <dbID n="Altibase" v="79"/>
+        <dbID n="MongoDBJDBC" v="80"/>
+        <dbID n="Presto" v="81"/>
+        <dbID n="DB2iSeriesJDBC" v="82"/>
+        <dbID n="DB2ZOSJDBC" v="83"/>
+        <dbID n="InformixWireJDBC" v="84"/>
+        <dbID n="SybaseASEJDBC" v="85"/>
+        <dbID n="SQLDatabase" v="86"/>
+        <dbID n="SQLDatabaseJDBC" v="87"/>
+        <dbID n="MemSQLJDBC" v="88"/>
+        <!-- <dbID n="InfiniDBJDBC" v="89"/> removed support -->
+        <dbID n="GreenPlumJDBC" v="90"/>
+        <dbID n="PIVOTALHAWQJDBC" v="91"/>
+        <dbID n="NetezzaJDBC" v="92"/>
+        <dbID n="InfoBrightJDBC" v="93"/>
+        <dbID n="ParAccelJDBC" v="94"/>
+        <dbID n="ImpalaJDBC" v="95"/>
+        <dbID n="IBMBigInsightsJDBC" v="96"/>
+        <dbID n="AsterJDBC" v="97"/>
+        <!-- <dbID n="RedBrickJDBC" v="98"/> removed support -->
+        <dbID n="VectorWiseJDBC" v="99"/>
+        <dbID n="EnterpriseDBJDBC" v="100"/>
+        <dbID n="VerticaJDBC" v="101"/>
+        <dbID n="DenodoJDBC" v="102"/>
+        <dbID n="CiscoDataVirtualizationJDBC" v="103"/>
+        <dbID n="ConnectionCloudJDBC" v="104"/>
+        <dbID n="DataDirectCloudJDBC" v="105"/>
+        <dbID n="ParStreamJDBC" v="106"/>
+        <dbID n="ArcadiaPlatformJDBC" v="107"/>
+        <dbID n="AltibaseJDBC" v="108"/>
+        <dbID n="PrestoJDBC" v="109"/>
+        <dbID n="PhoenixJDBC" v="110"/>
+        <dbID n="Kognitio" v="111" />
+        <dbID n="KognitioJDBC" v="112" />
+        <dbID n="Informatica" v="113" />
+        <dbID n="InformaticaJDBC" v="114" />
+        <dbID n="Cassandra" v="115" />
+        <dbID n="SybaseIQJDBC" v="116"/>
+        <dbID n="Ingres" v="117"/>
+        <dbID n="IngresJDBC" v="118"/>
+        <dbID n="InformixXPSJDBC" v="119"/>
+        <dbID n="CassandraJDBC" v="120"/>
+        <dbID n="MapRDrill" v="121"/>
+		<dbID n="Cirro" v="122"/>
+		<dbID n="EXASolution" v="123"/>
+        <dbID n="EXASolutionJDBC" v="124"/>
+		<dbID n="OracleCloud" v="125"/>
+		<dbID n="OracleCloudJDBC" v="126"/>
+		<dbID n="Snowflake" v="127"/>
+		<dbID n="SnowflakeJDBC" v="128"/>
+    </dbIDs>
+
+    <dbVersions>
+        <dbVersion n="Generic" v="-1" /> <!-- default minor version -->
+        <dbVersion n="Reserved" v="0" /> <!-- invalid value -->
+        <dbVersion n="TandemMPD45" v="1" /> <!-- C: Tandem NonStop SQL/MP D45 -->
+        <dbVersion n="TandemMX1" v="2" /> <!-- R: Tandem NonStop SQL/MX 1 -->
+        <dbVersion n="TandemMPD42" v="3" /> <!-- X: Tandem NonStop SQL/MPD42 -->
+        <dbVersion n="TeradataV2R1" v="4" /> <!-- X: NCR Teradata V2R1 -->
+        <dbVersion n="TeradataV2R20002" v="5" /> <!-- X: NCR Teradata V2R2.00.02 -->
+        <dbVersion n="TeradataV2R21" v="6" /> <!-- C: NCR Teradata V2R2.1 -->
+        <dbVersion n="Teradatav2R3" v="7" /> <!-- C: NCR Teradata V2R3 -->
+        <dbVersion n="Oracle733" v="8" /> <!-- C: Oracle 7.3.3 -->
+        <dbVersion n="Oracle8003" v="9" /> <!-- C: Oracle 8.0.03 -->
+        <dbVersion n="SQLServer65" v="10" /> <!-- X: Microsoft SQL Server 6.5 SP4 -->
+        <dbVersion n="SQLServer70" v="11" /> <!-- C: Microsoft SQL Server 7.0 -->
+        <dbVersion n="Access20" v="12" /> <!-- X: Microsoft Access 2.0 -->
+        <dbVersion n="Access70" v="13" /> <!-- S: Microsoft Access 7.0 -->
+        <dbVersion n="SybaseAdaptive115" v="14" /> <!-- C: Sybase adaptive server 11.5 -->
+        <dbVersion n="SybaseSQL112" v="15" /> <!-- X: Sybase SQL server 11.2 -->
+        <dbVersion n="SybaseIQ112" v="16" unixEncoding="0"/> <!-- X: Sybase IQ 11.2 -->
+        <dbVersion n="IBMDB2OS39041" v="17" /> <!-- X: IBM DB2/OS390 4.1 -->
+        <dbVersion n="IBMDB2OS39050" v="18" /> <!-- C: IBM DB2/OS390 5 -->
+        <dbVersion n="IBMUDBSMP50" v="19" /> <!-- X: IBM UDB/SMP 5.0 -->
+        <dbVersion n="IBMUDBEEE50" v="20" /> <!-- X: IBM UDB/EEE 5.0 -->
+        <dbVersion n="IBMDB2PE12" v="21" /> <!-- X: IBM DB2/PE 1.2 -->
+        <dbVersion n="IBMDB2CS212" v="22" /> <!-- X: IBM DB2/CS 2.1.2 -->
+        <dbVersion n="IBMDB2400V3R7" v="23" /> <!-- X: IBM DB2/400 V3R7 -->
+        <dbVersion n="IBMDB2400V4R1" v="24" /> <!-- X: IBM DB2/400 V4R1 -->
+        <dbVersion n="IBMDB2400V4R2" v="25" /> <!-- X: IBM DB2/400 V4R2 -->
+        <dbVersion n="InformixODS724UC1" v="26" /> <!-- X: Informix ODS 7.24UC1 -->
+        <dbVersion n="InformixXPS82" v="27" /> <!-- S: Informix XPS 8.2 -->
+        <dbVersion n="AdabaseD6112" v="28" /> <!-- S: Software AG Adabase-D6.1.1.2 -->
+        <dbVersion n="RedBrick5007" v="29" /> <!-- X: Red Brick 5.0.7 -->
+        <dbVersion n="RedBrick5012" v="30" /> <!-- X: Red Brick 5.0.12 -->
+        <dbVersion n="RedBrick5105" v="31" /> <!-- S: Red Brick 5.1.5 -->
+        <dbVersion n="TeradataNTV2R2" v="32" /> <!-- C: NCR Teradata NT V2R2 -->
+        <dbVersion n="TeradataNTV2R3" v="33" /> <!-- R: NCR Teradata NT V2R3 -->
+        <dbVersion n="Oracle8i" v="34" /> <!-- R: Oracle 8i (e.g. 8.1.5) -->
+        <dbVersion n="SybaseIQ12" v="35" unixEncoding="0"/> <!-- R: Sybase IQ 12 -->
+        <dbVersion n="IBMUDB52" v="36" /> <!-- C: IBM UDB 5.2 -->
+        <dbVersion n="IBMDB2400V4R3" v="37" /> <!-- S: IBM DB2/400 V4R3 -->
+        <dbVersion n="InformixODS731" v="38" /> <!-- S: Informix ODS 7.31 -->
+        <dbVersion n="InformixUDO92" v="39" /> <!-- S: Informix UDO 9.2 -->
+        <dbVersion n="InformixXPS83" v="40" /> <!-- R: Informix XPS 8.3 -->
+        <dbVersion n="IBMUDB61" v="41" /> <!-- R: IBM UDB 6.1 -->
+        <dbVersion n="Oracle805" v="42" /> <!-- R: Oracle 8.0.5 -->
+        <dbVersion n="Oracle8iR2" v="43" /> <!-- R: Oracle 8i R2 -->
+        <dbVersion n="IBMUDB7" v="44" /> <!-- R: IBM UDB 7.1/7.2 for Windows and Unix -->
+        <dbVersion n="IBMDB2OS39062" v="45" /> <!-- R: IBM DB2/OS390 6.2 -->
+        <dbVersion n="IBMDB2OS3907" v="46" /> <!-- R: IBM DB2/OS390 7 -->
+        <dbVersion n="IBMDB2400V4R4" v="47" /> <!-- R: IBM DB2/400 V4R4 -->
+        <dbVersion n="IBMDB2400V4R5" v="48" /> <!-- R: IBM DB2/400 V4R5 -->
+        <dbVersion n="RedBrick6" v="49" /> <!-- R: Red Brick 6 -->
+        <dbVersion n="TeradataV2R4" v="50" /> <!-- R: NCR Teradata V2R4 -->
+        <dbVersion n="SybaseAdaptive12" v="51" /> <!-- R: Sybase Adaptive Server 12 -->
+        <dbVersion n="SQLServer2000" v="52" /> <!-- R: Microsoft SQL Server 2000 -->
+        <dbVersion n="Access2000" v="53" /> <!-- R: Microsoft Access 2000 -->
+        <dbVersion n="Informix10" v="54" /> <!-- R: Informix 10 -->
+        <dbVersion n="Oracle8iR3" v="55" /> <!-- R: Oracle 8i R3 -->
+        <dbVersion n="Oracle9i" v="56" /> <!-- R: Oracle 9i -->
+        <dbVersion n="RedBrick61" v="57" /> <!-- R: Red Brick 6.1 -->
+        <dbVersion n="IBMUDB8" v="58" /> <!-- R: IBM UDB 8 for Windows and Unix -->
+        <dbVersion n="Oracle8iR2SE" v="59" /> <!-- R: Oracle 8i R2 Standard Edition -->
+        <dbVersion n="TeradataV2R41" v="61" /> <!-- R: NCR Teradata V2R4.1 -->
+        <dbVersion n="Access2002" v="62" /> <!-- R: Microsoft Access 2002 -->
+        <dbVersion n="IBMDB2400V5R1" v="63" /> <!-- R: IBM DB2/400 V5R1 -->
+        <dbVersion n="SybaseAdaptive125" v="64" /> <!-- R: Sybase Adaptive Server 12.5 -->
+        <dbVersion n="RedBrick62" v="65" /> <!-- R: Red Brick 6.2 -->
+        <dbVersion n="IBMDB2400V5R2" v="66" /> <!-- R: IBM DB2/400 V5R2 -->
+        <dbVersion n="TeradataV2R5" v="67" /> <!-- R: NCR Teradata V2R5 -->
+        <dbVersion n="MDXSAPBW30" v="68" /> <!-- R: SAP B/W 3.0 --> <!-- MDX -->
+        <dbVersion n="Oracle10g" v="69" /> <!-- R: Oracle 10g -->
+        <dbVersion n="TeradataV2R51" v="70" /> <!-- R: NCR Teradata V2R5.1 -->
+        <dbVersion n="InformixIDS93" v="71" /> <!-- R: Informix IDS 9.3 -->
+        <dbVersion n="InformixIDS94" v="72" /> <!-- R: Informix IDS 9.4 -->
+        <dbVersion n="RedBrick63" v="73" /> <!-- R: Red Brick 6.3 -->
+		<!-- @deprecated use {@link #DbVRedBrick63} instead -->
+        <dbVersion n="IBMDB2OS3908" v="74" /> <!-- R: IBM DB2 UDB for zSeries v8 (old 390 line) -->
+        <dbVersion n="Netezza22" v="75" /> <!-- R: Netezza 2.2 -->
+        <dbVersion n="Excel2003" v="76" /> <!-- R: Excel 2000/2003 -->
+        <dbVersion n="Netezza25" v="77" /> <!-- R: Netezza 2.5 -->
+        <dbVersion n="MDXEssbaseHyperion" v="78" /> <!-- R: Hyperion Essbase --> <!-- MDX -->
+        <dbVersion n="MDXMicrosoftAS2005" v="79" /> <!-- R: Microsoft Analysis Services 2000 --> <!-- MDX -->
+        <dbVersion n="MySQL50" v="80" unixEncoding="0"/> <!-- R: MySQL 5.0 -->
+        <dbVersion n="PostgreSQL81" v="81" /> <!-- R: PostgreSQL 8.1 -->
+        <dbVersion n="InformixIDS10" v="82" /> <!-- R: Informix IDS 10.0 -->
+        <!-- @deprecated use {@link #DbVInformixIDS10} instead -->
+        <dbVersion n="InformixIDS10x11x" v="82" /> -->
+        <dbVersion n="Oracle10gR2" v="83" /> <!-- R: Oracle 10g R2 -->
+		<!-- @deprecated use {@link #DbVOracle10gR2} instead -->
+        <dbVersion n="TeradataV2R6" v="84" /> <!-- R: NCR Teradata V2 R6 -->
+        <dbVersion n="TeradataV2R61" v="85" /> <!-- R: NCR Teradata V2 R6.1 -->
+        <dbVersion n="SybaseASE15" v="86" /> <!-- R: Sybase ASE 15 -->
+        <dbVersion n="SQLServer2005" v="87" /> <!-- R: Microsoft SQL Server 2005 -->
+		<!-- @deprecated use {@link #DbVSQLServer2005} instead -->
+        <dbVersion n="MDXMicrosoftAS2000" v="88" /> <!-- R: Microsoft Analysis Services 2000 --> <!-- MDX -->
+        <dbVersion n="IBMDB2400V5R4" v="89" /> <!-- R: IBM DB2/400 V5R4 -->
+        <dbVersion n="Netezza3" v="90" /> <!-- R: Netezza 3.0 -->
+        <!-- @deprecated use {@link #DbVNetezza3} instead -->
+        <dbVersion n="Netezza30" v="90" /> <!-- R: Netezza 3.0 -->
+        <dbVersion n="SybaseIQ127" v="91" unixEncoding="0"/> <!-- R: Sybase IQ 12.7 -->
+        <dbVersion n="IBMUDB91" v="92" /> <!-- R: DB2 UDB V9.1 for Linux, UNIX, and Windows -->
+        <dbVersion n="TeradataV2R62" v="93" /> <!-- R: NCR Teradata V2 R6.2 -->
+        <dbVersion n="PostgreSQL82" v="94" /> <!-- R: PostgreSQL 8.2 -->
+        <!-- @deprecated use {@link #DbVPostgreSQL82} instead -->
+        <dbVersion n="PostgreSQL83" v="94" /> -->
+        <dbVersion n="HPNeoview22" v="95" /> <!-- R: HP Neoview 2.2 -->
+        <!-- @deprecated use {@link #DbVHPNeoview22} instead -->
+        <dbVersion n="HPNeoview20" v="95" /> <!-- R: HP Neoview 2.X -->
+        <dbVersion n="Oracle11g" v="96" /> <!-- R: Oracle 11g -->
+        <dbVersion n="Netezza4" v="97" /> <!-- R: Netezza 4.0 -->
+        <!-- @deprecated use {@link #DbVNetezza4} instead -->
+        <dbVersion n="Netezza40" v="97" /> <!-- R: Netezza 4.0 -->
+        <dbVersion n="MDXEssbaseHyperion9" v="98" /> <!-- R: Hyperion Essbase --> <!-- MDX -->
+        <dbVersion n="Greenplum3x" v="99" /> <!-- R: Greenplum -->
+        <dbVersion n="HPNeoview23" v="100" /> <!-- R: HP Neoview 2.3 -->
+        <dbVersion n="IBMUDB95" v="101" /> <!-- R: IBM DB2 UDB V9.5 -->
+		<!-- @deprecated use {@link #DbVIBMUDB95} instead -->
+        <dbVersion n="Teradata12" v="102" /> <!-- R: Teradata 1.2 -->
+        <!-- @deprecated use {@link #DbVTeradata12} instead -->
+        <dbVersion n="Teradata120" v="102" /> <!-- R: Teradata 1.2 -->
+        <dbVersion n="IBMUDB91zOS" v="103" /> <!-- R: IBM DB2 UDB -->
+        <dbVersion n="Access2007" v="104" /> <!-- R: MicroSoft Access 2007 -->
+        <dbVersion n="IBMDB2400V6R1" v="105" /> <!-- R: IBM DB2 -->
+		<!-- @deprecated use {@link #DbVIBMDB2400V6R1} instead -->
+        <dbVersion n="Metamatrix55" v="106" /> <!-- R: Metamatrix -->
+        <dbVersion n="DATAllegro3x" v="107" /> <!-- R: DATAllegro -->
+        <dbVersion n="Composite450" v="108" /> <!-- R: Composite -->
+        <dbVersion n="Access2003" v="109" /> <!-- R: Access2003 -->
+        <dbVersion n="SQLServer2008" v="110" /> <!-- R: SQL Server 2008 -->
+        <dbVersion n="MySQL51" v="111" unixEncoding="0"/> <!-- R: My SQL -->
+        <dbVersion n="MDXMicrosoftAS2008" v="112" /> <!-- R: MicroStoft Analysis Services2008 --> <!-- MDX -->
+        <dbVersion n="AsternCluster30" v="113" /> <!-- R: Aster n Cluster -->
+        <dbVersion n="Vertica25" v="114" /> <!-- R: Vertica -->
+        <dbVersion n="MDXEssbaseHyperion9x" v="115" /> <!-- R: Hyperion Essbase --> <!-- MDX -->
+        <dbVersion n="OpenAccess14" v="116" /> <!-- R: Open Access -->
+        <dbVersion n="SybaseSQLAny11" v="117" /> <!-- R: Sybase SQL Anywhere 11 -->
+        <dbVersion n="Netezza46" v="118" /> <!-- R: Netezza 4.6 -->
+        <dbVersion n="Teradata13" v="119" /> <!-- R: Teradata 13 -->
+		<!-- @deprecated use {@link #DbVTeradata13} instead -->
+        <dbVersion n="SybaseIQ15" v="120" unixEncoding="0"/> <!-- R: SybaseIQ 15 -->
+        <dbVersion n="SybaseIQ151" v="121" unixEncoding="0"/> <!-- R: SybaseIQ 15.1 -->
+        <dbVersion n="HPNeoview24" v="122" /> <!-- R: HP Neoview 2.4 -->
+        <dbVersion n="IBMUDB97" v="123" /> <!-- R: IBM DB2 9.7 -->
+        <dbVersion n="Netezza50" v="124" /> <!-- R: Netezza 5.0 -->
+        <dbVersion n="Vertica30" v="125" /> <!-- R: Vertica 3.0 -->
+        <dbVersion n="MDXSAPBW7x" v="126" /> <!-- R: SAPBW 7.x --> <!-- MDX -->
+        <dbVersion n="Oracle11gR2" v="127" /> <!-- R: Oracle 11gR2 -->
+        <dbVersion n="InformixIDS115" v="128" /> <!-- R: InformixIDS 11.5 -->
+		<!-- @deprecated use {@link #DbVInformixIDS115} instead -->
+        <dbVersion n="PostgreSQL84" v="129" /> <!-- R: Postgre SQL 8.4 -->
+        <dbVersion n="SQLServer2008NativeClient" v="130" /> <!-- R: SQL Server 2008 -->
+        <dbVersion n="ParAccel2x" v="131" /> <!-- R: ParAccel -->
+        <dbVersion n="MDXTM1x" v="133" /> <!-- R: MDX TM1 --> <!-- MDX -->
+        <dbVersion n="IBMDB2400V7R1" v="134" /> <!-- R: IBM DB2 UDB V9.5 -->
+        <dbVersion n="AsternCluster40" v="135" /> <!-- R: Aster n Cluster -->
+        <dbVersion n="Infobright33" v="136" /> <!-- R: Infobright -->
+        <dbVersion n="Vertica40" v="137" /> <!-- R: Vertica -->
+        <dbVersion n="SybaseIQ152" v="139" unixEncoding="0"/> <!-- R: SybaseIQ 15.2 -->
+        <dbVersion n="Hive05" v="138" /> <!-- R: Hive -->
+        <dbVersion n="AsternCluster45" v="140" /> <!--R: Aster n Cluster -->
+        <dbVersion n="Greenplum4x" v="141" /> <!--R: Greenplum4x-->
+        <dbVersion n="XQuery" v="142" /> <!-- R: Xquery -->
+        <dbVersion n="Composite510" v="146" /> <!-- R: Composite -->
+        <dbVersion n="Netezza60" v="147" /> <!-- R: Netezza 6.0 -->
+        <dbVersion n="SQLServer2008R2Par" v="148" /> <!-- R: SQL Server -->
+        <dbVersion n="PostgreSQL90" v="149" /> <!-- R: Postgre SQL 9.0 -->
+        <dbVersion n="Teradata131" v="150" /> <!-- R: Teradata 13.10-->
+		<!-- @deprecated use {@link #DbVTeradata131} instead -->
+        <dbVersion n="ParAccel3" v="151" /> <!-- R: ParAccel -->
+        <dbVersion n="Hive06" v="152" /> <!-- R: Hive -->
+        <dbVersion n="Hive07" v="153" /> <!-- R: Hive -->
+        <dbVersion n="SalesForce" v="154" /> <!-- R: SalesForce -->
+        <dbVersion n="HiveThrift" v="156" /> <!-- R: Hive -->
+        <dbVersion n="IBMUDBV10zOS" v="157" /> <!-- R: IBM DB2 v10 OS -->
+        <dbVersion n="VectorWise15" v="158" /> <!-- VectorWise -->
+        <dbVersion n="SQLServer2012" v="159" /> <!-- R: SQL Server 2012 -->
+        <dbVersion n="Infobright40" v="160" /> <!-- R: Infobright -->
+        <dbVersion n="SybaseIQ153" v="161" unixEncoding="0"/> <!-- R: Sybase IQ 15.3 -->
+        <dbVersion n="SybaseIQ154" v="162" unixEncoding="0"/> <!-- R: Sybase IQ 15.4 -->
+        <dbVersion n="EnterpriseDB9x" v="163" /> <!-- R: Enterprise -->
+        <dbVersion n="Kognitio7x" v="164" /> <!-- R: Kognition 7x -->
+        <dbVersion n="Vertica5051" v="167" /> <!-- R: Vertica -->
+        <dbVersion n="ParAccel31x" v="168" /> <!-- R: ParAccel -->
+        <dbVersion n="ParAccel35" v="169" /> <!-- R: ParAccel -->
+        <dbVersion n="Composite6x" v="170" /> <!-- R: Composite -->
+        <dbVersion n="IBMUDB101" v="172" /> <!-- R: IBM DB2 10 -->
+        <dbVersion n="AsternCluster46" v="173" /> <!-- R: Astern Cluster -->
+        <dbVersion n="VectorWise20x" v="174" /> <!-- VectorWise -->
+        <dbVersion n="MDXMSAS20052008" v="175" /> <!-- R: Microsoft Analysis Services 2005/2008 (MDX Cube Provider) -->
+		<!-- @deprecated use {@link #DbVMDXMSAS20052008} instead -->
+        <dbVersion n="MDXMSAS2012" v="176" /> <!-- R: Microsoft Analysis Services 2012 (MDX Cube Provider) -->
+        <dbVersion n="Teradata14" v="177" /> <!-- R: Teradata 14-->
+		<!-- @deprecated use {@link #DbVTeradata14} instead -->
+        <dbVersion n="HiveThrift08" v="178"/> <!-- R: Hive -->
+        <dbVersion n="Hive08" v="179" /> <!-- R:Hive -->
+        <dbVersion n="Vertica60" v="180" /> <!-- R:Vertica -->
+		<!-- @deprecated use {@link #DbVVertica60} instead -->
+        <dbVersion n="DbVSAPHana1" v="181"/> <!-- R: SAPHana -->
+        <dbVersion n="AsternCluster50" v="184" /> <!-- R: Astern Cluster -->
+        <dbVersion n="Netezza70" v="185" /> <!-- R: Netezza 7.0 -->
+        <dbVersion n="Hive09" v="186" /> <!-- R:Hive -->
+        <dbVersion n="HiveThrift09" v="187" /> <!-- R: Hive -->
+        <dbVersion n="Impala1x" v="188" /> <!-- R: Impala1x -->
+        <dbVersion n="ParAccel40" v="189" /> <!-- R: ParAccel -->
+		<!-- @deprecated use {@link #DbVParAccel40} instead -->
+        <dbVersion n="AmazonRedShift" v="190" /> <!-- R: Amazon -->
+        <dbVersion n="SQLServerAzure" v="191" /> <!-- R: SQL Server Azure -->
+        <dbVersion n="MDXOracleEssbase93" v="193" /> <!-- R: Oracle Essbase 9.3/11.x MDX Cube provider -->
+        <dbVersion n="SQLDenodo50" v="194" /> <!-- R: Denodo -->
+        <dbVersion n="SQLServer2012Par" v="195" /> <!-- R: SQL Server 2012 Parallel Data Warehouse -->
+        <dbVersion n="GoogleBigQuery" v="196" /> <!-- R: Google Big Query -->
+        <dbVersion n="IBMBigInsights2x" v="197" /> <!-- R: IBM InfoSphere BigInsights 2.x -->
+		<!-- @deprecated use {@link #DbVIBMBigInsights2x} instead -->
+        <dbVersion n="Vectorwise3x" v="199" /> <!-- R: Vectorwise 3.x -->
+		<!-- @deprecated use {@link #DbVVectorwise3x} instead -->
+        <dbVersion n="MariaDB5x" v="200" /> <!-- R: MariaDB 5.x -->
+        <dbVersion n="IBMDB2105" v="202" /> <!-- R: IBM DB2 Version 10.5 for Linux, UNIX and Windows -->
+        <dbVersion n="SAPHANA1SP5" v="203" /> <!-- R: SAP HANA 1.0 SP5 -->
+        <dbVersion n="Hive010" v="204" /> <!-- R:Hive 0.10x -->
+        <dbVersion n="Hive011" v="205" /> <!-- R:Hive 0.11x -->
+        <dbVersion n="Teradata141" v="206" /> <!-- R: Teradata 14.10 -->
+        <dbVersion n="AsternCluster51" v="208" /> <!-- R: Aster Database 5.1.x -->
+        <dbVersion n="SybaseIQ16" v="209" unixEncoding="0"/> <!-- R: Sybase IQ 16.0 -->
+        <dbVersion n="InformixIDS12" v="210" /> <!-- R: IBM Informix IDS 12.x -->
+        <dbVersion n="Kognitio8x" v="211" /> <!-- R: Kognition 8x -->
+        <dbVersion n="Oracle12c" v="212" /> <!-- R: Oracle 12c -->
+        <dbVersion n="Ingres10s" v="213" /> <!-- R: Actian Ingres 10s -->
+        <dbVersion n="ParStream3x" v="215" /> <!-- R: ParStream 3.x -->
+        <dbVersion n="MongoDb2x" v="216" /> <!-- R: MongoDB 2.x -->
+        <dbVersion n="MarkLogic7x" v="217" /> <!-- R: MarkLogic 7.x -->
+        <dbVersion n="Hadoop" v="218" /> <!-- R: Hadoop -->
+        <dbVersion n="SolrSearch" v="219" /> <!-- R: SOLR for SearchEngine -->
+        <dbVersion n="SAPHANA1SP7" v="220" /> <!-- R: SAP Hana SPS 07 -->
+        <dbVersion n="Splunk6" v="221" /> <!-- R: Splunk for SearchEngine -->
+        <dbVersion n="Hive012" v="222" /> <!-- R: XQuery for BI -->
+		<!-- @deprecated use {@link #DbVHive012} instead -->
+        <dbVersion n="XQueryBI" v="223" /> <!-- R: XQuery for BI -->
+        <dbVersion n="SQLServer2014" v="224" /> <!-- R: SQL Server 2014 -->
+        <dbVersion n="Pig" v="225" /> <!-- R: Pig -->
+        <dbVersion n="SparkShark09x" v="226" /> <!-- R: Spark Shark 0.9x -->
+        <dbVersion n="Hive013" v="227" /> <!-- R:Hive 0.13x -->
+        <dbVersion n="SAPHANA1SP8" v="228" /> <!-- R: SAP Hana SPS 08 -->
+        <dbVersion n="ParAccel50x" v="229" /> <!-- R: ParAccel50x -->
+        <dbVersion n="SybaseASE16x" v="230" /> <!-- R: Sybase ASE 16.x -->
+        <dbVersion n="EXASolution5x" v="231" /> <!-- R: EXASolution -->
+		<dbVersion n="EXASolution40" v="166" /> <!-- R: EXASolution -->
+		<dbVersion n="IBMDB211forzOS" v="232" /> <!-- R: DB2 11 for z/OS -->
+        <dbVersion n="HPVertica7x" v="233" /> <!-- R: HP Vertica 7.x -->
+        <dbVersion n="IBMInfoSphereBigInsights3x" v="234" /> <!-- R: IBM InfoSphere BigInsights 3.x -->
+        <dbVersion n="AsterDB6" v="235" /> <!-- R: Aster Database 6.0 -->
+        <dbVersion n="IBMNetezza71x" v="236" /> <!-- R: IBM Netezza 7.1.x -->
+        <dbVersion n="MariaDB10x" v="237" /> <!-- R: MariaDB 10.x -->
+        <dbVersion n="Teradata15" v="238" /> <!-- R: Teradata 15.0 -->
+        <dbVersion n="DataDirectCloud" v="239" /> <!-- R: DataDirect Cloud -->
+        <dbVersion n="ArcadiaPlatform1" v="240"/> <!-- R: Arcadia Platform 1.1 -->
+        <dbVersion n="MemSQL26" v="241" /><!-- R: MemSQL 2.6 -->
+        <dbVersion n="Phoenix3x" v="242" /> <!-- R: Apache Phoenix 3.x-->
+        <dbVersion n="PivotalHAWQ2x" v="243" /> <!-- R: Pivotal HAWQ 1.0.x-->
+        <dbVersion n="Phoenix4x" v="244" /> <!-- R: Apache Phoenix 4.x-->
+        <dbVersion n="Informatica96x" v="245" /> <!-- R: Informatica 9.6.x -->
+        <dbVersion n="ApacheSpark1x" v="246" /><!-- R:Spark SQL 1.x -->
+        <dbVersion n="Altibase63x" v="247" /> <!-- R: Altibase 6.3x -->
+        <dbVersion n="ActianVector4x" v="248" /> <!-- R: Actian Vector 4.x -->
+        <dbVersion n="Cassandra2x" v="249" /> <!-- R: Apache Cassandra 2.x -->
+        <dbVersion n="Presto" v="250" /> <!-- R: Presto -->
+        <dbVersion n="Hive014" v="251" /> <!-- R:Hive 0.14x -->
+        <dbVersion n="SAPHANA1SP9" v="252" /> <!-- R: SAP Hana SPS 09 -->
+        <dbVersion n="ParAccel51x" v="253" /> <!-- R: ParAccel51x -->
+        <dbVersion n="MapRDrill" v="254" /> <!-- R: MapRDrill -->
+        <dbVersion n="Impala20" v="255" /> <!-- R: Impala1x -->
+		<dbVersion n="Cirro" v="256" /> <!-- R: Cirro -->
+		<dbVersion n="DataVirtualization7x" v="257" /> <!-- R: Cisco Data Virtualization 7.x -->
+		<dbVersion n="Teradata1510" v="258" /> <!-- R: Teradata 15.10 -->
+		<dbVersion n="IBMNetezza72x" v="259" /> <!-- R: IBM Netezza 7.2.x -->
+		<dbVersion n="Snowflake" v="260" /> <!-- Snowflake -->
+		<dbVersion n="PivotalHAWQ13x" v="261" /> <!-- R: Pivotal HAWQ 1.3.x-->
+		<dbVersion n="Hive110" v="262" /> <!-- R:Hive 1.1x -->
+		<dbVersion n="MapRDrill1x" v="263" /> <!-- R: MapR Drill 1.x -->
+    </dbVersions>
+
+    <!--
+        for connection type we use a bitwise value to allow future options; if not specified will be 1 (Windows)
+        windows = 1
+        mac = 2 only
+        windows and mac = 3 = (2 + 1)
+        driverless = 4
+    -->
+    <dbs>
+        <db n="IBM DB2 for LUW" dbID="DB2Wire" dbType="DB2">
+            <connection connStr="DRIVER={MicroStrategy ODBC Driver for DB2 Wire Protocol!#DRIVERSUFFIX#!}; IpAddress=@ip; TcpPort=@port; Database=@db;"/>
+            <dbParamSection>
+                <dbParam n="IP Address" tp="text" field="ip" ids="8517" required="true"/>
+                <dbParam n="TCP Port" tp="number" field="port" ids="8518" required="true"/>
+                <dbParam n="Database Name" tp="text" field="db" ids="8519" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="IBMUDB97"/>
+                <dbVersion n="IBMUDB101"/>
+                <dbVersion n="IBMDB2105"/>
+            </dbVersions>
+        </db>
+
+        <db n="IBM DB2 for LUW (JDBC)" dbID="DB2WireJDBC" dbType="DB2" connType="2">
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER={com.microstrategy.jdbc.db2.DB2Driver};URL={jdbc:microstrategy:db2://@hostport;DatabaseName=@db}" driver="com.microstrategy.jdbc.db2.DB2Driver" driverFile="mydb2.jar"/>
+            <dbParamSection>
+                <dbParam n="Host name:Port number" tp="text" field="hostport" ids="13907" required="true"/>
+                <dbParam n="Database Name" tp="text" field="db" ids="8519" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="IBMUDB97"/>
+                <dbVersion n="IBMUDB101"/>
+                <dbVersion n="IBMDB2105"/>
+            </dbVersions>
+        </db>
+
+        <db n="IBM DB2 for i" dbID="DB2iSeries" dbType="DB2">
+            <connection connStr="DRIVER={MicroStrategy ODBC Driver for DB2 Wire Protocol!#DRIVERSUFFIX#!}; IpAddress=@ip; Collection=@col; Location=@loc; DefaultIsolationLevel=@lvl; PackageOwner=@pkgown; TcpPort=@port;"/>
+            <dbParamSection>
+                <dbParam n="IP Address" tp="text" field="ip" ids="8517" required="true"/>
+                <dbParam n="Collection" tp="text" field="col" ids="8521" required="true"/>
+                <dbParam n="Location" tp="text" field="loc" ids="689" required="true"/>
+                <dbParam n="Isolation Level" tp="list" field="lvl" ids="8522" required="true">
+                    <dbParamVal v="0" n="Read uncommitted" ids="8523"/>
+                    <dbParamVal v="1" n="Read Committed" ids="8524"/>
+                    <dbParamVal v="2" n="Repeatable Read" ids="8528"/>
+                    <dbParamVal v="3" n="Serializable" ids="8529"/>
+                    <dbParamVal v="4" n="None" ids="512"/>
+                </dbParam>
+                <dbParam n="Package Owner" tp="text" field="pkgown" ids="8530" required="true"/>
+                <dbParam n="TCP Port" tp="text" field="port" ids="8518" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="IBMDB2400V7R1"/>
+            </dbVersions>
+        </db>
+
+        <db n="IBM DB2 for i (JDBC)" dbID="DB2iSeriesJDBC" dbType="DB2" connType="2">
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER={com.microstrategy.jdbc.db2.DB2Driver};URL={jdbc:microstrategy:db2://@hostport;LocationName=@loc; PackageCollection=@pkgcol; PackageOwner=@pkgown}" driver="com.microstrategy.jdbc.db2.DB2Driver" driverFile="mydb2.jar"/>
+            <dbParamSection>
+                <dbParam n="Host name:Port number" tp="text" field="hostport" ids="13907" required="true"/>
+                <dbParam n="Package Collection" tp="text" field="pkgcol" ids="8532" required="true"/>
+                <dbParam n="Location" tp="text" field="loc" ids="689" required="true"/>
+                <dbParam n="Package Owner" tp="text" field="pkgown" ids="8530" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="IBMDB2400V7R1"/>
+            </dbVersions>
+        </db>
+
+        <db n="IBM DB2 for z/OS" dbID="DB2ZOS" dbType="DB2">
+            <connection connStr="DRIVER={MicroStrategy ODBC Driver for DB2 Wire Protocol!#DRIVERSUFFIX#!}; IpAddress=@ip; Collection=@col; Location=@loc; PackageCollection=@pkgcol; PackageOwner=@pkgown; TcpPort=@port;"/>
+            <dbParamSection>
+                <dbParam n="IP Address" tp="text" field="ip" ids="8517" required="true"/>
+                <dbParam n="Collection" tp="text" field="col" ids="8521" required="true"/>
+                <dbParam n="Location" tp="text" field="loc" ids="689" required="true"/>
+                <dbParam n="Package Collection" field="pkgcol" tp="text" ids="8532" required="true"/>
+                <dbParam n="Package Owner" tp="text" field="pkgown" ids="8530" required="true"/>
+                <dbParam n="TCP Port" tp="text" field="port" ids="8518" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="IBMDB211forzOS"/>
+                <dbVersion n="IBMUDBV10zOS"/>
+            </dbVersions>
+        </db>
+
+        <db n="IBM DB2 for z/OS (JDBC)" dbID="DB2ZOSJDBC" dbType="DB2" connType="2">
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER={com.microstrategy.jdbc.db2.DB2Driver};URL={jdbc:microstrategy:db2://@hostport;LocationName=@loc;PackageCollection=@pkgcol;PackageOwner=@pkgown}" driver="com.microstrategy.jdbc.db2.DB2Driver" driverFile="mydb2.jar"/>
+            <dbParamSection>
+                <dbParam n="Host name:Port number" tp="text" field="hostport" ids="13907" required="true"/>
+                <dbParam n="Location" tp="text" field="loc" ids="689" required="true"/>
+                <dbParam n="Package Collection" field="pkgcol" tp="text" ids="8532" required="true"/>
+                <dbParam n="Package Owner" tp="text" field="pkgown" ids="8530" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="IBMDB211forzOS"/>
+                <dbVersion n="IBMUDBV10zOS"/>
+            </dbVersions>
+        </db>
+
+        <db n="IBM Informix" dbID="InformixWire" dbType="Informix">
+            <connection connStr="DRIVER={MicroStrategy ODBC Driver for Informix Wire Protocol!#DRIVERSUFFIX#!}; ServerName=@svr; HostName=@host; PortNumber=@port; Database=@db;"/>
+            <dbParamSection>
+                <dbParam n="Server Name" tp="text" field="svr" ids="8536" required="true"/>
+                <dbParam n="Host Name" tp="text" field="host" ids="8533" required="true"/>
+                <dbParam n="Port Number" tp="number" field="port" ids="8534" required="true"/>
+                <dbParam n="Database Name" tp="text" field="db" ids="8519" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="InformixIDS10x11x"/>
+                <dbVersion n="InformixIDS12"/>
+            </dbVersions>
+        </db>
+
+        <db n="IBM Informix (JDBC)" dbID="InformixWireJDBC" dbType="Informix" connType="2">
+           <connection connStr="FULLCONNECTION=JDBC;DRIVER={com.microstrategy.jdbc.informix.InformixDriver};URL={jdbc:microstrategy:informix://@hostport;DatabaseName=@db;InformixServer=@svr}" driver="com.microstrategy.jdbc.informix.InformixDriver" driverFile="myinformix.jar"/>
+            <dbParamSection>
+                <dbParam n="Server Name" tp="text" field="svr" ids="8536" required="true"/>
+                <dbParam n="Host name:Port number" tp="text" field="hostport" ids="13907" required="true"/>
+                <dbParam n="Database Name" tp="text" field="db" ids="8519" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="InformixIDS10x11x"/>
+                <dbVersion n="InformixIDS12"/>
+            </dbVersions>
+        </db>
+
+        <db n="IBM Informix XPS" dbID="InformixXPS" dbType="Informix">
+            <connection connStr="DRIVER={IBM Informix ODBC Driver (64-bit)}; Database=@db; ServerName=@svr; HostName=@host; Service=@svc; Protocol=@prot;"/>
+            <dbParamSection>
+                <dbParam n="Database" tp="text" field="db" ids="8538" required="true"/>
+                <dbParam n="Server Name" tp="text" field="svr" ids="8536" required="true"/>
+                <dbParam n="Host Name" tp="text" field="host" ids="8533" required="true"/>
+                <dbParam n="Service Name" tp="number" field="svc" ids="8539" required="true"/>
+                <dbParam n="Protocol Type" tp="list" field="prot" ids="8540" required="true">
+                    <dbParamVal v="olsocspx"/>
+                    <dbParamVal v="olsoctcp"/>
+                    <dbParamVal v="onsocspx"/>
+                    <dbParamVal v="onsoctcp"/>
+                    <dbParamVal v="seipcpip"/>
+                    <dbParamVal v="sesocspx"/>
+                    <dbParamVal v="sesoctcp"/>
+                </dbParam>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="InformixXPS83"/>
+            </dbVersions>
+        </db>
+
+        <db n="IBM Informix XPS (JDBC)" dbID="InformixXPSJDBC" dbType="Informix" connType="2">
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER={com.informix.jdbc.IfxDriver};URL={jdbc:informix-sqli://@hostport/@db:INFORMIXSERVER=@svr}" driver="com.informix.jdbc.IfxDriver" driverFile="ifxjdbc.jar"/>
+            <dbParamSection>
+                <dbParam n="Server Name" tp="text" field="svr" ids="8536" required="true"/>
+                <dbParam n="Host name:Service" tp="text" field="hostport" ids="13907" required="true"/>
+                <dbParam n="Database Name" tp="text" field="db" ids="8519" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="InformixXPS83"/>
+            </dbVersions>
+        </db>
+
+        <db n="PostgreSQL" dbID="PostgreSQL" dbType="PostgreSQL">
+            <connection connStr="DRIVER={MicroStrategy ODBC Driver for PostgreSQL Wire Protocol!#DRIVERSUFFIX#!}; HostName=@host; PortNumber=@port; Database=@db;"/>
+            <dbParamSection>
+                <dbParam n="Host Name" tp="text" field="host" ids="8533" required="true"/>
+                <dbParam n="Port Number" tp="number" field="port" ids="8534" required="true"/>
+                <dbParam n="Database Name" tp="text" field="db" ids="8519" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="PostgreSQL84"/>
+                <dbVersion n="PostgreSQL90"/>
+            </dbVersions>
+        </db>
+
+        <db n="PostgreSQL (JDBC)" dbID="PostgreSQLJDBC" dbType="PostgreSQL" connType="2">
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER={com.microstrategy.jdbc.postgresql.PostgreSQLDriver};URL={jdbc:microstrategy:postgresql://@hostport;DatabaseName=@db}" driver="com.microstrategy.jdbc.postgresql.PostgreSQLDriver" driverFile="mypostgresql.jar"/>
+            <dbParamSection>
+                <dbParam n="Host name:Port number" tp="text" field="hostport" ids="13907" required="true"/>
+                <dbParam n="Database Name" tp="text" field="db" ids="8519" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="PostgreSQL84"/>
+                <dbVersion n="PostgreSQL90"/>
+            </dbVersions>
+        </db>
+
+        <db n="SAP Sybase ASE" dbID="SybaseASE" dbType="Sybase">
+            <connection connStr="DRIVER={MicroStrategy ODBC Driver for Sybase ASE Wire Protocol!#DRIVERSUFFIX#!}; NetworkAddress=@netport; Database=@db;"/>
+            <dbParamSection>
+                <dbParam n="Network Address, port" tp="text" field="netport" required="true"/>
+                <dbParam n="Database Name" tp="text" field="db" ids="8519" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="SybaseASE16x"/>
+                <dbVersion n="SybaseASE15"/>
+            </dbVersions>
+        </db>
+
+        <db n="SAP Sybase ASE (JDBC)" dbID="SybaseASEJDBC" dbType="Sybase" connType="2">
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER={com.microstrategy.jdbc.sybase.SybaseDriver};URL={jdbc:microstrategy:sybase://@hostport;DatabaseName=@db}" driver="com.microstrategy.jdbc.sybase.SybaseDriver" driverFile="mysybase.jar"/>
+            <dbParamSection>
+                <dbParam n="Host name:Port number" tp="text" field="hostport" ids="13907" required="true"/>
+                <dbParam n="Database Name" tp="text" field="db" ids="8519" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="SybaseASE16x"/>
+                <dbVersion n="SybaseASE15"/>
+            </dbVersions>
+        </db>
+
+        <db n="SAP Sybase IQ" dbID="SybaseIQ" dbType="Sybase">
+            <connection connStr="DRIVER={Sybase IQ}; EngineName=@svr; DatabaseName=@db; CommLinks=tcpip(host=@host; port=@port); DriverUnicodeType=1;"/>
+            <dbParamSection>
+                <dbParam n="Server Name" tp="text" field="svr" ids="8536" required="true"/>
+                <dbParam n="Host" tp="text" field="host" ids="8533" required="true"/>
+                <dbParam n="Port" tp="text" field="port" ids="8534" required="true"/>
+                <dbParam n="Database Name" tp="text" field="db" ids="8519" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="SybaseIQ154"/>
+                <dbVersion n="SybaseIQ16"/>
+            </dbVersions>
+        </db>
+
+        <db n="SAP Sybase IQ (JDBC)" dbID="SybaseIQJDBC" dbType="Sybase" connType="2">
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER={com.sybase.jdbc4.jdbc.SybDriver};URL={jdbc:sybase:Tds:@hostport!#QUESTION#!@db}" driver="com.sybase.jdbc4.jdbc.SybDriver" driverFile="jconn4.jar"/>
+            <dbParamSection>
+                <dbParam n="Hostname:PortNumber" tp="text" field="hostport" ids="13907" required="true"/>
+                <dbParam n="Database Name" tp="text" field="db" ids="8519" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="SybaseIQ154"/>
+                <dbVersion n="SybaseIQ16"/>
+            </dbVersions>
+        </db>
+
+        <db n="Oracle" dbID="Oracle" dbType="Oracle">
+            <connection connStr="DRIVER={MicroStrategy ODBC Driver for Oracle Wire Protocol!#DRIVERSUFFIX#!}; HostName=@host; PortNumber=@port; SID=@sid; ServiceName=@svc; AlternateServers=@alt; EnableNCharSupport=1; IANAAppCodePage=111;"/>
+            <dbParamSection n="Standard Connection" ids="8546" defaultSection="true">
+                <dbParam n="Host Name" tp="text" field="host" ids="8533" required="true"/>
+                <dbParam n="Port Number" tp="number" field="port" ids="8534" required="true"/>
+                <dbParam n="SID" tp="text" field="sid" ids="8547"/>
+                <dbParam n="Service Name" tp="text" field="svc" ids="8539"/>
+                <dbParam n="Alternate Servers" tp="text" field="alt" ids="8548"/>
+            </dbParamSection>
+            <connection connStr="DRIVER={MicroStrategy ODBC Driver for Oracle Wire Protocol!#DRIVERSUFFIX#!}; ServerName=@svr; TNSNamesFile=@tns; EnableNCharSupport=1; IANAAppCodePage=111;"/>
+            <dbParamSection n="TNSNames Connection" ids="8549">
+                <dbParam n="Server Name" tp="text" field="svr" ids="8536" required="true"/>
+                <dbParam n="TNSNames File" tp="text" field="tns" ids="8550" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="Oracle11g"/>
+                <dbVersion n="Oracle11gR2"/>
+                <dbVersion n="Oracle12c"/>
+            </dbVersions>
+        </db>
+
+        <db n="Oracle (JDBC)" dbID="OracleJDBC" dbType="Oracle" connType="2">
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER={com.microstrategy.jdbc.oracle.OracleDriver};URL={jdbc:microstrategy:oracle://@hostport;SID=@sid};" driver="com.microstrategy.jdbc.oracle.OracleDriver" driverFile="myoracle.jar"/>
+            <dbParamSection n="Standard Connection" ids="8546">
+                <dbParam n="Host name:Port number" tp="text" field="hostport" ids="13907" required="true"/>
+                <dbParam n="SID" tp="text" field="sid" ids="8547" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="Oracle11g"/>
+                <dbVersion n="Oracle11gR2"/>
+                <dbVersion n="Oracle12c"/>
+            </dbVersions>
+        </db>
+
+        <db n="Microsoft Azure SQL Database" dbID="SQLDatabase" dbType="SQLServer">
+            <connection connStr="DRIVER={MicroStrategy ODBC Driver for SQL Server Wire Protocol!#DRIVERSUFFIX#!}; hostname=@host; Port=@port; Database=@db; EncryptionMethod=1; ValidateServerCertificate=0;"/>
+            <dbParamSection>
+                <dbParam n="Host Name" tp="text" field="host" ids="8533" required="true"/>
+                <dbParam n="Port Number" tp="number" field="port" ids="8534" required="false"/>
+                <dbParam n="Database Name" tp="text" field="db" ids="8519" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="SQLServerAzure"/>
+            </dbVersions>
+        </db>
+
+        <db n="Microsoft Azure SQL Database (JDBC)" dbID="SQLDatabaseJDBC" dbType="SQLServer" connType="2">
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER={com.microstrategy.jdbc.sqlserver.SQLServerDriver};URL={jdbc:microstrategy:sqlserver://@hostport;DatabaseName=@db;EncryptionMethod=SSL;ValidateServerCertificate=false}" driver="com.microstrategy.jdbc.sqlserver.SQLServerDriver" driverFile="mysqlserver.jar"/>
+            <dbParamSection>
+                <dbParam n="Host name:Port number" tp="text" field="hostport" ids="13907" required="true"/>
+                <dbParam n="Database Name" tp="text" field="db" ids="8519" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="SQLServerAzure"/>
+            </dbVersions>
+        </db>
+
+        <db n="Microsoft SQL Server" dbID="SQLServer" dbType="SQLServer">
+            <connection connStr="DRIVER={MicroStrategy ODBC Driver for SQL Server Wire Protocol!#DRIVERSUFFIX#!}; hostname=@host; Port=@port; Database=@db; AuthenticationMethod=@auth;"/>
+            <dbParamSection>
+                <dbParam n="Host Name" tp="text" field="host" ids="8533" required="true"/>
+                <dbParam n="Port Number" tp="number" field="port" ids="8534" required="false"/>
+                <dbParam n="Database Name" tp="text" field="db" ids="8519" required="true"/>
+                <dbParam n="Authentication Mode" tp="list" field="auth" ids="7952" required="false" defaultValue="1"> <!-- scope=1 for platform , 2 is for one tier only -->
+                    <dbParamVal v="1" n="Encrypt Password (default)" ids="13980"/>
+                    <dbParamVal v="4" n="Kerberos" ids="13981"/>
+                </dbParam>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="SQLServer2008NativeClient"/>
+                <dbVersion n="SQLServer2012"/>
+                <dbVersion n="SQLServer2014"/>
+                <dbVersion n="SQLServer2012Par"/>
+            </dbVersions>
+        </db>
+
+        <db n="Microsoft SQL Server (JDBC)" dbID="SQLServerJDBC" dbType="SQLServer" connType="2">
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER={com.microstrategy.jdbc.sqlserver.SQLServerDriver};URL={jdbc:microstrategy:sqlserver://@hostport;DatabaseName=@db}" driver="com.microstrategy.jdbc.sqlserver.SQLServerDriver" driverFile="mysqlserver.jar"/>
+            <dbParamSection>
+                <dbParam n="Host name:Port number" tp="text" field="hostport" ids="13907" required="true"/>
+                <dbParam n="Database Name" tp="text" field="db" ids="8519" required="true"/>
+            </dbParamSection>-->
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="SQLServer2008NativeClient"/>
+                <dbVersion n="SQLServer2012"/>
+                <dbVersion n="SQLServer2014"/>
+                <dbVersion n="SQLServer2012Par"/>
+            </dbVersions>
+        </db>
+
+        <db n="Teradata" dbID="Teradata" dbType="Teradata">
+            <connection connStr="DRIVER={Teradata}; DBCName=@svr; Database=@db; UseIntegratedSecurity=false;AUTHENTICATION=@auth;"/>
+            <dbParamSection>
+                <dbParam n="Server Name" tp="text" field="svr" ids="8536" required="true"/>
+                <dbParam n="Database Name" tp="text" field="db" ids="8519" required="true"/>
+                <dbParam n="Authentication Mode" tp="list" field="auth" ids="7952" required="false">
+                    <dbParamVal v="" n="Password (default)" ids="13982"/>
+                    <dbParamVal v="LDAP" n="LDAP" ids="7790"/>
+                </dbParam>
+
+                <dbParam n="Use Teradata Parallel Transporter (For Teradata V12 and above)" ids="13122" tp="boolean" stp="numeric" isgroup="1" groupid="usetptapi" display="onChecked" propset="VLDB Select" prop="Data Retrieval Mode" driverMode="2" help="enabling_tpt.htm" scope="1"/>
+                <dbParam n="TD_TDP_ID" ids="13123" tp="text" required="true" group="usetptapi" propset="VLDB Select" prop="Data Retrieval Parameters" propformat="text" propfield="TD_TDP_ID" scope="1"/>
+                <dbParam n="TD_MAX_SESSIONS" ids="13124" tp="number" required="true" group="usetptapi" propset="VLDB Select" prop="Data Retrieval Parameters" propformat="text" propfield="TD_MAX_SESSIONS" scope="1"/>
+                <dbParam n="TD_MIN_SESSIONS" ids="13125" tp="number" required="true" group="usetptapi" propset="VLDB Select" prop="Data Retrieval Parameters" propformat="text" propfield="TD_MIN_SESSIONS" scope="1"/>
+                <dbParam n="TD_MAX_INSTANCES" ids="13126" tp="number" required="true" group="usetptapi" propset="VLDB Select" prop="Data Retrieval Parameters" propformat="text" propfield="TD_MAX_INSTANCES" scope="1"/>
+                <dbParam n="Other parameters" ids="13952" tp="text" required="false" group="usetptapi" propset="VLDB Select" prop="Data Retrieval Parameters" propformat="text" propfield="" scope="1"/>
+
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="Teradata141"/>
+                <dbVersion n="Teradata15"/>
+				<dbVersion n="Teradata1510"/>
+            </dbVersions>
+        </db>
+
+        <db n="Teradata (JDBC)" dbID="TeradataJDBC" dbType="Teradata" connType="2">
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER={com.teradata.jdbc.TeraDriver};URL={jdbc:teradata://@svrdb}" driver="com.teradata.jdbc.TeraDriver" driverFile="terajdbc4.jar"/>
+            <dbParamSection>
+                <dbParam n="Server Name/database" ids="13910" tp="text" field="svrdb" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="Teradata141"/>
+                <dbVersion n="Teradata15" />
+				<dbVersion n="Teradata1510"/>
+            </dbVersions>
+        </db>
+
+        <db n="MySQL" dbID="MySQL" dbType="MySQL" ids="13100">
+            <connection connStr="DRIVER={MySQL ODBC 5.3 Unicode Driver}; SERVER=@svr; PORT=@port; DATABASE={@db};"/>
+            <dbParamSection>
+                <dbParam n="Server Name" tp="text" field="svr" ids="8536" required="true"/>
+                <dbParam n="Port Number" tp="number" field="port" ids="8534" required="true"/>
+                <dbParam n="Database Name" tp="text" field="db" ids="8519" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="MySQL50"/>
+                <dbVersion n="MySQL51"/>
+            </dbVersions>
+        </db>
+
+        <db n="MySQL (JDBC)" dbID="MySQLJDBC" dbType="MySQL" connType="2">
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER={com.mysql.jdbc.Driver};URL={jdbc:mysql://@hostportdb}" driver="com.mysql.jdbc.Driver" driverFile="mysql-connector-java-5.1.*.jar"/>
+            <dbParamSection>
+                <dbParam n="Hostname:PortNumber/database" tp="text" field="hostportdb" ids="13909" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="MySQL50"/>
+                <dbVersion n="MySQL51"/>
+            </dbVersions>
+        </db>
+
+        <db n="MemSQL" dbID="MemSQL" dbType="MemSQL">
+            <connection connStr="DRIVER={MySQL ODBC 5.3 Unicode Driver}; SERVER=@svr; PORT=@port; DATABASE={@db};"/>
+            <dbParamSection>
+                <dbParam n="Server Name" tp="text" field="svr" ids="8536" required="true"/>
+                <dbParam n="Port Number" tp="number" field="port" ids="8534" required="true"/>
+                <dbParam n="Database Name" tp="text" field="db" ids="8519" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="MemSQL26"/>
+            </dbVersions>
+        </db>
+
+        <db n="MemSQL (JDBC)" dbID="MemSQLJDBC" dbType="MySQL" connType="2">
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER={com.mysql.jdbc.Driver};URL={jdbc:mysql://@hostportdb}" driver="com.mysql.jdbc.Driver" driverFile="mysql-connector-java-5.1.*.jar"/>
+            <dbParamSection>
+                <dbParam n="Hostname:PortNumber/database" tp="text" field="hostportdb" ids="13909" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="MemSQL26"/>
+            </dbVersions>
+        </db>
+
+        <db n="MariaDB" dbID="MariaDB" dbType="MySQL">
+            <connection connStr="DRIVER={MySQL ODBC 5.3 Unicode Driver}; SERVER=@svr; PORT=@port; DATABASE=@db;"/>
+            <dbParamSection>
+                <dbParam n="Server Name" tp="text" field="svr" ids="8536" required="true"/>
+                <dbParam n="Port Number" tp="number" field="port" ids="8534" required="true"/>
+                <dbParam n="Database Name" tp="text" field="db" ids="8519" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="MariaDB5x"/>
+                <dbVersion n="MariaDB10x"/>
+            </dbVersions>
+        </db>
+
+        <db n="MariaDB (JDBC)" dbID="MariaDBJDBC" dbType="MySQL" connType="2">
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER={com.mysql.jdbc.Driver};URL={jdbc:mysql://@hostportdb}" driver="com.mysql.jdbc.Driver" driverFile="mysql-connector-java-5.1.*.jar"/>
+            <dbParamSection>
+                <dbParam n="Hostname:PortNumber/database" tp="text" field="hostportdb" ids="13909" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="MariaDB5x"/>
+                <dbVersion n="MariaDB10x"/>
+            </dbVersions>
+        </db>
+
+        <db n="Pivotal Greenplum" dbID="GreenPlum" dbType="PostgreSQL">
+            <connection connStr="DRIVER={MicroStrategy ODBC Driver for Greenplum Wire Protocol!#DRIVERSUFFIX#!}; HostName=@host; PortNumber=@port; Database=@db; AlternateServers=@svrs;"/>
+            <dbParamSection>
+                <dbParam n="Host Name" tp="text" field="host" ids="8533" required="true"/>
+                <dbParam n="Port Number" tp="number" field="port" ids="8534" defaultValue="5432" required="true"/>
+                <dbParam n="Database" tp="text" field="db" ids="8538" required="true"/>
+                <dbParam n="Alternate Servers" tp="text" field="svrs" ids="8548"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="Greenplum4x"/>
+            </dbVersions>
+        </db>
+
+        <db n="Pivotal Greenplum (JDBC)" dbID="GreenPlumJDBC" dbType="PostgreSQL" connType="2">
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER={com.microstrategy.jdbc.greenplum.GreenplumDriver};URL={jdbc:microstrategy:greenplum://@hostport;DatabaseName=@db}" driver="com.microstrategy.jdbc.greenplum.GreenplumDriver" driverFile="mygreenplum.jar"/>
+            <dbParamSection>
+                <dbParam n="Host name:Port number" tp="text" field="hostport" ids="13907" required="true"/>
+                <dbParam n="Database Name" tp="text" field="db" ids="8519" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="Greenplum4x"/>
+            </dbVersions>
+        </db>
+
+        <db n="Pivotal HAWQ" dbID="PIVOTALHAWQ" dbType="PIVOTALHAWQ">
+            <connection connStr="DRIVER={MicroStrategy ODBC Driver for Greenplum Wire Protocol!#DRIVERSUFFIX#!}; HostName=@host; PortNumber=@port; Database=@db; AlternateServers=@svrs;"/>
+            <dbParamSection>
+                <dbParam n="Host Name" tp="text" field="host" ids="8533" required="true"/>
+                <dbParam n="Port Number" tp="number" field="port" ids="8534" defaultValue="5432" required="true"/>
+                <dbParam n="Database" tp="text" field="db" ids="8538" required="true"/>
+                <dbParam n="Alternate Servers" tp="text" field="svrs" ids="8548"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="PivotalHAWQ2x"/>
+				<dbVersion n="PivotalHAWQ13x"/>
+            </dbVersions>
+        </db>
+
+        <db n="Pivotal HAWQ (JDBC)" dbID="PIVOTALHAWQJDBC" dbType="PIVOTALHAWQ" connType="2">
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER={com.microstrategy.jdbc.greenplum.GreenplumDriver};URL={jdbc:microstrategy:greenplum://@hostport;DatabaseName=@db}" driver="com.microstrategy.jdbc.greenplum.GreenplumDriver" driverFile="mygreenplum.jar"/>
+            <dbParamSection>
+                <dbParam n="Host name:Port number" tp="text" field="hostport" ids="13907" required="true"/>
+                <dbParam n="Database Name" tp="text" field="db" ids="8519" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="PivotalHAWQ2x"/>
+				<dbVersion n="PivotalHAWQ13x"/>
+            </dbVersions>
+        </db>
+
+        <db n="IBM Netezza" dbID="Netezza" dbType="Netezza">
+            <connection connStr="DRIVER={NetezzaSQL}; servername=@svr; port=@port; database=@db;"/>
+            <dbParamSection>
+                <dbParam n="Server Name" tp="text" field="svr" ids="8536" required="true"/>
+                <dbParam n="Port Number" tp="number" field="port" ids="8534" required="true"/>
+                <dbParam n="Database Name" tp="text" field="db" ids="8519" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="Netezza60"/>
+                <dbVersion n="Netezza70"/>
+                <dbVersion n="IBMNetezza71x"/>
+				<dbVersion n="IBMNetezza72x"/>
+            </dbVersions>
+        </db>
+
+        <db n="IBM Netezza (JDBC)" dbID="NetezzaJDBC" dbType="Netezza" connType="2">
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER={org.netezza.Driver};URL={jdbc:netezza://@hostportdb}" driver="org.netezza.Driver" driverFile="nzjdbc3.jar"/>
+            <altConnection connStr="FULLCONNECTION=JDBC;DRIVER={org.netezza.Driver};URL={jdbc:netezza://@hostportdb}" driver="org.netezza.Driver" driverFile="nzjdbc.jar"/>
+            <dbParamSection>
+                <dbParam n="Hostname:PortNumber/database" tp="text" field="hostportdb" ids="13909" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="Netezza60"/>
+                <dbVersion n="Netezza70"/>
+                <dbVersion n="IBMNetezza71x"/>
+				<dbVersion n="IBMNetezza72x"/>
+            </dbVersions>
+        </db>
+
+        <db n="Web Services" dbID="WebServices" dbType="XQuery" ids="8560" connType="7">
+            <connection connStr="FULLCONNECTION=XQUERY;@xq" driver="XQUERY"/> <!-- FULLCONNECTION= will be removed in code -->
+            <dbParamSection>
+                <dbParam n="Script Mode" tp="list" field="xq" ids="10064">
+                    <dbParamVal v="" n="XQuery" ids="8560"/>
+                    <dbParamVal v="Salesforce;" n="Salesforce SOQL" ids="14005"/>
+                </dbParam>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="XQuery"/>
+            </dbVersions>
+        </db>
+
+        <db n="Web Services BI Product Connector" dbID="WebServicesBI" dbType="XQuery" ids="13101" connType="7">
+            <connection connStr="FULLCONNECTION=XQUERY;@xq" driver="XQUERY"/> <!-- FULLCONNECTION= will be removed in code -->
+            <dbParamSection>
+                <dbParam n="BI Sources" tp="list" field="xq" ids="12752">
+                    <dbParamVal v="USE_ZORBA2;BO_SOAP;" n="SAP BO" ids="13531"/>
+                    <dbParamVal v="USE_ZORBA2;OBIEE;" n="OBIEE" ids="13532"/>
+                    <dbParamVal v="USE_ZORBA2;COGNOS;" n="Cognos" ids="13533"/>
+                </dbParam>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="XQueryBI"/>
+            </dbVersions>
+        </db>
+
+        <db n="Hadoop" dbID="Hadoop" dbType="Hadoop" ids="12758" connType="7" stdLogin="0">
+            <connection connStr="FULLCONNECTION=hadoopName=@hnn; hdfsPort=@hp; webHDFSPort=@wp; BDEIP=@bde; BDEPORT=@bdep;" driver=""/> <!-- FULLCONNECTION= will be removed in code -->
+            <dbParamSection>
+                <dbParam n="Hadoop Name Node" tp="text" field="hnn" ids="12308" required="true"/>
+                <dbParam n="HDFS Port" tp="number" field="hp" ids="12309" required="true"/>
+                <dbParam n="WebHDFS Port" tp="text" field="wp" ids="12310" required="true"/>
+                <dbParam n="Big Data Engine" tp="text" field="bde" ids="12312" required="true"/>
+                <dbParam n="Port" tp="number" field="bdep" ids="12313" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Hadoop"/>
+            </dbVersions>
+        </db>
+
+        <db n="Infobright" dbID="InfoBright" dbType="MySQL">
+            <connection connStr="DRIVER={MySQL ODBC 5.3 Unicode Driver}; SERVER=@svr; PORT=@port; DATABASE=@db;"/>
+            <dbParamSection>
+                <dbParam n="Server Name" tp="text" field="svr" ids="8536" required="true"/>
+                <dbParam n="Port Number" tp="number" field="port" ids="8534" required="true"/>
+                <dbParam n="Database Name" tp="text" field="db" ids="8519" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="Infobright40"/>
+            </dbVersions>
+        </db>
+
+        <db n="Infobright (JDBC)" dbID="InfoBrightJDBC" dbType="MySQL" connType="2">
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER={com.mysql.jdbc.Driver};URL={jdbc:mysql://@hostportdb}" driver="com.mysql.jdbc.Driver" driverFile="mysql-connector-java-5.1.*.jar"/>
+            <dbParamSection>
+                <dbParam n="Hostname:PortNumber/database" tp="text" field="hostportdb" ids="13909" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="Infobright40"/>
+            </dbVersions>
+        </db>
+
+        <db n="Salesforce" dbID="SalesForce" dbType="SalesForce">
+            <connection connStr="DRIVER={MicroStrategy ODBC Driver for Salesforce!#DRIVERSUFFIX#!}; HOST=@host; ConfigOptions={AuditColumns=AuditOnly;MapSystemColumnNames=0;CustomSuffix=Include}; SCL=0; TM=1; JVMArgs=-Dhttps.protocols=TLSv1.1,TLSv1.2;"/>
+            <dbParamSection>
+                <dbParam n="Host Name" tp="text" field="host" ids="8533" defaultValue="login.salesforce.com" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="SalesForce"/>
+            </dbVersions>
+        </db>
+
+        <db n="Salesforce (JDBC)" dbID="SalesForceJDBC" dbType="SalesForce" connType="0"> <!-- 987549  changed to 0 to avoid display in win or mac -->
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER={com.microstrategy.jdbc.sforce.SForceDriver};URL={jdbc:microstrategy:sforce://@host;ConfigOptions=(AuditColumns=AuditOnly;MapSystemColumnNames=0;CustomSuffix=Include);StmtCallLimit=0;TransactionMode=ignore};JVMArgs=-Dhttps.protocols=TLSv1.1,TLSv1.2" driver="com.microstrategy.jdbc.sforce.SForceDriver" driverFile="mysforce.jar"/>
+            <dbParamSection>
+                <dbParam n="Host Name" tp="text" field="host" ids="8533" defaultValue="login.salesforce.com" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="SalesForce"/>
+            </dbVersions>
+        </db>
+
+        <db n="Microsoft Access" dbID="Access" dbType="Access">
+            <connection connStr="DRIVER={Microsoft Access Driver (*.mdb, *.accdb)}; DBQ=@dbq; "/>
+            <altConnection connStr="DRIVER={Microsoft Access Driver (*.mdb)}; DBQ=@dbq; "/>
+            <altConnection connStr="DRIVER={Driver do Microsoft Access (*.mdb)}; DBQ=@dbq; "/>
+            <dbParamSection>
+                <dbParam n="File Path" tp="file" field="dbq" ids="10055" required="true" selectorOption="2"/> <!-- file selector bitwise 1 platform, bit 2 onetierwin, bit 4 onetier mac -->
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="Access2000"/>
+                <dbVersion n="Access2002"/>
+                <dbVersion n="Access2003"/>
+                <dbVersion n="Access2007"/>
+            </dbVersions>
+        </db>
+
+        <db n="Actian Matrix" dbID="ParAccel" dbType="ParAccel">
+            <connection connStr="DRIVER={PAODBC}; DB=@db; Host=@host; Port=@port;"/>
+            <dbParamSection>
+                <dbParam n="Host Name" tp="text" field="host" ids="8533" required="true"/>
+                <dbParam n="Port Number" tp="number" field="port" ids="8534" required="true"/>
+                <dbParam n="Database Name" tp="text" field="db" ids="8519" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="ParAccel50x"/>
+                <dbVersion n="ParAccel51x"/>
+            </dbVersions>
+        </db>
+
+        <db n="Actian Matrix (JDBC)" dbID="ParAccelJDBC" dbType="ParAccel" connType="2">
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER={com.paraccel.Driver};URL={jdbc:paraccel://@hostportdb;}" driver="com.paraccel.Driver" driverFile="paraccel-jdbc.jar"/>
+            <dbParamSection>
+                <dbParam n="Hostname:PortNumber/database" tp="text" field="hostportdb" ids="13909" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="ParAccel50x"/>
+                <dbVersion n="ParAccel51x"/>
+            </dbVersions>
+        </db>
+
+        <db n="Amazon Redshift" dbID="AmazonRedShift" dbType="AmazonRedShift">
+            <connection connStr="DRIVER={Amazon Redshift (x64)}; Servername=@svr; Port=@port; Database=@db;"/>
+            <altConnection connStr="DRIVER={MicroStrategy ODBC Driver for Amazon RedShift Wire Protocol!#DRIVERSUFFIX#!}; HostName=@svr; PortNumber=@port; Database=@db;"/>
+             <dbParamSection>
+                <dbParam n="Server Name" tp="text" field="svr" ids="8536" required="true"/>
+                <dbParam n="Port Number" tp="number" field="port" ids="8534" required="true"/>
+                <dbParam n="Database Name" tp="text" field="db" ids="8519" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="AmazonRedShift"/>
+            </dbVersions>
+        </db>
+
+        <db n="Amazon Redshift (JDBC)" dbID="AmazonRedShiftJDBC" dbType="AmazonRedShift" connType="2">
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER={com.microstrategy.jdbc.redshift.RedshiftDriver};URL={jdbc:microstrategy:redshift://@hostport;DatabaseName=@db;}" driver="com.microstrategy.jdbc.redshift.RedshiftDriver" driverFile="myredshift.jar"/>
+            <dbParamSection>
+                <dbParam n="Host name:Port number" tp="text" field="hostport" ids="13907" required="true"/>
+                <dbParam n="Database Name" tp="text" field="db" ids="8519" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="AmazonRedShift"/>
+            </dbVersions>
+        </db>
+
+
+        <db n="Impala" dbID="Impala" dbType="Impala" ids="10065">
+            <connection connStr="DRIVER={MicroStrategy Impala ODBC Driver!#DRIVERSUFFIX#!}; Host=@host; Port=@port; SCHEMA=@db; AuthMech=0;"/>
+			<altConnection connStr="DRIVER={MicroStrategy ODBC Driver for Impala Wire Protocol!#DRIVERSUFFIX#!}; Host=@host; Port=@port; Database=@db"/>
+			<altConnection connStr="DRIVER={Cloudera ODBC Driver for Impala}; Host=@host; Port=@port; Schema=@db; AuthMech=0;"/>
+            <dbParamSection>
+                <dbParam n="Server Name" tp="text" field="host" ids="8536" required="true"/>
+                <dbParam n="Port Number" tp="number" field="port" ids="8534" required="true" defaultValue="21050"/>
+				<dbParam n="Database" tp="text" field="db" ids="8538" required="true" defaultValue="default"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="Impala1x"/>
+                <dbVersion n="Impala20"/>
+            </dbVersions>
+        </db>
+
+
+        <db n="Impala (JDBC)" dbID="ImpalaJDBC" dbType="Impala" ids="10065" connType="2">
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER={com.cloudera.impala.jdbc41.Driver};URL={jdbc:impala://@hostport}" driver="com.cloudera.impala.jdbc41.Driver" driverFile="ImpalaJDBC41.jar"/>
+            <dbParamSection>
+                <dbParam n="Host name:Port number" tp="text" field="hostport" ids="13907" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="Impala1x"/>
+                <dbVersion n="Impala20"/>
+            </dbVersions>
+        </db>
+
+        <db n="IBM BigInsights" dbID="IBMBigInsights" dbType="IBMBigInsights">
+            <connection connStr="DRIVER={IBM DB2 ODBC DRIVER}; Hostname=@host; Port=@port; Database=@db;"/>
+            <dbParamSection>
+                <dbParam n="Host" tp="text" field="host" ids="8536" required="true"/>
+                <dbParam n="Port Number" tp="number" field="port" ids="8534" required="true"/>
+                <dbParam n="Database" tp="text" field="db" ids="8538" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="IBMInfoSphereBigInsights3x"/>
+            </dbVersions>
+        </db>
+
+        <db n="IBM BigInsights (JDBC)" dbID="IBMBigInsightsJDBC" dbType="IBMBigInsights" connType="2">
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER={com.ibm.db2.jcc.DB2Driver};URL={jdbc:db2://@hostportdb;}" driver="com.ibm.db2.jcc.DB2Driver" driverFile="db2jcc4.jar"/>
+            <altConnection connStr="FULLCONNECTION=JDBC;DRIVER={com.ibm.db2.jcc.DB2Driver};URL={jdbc:db2://@hostportdb;}" driver="com.ibm.db2.jcc.DB2Driver" driverFile="db2jcc.jar"/>
+            <dbParamSection>
+                <dbParam n="Hostname:PortNumber/database" tp="text" field="hostportdb" ids="13909" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="IBMInfoSphereBigInsights3x"/>
+            </dbVersions>
+        </db>
+
+        <db n="Aster" dbID="Aster" dbType="Aster" ids="10058">
+            <connection connStr="DRIVER={Aster ODBC Driver}; Server=@svr; Port=@port; Database=@db;"/>
+            <altConnection connStr="DRIVER={Aster Data ODBC driver for nCluster}; Server=@svr; Port=@port; Database=@db;"/>
+            <dbParamSection>
+                <dbParam n="Server Name" tp="text" field="svr" ids="8536" required="true"/>
+                <dbParam n="Port Number" tp="number" field="port" ids="8534" required="true"/>
+                <dbParam n="Database Name" tp="text" field="db" ids="8519" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="AsternCluster50"/>
+                <dbVersion n="AsternCluster51"/>
+                <dbVersion n="AsterDB6"/>
+            </dbVersions>
+        </db>
+
+        <db n="Aster (JDBC)" dbID="AsterJDBC" dbType="Aster" ids="10058" connType="2">
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER={com.asterdata.ncluster.Driver};URL={jdbc:ncluster://@hostportdb}" driver="com.asterdata.ncluster.Driver" driverFile="noarch-aster-jdbc-driver.jar"/>
+            <dbParamSection>
+                <dbParam n="Hostname:PortNumber/database" tp="text" field="hostportdb" ids="13909" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="AsternCluster50"/>
+                <dbVersion n="AsternCluster51"/>
+                <dbVersion n="AsterDB6"/>
+            </dbVersions>
+        </db>
+
+        <db n="Actian Vectorwise" dbID="VectorWise" dbType="VectorWise">
+            <connection connStr="DRIVER={Ingres}; Server=@svr; Database=@db; ServerType=INGRES;"/>
+            <dbParamSection>
+                <dbParam n="Server Name" tp="text" field="svr" ids="8536" required="true"/>
+                <dbParam n="Database Name" tp="text" field="db" ids="8519" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="ActianVector4x" />
+            </dbVersions>
+        </db>
+
+        <db n="Actian Vectorwise (JDBC)" dbID="VectorWiseJDBC" dbType="VectorWise" connType="2">
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER={com.ingres.jdbc.IngresDriver};URL={jdbc:ingres://@hostportdb;}" driver="com.ingres.jdbc.IngresDriver" driverFile="iijdbc.jar"/>
+            <dbParamSection>
+                <dbParam n="Hostname:PortNumber/database" tp="text" field="hostportdb" ids="13909" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="ActianVector4x" />
+            </dbVersions>
+        </db>
+
+      <db n="Actian Ingres" dbID="Ingres" dbType="VectorWise">
+          <connection connStr="DRIVER={Ingres}; Server=@svr; Database=@db; ServerType=INGRES;"/>
+          <dbParamSection>
+              <dbParam n="Server Name" tp="text" field="svr" ids="8536" required="true"/>
+              <dbParam n="Database Name" tp="text" field="db" ids="8519" required="true"/>
+          </dbParamSection>
+          <dbVersions>
+              <dbVersion n="Generic"/>
+              <dbVersion n="Ingres10s" />
+          </dbVersions>
+      </db>
+
+      <db n="Actian Ingres (JDBC)" dbID="IngresJDBC" dbType="VectorWise" connType="2">
+          <connection connStr="FULLCONNECTION=JDBC;DRIVER={com.ingres.jdbc.IngresDriver};URL={jdbc:ingres://@hostportdb;}" driver="com.ingres.jdbc.IngresDriver" driverFile="iijdbc.jar"/>
+          <dbParamSection>
+              <dbParam n="Hostname:PortNumber/database" tp="text" field="hostportdb" ids="13909" required="true"/>
+          </dbParamSection>
+          <dbVersions>
+              <dbVersion n="Generic"/>
+              <dbVersion n="Ingres10s" />
+          </dbVersions>
+      </db>
+
+        <db n="EnterpriseDB" dbID="EnterpriseDB" dbType="EnterpriseDB" ids="10061">
+            <connection connStr="DRIVER={EnterpriseDB 9.3 (UNICODE)}; Servername=@svr; Port=@port; Database=@db;"/>
+            <dbParamSection>
+                <dbParam n="Server Name" tp="text" field="svr" ids="8536" required="true"/>
+                <dbParam n="Port Number" tp="number" field="port" ids="8534" required="true"/>
+                <dbParam n="Database Name" tp="text" field="db" ids="8519" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="EnterpriseDB9x"/>
+            </dbVersions>
+        </db>
+
+        <db n="EnterpriseDB (JDBC)" dbID="EnterpriseDBJDBC" dbType="EnterpriseDB" ids="10061" connType="2">
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER={com.edb.Driver};URL={jdbc:edb://@hostportdb}" driver="com.edb.Driver" driverFile="edb-jdbc16.jar"/>
+            <altConnection connStr="FULLCONNECTION=JDBC;DRIVER={com.edb.Driver};URL={jdbc:edb://@hostportdb}" driver="com.edb.Driver" driverFile="edb-jdbc14.jar"/>
+            <dbParamSection>
+                <dbParam n="Hostname:PortNumber/database" tp="text" field="hostportdb" ids="13909" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="EnterpriseDB9x"/>
+            </dbVersions>
+        </db>
+
+        <db n="HP Vertica" dbID="Vertica" dbType="Vertica">
+            <connection connStr="DRIVER={Vertica}; Servername=@svr; Port=@port; Database=@db;ColumnsAsChar=1;ResultBufferSize=0;"/>
+            <dbParamSection>
+                <dbParam n="Server Name" tp="text" field="svr" ids="8536" required="true"/>
+                <dbParam n="Port Number" tp="number" field="port" ids="8534" required="true"/>
+                <dbParam n="Database Name" tp="text" field="db" ids="8519" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="HPVertica7x"/>
+            </dbVersions>
+        </db>
+
+        <db n="HP Vertica (JDBC)" dbID="VerticaJDBC" dbType="Vertica" connType="2">
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER={com.vertica.jdbc.Driver};URL={jdbc:vertica://@hostportdb}" driver="com.vertica.jdbc.Driver" driverFile="vertica-jdbc.jar"/>
+            <altConnection connStr="FULLCONNECTION=JDBC;DRIVER={com.vertica.jdbc.Driver};URL={jdbc:vertica://@hostportdb}" driver="com.vertica.jdbc.Driver" driverFile="vertica-jdk5.jar"/>
+            <dbParamSection>
+                <dbParam n="Hostname:PortNumber/database" tp="text" field="hostportdb" ids="13909" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="HPVertica7x"/>
+            </dbVersions>
+        </db>
+
+        <db n="Denodo" dbID="Denodo" dbType="Denodo">
+            <connection connStr="DRIVER={PostgreSQL Unicode}; Server=@svr; Port=@port; Database=@db;"/>
+            <altConnection connStr="DRIVER={PostgreSQL Unicode(x64)}; Server=@svr; Port=@port; Database=@db;"/>
+            <dbParamSection>
+                <dbParam n="Server Name" tp="text" field="svr" ids="8536" required="true"/>
+                <dbParam n="Port Number" tp="number" field="port" ids="8534" required="true"/>
+                <dbParam n="Database Name" tp="text" field="db" ids="8519" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="SQLDenodo50"/>
+            </dbVersions>
+        </db>
+
+        <db n="Denodo (JDBC)" dbID="DenodoJDBC" dbType="Denodo" connType="2">
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER={com.denodo.vdb.jdbcdriver.VDBJDBCDriver};URL={jdbc:vdb://@hostportdb};" driver="com.denodo.vdb.jdbcdriver.VDBJDBCDriver" driverFile="denodo-vdp-jdbcdriver.jar"/>
+            <dbParamSection>
+                <dbParam n="Hostname:PortNumber/database" tp="text" field="hostportdb" ids="13909" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="SQLDenodo50"/>
+            </dbVersions>
+        </db>
+
+        <db n="CiscoDataVirtualization" dbID="CiscoDataVirtualization" dbType="CiscoDataVirtualization">
+            <connection connStr="DRIVER={Composite 6.2}; HOST=@host; PORT=@port; SSO=(Disabled); DOMAIN=@dom; DATASOURCE=@ds; CONNECTTIMEOUT=70;"/>
+            <altConnection connStr="DRIVER={Cisco Information Server 7.0}; HOST=@host; PORT=@port; SSO=(Disabled); DOMAIN=@dom; DATASOURCE=@ds; CONNECTTIMEOUT=70;"/>
+            <altConnection connStr="DRIVER={composite70_x64}; HOST=@host; PORT=@port; SSO=(Disabled); DOMAIN=@dom; DATASOURCE=@ds; CONNECTTIMEOUT=70;"/>
+            <dbParamSection>
+                <dbParam n="Host Name" tp="text" field="host" ids="8533" required="true"/>
+                <dbParam n="Port Number" tp="number" field="port" ids="8534" defaultValue="9401" required="true"/>
+                <dbParam n="Domain:" tp="text" field="dom" defaultValue="composite" required="true" ids="13103"/>
+                <dbParam n="Data source" tp="text" field="ds" ids="3332" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="Composite6x"/>
+				<dbVersion n="DataVirtualization7x"/>
+            </dbVersions>
+        </db>
+
+        <db n="CiscoDataVirtualization (JDBC)" dbID="CiscoDataVirtualizationJDBC" dbType="CiscoDataVirtualization" connType="2">
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER={cs.jdbc.driver.CompositeDriver};URL={jdbc:compositesw:dbapi@@hostport?domain=@dom&amp;dataSource=@ds&amp;unsupportedMode=silent}" driver="cs.jdbc.driver.CompositeDriver" driverFile="csjdbc.jar"/>
+            <dbParamSection>
+                <dbParam n="Host name:Port number" tp="text" field="hostport" ids="13907" required="true"/>
+                <dbParam n="Domain:" tp="text" field="dom" defaultValue="composite" required="true" ids="13103"/>
+                <dbParam n="Data source" tp="text" field="ds" ids="3332" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="Composite6x"/>
+				<dbVersion n="DataVirtualization7x"/>
+            </dbVersions>
+        </db>
+
+        <db n="Microsoft Excel" dbID="Excel" dbType="Excel" ids="13104">
+            <connection connStr="DRIVER={Microsoft Excel Driver (*.xls)};"/>
+            <dbVersions>
+                <dbVersion n="Excel2003" dsnless="false"/>
+            </dbVersions>
+        </db>
+
+        <db n="Google Big Query" dbID="GoogleBigQuery" dbType="GoogleBigQuery" ids="12542">
+            <connection connStr="DRIVER={MicroStrategy Google BigQuery ODBC Driver};RefreshToken=@token;Catalog=@cat;ExecCatalog=@billed;UseNativeQuery=0;UseNativeQueryMetadata=1"/>
+            <dbParamSection>
+                <dbParam n="Token" tp="text" field="token" required="true" ids="13105"/>
+                <dbParam n="Catalog" tp="text" field="cat" required="true" ids="13106"/>
+		<dbParam n="Billed Project" tp="text" field="billed" required="false"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="GoogleBigQuery"/>
+            </dbVersions>
+        </db>
+
+        <db n="SAP HANA" dbID="SapHana" dbType="SAPHana" ids="12997" configuration="64">
+            <connection connStr="DRIVER={HDBODBC}; SERVERNODE={@svr:@port};"/>
+            <dbParamSection>
+                <dbParam n="Server" tp="text" field="svr" ids="15" required="true"/>
+                <dbParam n="Port Number" tp="number" field="port" ids="8534" required="true" defaultValue="30015"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="SAPHANA1SP9"/>
+            </dbVersions>
+        </db>
+
+        <db n="SAP HANA (32 bit)" dbID="SapHana" dbType="SAPHana" ids="12997" configuration="32">
+            <connection connStr="DRIVER={HDBODBC32}; SERVERNODE={@svr:@port};"/>
+            <dbParamSection>
+                <dbParam n="Server" tp="text" field="svr" ids="15" required="true"/>
+                <dbParam n="Port Number" tp="number" field="port" ids="8534" required="true" defaultValue="30015"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="SAPHANA1SP9"/>
+            </dbVersions>
+        </db>
+
+        <db n="SAP HANA (JDBC)" dbID="SapHanaJDBC" dbType="SAPHana" ids="12997" connType="2">
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER={com.sap.db.jdbc.Driver};URL={jdbc:sap://@hostport};" driver="com.sap.db.jdbc.Driver" driverFile="ngdbc.jar"/>
+            <dbParamSection>
+                <dbParam n="Hostname:PortNumber" tp="text" field="hostport" ids="13907" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="SAPHANA1SP9"/>
+            </dbVersions>
+        </db>
+
+        <db n="SAP" dbID="SAP" dbType="SAP" ids="13107" connType="7">
+            <connection connStr="FULLCONNECTION=APPSERVER=@svr;SYSNR=@sysnum;CLIENT=@clientnum;LANG=@language;JCO;" driver=""/> <!-- FULLCONNECTION= will be removed in code -->
+            <dbParamSection n="Application Server" ids="13108" defaultSection="true">
+                <dbParam n="Application Server" tp="text" field="svr" required="true" ids="13108"/>
+                <dbParam n="System Number" tp="text" field="sysnum" required="true" ids="13109"/>
+                <dbParam n="Client Number" tp="text" field="clientnum" required="true" ids="13110"/>
+                <dbParam n="Language" tp="text" field="language" required="true" ids="13111"/>
+            </dbParamSection>
+            <connection connStr="FULLCONNECTION=BALANCE;MSHOST=@host;R3NAME=@sysid;GROUP=@group;CLIENT=@num;LANG=@lan;JCO;" driver=""/> <!-- FULLCONNECTION= will be removed in code -->
+            <dbParamSection n="Message Server" ids="13112">
+                <dbParam n="Message Server" tp="text" field="host" required="true" ids="13112"/>
+                <dbParam n="System ID" tp="text" field="sysid" required="true" ids="13113"/>
+                <dbParam n="Logon Group" tp="text" field="group" required="true" ids="13114"/>
+                <dbParam n="Client Number" tp="text" field="num" required="true" ids="13110"/>
+                <dbParam n="Language" tp="text" field="lan" required="true" ids="13111"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="MDXSAPBW30"/>
+                <dbVersion n="MDXSAPBW7x"/>
+            </dbVersions>
+        </db>
+
+        <db n="Microsoft Analysis Services" dbID="MicrosoftAS" dbType="MicrosoftAS" ids="13115" connType="7">
+            <connection connStr="FULLCONNECTION=XMLA;URL={@svr};DSI={@dsi};CATALOG={@catalog};USE_MTOM" driver=""/>
+            <dbParamSection>
+                <dbParam n="Uniform Resource Locator" tp="text" field="svr" required="true" ids="13116"/>
+                <dbParam n="Data Source Information" tp="text" field="dsi" required="true" ids="13117"/>
+                <dbParam n="Catalog" tp="text" field="catalog" required="true" ids="13106"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="MDXMSAS2012"/>
+            </dbVersions>
+        </db>
+
+        <db n="Oracle Essbase" dbID="EssBase" dbType="EssBase" ids="13118" connType="7">
+            <connection connStr="FULLCONNECTION=XMLA;URL={@svr};DSI={Provider=Essbase;Data Source=@host};CATALOG={@catalog};USE_MTOM" driver=""/>
+            <dbParamSection>
+                <dbParam n="Uniform Resource Locator" tp="text" field="svr" required="true" ids="13116"/>
+                <dbParam n="Essbase host name" tp="text" field="host" required="true" ids="8533"/>
+                <dbParam n="Catalog" tp="text" field="catalog" required="true" ids="13106"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="MDXOracleEssbase93"/>
+            </dbVersions>
+        </db>
+
+        <db n="IBM Cognos TM1" dbID="TM1" dbType="TM1" ids="13119" connType="7">
+            <connection connStr="FULLCONNECTION=XMLA;URL={@svr};DSI={@dsi};CATALOG={@catalog};USE_MTOM;" driver=""/>
+            <dbParamSection>
+                <dbParam n="Uniform Resource Locator" tp="text" field="svr" required="true" ids="13116"/>
+                <dbParam n="Data Source Information" tp="text" field="dsi" required="true" ids="13117"/>
+                <dbParam n="Catalog" tp="text" field="catalog" required="true" ids="13106"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="MDXTM1x"/>
+            </dbVersions>
+        </db>
+
+        <db n="Search on source" dbID="SearchEngine" dbType="SearchEngine" ids="1034" connType="7">
+            <connection connStr="FULLCONNECTION=SOLR;ADDR={@addr};" driver=""/>
+            <dbParamSection>
+                <dbParam n="Search Server" tp="text" field="addr" required="true" ids="13121"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="SolrSearch"/>
+            </dbVersions>
+        </db>
+
+        <db n="Amazon EMR" dbID="AmazonElasticMapReduce" dbType="Hive">
+            <connection connStr="DRIVER={MicroStrategy Hive ODBC Driver!#DRIVERSUFFIX#!};HOST=@host;PORT=@port;SCHEMA=@db;HiveServerType=@svrtype;GetTablesWithQuery=@nativefns;"/>
+            <dbParamSection>
+                <dbParam n="Host" tp="text" field="host" ids="8533" required="true"/>
+                <dbParam n="Port Number" tp="number" field="port" ids="8534" required="true"/>
+                <dbParam n="Database" tp="text" field="db" ids="8538" required="true"/>
+                <dbParam n="Hive Server Type" tp="list" field="svrtype" ids="13908" defaultValue="2">
+                    <dbParamVal v="1" n="Hiver Server 1" ids="14685"/>
+                    <dbParamVal v="2" n="Hiver Server 2" ids="14686"/>
+                </dbParam>
+                <dbParam n="Get Tables With Query " ids="14687" tp="list" field="nativefns" defaultValue="1" >
+                    <dbParamVal v="0" n="Disabled" ids="3989" />
+                    <dbParamVal v="1" n="Enabled" ids="260" />
+                </dbParam>
+            </dbParamSection>
+            <altConnection connStr="DRIVER={Cloudera ODBC Driver for Apache Hive}; Host=@host; Port=5432; Schema=@db; HiveServerType=@svrtype;"/>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="Hive013"/>
+                <dbVersion n="Hive011"/>
+            </dbVersions>
+        </db>
+
+        <db n="Amazon EMR (JDBC)" dbID="AmazonElasticMapReduceJDBC" dbType="Hive" connType="2">
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER={com.microstrategy.jdbc.hive.HiveDriver};URL={jdbc:microstrategy:hive://@hostport;DatabaseName=@db;WireProtocolVersion=auto;}" driver="com.microstrategy.jdbc.hive.HiveDriver" driverFile="myhive.jar"/>
+            <dbParamSection>
+                <dbParam n="Host name:Port number" tp="text" field="hostport" ids="13907" required="true"/>
+                <dbParam n="Database Name" tp="text" field="db" ids="8519" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="Hive013"/>
+                <dbVersion n="Hive011"/>
+            </dbVersions>
+        </db>
+
+        <db n="Apache Hive" dbID="ApacheHive" dbType="Hive">
+            <connection connStr="DRIVER={MicroStrategy Hive ODBC Driver!#DRIVERSUFFIX#!};HOST=@host;PORT=@port;SCHEMA=@db;HiveServerType=@svrtype;GetTablesWithQuery=@nativefns;"/>
+            <dbParamSection>
+                <dbParam n="Host" tp="text" field="host" ids="8533" required="true"/>
+                <dbParam n="Port Number" tp="number" field="port" ids="8534" required="true"/>
+                <dbParam n="Database" tp="text" field="db" ids="8538" required="true"/>
+                <dbParam n="Hive Server Type" tp="list" field="svrtype" ids="13908" defaultValue="2">
+                    <dbParamVal v="1" n="Hiver Server 1" ids="14685"/>
+                    <dbParamVal v="2" n="Hiver Server 2" ids="14686"/>
+                </dbParam>
+                <dbParam n="Get Tables With Query " ids="14687" tp="list" field="nativefns" defaultValue="1" >
+                    <dbParamVal v="0" n="Disabled" ids="3989" />
+                    <dbParamVal v="1" n="Enabled" ids="260" />
+                </dbParam>
+            </dbParamSection>
+            <altConnection connStr="DRIVER={Cloudera ODBC Driver for Apache Hive}; Host=@host; Port=5432; Schema=@db; HiveServerType=@svrtype;"/>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="Hive013"/>
+                <dbVersion n="Hive014"/>
+				<dbVersion n="Hive110"/>
+            </dbVersions>
+        </db>
+
+       <db n="Apache Hive (JDBC)" dbID="ApacheHiveJDBC" dbType="Hive" connType="2">
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER={com.microstrategy.jdbc.hive.HiveDriver};URL={jdbc:microstrategy:hive://@hostport;DatabaseName=@db;WireProtocolVersion=auto;}" driver="com.microstrategy.jdbc.hive.HiveDriver" driverFile="myhive.jar"/>
+            <dbParamSection>
+                <dbParam n="Host name:Port number" tp="text" field="hostport" ids="13907" required="true"/>
+                <dbParam n="Database Name" tp="text" field="db" ids="8519" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="Hive013"/>
+                <dbVersion n="Hive014"/>
+				<dbVersion n="Hive110"/>
+            </dbVersions>
+        </db>
+
+        <db n="Cloudera Hive" dbID="ClouderaHive" dbType="Hive">
+            <connection connStr="DRIVER={MicroStrategy Hive ODBC Driver!#DRIVERSUFFIX#!};HOST=@host;PORT=@port;SCHEMA=@db;HiveServerType=@svrtype;GetTablesWithQuery=@nativefns;"/>
+            <dbParamSection>
+                <dbParam n="Host" tp="text" field="host" ids="8533" required="true"/>
+                <dbParam n="Port Number" tp="number" field="port" ids="8534" required="true"/>
+                <dbParam n="Database" tp="text" field="db" ids="8538" required="true"/>
+                <dbParam n="Hive Server Type" tp="list" field="svrtype" ids="13908" defaultValue="2">
+                    <dbParamVal v="1" n="Hiver Server 1" ids="14685"/>
+                    <dbParamVal v="2" n="Hiver Server 2" ids="14686"/>
+                </dbParam>
+                <dbParam n="Get Tables With Query " ids="14687" tp="list" field="nativefns" defaultValue="1" >
+                    <dbParamVal v="0" n="Disabled" ids="3989" />
+                    <dbParamVal v="1" n="Enabled" ids="260" />
+                </dbParam>
+                <dbParam n="Service Principal Name" tp="text" field="svrpn" ids="14596" required="false" defaultValue="" />
+            </dbParamSection>
+            <altConnection connStr="DRIVER={Cloudera ODBC Driver for Apache Hive}; Host=@host; Port=5432; Schema=@db; HiveServerType=@svrtype;UseNativeCatalogFunctions=@nativefns; AuthMech=2; KrbHostFQDN=; KrbServiceName=; KrbRealm=; "/>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="Hive013"/>
+                <dbVersion n="Hive014"/>
+				<dbVersion n="Hive110"/>
+            </dbVersions>
+        </db>
+
+        <db n="Cloudera Hive (JDBC)" dbID="ClouderaHiveJDBC" dbType="Hive" connType="2">
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER={com.microstrategy.jdbc.hive.HiveDriver};URL={jdbc:microstrategy:hive://@hostport;DatabaseName=@db;WireProtocolVersion=auto;}" driver="com.microstrategy.jdbc.hive.HiveDriver" driverFile="myhive.jar"/>
+            <dbParamSection>
+                <dbParam n="Host name:Port Number" tp="text" field="hostport" ids="13907" required="true"/>
+                <dbParam n="Database Name" tp="text" field="db" ids="8519" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="Hive013"/>
+                <dbVersion n="Hive014"/>
+				<dbVersion n="Hive110"/>
+            </dbVersions>
+        </db>
+
+        <db n="Hortonworks Hive" dbID="HortonworksHive" dbType="Hive">
+            <connection connStr="DRIVER={MicroStrategy Hive ODBC Driver!#DRIVERSUFFIX#!};HOST=@host;PORT=@port;SCHEMA=@db;HiveServerType=@svrtype;GetTablesWithQuery=@nativefns;"/>
+            <dbParamSection>
+                <dbParam n="Host" tp="text" field="host" ids="8533" required="true"/>
+                <dbParam n="Port Number" tp="number" field="port" ids="8534" required="true"/>
+                <dbParam n="Database" tp="text" field="db" ids="8538" required="true"/>
+                <dbParam n="Hive Server Type" tp="list" field="svrtype" ids="13908" defaultValue="2">
+                    <dbParamVal v="1" n="Hiver Server 1" ids="14685"/>
+                    <dbParamVal v="2" n="Hiver Server 2" ids="14686"/>
+                </dbParam>
+                <dbParam n="Get Tables With Query " ids="14687" tp="list" field="nativefns" defaultValue="1" >
+                    <dbParamVal v="0" n="Disabled" ids="3989" />
+                    <dbParamVal v="1" n="Enabled" ids="260" />
+                </dbParam>
+            </dbParamSection>
+            <altConnection connStr="Driver={Hortonworks Hive ODBC Driver}; Host=@host; Port=@port; HiveServerType=@svrtype;AuthMech=2;Schema=@db;"/>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="Hive014"/>
+            </dbVersions>
+        </db>
+
+        <db n="Hortonworks Hive (JDBC)" dbID="HortonworksHiveJDBC" dbType="Hive" connType="2">
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER={com.microstrategy.jdbc.hive.HiveDriver};URL={jdbc:microstrategy:hive://@hostport;DatabaseName=@db;WireProtocolVersion=auto;}" driver="com.microstrategy.jdbc.hive.HiveDriver" driverFile="myhive.jar"/>
+            <dbParamSection>
+                <dbParam n="Host name:Port number" tp="text" field="hostport" ids="13907" required="true"/>
+                <dbParam n="Database Name" tp="text" field="db" ids="8519" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="Hive014"/>
+            </dbVersions>
+        </db>
+
+        <db n="MapR Hive" dbID="MapRHive" dbType="Hive">
+            <connection connStr="DRIVER={MicroStrategy Hive ODBC Driver!#DRIVERSUFFIX#!};HOST=@host;PORT=@port;SCHEMA=@db;HiveServerType=@svrtype;GetTablesWithQuery=@nativefns;"/>
+            <dbParamSection>
+                <dbParam n="Host" tp="text" field="host" ids="8533" required="true"/>
+                <dbParam n="Port Number" tp="number" field="port" ids="8534" required="true"/>
+                <dbParam n="Database" tp="text" field="db" ids="8538" required="true"/>
+                <dbParam n="Hive Server Type" tp="list" field="svrtype" ids="13908" defaultValue="2">
+                    <dbParamVal v="1" n="Hiver Server 1" ids="14685"/>
+                    <dbParamVal v="2" n="Hiver Server 2" ids="14686"/>
+                </dbParam>
+                <dbParam n="Get Tables With Query " ids="14687" tp="list" field="nativefns" defaultValue="1" >
+                    <dbParamVal v="0" n="Disabled" ids="3989" />
+                    <dbParamVal v="1" n="Enabled" ids="260" />
+                </dbParam>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="Hive013"/>
+            </dbVersions>
+        </db>
+
+        <db n="MapR Hive (JDBC)" dbID="MapRHiveJDBC" dbType="Hive" connType="2">
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER={com.microstrategy.jdbc.hive.HiveDriver};URL={jdbc:microstrategy:hive://@hostport;DatabaseName=@db;WireProtocolVersion=auto;}" driver="com.microstrategy.jdbc.hive.HiveDriver" driverFile="myhive.jar"/>
+            <dbParamSection>
+                <dbParam n="Host name:Port number" tp="text" field="hostport" ids="13907" required="true"/>
+                <dbParam n="Database Name" tp="text" field="db" ids="8519" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="Hive013"/>
+            </dbVersions>
+        </db>
+
+        <db n="Pig" dbID="Pig" dbType="Pig" connType="7">
+          <connection connStr="FULLCONNECTION=FS.DEFAULT.NAME=@hdfshostport;MAPRED.JOB.TRACKER=@mrhostport;MSTR_PIG_JAR_FOLDER=@MSTR_PIG_JAR_FOLDER;" driver=""/>
+            <dbParamSection>
+                <dbParam n="HDFS Host : Port Number" tp="text" field="hdfshostport" required="true" defaultValue="hdfs://"/>
+                <dbParam n="MR Host : Port Number" tp="text" field="mrhostport"  required="true"/>
+                <dbParam n="Pig JAR Folder" tp="text" field="MSTR_PIG_JAR_FOLDER"  required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="Pig"/>
+            </dbVersions>
+        </db>
+
+        <db n="Spark SQL" dbID="SharkSpark" dbType="Hive">
+            <connection connStr="DRIVER={MicroStrategy ODBC Driver for Apache Spark SQL!#DRIVERSUFFIX#!};HOST=@host;PORT=@port;DATABASE=@db;MaxStringSize=4000;EnableDescribeParam=1;"/>
+            <dbParamSection>
+                <dbParam n="Host" tp="text" field="host" ids="8533" required="true"/>
+                <dbParam n="Port Number" tp="number" field="port" ids="8534" required="true"/>
+                <dbParam n="Database" tp="text" field="db" ids="8538" required="true"/>
+            </dbParamSection>
+            <!--<altConnection connStr="Driver={Simba Spark ODBC Driver}; Host=@host; Port=@port;SparkServerType=3;AuthMech=3;Schema=@db;"/>-->
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="ApacheSpark1x"/>
+            </dbVersions>
+        </db>
+
+        <db n="Spark SQL(JDBC)" dbID="SharkSparkJDBC" dbType="Hive" connType="2">
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER={com.microstrategy.jdbc.sparksql.SparkSQLDriver};URL={jdbc:microstrategy:sparksql://@hostport;DatabaseName=@db;}" driver="com.microstrategy.jdbc.sparksql.SparkSQLDriver" driverFile="mysparksql.jar"/>
+            <dbParamSection>
+                <dbParam n="Host name:Port number" tp="text" field="hostport" ids="13907" required="true"/>
+                <dbParam n="Database Name" tp="text" field="db" ids="8519" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="ApacheSpark1x"/>
+            </dbVersions>
+        </db>
+
+        <db n="MongoDB" dbID="MongoDB" dbType="MongoDB">
+            <connection connStr="Driver={MicroStrategy ODBC Driver for MongoDB!#DRIVERSUFFIX#!};HostName=@host;Port=@port;Database=@db;SD=#TEMP_PATH#@db;"/>
+            <dbParamSection>
+                <dbParam n="Host" tp="text" field="host" ids="8533" required="true"/>
+                <dbParam n="Port Number" tp="number" field="port" ids="8534" required="true"/>
+                <dbParam n="Database" tp="text" field="db" ids="8538" required="true"/>
+            </dbParamSection>
+            <altConnection connStr="DRIVER={Simba MongoDB ODBC Driver};Host=@host;Port=@port;Database=@db;"/>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="MongoDb2x"/>
+            </dbVersions>
+        </db>
+
+        <db n="MongoDB (JDBC)" dbID="MongoDBJDBC" dbType="MongoDB" connType="2">
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER={com.microstrategy.jdbc.mongodb.MongoDBDriver};URL={jdbc:microstrategy:mongodb://@hostport;DatabaseName=@db;SchemaDefinition=MSTR_JDBC_JAR_FOLDER}" driver="com.microstrategy.jdbc.mongodb.MongoDBDriver" driverFile="mymongodb.jar"/>
+            <dbParamSection>
+                <dbParam n="Host name:Port number" tp="text" field="hostport" ids="13907" required="true"/>
+                <dbParam n="Database Name" tp="text" field="db" ids="8519" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="MongoDb2x"/>
+            </dbVersions>
+        </db>
+
+        <db n="MarkLogic" dbID="MarkLogic" dbType="MarkLogic" configuration="64">
+            <connection connStr="Driver={MarkLogic SQL};Server=@host;Port=@port;Database=@db;"/>
+            <dbParamSection>
+                <dbParam n="Host" tp="text" field="host" ids="8533" required="true"/>
+                <dbParam n="Port Number" tp="number" field="port" ids="8534" required="true"/>
+                <dbParam n="Database" tp="text" field="db" ids="8538" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="MarkLogic7x"/>
+            </dbVersions>
+        </db>
+
+        <db n="MarkLogic (32 bit)" dbID="MarkLogic" dbType="MarkLogic" configuration="32">
+            <connection connStr="Driver={MarkLogic SQL (X86)};Server=@host;Port=@port;Database=@db;"/>
+            <dbParamSection>
+                <dbParam n="Host" tp="text" field="host" ids="8533" required="true"/>
+                <dbParam n="Port Number" tp="number" field="port" ids="8534" required="true"/>
+                <dbParam n="Database" tp="text" field="db" ids="8538" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="MarkLogic7x"/>
+            </dbVersions>
+        </db>
+
+        <db n="Splunk" dbID="Splunk" dbType="Splunk">
+            <connection connStr="DRIVER={Splunk ODBC Driver};url=@url;"/>
+            <dbParamSection>
+                <dbParam n="Uniform Resource Locator" tp="text" field="url" required="true" ids="13116"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="Splunk6"/>
+            </dbVersions>
+        </db>
+
+        <db n="DataDirect Cloud" dbID="DataDirectCloud" dbType="DataDirectCloud">
+            <connection connStr="Driver={DataDirect Cloud 2.0};ClientTimeZone=@timezone;Database = @db;"/>
+            <dbParamSection>
+                <dbParam n="Database" tp="text" field="db" ids="8538" required="true"/>
+                <dbParam n="Client Time Zone" tp="text" field="timezone" ids="13373" defaultValue="America/New_York" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="DataDirectCloud"/>
+            </dbVersions>
+        </db>
+
+        <db n="DataDirect Cloud (JDBC)" dbID="DataDirectCloudJDBC" dbType="DataDirectCloud" connType="2">
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER={com.ddtek.jdbc.ddcloud.DDCloudDriver};URL={jdbc:datadirect:ddcloud:Database=@db;ClientTimeZone=@timezone;}" driver="com.ddtek.jdbc.ddcloud.DDCloudDriver" driverFile="ddcloud.jar"/>
+            <dbParamSection>
+                <dbParam n="Database" tp="text" field="db" ids="8538" required="true"/>
+                <dbParam n="Client Time Zone" tp="text" field="timezone" ids="13373" defaultValue="America/New_York" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="DataDirectCloud"/>
+            </dbVersions>
+        </db>
+
+        <db n="ParStream" dbID="ParStream" dbType="ParStream">
+            <connection connStr="Driver={PostgreSQL ANSI};Server=@svr;Port=@port;Database=@db;"/>
+            <altConnection connStr="Driver={PostgreSQL ANSI(x64)};Server=@svr;Port=@port;Database=@db;"/>
+            <dbParamSection>
+                <dbParam n="Server Name" tp="text" field="svr" ids="8536" required="true"/>
+                <dbParam n="Port Number" tp="number" field="port" ids="8534" required="true"/>
+                <dbParam n="Database" tp="text" field="db" ids="8538" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="ParStream3x"/>
+            </dbVersions>
+        </db>
+
+        <db n="ParStream (JDBC)" dbID="ParStreamJDBC" dbType="ParStream" connType="2">
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER={org.postgresql.Driver};URL={jdbc:postgresql://@hostportdb};" driver="org.postgresql.Driver" driverFile="postgresql-9.3-*.jar"/>
+            <dbParamSection>
+                <dbParam n="Hostname:PortNumber/database" tp="text" field="hostportdb" ids="13909" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="ParStream3x"/>
+            </dbVersions>
+        </db>
+
+        <db n="Pivotal Hive" dbID="PivotalHive" dbType="Hive">
+            <connection connStr="DRIVER={MicroStrategy Hive ODBC Driver!#DRIVERSUFFIX#!};HOST=@host;PORT=@port;SCHEMA=@db;HiveServerType=@svrtype;GetTablesWithQuery=@nativefns;"/>
+            <dbParamSection>
+                <dbParam n="Host" tp="text" field="host" ids="8533" required="true"/>
+                <dbParam n="Port Number" tp="number" field="port" ids="8534" required="true"/>
+                <dbParam n="Database" tp="text" field="db" ids="8538" required="true"/>
+                <dbParam n="Hive Server Type" tp="list" field="svrtype" ids="13908" defaultValue="2">
+                    <dbParamVal v="1" n="Hiver Server 1" ids="14685"/>
+                    <dbParamVal v="2" n="Hiver Server 2" ids="14686"/>
+                </dbParam>
+                <dbParam n="Get Tables With Query " ids="14687" tp="list" field="nativefns" defaultValue="1" >
+                    <dbParamVal v="0" n="Disabled" ids="3989" />
+                    <dbParamVal v="1" n="Enabled" ids="260" />
+                </dbParam>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="Hive012"/>
+            </dbVersions>
+        </db>
+
+        <db n="Pivotal Hive (JDBC)" dbID="PivotalHiveJDBC" dbType="Hive" connType="2">
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER={com.microstrategy.jdbc.hive.HiveDriver};URL={jdbc:microstrategy:hive://@hostport;DatabaseName=@db;WireProtocolVersion=auto;}" driver="com.microstrategy.jdbc.hive.HiveDriver" driverFile="myhive.jar"/>
+            <dbParamSection>
+                <dbParam n="Host name:Port number" tp="text" field="hostport" ids="13907" required="true"/>
+                <dbParam n="Database Name" tp="text" field="db" ids="8519" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="Hive012"/>
+            </dbVersions>
+        </db>
+
+        <db n="Phoenix" dbID="Phoenix" dbType="PHOENIX" connType="1">
+            <connection connStr="FULLCONNECTION=JDBC;MSTR_JDBC_JAR_FOLDER=@jar;DRIVER=org.apache.phoenix.jdbc.PhoenixDriver;URL={jdbc:phoenix:@host:@port}" driver="org.apache.phoenix.jdbc.PhoenixDriver"/>
+            <dbParamSection>
+                <dbParam n="JDBC Driver Path" tp="text" field="jar" ids="13944" required="true"/>
+                <dbParam n="Host" tp="text" field="host" ids="8533" required="true"/>
+                <dbParam n="Port Number" tp="number" field="port" ids="8534" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="Phoenix3x"/>
+                <dbVersion n="Phoenix4x"/>
+            </dbVersions>
+        </db>
+
+        <db n="Phoenix (JDBC)" dbID="PhoenixJDBC" dbType="PHOENIX" connType="2">
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER={org.apache.phoenix.jdbc.PhoenixDriver};URL={jdbc:phoenix:@host:@port}" driver="org.apache.phoenix.jdbc.PhoenixDriver" driverFile="phoenix-client.jar"/>
+            <dbParamSection>
+                <dbParam n="Host" tp="text" field="host" ids="8533" required="true"/>
+                <dbParam n="Port Number" tp="number" field="port" ids="8534" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="Phoenix3x"/>
+                <dbVersion n="Phoenix4x"/>
+            </dbVersions>
+        </db>
+
+        <db n="Arcadia Platform" dbID="ArcadiaPlatform" dbType="ArcadiaPlatform">
+            <connection connStr="DRIVER={MicroStrategy ODBC Driver for Impala Wire Protocol!#DRIVERSUFFIX#!}; Host=@host; Port=@port;"/>
+            <dbParamSection>
+                <dbParam n="Server Name" tp="text" field="host" ids="8536" required="true"/>
+                <dbParam n="Port Number" tp="number" field="port" ids="8534" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="ArcadiaPlatform1"/>
+            </dbVersions>
+        </db>
+
+        <db n="Arcadia Platform (JDBC)" dbID="ArcadiaPlatformJDBC" dbType="ArcadiaPlatform" connType="2">
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER={com.cloudera.impala.jdbc4.Driver};URL={jdbc:impala://@hostport}" driver="com.cloudera.impala.jdbc4.Driver" driverFile="ImpalaJDBC4.jar"/>
+            <dbParamSection>
+                <dbParam n="Host name:Port number" tp="text" field="hostport" ids="13907" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="ArcadiaPlatform1"/>
+            </dbVersions>
+        </db>
+
+        <db n="Altibase" dbID="Altibase" dbType="Altibase">
+            <connection connStr="DRIVER={ALTIBASE_HDB_ODBC_64bit};Server=@host;NLS_USE=US7ASCII;Port=@port;Database=@db;"/>
+            <dbParamSection>
+                <dbParam n="Server Name" tp="text" field="host" ids="8536" required="true"/>
+                <dbParam n="Port Number" tp="number" field="port" ids="8534" required="true" defaultValue="20300" />
+                <dbParam n="Database Name" tp="text" field="db" ids="8519" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="Altibase63x"/>
+            </dbVersions>
+        </db>
+
+        <db n="Altibase (32 bit)" dbID="Altibase" dbType="Altibase" configuration="32">
+            <connection connStr="DRIVER={ALTIBASE_HDB_ODBC_32bit};Server=@host;NLS_USE=US7ASCII;Port=@port;Database=@db;"/>
+            <dbParamSection>
+                <dbParam n="Server Name" tp="text" field="host" ids="8536" required="true"/>
+                <dbParam n="Port Number" tp="number" field="port" ids="8534" required="true" defaultValue="20300" />
+                <dbParam n="Database Name" tp="text" field="db" ids="8519" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="Altibase63x"/>
+            </dbVersions>
+        </db>
+
+        <db n="Altibase (JDBC)" dbID="AltibaseJDBC" dbType="Altibase" connType="2">
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER={Altibase.jdbc.driver.AltibaseDriver};URL={jdbc:Altibase://@hostportdb;}" driver="Altibase.jdbc.driver.AltibaseDriver" driverFile="Altibase.jar"/>
+            <dbParamSection>
+                <dbParam n="Hostname:PortNumber/database" tp="text" field="hostportdb" ids="13909" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="Altibase63x"/>
+            </dbVersions>
+        </db>
+
+        <db n="Presto" dbID="Presto" dbType="Presto">
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER=com.facebook.presto.jdbc.PrestoDriver;URL={jdbc:presto://@hostportcatschema}" driver=""/>
+            <dbParamSection>
+                <dbParam n="host:port/catalog/schema" tp="text" field="hostportcatschema" ids="13945" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="Presto"/>
+            </dbVersions>
+        </db>
+
+        <db n="Presto (JDBC)" dbID="PrestoJDBC" dbType="Presto" connType="2">
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER={com.facebook.presto.jdbc.PrestoDriver};URL={jdbc:presto://@hostportcatschema}" driver="com.facebook.presto.jdbc.PrestoDriver" driverFile="presto-jdbc-0.86.jar"/>
+            <dbParamSection>
+                <dbParam n="host:port/catalog/schema" tp="text" field="hostportcatschema" ids="13945" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="Presto"/>
+            </dbVersions>
+        </db>
+
+        <db n="Kognitio" dbID="Kognitio" dbType="KOGNITIOWX2">
+            <connection connStr="DRIVER={Kognitio WX2}; Server={@svr:@port};"/>
+            <dbParamSection>
+                <dbParam n="Server" tp="text" field="svr" ids="15" required="true"/>
+                <dbParam n="Port Number" tp="number" field="port" ids="8534" required="true" defaultValue="6550"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="Kognitio7x"/>
+                <dbVersion n="Kognitio8x"/>
+            </dbVersions>
+        </db>
+
+        <db n="Kognitio (JDBC)" dbID="KognitioJDBC" dbType="KOGNITIOWX2" connType="2">
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER={com.kognitio.jdbc.Driver};URL={jdbc:kognitio://@hostport;}" driver="com.kognitio.jdbc.Driver" driverFile="Kognitio.jar"/>
+            <dbParamSection>
+                <dbParam n="Host name:Port number" tp="text" field="hostport" ids="13907" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="Kognitio7x"/>
+                <dbVersion n="Kognitio8x"/>
+            </dbVersions>
+        </db>
+
+        <db n="Informatica" dbID="Informatica" dbType="Informatica">
+            <connection connStr="DRIVER={Informatica Data Services ODBC Driver 9.6.1};Server=@svr;Port=@port;Database=@sqldsname;AUTHMODE=@auth;DIS=@disname;"/>
+            <dbParamSection>
+                <dbParam n="Server Name" tp="text" field="svr" ids="8536" required="true"/>
+                <dbParam n="Port Number" tp="number" field="port" ids="8534" required="true"/>
+                <dbParam n="SQL Data Service Name" tp="text" field="sqldsname" ids="13951" required="true"/>
+                <dbParam n="Data Integration Service Name" tp="text" field="disname" ids="13946" required="true"/>
+                <dbParam n="Authentication Mode" tp="list" field="auth" ids="7952" required="true">
+                    <dbParamVal n="Native or LDAP authentication" v="Native or LDAP authentication" ids="13947"/>
+                    <dbParamVal n="Kerberos with keytab file" v="Kerberos with keytab file" ids="13948"/>
+                    <dbParamVal n="Keberos with username and password" v="Keberos with username !#AND#! password" ids="13949"/>
+                    <dbParamVal n="Logged in user" v="Logged in user" ids="13950"/>
+                </dbParam>
+            </dbParamSection>
+            <dbVersions>
+               <dbVersion n="Generic"/>
+               <dbVersion n="Informatica96x"/>
+            </dbVersions>
+        </db>
+
+        <db n="Informatica (JDBC)" dbID="InformaticaJDBC" dbType="Informatica" connType="2">
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER={com.informatica.ds.sql.jdbcdrv.INFADriver};URL={jdbc:informatica:sqlds//!#AT#!@hostport!#QUESTION#!dis=@disname!#AND#!sqlds=@sqldsname}" driver="com.informatica.ds.sql.jdbcdrv.INFADriver" driverFile="infadsjdbc.jar"/>
+            <dbParamSection>
+                <dbParam n="Host name:Port number" tp="text" field="hostport" ids="13907" required="true"/>
+                <dbParam n="Data Integration Service Name" tp="text" field="disname" ids="13946" required="true"/>
+                <dbParam n="SQL Data Service Name" tp="text" field="sqldsname" ids="13951" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="Informatica96x"/>
+            </dbVersions>
+        </db>
+
+        <db n="Apache Cassandra" dbID="Cassandra" dbType="Cassandra" connType="1">
+            <connection connStr="FULLCONNECTION=JDBC;MSTR_JDBC_JAR_FOLDER=@jar;DRIVER=org.apache.cassandra.cql.jdbc.CassandraDriver;URL={jdbc:cassandra://@hostportkeyspace}" driver="org.apache.cassandra.cql.jdbc.CassandraDriver"/>
+            <dbParamSection>
+                <dbParam n="JDBC Driver Path" tp="text" field="jar" ids="13944" required="true"/>
+                <dbParam n="Host:Port/Keyspace" tp="text" field="hostportkeyspace" ids="13979" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="Cassandra2x"/>
+            </dbVersions>
+        </db>
+
+        <db n="Apache Cassandra(JDBC)" dbID="CassandraJDBC" dbType="Cassandra" connType="2">
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER=org.apache.cassandra.cql.jdbc.CassandraDriver;URL={jdbc:cassandra://@hostportkeyspace}" driver="org.apache.cassandra.cql.jdbc.CassandraDriver" driverFile="cassandra-jdbc-2.1.*.jar"/>
+            <dbParamSection>
+                <dbParam n="Host:Port/Keyspace" tp="text" field="hostportkeyspace" ids="13979" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="Cassandra2x"/>
+            </dbVersions>
+        </db>
+
+        <db n="MapR Drill" dbID="MapRDrill" dbType="Drill" connType="1">
+            <connection connStr="DRIVER={MicroStrategy Drill ODBC Driver};ConnectionType=Direct;Host=@host;Port=@port;Schema=@db; AuthenticationType=No Authentication;Catalog=DRILL;"/>
+			<altConnection connStr="DRIVER={MapR Drill ODBC Driver};Host=@host;Port=@port;Schema=@db;ConnectionType=Direct;AuthenticationType=No Authentication;"/>
+            <dbParamSection>
+                <dbParam n="Host" tp="text" field="host" ids="8533" required="true"/>
+                <dbParam n="Port Number" tp="number" field="port" ids="8534" required="true"/>
+                <dbParam n="Database" tp="text" field="db" ids="8538" required="false"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="MapRDrill"/>
+				<dbVersion n="MapRDrill1x"/>
+            </dbVersions>
+        </db>
+
+        <db n="MapR Drill(JDBC)" dbID="MapRDrill" dbType="Drill" connType="2">
+            <connection connStr="JDBC;DRIVER={org.apache.drill.jdbc.Driver};URL={jdbc:drill:zk=@hostname:@port/drill/@clusterid;schema=@schemaname}"/>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="MapRDrill"/>
+            </dbVersions>
+        </db>
+
+
+        <db n="Cirro" dbID="Cirro" dbType="Cirro">
+            <connection connStr="DRIVER={Cirro};Server=@host;Port=@port;Database=@db;EXTRA_PARMS={schemanamepattern=true};"/>
+            <dbParamSection>
+                <dbParam n="Server" tp="text" field="host" ids="8533" required="true"/>
+                <dbParam n="Port Number" tp="number" field="port" ids="8534" required="true"/>
+                <dbParam n="Database" tp="text" field="db" ids="8538" required="false"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="Cirro"/>
+            </dbVersions>
+        </db>
+
+        <db n="EXASolution" dbID="EXASolution" dbType="EXASolution">
+            <connection connStr="DRIVER={EXASolution Driver};EXAHOST=@hostport;"/>
+            <dbParamSection>
+                <dbParam n="Server:Port" tp="text" field="hostport" ids="13907" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="EXASolution5x"/>
+				<dbVersion n="EXASolution40"/>
+            </dbVersions>
+        </db>
+
+		<db n="EXASolution(JDBC)" dbID="EXASolutionJDBC" dbType="EXASolution" connType="2">
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER={com.exasol.jdbc.EXADriver};URL={jdbc:exa:@hostport;}" driver="com.exasol.jdbc.EXADriver" driverFile="exajdbc.jar"/>
+            <dbParamSection>
+                <dbParam n="Server:Port" tp="text" field="hostport" ids="13907" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="EXASolution5x"/>
+				<dbVersion n="EXASolution40"/>
+            </dbVersions>
+        </db>
+
+
+		<db n="Generic" dbID="Undefined" dbType="Generic">
+            <connection connStr="FULLCONNECTION=MSTR_CUSTOM=true;" driver=""/>
+            <dbParamSection>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+            </dbVersions>
+        </db>
+
+		<db n="Oracle Database Cloud" dbID="OracleCloud" dbType="Oracle">
+            <connection connStr="DRIVER={MicroStrategy ODBC Driver for Oracle Wire Protocol!#DRIVERSUFFIX#!}; HostName=@host; PortNumber=@port; SID=@sid; ServiceName=@svc; AlternateServers=@alt; EnableNCharSupport=1; IANAAppCodePage=111;EncryptionLevel=1; DataIntegrityLevel=1;"/>
+            <dbParamSection n="Standard Connection" ids="8546" defaultSection="true">
+                <dbParam n="Host Name" tp="text" field="host" ids="8533" required="true"/>
+                <dbParam n="Port Number" tp="number" field="port" ids="8534" required="true"/>
+                <dbParam n="SID" tp="text" field="sid" ids="8547"/>
+                <dbParam n="Service Name" tp="text" field="svc" ids="8539"/>
+                <dbParam n="Alternate Servers" tp="text" field="alt" ids="8548"/>
+            </dbParamSection>
+            <connection connStr="DRIVER={MicroStrategy ODBC Driver for Oracle Wire Protocol!#DRIVERSUFFIX#!}; ServerName=@svr; TNSNamesFile=@tns; EnableNCharSupport=1; IANAAppCodePage=111;EncryptionLevel=1; DataIntegrityLevel=1;"/>
+            <dbParamSection n="TNSNames Connection" ids="8549">
+                <dbParam n="Server Name" tp="text" field="svr" ids="8536" required="true"/>
+                <dbParam n="TNSNames File" tp="text" field="tns" ids="8550" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+			    <dbVersion n="Generic"/>
+                <dbVersion n="Oracle11gR2"/>
+                <dbVersion n="Oracle12c"/>
+            </dbVersions>
+        </db>
+
+        <db n="Oracle Database Cloud (JDBC)" dbID="OracleCloudJDBC" dbType="Oracle" connType="2">
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER={com.microstrategy.jdbc.oracle.OracleDriver};URL={jdbc:microstrategy:oracle://@hostport;SID=@sid;EncryptionLevel=accepted; DataIntegrityLevel=accepted};" driver="com.microstrategy.jdbc.oracle.OracleDriver" driverFile="myoracle.jar"/>
+            <dbParamSection n="Standard Connection" ids="8546">
+                <dbParam n="Host name:Port number" tp="text" field="hostport" ids="13907" required="true"/>
+                <dbParam n="SID" tp="text" field="sid" ids="8547" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="Oracle11gR2"/>
+                <dbVersion n="Oracle12c"/>
+            </dbVersions>
+        </db>
+
+		<db n="Snowflake" dbID="Snowflake" dbType="Snowflake">
+			<connection connStr="DRIVER={SnowflakeDSIIDriver};SERVER=@svr;DATABASE=@db;SCHEMA=@schema;WAREHOUSE=@wh;"/>
+            <dbParamSection>
+				<dbParam n="Server Name" tp="text" field="svr" ids="8536" required="true"/>
+                <dbParam n="Database" tp="text" field="db" ids="8538" required="true"/>
+				<dbParam n="Warehouse" tp="text" field="wh" ids="14620" required="true"/>
+				<dbParam n="Schema" tp="text" field="schema" ids="14621" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+			    <dbVersion n="Generic"/>
+                <dbVersion n="Snowflake"/>
+            </dbVersions>
+        </db>
+
+        <db n="Snowflake (JDBC)" dbID="SnowflakeJDBC" dbType="Snowflake" connType="2">
+            <connection connStr="FULLCONNECTION=JDBC;DRIVER={com.snowflake.client.jdbc.SnowflakeDriver};URL={jdbc:snowflake://@host/!#QUESTION#!ssl=on!#AND#!account=@account!#AND#!warehouse=@wh!#AND#!db=@db!#AND#!schema=@schema};" driver="com.snowflake.client.jdbc.SnowflakeDriver" driverFile="snowflake_jdbc.jar"/>
+            <dbParamSection n="Standard Connection" ids="8546">
+				<dbParam n="Host Name" tp="text" field="host" ids="8533" required="true"/>
+                <dbParam n="Database" tp="text" field="db" ids="8538" required="true"/>
+				<dbParam n="Warehouse" tp="text" field="wh" ids="14620" required="true"/>
+				<dbParam n="Schema" tp="text" field="schema" ids="14621" required="true"/>
+                <dbParam n="Account" tp="text" field="account" ids="14641" required="true"/>
+            </dbParamSection>
+            <dbVersions>
+                <dbVersion n="Generic"/>
+                <dbVersion n="Snowflake"/>
+            </dbVersions>
+        </db>
+
+	</dbs>
+</dbProperties>

@@ -1,0 +1,5 @@
+<browser-settings>
+<!--  2017-07-31 bae add  -->
+  <browser-setting desc="Hidden reportDetails" name="reportDetails" value="0"/>
+  <browser-setting desc="Hidden promptDetails" name="promptDetails" value="0"/>
+</browser-settings>

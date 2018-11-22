@@ -1,0 +1,4 @@
+<servers version="1.0">
+  <server conn="false" name="10.253.42.211"/>
+  <server conn="true" name="CSH-IUX-BIWAS1"/>
+</servers>

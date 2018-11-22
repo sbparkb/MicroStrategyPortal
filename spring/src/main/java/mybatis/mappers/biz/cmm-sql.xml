@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd"> 
+
+<mapper namespace="cmm">
+ 
+	
+	<resultMap type="cmmnBbsfileVO" 				id="attachMap" 						>
+		<id		property="atchFileSeqNo"			column="ATCH_FILE_SEQ_NO"			/>
+		<result property="dsplyNm"					column="DSPLY_NM"					/>
+		<result property="atchFileNm"				column="ATCH_FILE_NM"				/>
+		<result property="atchFileUrl"				column="ATCH_FILE_URL"				/>
+		<result property="atchFileSize"				column="ATCH_FILE_SIZE"				/>
+		<result property="atchFilePhysiclPath"		column="ATCH_FILE_PHYSICL_PATH"		/>
+		<result property="dwldCnt"					column="DWLD_CNT"					/>
+		<result property="atchFileExt"				column="ATCH_FILE_EXT"				/>
+		<result property="userId"					column="USER_ID"					/>
+	</resultMap>
+	
+ 	<select id="selectRptUseYn" resultType="java.util.Map" parameterType="String">
+		SELECT EXEC_YN, NON_USE_RESN /*+ selectRptUseYn +*/
+		  FROM SY_RPT_EXEC_M
+		 WHERE RPT_ID = #{reportId}
+	</select>
+	
+	<select id="selectSeqId" resultType="int" parameterType="java.util.Map">
+		SELECT /*+ biz.cmm.selectSeqId +*/
+			GET_SEQUENCE_VAL(#{seqId}) AS VAL
+		FROM
+			DUAL
+	</select>
+ 
+ 
+ 	<select id="selectBbsSeqId" resultType="int" parameterType="java.util.Map">
+		SELECT /*+ biz.cmm.selectBbsSeqId +*/
+			NVL(MAX(T1.BBS_SEQ_NO),0) +1  AS VAL
+		FROM 
+			CM_BOARD_DET T1 
+		WHERE T1.BBS_ID = 'BBS00001'
+	</select>
+	
+
+ 	<select id="selectAttachSeqId" resultType="int" parameterType="java.util.Map">
+		SELECT /*+ biz.cmm.selectAttachSeqId +*/
+			NVL(MAX(T1.ATCH_FILE_SEQ_NO),0) +1  AS VAL
+		FROM 
+			CO_ATCHFILE_MST T1 
+ 	</select>
+
+	
+	<insert id="insertAttachFileInfo" parameterType="cmmnBbsfileVO">
+		INSERT /*+ biz.cmm.insertAttachFileInfo +*/
+			INTO
+		CO_ATCHFILE_MST
+		(
+			ATCH_FILE_SEQ_NO
+			, DSPLY_NM
+			, ATCH_FILE_NM
+			, ATCH_FILE_SIZE
+			, ATCH_FILE_PHYSICL_PATH
+			, DWLD_CNT
+			, DEL_YN
+			, REGIST_ID
+			, REGIST_DATE
+			, ATCH_FILE_EXT
+			, MASTER_ID
+			<if test='masterDiv != null and !"".equals(masterDiv)'>
+			, MASTER_DIV
+			</if>
+		)
+		VALUES
+		(
+			#{atchFileSeqNo}
+			, #{onedsplyName}
+			, #{onefileNamedata}
+			, #{onefilesizedata}
+			, #{onefilePhysiclPath}
+			, 0
+			, 'N'
+			, #{registId}
+			, SYSDATE
+			, #{onefileExt}
+			, #{masterId}
+			<if test='masterDiv != null and !"".equals(masterDiv)'>
+			, #{masterDiv}
+			</if>
+		)
+	
+	</insert>
+	
+	<select id="selectAttachFileInfo" resultMap="attachMap" parameterType="cmmnBbsfileVO">
+		SELECT /*+ biz.cmm.selectAttachFileInfo +*/
+			ATCH_FILE_SEQ_NO
+			, MASTER_ID
+			, MASTER_DIV
+			, DSPLY_NM
+			, ATCH_FILE_NM
+			, ATCH_FILE_URL
+			, ATCH_FILE_SIZE
+			, ATCH_FILE_PHYSICL_PATH
+			, DWLD_CNT
+			, DEL_YN
+			, REGIST_ID
+			, REGIST_DATE
+			, ATCH_FILE_EXT
+		FROM 
+			CO_ATCHFILE_MST
+		WHERE
+			DEL_YN = 'N'
+			<if test='atchFileSeqNo != null and atchFileSeqNo > 0'>
+				AND ATCH_FILE_SEQ_NO 	= #{atchFileSeqNo}
+			</if>
+			<if test='masterId != null and !"".equals(masterId)'>
+				AND MASTER_ID 			= #{masterId}
+			</if>
+	</select>
+	
+	<update id="deleteAttachFileInfo" parameterType="cmmnBbsfileVO">
+		UPDATE /*+ biz.cmm.deleteAttachFileInfo +*/
+			CO_ATCHFILE_MST
+		SET
+			DEL_YN 						= 'Y'
+			, UPDT_ID					= #{updtId}
+			, UPDT_DATE					= SYSDATE
+		WHERE
+			1=1
+			<if test='masterId != null and !"".equals(masterId)'>
+				AND MASTER_ID			= #{masterId}
+			</if>
+			<if test='masterDiv !=null and !"".equals(masterDiv)'>
+				AND MASTER_DIV			= #{masterDiv}
+			</if>
+			<if test='atchFileSeqNo != null and !"".equals(atchFileSeqNo)'>
+				AND ATCH_FILE_SEQ_NO	= #{atchFileSeqNo}
+			</if>
+	</update>
+ 
+</mapper>

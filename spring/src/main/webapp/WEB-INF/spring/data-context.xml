@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	
+	<!-- datasource -->
+	<bean id="environmentVariablesConfiguration" class="org.jasypt.encryption.pbe.config.EnvironmentStringPBEConfig">  
+		<property name="algorithm" value="PBEWithMD5AndDES" />
+		<property name="passwordEnvName" value="ENV_PASS" />
+	</bean> 	        
+     
+	<bean id="encryptor" class="org.jasypt.encryption.pbe.StandardPBEStringEncryptor">
+		<property name="config" ref="environmentVariablesConfiguration" />  
+	</bean>
+	 
+  	<bean id="jasyptPropHolder" class="org.jasypt.spring3.properties.EncryptablePropertyPlaceholderConfigurer">  
+        <constructor-arg ref="encryptor" />  
+		<property name="locations">
+			<list>
+			 	<value>classpath:/properties/jdbc.properties</value>
+			</list>
+		</property>
+	</bean> 
+	
+	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" /> 
+ 		<property name="url" value="jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=10.103.96.29)(PORT=1521)) (ADDRESS=(PROTOCOL=TCP)(HOST=10.103.96.28)(PORT=1521)) ) (CONNECT_DATA=(SERVICE_NAME=SCHDW) ) )" />
+ 		<property name="username" value="US_BI" /> 
+		<property name="password" value="${ds1.jdbc.password}" />		 		 
+		<property name="defaultAutoCommit" value="false" />
+		<property name="poolPreparedStatements" value="true"/>
+		<property name="validationQuery" value="select * from dual"/>
+ 	</bean>
+ 
+	<!--  추가 -->
+ 	<bean id="dataSource2" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+ 		<property name="url" value="jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=10.103.96.24)(PORT=1521)) (ADDRESS=(PROTOCOL=TCP)(HOST=10.103.96.23)(PORT=1521)) ) (CONNECT_DATA=(SERVICE_NAME=SCHDFS) ) )" />
+ 		<property name="username" value="US_ETL" /> 
+		<property name="password" value="${ds2.jdbc.password}" />		  
+		<property name="defaultAutoCommit" value="false" />
+		<property name="poolPreparedStatements" value="true"/> 
+		<property name="validationQuery" value="select * from dual"/>
+	</bean>	
+		
+</beans>

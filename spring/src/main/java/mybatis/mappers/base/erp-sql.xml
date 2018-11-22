@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd"> 
+
+<mapper namespace="erp">
+
+	<select id="selectTimeoutCheck" resultType="Integer" timeout="1">
+/*		 SELECT COUNT(1) FROM SY0010M */
+		/* TIMEOUT CHECK */
+		SELECT * FROM TUS_DFS.SY0010M A, TUS_DFS.SY0010M B, TUS_DFS.SY0010M C	 
+	</select>
+ 	 
+	<select id="selectPasswd" resultType="String" parameterType="String">
+		 select
+         dc_bo_dev.cware_enc_dec(#{passwd},'H') as passwd
+         from dual	 
+	</select>
+	
+	<select id="selectErpUser" parameterType="java.util.Map" resultType="java.util.Map" >
+		SELECT   /* erp.selectErpUser */
+		    COMP_CD,
+			USR_ID,
+			USR_NM,
+			PWD,
+			TO_CHAR(PWD_CHG_DTTM, 'YYYY-MM-DD HH24:MI:SS')  PWD_CHG_DTTM,
+			DF_XX1.DEC_VARCHAR2_SEL(MOBL_NO,11,'TEL_NO','SY0010M','MOBL_NO') AS MOBL_NO,
+			BI_YN,
+			USE_YN
+		FROM SY0010M
+		WHERE COMP_CD = #{COMP_CD}
+		--AND   USE_YN = 'Y'
+		--AND   BI_YN = 'Y'
+		AND   USR_ID =  #{USER_ID}   /*  'P905LP' */
+	</select>
+ 
+	<select id="callSms"  statementType="CALLABLE"  parameterType="java.util.Map" >
+		<!-- { 와 call 사이에 스페이스 1개 만 허용 tab 은 허용하지 않음 -->
+		<![CDATA[
+		  { call SP_SYSMS_SEND_SMS_EX  /*  erp.callSms */
+			(
+				 #{PI_USERID, mode=IN, jdbcType=VARCHAR, javaType=string} ,
+				 'S'        /* PI_PRIORITY */, 
+				 NULL       /* PI_DATE_CLIENT_REQ */, 
+				 #{PI_CONTENT, mode=IN, jdbcType=VARCHAR, javaType=string} , 
+				 NULL       /* PI_CALLBACK */, 
+				 #{PI_RECIPIENT_NUM, mode=IN, jdbcType=VARCHAR, javaType=string} , 
+				 ''         /* PI_RECIPIENT_NET */ ,
+		         'Y'        /* PI_RECIPIENT_NPSEND */ , 
+		         'BI_LOGIN' /* PI_REG_PGM_ID */, 
+		         ' '       /* PI_EMMA_ID */,   
+				 NULL       /* PI_TABLE_NM */,  
+				 NULL       /* PI_FILED_NM */,  
+				 NULL       /* PI_WHERE_FIELD_NAME */,  
+				 NULL       /* PI_WHERE_FIELD_VALUE */,  
+				 NULL       /* PI_ETC_CHAR_1 */,  
+				 NULL       /* PI_ETC_CHAR_2 */,  
+				 0          /* PI_ETC_INT_3 */,  
+				 '99'       /* PI_STO_CD */,  
+				 ''         /* PI_MD_CD */,  
+				 #{PO_RETURN_CODE, mode=OUT, jdbcType=VARCHAR, javaType=string} , 
+				 #{PO_RETURN_DATA, mode=OUT, jdbcType=VARCHAR, javaType=string} 
+			)
+	 	}
+	 	]]>
+	</select>
+
+
+	<select id="selectOtpText" resultType="String" >
+		SELECT   /*  erp.selectOtpText */
+			DBMS_RANDOM.STRING('U',4) || ROUND(DBMS_RANDOM.VALUE(10000,99990)) AS INIT_SMS
+  		FROM DUAL
+	</select>
+
+	<select id="selectMoblNo" resultType="String" >
+		SELECT   /* erp.selectMoblNo */
+			DF_XX1.DEC_VARCHAR2_SEL(MOBL_NO,11,'TEL_NO','SY0010M','MOBL_NO') AS MOBL_NO 
+		FROM SY0010M
+		WHERE COMP_CD = #{COMP_CD}
+		AND   USE_YN = 'Y'
+		AND   BI_YN = 'Y'
+		AND   USR_ID =  #{USER_ID}   /*  'P905LP' */
+	</select>
+	
+	<insert id="insertSmsOtp"  parameterType="java.util.Map">
+		INSERT INTO SY0014L   /*  erp.insertSmsOtp */
+			(
+				COMP_CD ,
+				USR_ID ,
+				REG_DT , 
+				PWD_INI_RQMT_DTTM ,
+				PWD_INI_AUCA_CHAR ,
+				REFL_PGM_ID ,
+				FIRS_REGR_ID ,
+				FIRS_REG_DTTM ,
+				FINA_REGR_ID ,
+				FINA_REG_DTTM
+			) VALUES (
+				#{COMP_CD},
+				#{USR_ID},
+				TO_CHAR(SYSDATE , 'YYYYMMDD') , 
+				SYSDATE ,
+				#{SMS_OTP},
+				'BI_CONFIRM' ,
+				#{USR_ID},
+				SYSDATE ,
+				#{USR_ID},
+				SYSDATE
+			)
+	</insert>
+
+
+
+
+
+	<select id="selectCheckSms"   parameterType="java.util.Map" resultType="java.util.Map" >
+		SELECT  /*  erp.selectCheckSms */
+			A.USR_ID, 
+			TO_CHAR(A.DIFF) DIFF
+		FROM (
+			SELECT  
+			    USR_ID ,
+				PWD_INI_RQMT_DTTM ,
+				TRUNC( (SYSDATE - PWD_INI_RQMT_DTTM) * (24*60*60) ) DIFF,
+				ROW_NUMBER() OVER (ORDER BY COMP_CD, USR_ID, PWD_INI_RQMT_DTTM DESC) RN
+			FROM SY0014L
+			WHERE COMP_CD = #{COMP_CD}
+			AND   USR_ID =  #{USER_ID}   /*  'P905LP' */
+			AND   PWD_INI_AUCA_CHAR = #{SMS_DATA}
+		) A
+		WHERE A.RN = 1
+		AND   A.DIFF <![CDATA[ <= ]]> 180
+	</select>
+
+
+<!-- DF_XX1.DEC_VARCHAR2_SEL(MOBL_NO,11,'TEL_NO','SY0010M','MOBL_NO') AS MOBL_NO -->
+<!-- PWD = DF_XX1.ENC_VARCHAR2_INS(#{PWD},10,'PASS_WD','SY0010M','PWD') , -->
+
+	<select id="selectCheckSmsEnc"   parameterType="java.util.Map" resultType="java.util.Map" >
+		SELECT	CASE WHEN ENCED_IN_OTP = #{ENC_OTP} THEN #{USER_ID} ELSE NULL END AS UIDD,
+					1 AS DIFF
+		FROM (
+				SELECT	DF_XX1.ENC_VARCHAR2_INS(#{SMS_DATA},10,'PASS_WD','SY0010M','PWD') AS ENCED_IN_OTP
+				FROM		DUAL
+		)
+	</select>
+	
+	<select id="selectEncryptionOtp" parameterType="java.util.Map" resultType="String" >
+	SELECT 
+				DF_XX1.ENC_VARCHAR2_INS(#{EncOtp},10,'PASS_WD','SY0010M','PWD') AS EncOtp
+  	FROM DUAL
+
+	</select>
+
+
+<!-- PWD = DF_XX1.ENC_VARCHAR2_INS(#{PWD},10,'PASS_WD','SY0010M','PWD') , -->
+	
+	<update id="updateUserToErp"  parameterType="java.util.Map"  >
+		UPDATE   /* erp.updateUserToErp */
+			SY0010M
+		SET
+ 			PWD = #{ENC_PWD},
+ 			PWD_CHG_DTTM = SYSDATE ,
+ 			LGIN_ERR_CNT = 0
+		WHERE 1=1						
+			AND USR_ID = #{USR_ID}
+			AND COMP_CD = #{COMP_CD}
+	</update>
+
+<!-- XX1.ENC_VARCHAR2_INS(#{PWD},10,'PASS_WD'), -->	
+	<insert id="insertUserToErpHis"  parameterType="java.util.Map"  >
+		INSERT INTO SY0012L   /* erp.insertUserToErpHis */
+			(
+				COMP_CD,
+				USR_ID,
+				REG_DT,
+				PWD_CHG_DTTM,
+				PWD,
+
+				REFL_PGM_ID,
+				
+				FIRS_REGR_ID,
+				FIRS_REG_DTTM,
+				FINA_REGR_ID,
+				FINA_REG_DTTM
+				
+			) VALUES (
+				#{COMP_CD},
+				#{USR_ID},
+				TO_CHAR(SYSDATE , 'YYYYMMDD') , 
+				SYSDATE ,
+
+				#{ENC_PWD}, 
+
+				'BI PORTAL',
+				
+				#{USR_ID},
+				SYSDATE ,
+				#{USR_ID},
+				SYSDATE
+			)
+ 	</insert>
+
+	<select id="selectErpPwdHis" parameterType="java.util.Map" resultType="java.util.Map" >
+
+		SELECT  /* erp.selectErpPwdHis */
+		  A.COMP_CD,
+		  A.USR_ID,
+		  A.PWD
+		FROM (
+	
+			SELECT  
+	      		COMP_CD,
+				USR_ID,
+	 			PWD,
+	      		ROW_NUMBER() OVER(ORDER BY REG_DT DESC, PWD_CHG_DTTM DESC) RN
+			FROM SY0012L
+			WHERE COMP_CD = #{COMP_CD}
+	 		AND   USR_ID =  #{USR_ID}   /*  'P905LP' */
+	 		
+		) A 
+		WHERE  A.RN <![CDATA[ < ]]> 4
+		
+	</select>
+
+ 	
+</mapper>

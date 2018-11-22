@@ -1,0 +1,632 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd"> 
+
+<mapper namespace="bbs">
+	<resultMap type="cmmnBbsVO" id="cmmnBbsMap">
+		<result property="bbsSeqNo"					column="BBS_SEQ_NO"				/>
+		<result property="bbsId"	 				column="BBS_ID"					/>
+		<result property="bbsSj"	 				column="BBS_SJ"					/>
+		<result property="bbsCn"	 				column="BBS_CN"					/>
+		<result property="noticeYn" 				column="NOTICE_YN"				/>
+		<result property="atchFileYn"				column="ATCH_FILE_YN"			/>
+		<result property="delYn"	 				column="DEL_YN"					/>
+		<result property="readCnt"		 			column="READ_CNT"				/>
+		<result property="cometCnt"					column="COMET_CNT"				/>
+		<result property="registId" 				column="REGIST_ID"				/>
+		<result property="registDate" 				column="REGIST_DATE"			/>
+		<result property="updtId" 					column="UPDT_ID"				/>
+		<result property="updtDate" 				column="UPDT_DATE"				/>
+		<result property="registName" 				column="REGIST_NAME"			/>
+		<result property="noticeStrYmd" 			column="NOTICE_STR_YMD"			/>
+		<result property="noticeStrTime"			column="NOTICE_STR_TIME"		/>
+		<result property="noticeEndYmd"				column="NOTICE_END_YMD"			/>
+		<result property="noticeEndTime"			column="NOTICE_END_TIME"		/>
+		<result property="bbsName"	 				column="BBS_NAME"				/>
+		<result property="isNotice"	 				column="IS_NOTICE"				/>
+		<result property="bbsDivCode"				column="BBS_DIV_CODE"			/>
+		<result property="bbsDivCodeName"			column="BBS_DIV_CODE_NAME"		/>
+	</resultMap>
+	
+	<resultMap type="cmmnBbsVO" id="cmmnBbsWithFileMap">
+		<result property="bbsSeqNo"					column="BBS_SEQ_NO"				/>
+		<result property="bbsId"	 				column="BBS_ID"					/>
+		<result property="bbsSj"	 				column="BBS_SJ"					/>
+		<result property="bbsCn"	 				column="BBS_CN"					/>
+		<result property="noticeYn"					column="NOTICE_YN"				/>
+		<result property="atchFileYn"				column="ATCH_FILE_YN"			/>
+		<result property="delYn"	 				column="DEL_YN"					/>
+		<result property="readCnt"		 			column="READ_CNT"				/>
+		<result property="cometCnt"					column="COMET_CNT"				/>
+		<result property="registId" 				column="REGIST_ID"				/>
+		<result property="registDate" 				column="REGIST_DATE"			/>
+		<result property="updtId" 					column="UPDT_ID"				/>
+		<result property="updtDate" 				column="UPDT_DATE"				/>
+		<result property="registName" 				column="REGIST_NAME"			/>
+		<result property="noticeStrYmd" 			column="NOTICE_STR_YMD"			/>
+		<result property="noticeStrTime"			column="NOTICE_STR_TIME"		/>
+		<result property="noticeEndYmd"				column="NOTICE_END_YMD"			/>
+		<result property="noticeEndTime"			column="NOTICE_END_TIME"		/>
+		<result property="isNew"					column="IS_NEW"					/>
+		<result property="bbsDivCode"				column="BBS_DIV_CODE"			/>
+		<result property="bbsDivCodeName"			column="BBS_DIV_CODE_NAME"		/>
+		<association property="files" column="ATCH_FILE_SEQ_NO"	resultMap="bbs.cmmnBbsfileMap" />
+	</resultMap>
+
+
+	<resultMap type="cmmnBbsfileVO" id="cmmnBbsfileMap" >
+		<id		property="atchFileSeqNo"			column="ATCH_FILE_SEQ_NO"			/>
+		<result property="dsplyNm"					column="DSPLY_NM"					/>
+		<result property="atchFileNm"				column="ATCH_FILE_NM"				/>
+		<result property="atchFileUrl"				column="ATCH_FILE_URL"				/>
+		<result property="atchFileSize"				column="ATCH_FILE_SIZE"				/>
+		<result property="atchFileExt"				column="ATCH_FILE_EXT"				/>
+		<result property="atchFilePhysiclPath"		column="ATCH_FILE_PHYSICL_PATH"		/>
+		<result property="dwldCnt"					column="DWLD_CNT"					/>
+		<result property="registDate"				column="ATCH_REGIST_DATE"			/>
+	</resultMap>
+
+	<resultMap type="cmmnBbsMasterVO" id="cmmnBbsMasterMap">
+		<result property="bbsId" 					column="BBS_ID"					/>
+		<result property="bbsDesc" 					column="BBS_DESC"				/>
+		<result property="menuLang"	 				column="MENU_LANG"				/>
+		<result property="registId" 				column="REGIST_ID"				/>
+		<result property="registDate" 				column="REGIST_DATE"			/>
+		<result property="updtId" 					column="UPDT_ID"				/>
+		<result property="updtDate" 				column="UPDT_DATE"				/>
+		<result property="bbsName" 					column="BBS_NAME"				/>
+		<result property="sortNo"	 				column="SORT_NO"				/>
+		<result property="levelNo" 					column="LEVEL_NO"				/>
+		<result property="useYn"	 				column="USE_YN"					/>
+		<result property="upperBbsId"		 		column="UPPER_BBS_ID"			/>
+	</resultMap>
+	
+	<select id="selectListPageBbs" resultMap="cmmnBbsMap" parameterType="cmmnBbsVO">
+	/*Kichan 0419 Modify*/
+		SELECT /* biz.bbs.selectListPageBbs */
+			TTTT1.* 
+			,TTTT1.REGIST_ID AS REGIST_NAME
+		FROM(
+			SELECT 
+				TTT1.*
+				, ROW_NUMBER()OVER(ORDER BY IS_NOTICE ASC, TTT1.BBS_SEQ_NO DESC, TTT1.REGIST_DATE_ORG DESC) AS RNUM_1
+				, TTT1.RNUM AS NO
+				, 999					AS IS_NEW
+				FROM (
+				SELECT ROWNUM AS RNUM, TT1.* FROM
+					(
+					SELECT
+				        T2.BBS_SEQ_NO
+				        , T2.BBS_ID
+				        , T2.BBS_SJ
+				        , T2.BBS_CN
+				        , T2.NOTICE_YN
+				        , T2.ATCH_FILE_YN
+				        , T2.DEL_YN
+				        , T2.READ_CNT
+				        , T2.COMET_CNT
+				        , NVL(US.USER_NM,T2.REGIST_ID) AS REGIST_ID
+				        , TO_CHAR(T2.REGIST_DATE, 'YYYYMMDD') REGIST_DATE
+				        , TO_CHAR(T2.UPDT_DATE, 'YYYYMMDD') UPDT_DATE
+				        , REGIST_DATE        AS REGIST_DATE_ORG
+						, NVL((SELECT USER_NM FROM SYS_USER WHERE USER_ID = T2.UPDT_ID ),T2.UPDT_ID) AS UPDT_ID
+				        , 1 AS IS_NOTICE
+				        , T2.BBS_DIV_CODE
+				        , T2.BBS_DIV_CODE AS BBS_DIV_CODE_NAME
+				    FROM 
+				        CM_BOARD_DET T2 
+				       ,SYS_USER US
+				    WHERE 
+				        T2.DEL_YN = 'N'
+				        AND T2.REGIST_ID = US.USER_ID(+)
+				        AND T2.NOTICE_YN = 'Y'
+				        AND T2.BBS_ID = #{bbsId}
+				        AND (  T2.NOTICE_STR_YMD <![CDATA[<=]]> TO_CHAR(SYSDATE, 'YYYYMMDD')  
+			        	AND T2.NOTICE_END_YMD <![CDATA[>=]]> TO_CHAR(SYSDATE, 'YYYYMMDD'))
+			        	
+				        <if test="title != null and !''.equals(title)">
+							AND T2.BBS_SJ LIKE CONCAT('%', CONCAT(#{title}, '%'))
+						</if>
+						<if test="bbsCn != null and !''.equals(bbsCn)">
+							AND DBMS_LOB.INSTR(T2.BBS_CN, #{bbsCn}) > 0
+						</if>
+						<if test="registId != null and !''.equals(registId)">
+							AND
+					(
+					 T2.REGIST_ID LIKE CONCAT('%', CONCAT(#{registId}, '%'))
+					OR
+					 T2.REGIST_ID IN (SELECT USER_ID FROM SYS_USER WHERE USER_NM LIKE CONCAT('%', CONCAT(#{registId}, '%')) )
+					)
+						</if>
+						
+					UNION ALL
+					SELECT
+						T1.BBS_SEQ_NO
+						, T1.BBS_ID
+						, T1.BBS_SJ
+						, T1.BBS_CN
+						, T1.NOTICE_YN
+						, T1.ATCH_FILE_YN
+						, T1.DEL_YN
+						, T1.READ_CNT
+						, T1.COMET_CNT
+						, NVL(US.USER_NM,T1.REGIST_ID) AS REGIST_ID
+						, TO_CHAR(T1.REGIST_DATE, 'YYYYMMDD') REGIST_DATE
+						, TO_CHAR(T1.UPDT_DATE, 'YYYYMMDD') UPDT_DATE
+						, REGIST_DATE		AS REGIST_DATE_ORG
+						, NVL((SELECT USER_NM FROM SYS_USER WHERE USER_ID = T1.UPDT_ID ),T1.UPDT_ID) AS UPDT_ID
+						, 2 AS IS_NOTICE
+						, T1.BBS_DIV_CODE
+						, T1.BBS_DIV_CODE AS BBS_DIV_CODE_NAME
+					FROM 
+					    CM_BOARD_DET T1 
+					    ,SYS_USER US
+					WHERE 
+					T1.DEL_YN = 'N'
+					AND T1.REGIST_ID = US.USER_ID(+)
+					AND T1.BBS_ID = #{bbsId}
+					<if test="title != null and !''.equals(title)">
+						AND T1.BBS_SJ LIKE CONCAT('%', CONCAT(#{title}, '%'))
+					</if>
+					<if test="bbsCn != null and !''.equals(bbsCn)">
+						AND DBMS_LOB.INSTR(T1.BBS_CN, #{bbsCn}) > 0
+					</if>
+					<if test="registId != null and !''.equals(registId)">
+						AND
+					(
+					 T1.REGIST_ID LIKE CONCAT('%', CONCAT(#{registId}, '%'))
+					OR
+					 T1.REGIST_ID IN (SELECT USER_ID FROM SYS_USER WHERE USER_NM LIKE CONCAT('%', CONCAT(#{registId}, '%')) )
+					)
+					</if>
+					
+					ORDER BY IS_NOTICE ASC, BBS_SEQ_NO ASC, REGIST_DATE ASC
+				) TT1
+			) TTT1
+		) TTTT1
+	</select>
+	
+		<select id="selectListPageBbsOriginal" resultMap="cmmnBbsMap" parameterType="cmmnBbsVO">
+		/*Kichan 0419 Backup*/
+		SELECT /* biz.bbs.selectListPageBbs */
+			TTTT1.* 
+			,TTTT1.REGIST_ID AS REGIST_NAME
+		FROM(
+			SELECT 
+				TTT1.*
+				, ROW_NUMBER()OVER(ORDER BY IS_NOTICE ASC, TTT1.BBS_SEQ_NO DESC, TTT1.REGIST_DATE_ORG DESC) AS RNUM_1
+				, TTT1.RNUM AS NO
+				, CASE WHEN (SELECT COUNT(*) CNT FROM CM_BOARD_DET_READ_H BBSH 
+							WHERE BBSH.BBS_SEQ_NO = TTT1.BBS_SEQ_NO AND BBSH.USER_ID = #{bbsReadUser}) > 0 THEN 999
+					ELSE TO_CHAR(TO_DATE(SYSDATE) - TO_DATE(TTT1.REGIST_DATE_ORG)) + 0
+					END 										AS IS_NEW
+				FROM (
+				SELECT ROWNUM AS RNUM, TT1.* FROM
+					(
+					SELECT
+				        T2.BBS_SEQ_NO
+				        , T2.BBS_ID
+				        , T2.BBS_SJ
+				        , T2.BBS_CN
+				        , T2.NOTICE_YN
+				        , T2.ATCH_FILE_YN
+				        , T2.DEL_YN
+				        , T2.READ_CNT
+				        , T2.COMET_CNT
+						, NVL(US.USER_NM,T2.REGIST_ID) AS REGIST_ID
+				        , TO_CHAR(T2.REGIST_DATE, 'YYYYMMDD') REGIST_DATE
+				        , TO_CHAR(T2.UPDT_DATE, 'YYYYMMDD') UPDT_DATE
+				        , REGIST_DATE        AS REGIST_DATE_ORG
+						, NVL((SELECT USER_NM FROM SYS_USER WHERE USER_ID = T2.UPDT_ID ),T2.UPDT_ID) AS UPDT_ID
+				        , 1 AS IS_NOTICE
+				        , T2.BBS_DIV_CODE
+				        , T2.BBS_DIV_CODE AS BBS_DIV_CODE_NAME
+				    FROM 
+				        CM_BOARD_DET T2 ,
+				        SYS_USER US
+				                        
+				    WHERE 
+				        T2.DEL_YN = 'N'
+				        AND T2.REGIST_ID = US.USER_ID(+)
+				        AND T2.NOTICE_YN = 'Y'
+				        AND T2.BBS_ID = #{bbsId}
+				        AND (  T2.NOTICE_STR_YMD <![CDATA[<=]]> TO_CHAR(SYSDATE, 'YYYYMMDD')  
+			        	AND T2.NOTICE_END_YMD <![CDATA[>=]]> TO_CHAR(SYSDATE, 'YYYYMMDD'))
+			        	
+				        <if test="title != null and !''.equals(title)">
+							AND T2.BBS_SJ LIKE CONCAT('%', CONCAT(#{title}, '%'))
+						</if>
+						<if test="bbsCn != null and !''.equals(bbsCn)">
+							AND DBMS_LOB.INSTR(T2.BBS_CN, #{bbsCn}) > 0
+						</if>
+						<if test="registId != null and !''.equals(registId)">
+							AND
+					(
+					 T2.REGIST_ID LIKE CONCAT('%', CONCAT(#{registId}, '%'))
+					OR
+					 T2.REGIST_ID IN (SELECT USER_ID FROM SYS_USER WHERE USER_NM LIKE CONCAT('%', CONCAT(#{registId}, '%')) )
+					)
+						</if>
+						
+					UNION ALL
+					SELECT
+						T1.BBS_SEQ_NO
+						, T1.BBS_ID
+						, T1.BBS_SJ
+						, T1.BBS_CN
+						, T1.NOTICE_YN
+						, T1.ATCH_FILE_YN
+						, T1.DEL_YN
+						, T1.READ_CNT
+						, T1.COMET_CNT
+					 	, NVL(US.USER_NM,T1.REGIST_ID) AS REGIST_ID
+						, TO_CHAR(T1.REGIST_DATE, 'YYYYMMDD') REGIST_DATE
+						, TO_CHAR(T1.UPDT_DATE, 'YYYYMMDD') UPDT_DATE
+						, REGIST_DATE		AS REGIST_DATE_ORG						
+						, NVL((SELECT USER_NM FROM SYS_USER WHERE USER_ID = T1.UPDT_ID ),T1.UPDT_ID) AS UPDT_ID					    
+						, 2 AS IS_NOTICE
+						, T1.BBS_DIV_CODE
+						, T1.BBS_DIV_CODE AS BBS_DIV_CODE_NAME
+					FROM 
+					    CM_BOARD_DET T1 
+					    , SYS_USER US
+					WHERE 
+					T1.DEL_YN = 'N'
+					AND T1.UPDT_ID = US.USER_ID
+					AND T1.BBS_ID = #{bbsId}
+					<if test="title != null and !''.equals(title)">
+						AND T1.BBS_SJ LIKE CONCAT('%', CONCAT(#{title}, '%'))
+					</if>
+					<if test="bbsCn != null and !''.equals(bbsCn)">
+						AND DBMS_LOB.INSTR(T1.BBS_CN, #{bbsCn}) > 0
+					</if>
+					<if test="registId != null and !''.equals(registId)">
+						AND
+					(
+					 T1.REGIST_ID LIKE CONCAT('%', CONCAT(#{registId}, '%'))
+					OR
+					 T1.REGIST_ID IN (SELECT USER_ID FROM SYS_USER WHERE USER_NM LIKE CONCAT('%', CONCAT(#{registId}, '%')) )
+					)
+					</if>
+					
+					ORDER BY IS_NOTICE ASC, BBS_SEQ_NO ASC, REGIST_DATE ASC
+				) TT1
+			) TTT1
+		) TTTT1
+		WHERE 1=1
+--		AND TTTT1.RNUM_1 <![CDATA[>]]> #{startRow} AND TTTT1.RNUM_1 <![CDATA[<=]]> (#{gridRowsPerPage} * #{pageNo})
+	</select>
+	
+	<select id="selectCountBbs" parameterType="cmmnBbsVO" resultType="int">
+		SELECT /* biz.bbs.selectCountBbs */
+		COUNT(*) FROM
+			(
+			SELECT
+		        T2.BBS_SEQ_NO
+		    FROM 
+		        CM_BOARD_DET T2 
+		    WHERE 
+		        T2.DEL_YN = 'N'
+		        AND T2.NOTICE_YN = 'Y'
+		        AND T2.BBS_ID = #{bbsId}
+		        AND (  T2.NOTICE_STR_YMD <![CDATA[<=]]> TO_CHAR(SYSDATE, 'YYYYMMDD')  
+		        AND T2.NOTICE_END_YMD <![CDATA[>=]]> TO_CHAR(SYSDATE, 'YYYYMMDD'))
+		        
+		        <if test="title != null and !''.equals(title)">
+					AND T2.BBS_SJ LIKE CONCAT('%', CONCAT(#{title}, '%'))
+				</if>
+				<if test="bbsCn != null and !''.equals(bbsCn)">
+					AND DBMS_LOB.INSTR(T2.BBS_CN, #{bbsCn}) > 0
+				</if>
+				<if test="registId != null and !''.equals(registId)">
+					AND
+					(
+					 T2.REGIST_ID LIKE CONCAT('%', CONCAT(#{registId}, '%'))
+					OR
+					 T2.REGIST_ID IN (SELECT USER_ID FROM SYS_USER WHERE USER_NM LIKE CONCAT('%', CONCAT(#{registId}, '%')) )
+					)
+				</if>
+				
+			UNION ALL
+			SELECT
+			    T1.BBS_SEQ_NO
+			FROM 
+			    CM_BOARD_DET T1 
+			WHERE 
+				T1.DEL_YN = 'N'
+				AND T1.BBS_ID = #{bbsId}
+				<if test="title != null and !''.equals(title)">
+					AND T1.BBS_SJ LIKE CONCAT('%', CONCAT(#{title}, '%'))
+				</if>
+				<if test="bbsCn != null and !''.equals(bbsCn)">
+					AND DBMS_LOB.INSTR(T1.BBS_CN, #{bbsCn}) > 0
+				</if>
+				<if test="registId != null and !''.equals(registId)">
+					AND T1.REGIST_ID LIKE CONCAT('%', CONCAT(#{registId}, '%'))
+				</if>
+				
+		) TT1
+	</select>
+ 
+ 	<select id="selectBoardInfo" resultMap="cmmnBbsMasterMap" parameterType="cmmnBbsMasterVO">
+		SELECT /* biz.bbs.selectBoardInfo */
+			'BBS00001' BBS_ID
+			, '공지사항 게시판' BBS_DESC
+			, 'SYSTEM' REGIST_ID
+			, SYSDATE REGIST_DATE
+			, 'SYSTEM' UPDT_ID
+			, SYSDATE UPDT_DATE
+			, '공지사항' BBS_NAME
+			, 1 SORT_NO
+			, 1 LEVEL_NO
+			, 'Y' USE_YN
+			, NULL UPPER_BBS_ID
+		FROM
+			DUAL
+	</select>
+	
+	
+	<insert id ="updateCmmnBbsHistory" parameterType="java.util.Map" >
+		INSERT /* biz.bbs.updateCmmnBbsHistory */ 
+		 INTO    CM_BOARD_DET_CHG_H
+			(
+			    SELECT  NVL((SELECT MAX(NVL(BBS_CHG_SEQ_NO,0)) 
+			                FROM CM_BOARD_DET_CHG_H BB WHERE BB.BBS_ID = AA.BBS_ID AND BB.BBS_SEQ_NO = AA.BBS_SEQ_NO) , 0) + 1
+			             AS BBS_CHG_SEQ_NO
+			            , BBS_SEQ_NO
+			            , BBS_ID
+			            , BBS_SJ
+			            , BBS_CN
+			            , ATCH_FILE_YN
+			            , NOTICE_STR_YMD
+			            , NOTICE_STR_TIME
+			            , NOTICE_END_YMD
+			            , NOTICE_END_TIME
+			            , NOTICE_YN
+			            , DEL_YN
+			            , READ_CNT
+			            , COMET_CNT
+			            , REGIST_ID
+			            , REGIST_DATE
+			            , #{updt_id} AS UPDT_ID
+			            , SYSDATE AS UPDT_DATE
+			            , BBS_DIV_CODE
+			            , 'N'
+			    FROM    CM_BOARD_DET AA
+			    WHERE   AA.BBS_SEQ_NO = #{bbs_seq_no}
+			    AND     AA.BBS_ID = #{bbs_id}
+			)	
+	</insert>
+	
+	<insert id="insertCmmnBbs" parameterType="cmmnBbsVO">
+		INSERT /* biz.bbs.insertCmmnBbs */
+			INTO
+		CM_BOARD_DET
+		(
+			BBS_SEQ_NO
+			, BBS_ID
+			, BBS_SJ
+			, BBS_CN
+			, BBS_DIV_CODE
+			<if test='noticeYn != null and !"".equals(noticeYn)'>
+			, NOTICE_YN
+			</if>
+			, ATCH_FILE_YN
+			<if test='noticeYn != null and !"".equals(noticeYn)'>
+			, NOTICE_STR_YMD
+			, NOTICE_STR_TIME
+			, NOTICE_END_YMD
+			, NOTICE_END_TIME
+			</if>
+			, DEL_YN
+			, READ_CNT
+			, COMET_CNT
+			, REGIST_ID
+			, REGIST_DATE
+		)
+		VALUES
+		(
+			#{bbsSeqNo}
+			, #{bbsId}
+			, #{bbsSj}
+			, #{bbsCn}
+			, '11111'
+			<if test='noticeYn != null and !"".equals(noticeYn)'>
+			, #{noticeYn}
+			</if>
+			, 'N'
+			<if test='noticeYn != null and !"".equals(noticeYn)'>
+				<if test='"Y".equals(noticeYn)'>
+					, #{noticeStrYmd}
+					, #{noticeStrTime}
+					, #{noticeEndYmd}
+					, #{noticeEndTime}
+				</if>
+				<if test='"N".equals(noticeYn)'>
+					, ''
+					, ''
+					, ''
+					, ''
+				</if>
+			</if>
+			, 'N'
+			, 0
+			, 0
+			, #{registId}
+			, SYSDATE
+		)
+	</insert>
+
+
+	<select id="selectCountCmmnBbsReadHistory" parameterType="cmmnBbsReadHVO" resultType="int">
+		SELECT /* biz.bbs.selectCountCmmnBbsReadHistory */
+			COUNT(USER_ID) CNT
+		FROM
+			CM_BOARD_DET_READ_H T1
+		WHERE
+			BBS_SEQ_NO 			= #{bbsSeqNo}
+			AND BBS_ID 			= #{bbsId}
+			AND USER_ID 		= #{userId}
+	</select>
+	
+	<update id="updateCmmnBbsCnt"  parameterType="cmmnBbsVO">
+		UPDATE /* biz.bbs.updateCmmnBbsCnt */
+			CM_BOARD_DET
+		SET
+			BBS_DIV_CODE = '11111'
+			<if test="readngCnt != null and !''.equals(readngCnt)">
+			,READ_CNT = #{readCnt}
+			</if>
+			<if test="cometCnt != null and !''.equals(cometCnt)">
+			,COMET_CNT = #{cometCnt}
+			</if>
+		WHERE 1=1						
+			AND BBS_SEQ_NO = #{bbsSeqNo}
+			AND BBS_ID = #{bbsId}
+	</update>
+	
+	<insert id="insertCmmnBbsReadHistory" parameterType="cmmnBbsReadHVO">
+		INSERT /* biz.bbs.insertCmmnBbsReadHistory */
+		INTO
+			CM_BOARD_DET_READ_H
+			(
+				USER_ID
+				, BBS_SEQ_NO
+				, BBS_ID
+				, READNG_DATE
+				, REGIST_ID
+				, REGIST_DATE
+			)
+			VALUES
+			(
+				#{userId}
+				, #{bbsSeqNo}
+				, #{bbsId}
+				, SYSDATE
+				, #{registId}
+				, SYSDATE
+			)
+	</insert>
+	
+	<select id="selectBbsInfoWithFile" resultMap="cmmnBbsWithFileMap" parameterType="cmmnBbsVO">
+		SELECT /* biz.bbs.selectBbsInfoWithFile */
+			T1.BBS_SEQ_NO
+			, T1.BBS_ID
+			, T1.BBS_SJ
+			, T1.BBS_CN
+			, T1.NOTICE_YN
+			, T1.ATCH_FILE_YN
+			, T1.NOTICE_STR_YMD
+			, T1.NOTICE_STR_TIME
+			, T1.NOTICE_END_YMD
+			, T1.NOTICE_END_TIME
+			, T1.DEL_YN
+			, T1.READ_CNT
+			, T1.COMET_CNT
+			, NVL((SELECT USER_NM FROM SYS_USER WHERE USER_ID = T1.REGIST_ID),T1.REGIST_ID) AS REGIST_NAME
+			, T1.REGIST_ID
+			, T1.REGIST_DATE
+			, NVL((SELECT USER_NM FROM SYS_USER WHERE USER_ID = T1.UPDT_ID),T1.UPDT_ID) AS UPDT_NAME
+			, T1.UPDT_ID
+			, T1.UPDT_DATE
+			, T1.BBS_DIV_CODE
+			, T1.BBS_DIV_CODE AS BBS_DIV_CODE_NAME
+		    , CASE WHEN (SELECT COUNT(*) CNT FROM CM_BOARD_DET_READ_H BBSH WHERE BBSH.BBS_SEQ_NO = T1.BBS_SEQ_NO AND BBSH.USER_ID = #{bbsReadUser}) > 0 THEN 999
+				ELSE TO_CHAR(TO_DATE(SYSDATE) - TO_DATE(T1.REGIST_DATE)) + 0
+				END 										AS IS_NEW
+			
+			, (SELECT USER_NM FROM SYS_USER WHERE USER_ID = T1.REGIST_ID ) AS REGIST_NAME
+		FROM
+			CM_BOARD_DET T1
+		WHERE
+			T1.DEL_YN = 'N'
+		AND
+			T1.BBS_SEQ_NO = #{bbsSeqNo}
+		<if test="bbsId != null">	
+		AND 
+			T1.BBS_ID	  = #{bbsId}
+		</if>
+	</select>	
+	
+	<update id="updateCmmnBbs" parameterType="cmmnBbsVO">
+		UPDATE /* biz.bbs.updateCmmnBbs */
+			CM_BOARD_DET
+		SET
+			UPDT_ID						= #{updtId}
+			, UPDT_DATE					= SYSDATE
+			<if test='bbsSj != null and !"".equals(bbsSj)'>
+			, BBS_SJ					= #{bbsSj}
+			</if>
+			<if test='bbsCn != null and !"".equals(bbsCn)'>
+			, BBS_CN					= #{bbsCn}
+			</if>
+			<if test='noticeYn != null and !"".equals(noticeYn)'>
+			, NOTICE_YN					= #{noticeYn}
+			</if>
+			<if test='atchFileYn != null and !"".equals(atchFileYn)'>
+			, ATCH_FILE_YN				= #{atchFileYn}
+			</if>
+			<if test='noticeYn != null and !"".equals(noticeYn)'>
+				<if test='"Y".equals(noticeYn)'>
+					, NOTICE_STR_YMD	= #{noticeStrYmd}
+					, NOTICE_STR_TIME	= #{noticeStrTime}
+					, NOTICE_END_YMD	= #{noticeEndYmd}
+					, NOTICE_END_TIME	= #{noticeEndTime}
+				</if>
+				<if test='"N".equals(noticeYn)'>
+					, NOTICE_STR_YMD	= ''
+					, NOTICE_STR_TIME	= ''
+					, NOTICE_END_YMD	= ''
+					, NOTICE_END_TIME	= ''
+				</if>
+			</if>
+			<if test='delYn != null and !"".equals(delYn)'>
+			, DEL_YN					= #{delYn}
+			</if>
+			<if test='readCnt != null and readCnt > 0'>
+			, READ_CNT					= #{readCnt}
+			</if>
+			<if test="cometCnt != null and cometCnt > 0">
+			, COMET_CNT					= #{cometCnt}
+			</if>
+			<if test='bbsDivCode != null and !"".equals(bbsDivCode)'>
+			, BBS_DIV_CODE				= #{bbsDivCode}
+			</if>
+		WHERE
+			BBS_SEQ_NO					= #{bbsSeqNo}
+			<if test='bbsId != null and !"".equals(bbsId)'>
+			AND BBS_ID					= #{bbsId}
+			</if>
+	</update>	
+	
+	<update id="deleteCmmnBbsInfo" parameterType="cmmnBbsVO">
+		UPDATE /* biz.cmmnbbs.deleteCmmnBbsInfo */
+			CM_BOARD_DET
+		SET
+			DEL_YN = 'Y'
+			, UPDT_ID = #{updtId}
+			, UPDT_DATE = SYSDATE
+		WHERE 1=1						
+			AND BBS_SEQ_NO = #{bbsSeqNo}
+	</update>
+
+
+	<update id="deleteCmmnBbsAtchFile" parameterType="cmmnBbsfileVO">
+		UPDATE /* biz.bbs.deleteCmmnBbsAtchFile */
+			CO_ATCHFILE_MST
+		SET
+			UPDT_ID = #{updtId}
+			, UPDT_DATE = SYSDATE
+			, MASTER_ID = '0'
+			, DEL_YN = #{delYn}
+		WHERE 1=1
+			<if test='masterId != null and !"".equals(masterId)'>
+				AND MASTER_ID 		= #{masterId}
+			</if>
+			<if test="atchFileIds!= null and atchFileIds.size() > 0">
+				<foreach collection="atchFileIds" item="i" open="AND ATCH_FILE_SEQ_NO IN (" close=")" separator=", ">
+					#{i}
+				</foreach>
+			</if>
+	</update>
+		
+</mapper>
