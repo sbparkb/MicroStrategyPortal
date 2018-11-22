@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans
+	xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
+
+	<!-- DispatcherServlet Context: defines this servlet's request-processing 
+		infrastructure -->
+
+	<!-- Enables the Spring MVC @Controller programming model -->
+	<annotation-driven />
+	
+	<context:annotation-config/>
+
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving 
+		up static resources in the ${webappRoot}/resources directory -->
+	<resources mapping="/**" location="/" />
+ 
+	<!-- messages -->
+	<beans:bean id="localeResolver"
+		class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+		<beans:property name="defaultLocale" value="ko" />
+	</beans:bean>
+
+	<beans:bean id="messageSource"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">	
+		<beans:property name="basenames">
+			<beans:list>
+				<beans:value>classpath:/message/message</beans:value>
+				<beans:value>classpath:/properties/system</beans:value>
+				<beans:value>classpath:/properties/se</beans:value>
+			</beans:list>
+		</beans:property>		
+		<beans:property name="defaultEncoding">
+			<beans:value>UTF-8</beans:value>
+		</beans:property>
+		<beans:property name="cacheSeconds">
+			<beans:value>60</beans:value>
+		</beans:property>
+	</beans:bean>
+
+	<beans:bean id="messageSourceAccessor"
+		class="org.springframework.context.support.MessageSourceAccessor">
+		<beans:constructor-arg ref="messageSource" />
+	</beans:bean>
+	
+ 	<beans:bean id="message"
+		class="com.groto.cmm.util.SystemMessage">
+		<beans:property name="messageSourceAccessor"
+			ref="messageSourceAccessor" />
+	</beans:bean>
+
+	
+	<beans:bean id="sqlSessionFactory"
+		class="org.mybatis.spring.SqlSessionFactoryBean">
+		<beans:property name="dataSource" ref="dataSource" />
+		<beans:property name="configLocation"
+			value="classpath:/mybatis/mybatis-config.xml" />
+		<beans:property name="mapperLocations">
+			<beans:list>
+				<beans:value>classpath:/mybatis/mappers/*.xml</beans:value>
+				<beans:value>classpath:/mybatis/mappers/biz/*.xml</beans:value>
+			</beans:list>
+		</beans:property>
+	</beans:bean>
+	
+	<beans:bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+        <beans:constructor-arg ref="sqlSessionFactory" />
+    </beans:bean>
+    
+    <beans:bean id="sqlSessionFactory2" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <beans:property name="dataSource" ref="dataSource2" /> 
+        <beans:property name="configLocation" value="classpath:/mybatis/mybatis-config.xml" />
+        <beans:property name="mapperLocations">
+        	<beans:list>
+ 				<beans:value>classpath:/mybatis/mappers/base/erp*.xml</beans:value>
+			</beans:list>
+    	</beans:property>
+    </beans:bean>
+ 
+    <beans:bean id="sqlSessionTemplate2" class="org.mybatis.spring.SqlSessionTemplate">
+        <beans:constructor-arg ref="sqlSessionFactory2" />
+    </beans:bean>
+
+	<!-- transaction -->
+ 	<beans:bean id="txManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<beans:property name="dataSource">
+			<beans:ref bean="dataSource" />
+		</beans:property>
+	</beans:bean>
+
+	<tx:annotation-driven transaction-manager="txManager" />
+
+	<tx:advice id="txAdvice" transaction-manager="txManager">
+		<tx:attributes>
+			<tx:method name="save*" rollback-for="Exception" />
+			<tx:method name="update*" rollback-for="Exception" />
+			<tx:method name="remove*" rollback-for="Exception" />
+			<tx:method name="insert*" rollback-for="Exception" />
+		</tx:attributes>
+	</tx:advice>
+
+	<beans:bean id="txManager2" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<beans:property name="dataSource">
+			<beans:ref bean="dataSource2" />
+		</beans:property>
+	</beans:bean>
+	
+	<tx:annotation-driven transaction-manager="txManager2" /> 
+ 
+	 <tx:advice id="txAdvice2" transaction-manager="txManager2">
+		<tx:attributes>
+			<tx:method name="save*" rollback-for="Exception"/>
+			<tx:method name="update*" rollback-for="Exception"/>
+			<tx:method name="remove*" rollback-for="Exception"/>
+			<tx:method name="insert*" rollback-for="Exception"/>
+		</tx:attributes>
+	</tx:advice>
+	
+	<!-- file upload -->
+	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+    	<beans:property name="defaultEncoding" value="utf-8"/>
+        <!--   <property name="maxUploadSize" value="10000000"/>  
+        <property name="uploadTempDir" ref="uploadDirResource"/>  -->
+    </beans:bean>
+	<beans:bean id="uploadDirResource" class="org.springframework.core.io.FileSystemResource">
+         <beans:constructor-arg>
+          	<beans:value>/home/mstr/attachment/uploadDir/</beans:value>
+         </beans:constructor-arg>
+    </beans:bean>
+    
+	<!-- component -->
+    <context:component-scan base-package="com.groto" use-default-filters="false">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/>
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Component"/>
+    </context:component-scan>
+	 
+</beans:beans>

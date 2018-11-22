@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE block SYSTEM "blockLibrary.dtd">
+<block name="MojoToolbarModel">
+ <assignments>
+ <property name="items">
+ <list>
+ <block listAction="delete" listElementKey="K6" listItem="K6" name="MojoToolbarButtonModel"/>
+ </list>
+ </property>
+ </assignments>
+</block>

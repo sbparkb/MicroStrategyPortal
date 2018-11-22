@@ -1,0 +1,86 @@
+
+function submitLink(H, F) {
+    
+    //alert('1.' + F);
+    
+    if (!F) {
+	F = window.event;
+    }
+    if (F && F.ctrlKey) {
+	return false;
+    }
+
+    
+    var B = H.target; 
+    
+    //alert('2.' + F + ', H: ' + H + ', iframe : '+ iframe);
+    
+    if (iframe && B.indexOf("_blank") === -1) {
+	iframe.showWaitPage(true);
+    }
+    window.mstrSubmitLink = true;
+    if (H.getAttribute("useIframe")) {
+	if (history.pushState) {
+	    var D = H.href.split(/[?#]/)[0];
+	    history.pushState({
+		target : H.target,
+		href : H.href
+	    }, H.title, D);   
+	}
+	H.href = replaceURLParameter(H.href, "iframe", "true");
+    }
+    var G = H.href;
+    
+    //alert('G : ' + G)
+    var A = document.getElementById("cssAnalyzerToolbar");
+    var I = (getCookie(ENABLE) == "true") && (A != null) && F.altKey;
+    if (I) {
+	return false;
+    }
+ 
+    if (B == "frameManager"
+	    || (typeof (microstrategy) != "undefined"
+		    && microstrategy.updateManager && microstrategy.updateManager
+		    .hasChangesToSubmit())) {
+	
+	//alert('if');
+	if (!bIsIE7 || document.readyState == "complete") {
+	    var J = createDynamicForm(G);
+	    if (B) {
+		J.target = B;
+	    }
+	    if (H.getAttribute("runAsExpress") == "1") {
+		createHiddenInput(J, "innerWidth", getClientWidth());
+		createHiddenInput(J, "innerHeight", getClientHeight());
+	    }
+	    submitForm(J);
+	}
+	return false;
+    }
+    //console.log(pageState);
+    //alert('pageState : ' + pageState);
+    
+    if (typeof (pageState) != "undefined") {
+	var C = updateLink(G);
+	//alert("C1 :" + C);
+	//console.log("C1 :" + C);
+	
+	C = moveAnchor(C);
+	//alert("C2 :" + C);
+	//console.log("C2 :" + C);
+	
+	var E = null;
+	if (bIsIE6 && H.childNodes && (H.childNodes.length == 1)
+		&& H.childNodes[0].nodeType == 3) {
+	    E = H.innerHTML;
+	}
+	var J = createDynamicForm(C);
+	if (B) {
+	    J.target = B;
+	}
+	submitForm(J);
+	return false;
+    } else {
+	return true;
+    }
+}

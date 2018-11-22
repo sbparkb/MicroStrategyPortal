@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shape-config>
+    <shapes>        
+        <shape 
+            id="100" 
+            desc="US States" 
+            descWeb="mstrweb.9229" 
+            descFlash="mstr.1622" 
+            descDesktop="26973"         
+            roleId="2" 
+            default="true"
+            type="Polygon" 
+            shapeKey="name" 
+            shapeCat="1003" />
+        <shape 
+            id="200" 
+            desc="State Abbreviations"
+            descWeb="mstrweb.9229" 
+            descFlash="mstr.1622" 
+            descDesktop="26973"          
+            roleId="2" 
+            type="Polygon"
+            shapeKey="abbr" 
+            shapeCat="1003" />
+        <shape 
+            id="300" 
+            desc="ZipCode" 
+            descWeb="mstrweb.9229" 
+            descFlash="mstr.1622" 
+            descDesktop="26973"         
+            roleId="8" 
+            default="true" 
+            type="Polygon"
+            shapeKey="name" 
+            shapeCat="1005" />
+        <shape 
+            id="4" 
+            desc="Countries of the world"
+            descWeb="mstrweb.9229" 
+            descFlash="mstr.1622" 
+            descDesktop="26973"          
+            roleId="3" 
+            default="true"
+            type="Polygon" 
+            shapeKey="name" 
+            shapeCat="1002" />
+        <shape 
+            id="5" 
+            desc="World Admin Divisions"
+            descWeb="mstrweb.9229" 
+            descFlash="mstr.1622" 
+            descDesktop="26973"          
+            roleId="2" 
+            type="Polygon"
+            shapeCat="1003" 
+            shapeKey="name" />
+        <shape 
+            id="6" 
+            desc="US Counties" 
+            descWeb="mstrweb.9229" 
+            descFlash="mstr.1622" 
+            descDesktop="26973"         
+            roleId="9" 
+            default="true"
+            type="Polygon" 
+            sfr="2" 
+            shapeKey="abbr"
+            shapeCat="1004" />
+    </shapes>
+    <roles>
+        <role id="1" name="City" />
+        <role id="2" name="State" />
+        <role id="3" name="Country" />
+        <role id="4" name="Location" />
+        <role id="5" name="Latitiude" />
+        <role id="6" name="Longitude" />
+        <role id="7" name="Other" />
+        <role id="8" name="ZipCode" />
+        <role id="9" name="County" />
+    </roles>
+</shape-config>

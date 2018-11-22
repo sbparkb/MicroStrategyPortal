@@ -1,0 +1,9 @@
+<%@ taglib prefix="spring"    uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="form"      uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c"         uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt"       uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn"        uri="http://java.sun.com/jsp/jstl/functions"%>
+<c:set var="ContextName" value="${pageContext.request.contextPath}" />
+<c:set var="URL.WEB.SERVER" scope="request"><spring:message code='URL.WEB.SERVER' /></c:set>
+<c:set var="URL.WAS.SERVER" scope="request"><spring:message code='URL.WAS.SERVER' /></c:set>
+<c:set var="URL.IMG.SERVER" scope="request"><spring:message code='URL.IMG.SERVER' /></c:set>

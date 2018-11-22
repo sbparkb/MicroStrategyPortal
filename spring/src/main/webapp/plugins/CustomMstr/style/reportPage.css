@@ -1,0 +1,17 @@
+/* report execute page color page navigater postition bae */
+
+.mstrDockCenter {
+	background: #fff; /*#d2d2d3;*/
+	padding-top:  5px; /* 8px; */
+	padding-left: 3px
+}
+
+
+.repLayoutRight {
+	border: 1px solid #AAA;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	background: #fff;  /* #fff;aqua; */
+	padding: 0
+}

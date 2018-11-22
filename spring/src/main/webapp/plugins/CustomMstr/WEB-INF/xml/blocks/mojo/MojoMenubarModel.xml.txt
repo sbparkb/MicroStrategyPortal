@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE block SYSTEM "blockLibrary.dtd">
+<block name="MojoMenubarModel">
+  <assignments>
+    <property name="items">
+      <list>
+        <block name="MojoMenubarFileModel">
+        
+			<property name="items">
+				<list>
+					<block listAction="delete" listElementKey="closeVI" listItem="closeVI" name="MojoToolbarButtonModel"/>
+				</list>
+			</property>
+        
+        </block>
+      </list>
+    </property>
+  </assignments

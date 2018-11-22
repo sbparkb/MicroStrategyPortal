@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN" "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<!-- Appenders -->
+	<appender name="console" class="org.apache.log4j.ConsoleAppender">
+		<param name="Target" value="System.out" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-5p: %c - %m%n" />
+		</layout>
+	</appender>
+	
+	<!-- 일별 로그 파일 설정 -->
+    <appender name="FileAppender" class="org.apache.log4j.DailyRollingFileAppender">
+
+        <!-- 로그파일 경로로 상대경로 입력시 실행한 디렉토리에 파일이 생성되므로 적절한 로그 경로를 지정해야 한다. -->
+        <param name="File" value="/mstr/mstr_home/log/portal.log" />
+        <!-- 로그파읾명 뒤에 날자 패턴이 붙게되며 날자 패턴이 yyyy-MM일경우 일별이 아닌 매달 로그파일을 생성한다. -->
+        <param name="DatePattern" value="'.'yyyy-MM-dd" />
+        <!-- 기존 파일에 로그를 추가, false로 설정하게되면 로그파일이  매번 초기화된다. -->
+        <param name="Append" value="true" />
+        <!-- 로그형식을 지정한다. -->
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%-5p] %d{yy/MM/dd HH:mm:ss.SSS} [%C] (%F:%L) \n  - %m%n" />
+        </layout>
+    </appender> 
+    
+   <logger name="com.groto" additivity="false">
+  		<level value="ERROR"/> 
+  		<appender-ref ref="console" />
+	</logger>
+	
+	<logger name="java.sql" additivity="false">
+     <level value="ERROR"/>  
+        <appender-ref ref="console"/>  
+    </logger>      
+
+    <logger name="org.apache.ibatis" additivity="true">
+        <level value="ERROR"/> 
+        <appender-ref ref="console" />
+    </logger>
+	
+	<!-- 3rdparty Loggers -->
+	<!-- 
+	<logger name="org.springframework.core">
+		<level value="INFO" />
+	</logger>	
+	
+	<logger name="org.springframework.beans">
+		<level value="INFO" />
+	</logger>
+	
+	<logger name="org.springframework.context">
+		<level value="INFO" />
+	</logger>
+
+	<logger name="org.springframework.web">
+		<level value="INFO" />
+	</logger>
+	 -->
+	 
+	<!-- log SQL with timing INFOrmation, post execution -->  
+	<!-- 
+ 	<logger name="jdbc.sqltiming" additivity="false">  
+  		<level value="DBUG" />  
+  		<appender-ref ref="console" />  
+ 	</logger>  
+ 	 -->
+ 	 
+	<!-- Root Logger -->
+	<root>
+		<priority value="ERROR" />
+		<!-- 
+        <appender-ref ref="FileAppender" />
+         -->
+		<appender-ref ref="console" />
+	</root>
+	
+</log4j:configuration>

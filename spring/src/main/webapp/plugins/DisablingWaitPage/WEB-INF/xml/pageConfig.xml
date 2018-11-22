@@ -1,0 +1,13 @@
+<framework>
+<pages>
+<page name="search">
+<web-beans>
+<web-bean name="sb">
+<init-properties>
+<property name="maxWait" source="const" value="-1"/>
+</init-properties>
+</web-bean>
+</web-beans>
+</page>
+</pages>
+</framework>

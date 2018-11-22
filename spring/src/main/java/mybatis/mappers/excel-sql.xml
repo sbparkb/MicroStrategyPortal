@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd"> 
+
+<mapper namespace="excel">
+ 
+	
+	<select id="selectExcelAuthCnt" resultType="String"  parameterType="hashMap">
+		SELECT
+			COUNT(A.XLS_ID) AS CNT
+		FROM DW_SY_BI_XLS_LST A
+		WHERE A.MSTR_ROLE IN
+				(
+        <foreach collection="mstrGroup" item="groupId" index="index"   separator=",">
+            #{groupId}
+        </foreach>
+				)
+ 	</select>
+	
+	<select id="selectExcelAuthList" resultType="map" parameterType="hashMap">
+        SELECT
+              A.XLS_ID AS EXCEL_ID,
+			  A.XLS_NM AS EXCEL_NAME,
+			  A.XLS_EXPL AS EXCEL_DESC,
+			  A.MSTR_ROLE 
+        FROM DW_SY_BI_XLS_LST A
+		WHERE A.MSTR_ROLE IN
+				(
+        <foreach collection="mstrGroup" item="groupId" index="index"   separator=",">
+            #{groupId}
+        </foreach>
+				)
+        ORDER BY A.XLS_SEAR_SEQ_ORD ASC
+	</select>
+
+	<delete id="deleteExcel01"  parameterType="java.util.Map">
+		DELETE /*  excel.deleteExcel01  */  
+			FROM DW_EX_WTH_EXCH_EXTR_COST_L A
+	   	WHERE
+		   	A.COMP_CD  =  #{COL0} 
+			AND A.STD_YMON =  #{COL1}
+			AND A.WH_NM  =  #{COL2}  
+			AND A.WTH_WTHO_EXCH_CLS_NM  =  #{COL3}  
+			AND A.BL_NO  =  #{COL4}  
+  	</delete> 	
+ 	
+	<insert id="insertExcel01"  parameterType="java.util.Map">
+  		INSERT /*  excel.insertExcel01  */
+			INTO DW_EX_WTH_EXCH_EXTR_COST_L
+		        (
+		        COMP_CD 
+ 		 		, STD_YMON
+		 		, WH_NM
+		 		, WTH_WTHO_EXCH_CLS_NM
+		 		, BL_NO
+		 		, BRAN_NM
+		 		, ITEM_NM
+		 		, SBMT_NO
+		 		, RPT_DT
+		 		, LCNS_DT
+		 		, RPT_DOLR_AMT
+		 		, DUT_WON_AMT
+		 		, IMP_VAT_WON_AMT
+		 		, IMMI_FEE_WON_AMT
+		 		, VAT_WON_AMT
+		 		, CITES_WON_AMT
+		 		, BUP_NM
+ 		 		, ETL_LOAD_DTTM
+		        )
+		VALUES(
+		      	#{COL0}
+  				, #{COL1} 
+  				, #{COL2} 
+  				, #{COL3}
+  				, #{COL4}
+  				, #{COL5}
+  				, #{COL6}
+  				, #{COL7}
+  				, #{COL8}
+  				, #{COL9}
+		      	, #{COL10}
+  				, #{COL11} 
+  				, #{COL12} 
+  				, #{COL13}
+  				, #{COL14}
+  				, #{COL15}
+  				, #{COL16}				
+		 		, SYSDATE
+		      )
+ 	</insert>
+
+	<delete id="deleteExcel02"  parameterType="java.util.Map">
+		DELETE /*  excel.deleteExcel02  */  
+			FROM DW_EX_WTHO_EXCH_UNCO_L A
+	   	WHERE
+		   	A.COMP_CD  =  #{COL0} 
+			AND A.STD_YMON =  #{COL1}
+			AND A.WH_NM  =  #{COL2}  
+			AND A.WTH_WTHO_EXCH_CLS_NM  =  #{COL3}  
+			AND A.BL_NO  =  #{COL4}  
+  	</delete> 	
+ 	
+	<insert id="insertExcel02"  parameterType="java.util.Map">
+  		INSERT /*  excel.insertExcel02  */
+			INTO DW_EX_WTHO_EXCH_UNCO_L
+		        (
+		        COMP_CD 
+ 		 		, STD_YMON
+		 		, WH_NM
+		 		, WTH_WTHO_EXCH_CLS_NM
+		 		, BL_NO
+		 		, BRAN_NM
+		 		, ITEM_NM
+		 		, SBMT_NO
+		 		, RPT_DT
+		 		, LCNS_DT
+		 		, RPT_DOLR_AMT
+		 		, DUT_WON_AMT
+		 		, IMP_VAT_WON_AMT
+		 		, IMMI_FEE_WON_AMT
+		 		, VAT_WON_AMT
+ 		 		, ETL_LOAD_DTTM
+		        )
+		VALUES(
+		      	#{COL0}
+  				, #{COL1} 
+  				, #{COL2} 
+  				, #{COL3}
+  				, #{COL4}
+  				, #{COL5}
+  				, #{COL6}
+  				, #{COL7}
+  				, #{COL8}
+  				, #{COL9}
+		      	, #{COL10}
+  				, #{COL11} 
+  				, #{COL12} 
+  				, #{COL13}
+  				, #{COL14}
+		 		, SYSDATE
+		      )
+ 	</insert>
+ 	
+	<delete id="deleteExcel03"  parameterType="java.util.Map">
+		DELETE /*  excel.deleteExcel03  */  
+			FROM DW_EX_TRAN_FEE_L A
+	   	WHERE
+		   	A.COMP_CD  =  #{COL0} 
+			AND A.STD_YMON =  #{COL1}
+			AND A.WH_NM  =  #{COL2}  
+			AND A.WTH_WTHO_EXCH_CLS_NM = #{COL3}  
+			AND A.BL_NO  =  #{COL4}  
+  	</delete> 	
+ 	
+	<insert id="insertExcel03"  parameterType="java.util.Map">
+  		INSERT /*  excel.insertExcel03  */
+			INTO DW_EX_TRAN_FEE_L
+		        (
+					COMP_CD
+					,STD_YMON
+					,WH_NM
+					,WTH_WTHO_EXCH_CLS_NM
+					,BL_NO
+					,FEE_WON_AMT
+					,TRAN_FEE_WON_AMT
+					,THC_WON_AMT
+					,VAT_WON_AMT
+					,RMK
+					,FEE_RESN
+					,BUP_NM
+					,ETL_LOAD_DTTM
+		        )
+			VALUES(
+			      	#{COL0}
+	  				, #{COL1} 
+	  				, #{COL2} 
+	  				, #{COL3}
+	  				, #{COL4}
+	  				, #{COL5}
+	  				, #{COL6}
+	  				, #{COL7}
+	  				, #{COL8}
+	  				, #{COL9} 
+	  				, #{COL10} 
+	  				, #{COL11} 
+	  				, SYSDATE
+			      )
+ 	</insert>
+
+
+	<delete id="deleteExcel04"  parameterType="java.util.Map">
+		DELETE /*  excel.deleteExcel04  */  
+			FROM DW_EX_FRWD_AIR_FEE_L A
+	   	WHERE
+		   	A.COMP_CD  =  #{COL0} 
+			AND A.STD_YMON =  #{COL1}
+			AND A.WH_NM  =  #{COL2}  
+			AND A.WTH_WTHO_EXCH_CLS_NM  =  #{COL3}  
+			AND A.BL_NO  =  #{COL4}  
+  	</delete> 	
+ 	
+	<insert id="insertExcel04"  parameterType="java.util.Map">
+  		INSERT /*  excel.insertExcel04  */
+			INTO DW_EX_FRWD_AIR_FEE_L
+		        (
+					COMP_CD
+					,STD_YMON
+					,WH_NM
+					,WTH_WTHO_EXCH_CLS_NM
+					,BL_NO
+					,DEPA_PLAC_NM
+					,DEST_NM
+					,DG_CLS_NM
+					,TRS_COND_NM
+					,TRAN_WAY_NM
+					,GWT_WON_AMT
+					,CWT_WON_AMT
+					,AIR_FRGT_WON_AMT
+					,FSC_WON_AMT
+					,SC_WON_AMT
+					,INLD_TRAN_WON_AMT
+					,ETC_TRAN_WON_AMT
+					,SPCL_EXPR_TRAN_WON_AMT
+					,IMMI_WON_AMT
+					,HC_WON_AMT
+					,BUP_NM
+					,RMK
+					,ETL_LOAD_DTTM
+		        )
+			VALUES(
+			      	#{COL0}
+	  				, #{COL1} 
+	  				, #{COL2} 
+	  				, #{COL3}
+	  				, #{COL4}
+	  				, #{COL5}
+	  				, #{COL6}
+	  				, #{COL7}
+	  				, #{COL8}
+	  				, #{COL9}
+			      	, #{COL10}
+	  				, #{COL11} 
+	  				, #{COL12} 
+	  				, #{COL13}
+	  				, #{COL14}
+	  				, #{COL15}
+	  				, #{COL16}			
+	  				, #{COL17}
+	  				, #{COL18}
+	  				, #{COL19}
+			      	, #{COL20}
+	  				, #{COL21} 
+			 		, SYSDATE
+			      )
+ 	</insert>
+
+
+
+ 	
+	<delete id="deleteExcel05"  parameterType="java.util.Map">
+		DELETE /*  excel.deleteExcel05  */  
+			FROM DW_EX_BRAN_CLSB_AGNT_L A
+	   	WHERE
+			A.COMP_CD =  #{COL0} 
+			AND A.STD_YMON =  #{COL1}
+			AND A.BRAN_NM =  #{COL2}  
+ 	</delete> 	
+ 	
+	<insert id="insertExcel05"  parameterType="java.util.Map">
+  		INSERT /*  excel.insertExcel05  */
+			INTO DW_EX_BRAN_CLSB_AGNT_L
+		        (
+		        COMP_CD 
+  				, STD_YMON 
+  				, BRAN_NM
+		 		, AGNT_NM
+		 		, ETL_LOAD_DTTM
+		        )
+		VALUES(
+		      	#{COL0}
+  				, #{COL1} 
+  				, #{COL2} 
+  				, #{COL3}
+		 		, SYSDATE
+		      )
+ 	</insert>
+ 
+ 
+
+	<select id="selectExcelAuthCntOld" resultType="String"  parameterType="hashMap">
+		SELECT
+			COUNT(A.EXCEL_ID) CNT
+		FROM BI_EXCEL_LIST A
+		WHERE A.MSTR_ROLE IN
+				(
+        <foreach collection="mstrGroup" item="groupId" index="index"   separator=",">
+            #{groupId}
+        </foreach>
+				)
+ 	</select>
+ 	
+ 	<select id="selectExcelAuthListOld" resultType="map" parameterType="hashMap">
+        SELECT
+              A.EXCEL_ID,
+			  A.EXCEL_NAME,
+			  A.EXCEL_DESC,
+			  A.MSTR_ROLE 
+        FROM BI_EXCEL_LIST A
+		WHERE A.MSTR_ROLE IN
+				(
+        <foreach collection="mstrGroup" item="groupId" index="index"   separator=",">
+            #{groupId}
+        </foreach>
+				)
+        ORDER BY A.EXCEL_SORT_NO ASC
+	</select>
+	 
+	 
+	<insert id="mergeExcel011"  parameterType="java.util.Map">
+	
+		MERGE /*  excel.mergeExcel011  */  
+			INTO BI_EXCEL_01 AA
+	   	USING	(
+	       SELECT 
+			TO_DATE(#{COL0}, 'YYYYMMDD') as BASE_DT
+			, #{COL1} as PLTFM_NAME
+			, #{COL2} as CHNL_NAME
+			, #{COL3} as VWER_RTNG
+	       FROM DUAL 
+	       
+	    ) BB ON  (  
+	  		AA.BASE_DT = BB.BASE_DT 
+	  		AND  AA.PLTFM_NAME = BB.PLTFM_NAME 
+	  		AND  AA.CHNL_NAME = BB.CHNL_NAME 
+	   	)
+		WHEN MATCHED THEN
+			UPDATE SET
+			      	AA.VWER_RTNG        = BB.VWER_RTNG
+	 				, AA.LOAD_DTM       = SYSDATE
+		WHEN NOT MATCHED THEN
+			INSERT (
+			        AA.BASE_DT 
+	  				, AA.PLTFM_NAME 
+	  				, AA.CHNL_NAME 
+			 		, AA.VWER_RTNG  
+			 		, AA.LOAD_DTM
+			        )
+			VALUES(
+			      	BB.BASE_DT 
+	  				, BB.PLTFM_NAME  
+	  				, BB.CHNL_NAME 
+			 		, BB.VWER_RTNG  
+			 		, SYSDATE
+			      )
+ 	</insert>
+
+	<delete id="deleteExcel011"  parameterType="java.util.Map">
+	
+		DELETE /*  excel.deleteExcel011  */  
+			FROM BI_EXCEL_01 A
+	   	WHERE
+			A.BASE_DT = TO_DATE(#{COL0}, 'YYYYMMDD')  
+			AND A.PLTFM_NAME =  #{COL1}
+			AND A.CHNL_NAME =  #{COL2}  
+ 	</delete> 		 	
+</mapper>

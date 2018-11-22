@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "HTTP://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <setting name="cacheEnabled" value="true" />
+        <setting name="lazyLoadingEnabled" value="true" />
+        <setting name="multipleResultSetsEnabled" value="true" />
+        <setting name="useColumnLabel" value="true" />
+        <setting name="useGeneratedKeys" value="false" />
+        <setting name="defaultExecutorType" value="SIMPLE" />
+        <setting name="defaultStatementTimeout" value="100" />
+        <setting name="safeRowBoundsEnabled" value="false" />
+        <setting name="mapUnderscoreToCamelCase" value="false" />
+        <setting name="localCacheScope" value="SESSION" />
+        <setting name="jdbcTypeForNull" value="OTHER" />
+        <setting name="lazyLoadTriggerMethods" value="equals,clone,hashCode,toString" />
+ 
+        <!--<setting name="defaultExecutorType" value="BATCH" /> -->
+    </settings>
+    <typeAliases> 
+		<typeAlias type="java.util.HashMap"	alias="hashMap"	/>
+		<typeAlias type="java.util.Map"		alias="map"		/>
+		
+		
+		<!-- 	    게시판 -->
+		<typeAlias type="com.groto.web.bbs.vo.CmmnBbsVO" 						alias="cmmnBbsVO"						/>
+		<typeAlias type="com.groto.web.bbs.vo.CmmnBbsReadHVO" 					alias="cmmnBbsReadHVO"					/>
+		<typeAlias type="com.groto.web.bbs.vo.CmmnBbsMasterVO"					alias="cmmnBbsMasterVO"					/>
+		<typeAlias type="com.groto.web.bbs.vo.CmmnBbsFileVO" 					alias="cmmnBbsFileVO"					/>
+		
+    </typeAliases> 
+</configuration>

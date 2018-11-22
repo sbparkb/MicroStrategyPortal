@@ -1,0 +1,54 @@
+@charset "utf-8";
+/* CSS Document */
+/* some custom fonts via google font api */
+/*
+@import url(http://fonts.googleapis.com/css?family=Lobster);
+@import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:extralight);
+*/
+/* content block 1 */
+/*Kichan(175575) height 400px -> 500px modify*/
+#mcs_container{position:relative; margin:0px; width:100%; height:500px;}
+#mcs_container .customScrollBox{position:relative; height:100%; padding:0px; overflow:hidden;}
+#mcs_container .customScrollBox .container{position:relative; /*width:240px;*/ top:0; float:left;}
+#mcs_container .customScrollBox .container.close {padding-left:0px !important;}
+#mcs_container .customScrollBox .content{clear:both;}
+#mcs_container .customScrollBox .content div{padding:0; margin:0; font-size:12px; line-height:20px;}
+#mcs_container .customScrollBox .content p.alt{padding:10px 5px; margin:10px 0; font-size:17px; line-height:19px; color:#999;}
+#mcs_container .customScrollBox img{border:5px solid #fff;}
+#mcs_container .dragger_container{position:relative; width:6px; height:400px; position:absolute; right:4px; margin:0px 0 0 10px; background:#242424; cursor:pointer -moz-border-radius:6px; -moz-border-radius:6px; -khtml-border-radius:6px; -webkit-border-radius:6px; border-radius:6px; cursor:s-resize;}
+#mcs_container .dragger{position:absolute; width:6px; height:60px !important; background:#a2a2a2; text-align:center; line-height:60px; color:#666; overflow:hidden; cursor:pointer; -moz-border-radius:2px; -khtml-border-radius:2px; -webkit-border-radius:2px; border-radius:2px;}
+#mcs_container .dragger_pressed{position:absolute; width:6px; margin-left:0px; height:60px !important; background:#b1cad1; text-align:center; line-height:60px; color:#666; overflow:hidden; -moz-border-radius:6px; -khtml-border-radius:6px; -webkit-border-radius:6px; border-radius:6px; cursor:s-resize;}
+#mcs_container .scrollUpBtn,#mcs_container .scrollDownBtn{position:absolute; display:inline-block; width:14px; height:15px; margin-right:12px; text-decoration:none; right:0; filter:alpha(opacity=20); -moz-opacity:0.20; -khtml-opacity:0.20; opacity:0.20;}
+#mcs_container .scrollUpBtn{top:16px; background:url(mcs_btnUp.png) center center no-repeat;}
+#mcs_container .scrollDownBtn{bottom:12px; background:url(mcs_btnDown.png) center center no-repeat;}
+#mcs_container .scrollUpBtn:hover,#mcs_container .scrollDownBtn:hover{filter:alpha(opacity=60); -moz-opacity:0.60; -khtml-opacity:0.60; opacity:0.60;}
+
+/* content block 2 */
+#mcs2_container{position:relative; height:100%;}
+#mcs2_container .customScrollBox{position:relative; height:100%; padding:0; overflow:hidden;}
+#mcs2_container .customScrollBox .container{position:relative; /*width:240px;*/ top:0; float:left;}
+#mcs2_container .customScrollBox .content{clear:both;}
+#mcs2_container .customScrollBox .content p{padding:0 5px; margin:10px 0; font-size:12px; line-height:20px;}
+#mcs2_container .customScrollBox .content p.alt{padding:10px 5px; margin:10px 0; font-size:17px; line-height:19px; color:#999;}
+#mcs2_container .customScrollBox img{border:5px solid #fff;}
+#mcs2_container .dragger_container{position:relative; width:6px; height:100%; /*float:left;*/ position:absolute; right:0px; margin:0px 0 0 10px; background:#eef0ef; cursor:pointer -moz-border-radius:6px; -moz-border-radius:6px; -khtml-border-radius:6px; -webkit-border-radius:6px; border-radius:6px; cursor:s-resize;}
+#mcs2_container .dragger{position:absolute; width:6px; height:60px; background:#b1cad1; text-align:center; line-height:60px; color:#666; overflow:hidden; cursor:pointer; -moz-border-radius:2px; -khtml-border-radius:2px; -webkit-border-radius:2px; border-radius:2px;}
+#mcs2_container .dragger_pressed{position:absolute; width:6px; margin-left:0px; height:60px; background:#b1cad1; text-align:center; line-height:60px; color:#666; overflow:hidden; -moz-border-radius:6px; -khtml-border-radius:6px; -webkit-border-radius:6px; border-radius:6px; cursor:s-resize;}
+
+/* Kichan(175575) 3X3 Menu add*/
+/* content block 3 */
+#mcsB_container{position:relative; margin:0px; width:100%; height:40px;}
+#mcsB_container .customScrollBox{position:relative; height:100%; padding:0px; overflow:hidden;}
+#mcsB_container .customScrollBox .container{position:relative; /*width:240px;*/ top:0; float:left;}
+#mcsB_container .customScrollBox .container.close {padding-left:0px !important;}
+#mcsB_container .customScrollBox .content{clear:both;}
+#mcsB_container .customScrollBox .content div{padding:0; margin:0; font-size:12px; line-height:20px;}
+#mcsB_container .customScrollBox .content p.alt{padding:10px 5px; margin:10px 0; font-size:17px; line-height:19px; color:#999;}
+
+#mcsB_container .dragger_container{position:relative; width:6px; height:400px; position:absolute; right:4px; margin:0px 0 0 10px; background:#242424; cursor:pointer -moz-border-radius:6px; -moz-border-radius:6px; -khtml-border-radius:6px; -webkit-border-radius:6px; border-radius:6px; cursor:s-resize;}
+#mcsB_container .dragger{position:absolute; width:6px; height:60px !important; background:#a2a2a2; text-align:center; line-height:60px; color:#666; overflow:hidden; cursor:pointer; -moz-border-radius:2px; -khtml-border-radius:2px; -webkit-border-radius:2px; border-radius:2px;}
+#mcsB_container .dragger_pressed{position:absolute; width:6px; margin-left:0px; height:60px !important; background:#b1cad1; text-align:center; line-height:60px; color:#666; overflow:hidden; -moz-border-radius:6px; -khtml-border-radius:6px; -webkit-border-radius:6px; border-radius:6px; cursor:s-resize;}
+#mcsB_container .scrollUpBtn,#mcs_container .scrollDownBtn{position:absolute; display:inline-block; width:14px; height:15px; margin-right:12px; text-decoration:none; right:0; filter:alpha(opacity=20); -moz-opacity:0.20; -khtml-opacity:0.20; opacity:0.20;}
+#mcsB_container .scrollUpBtn{top:16px; background:url(mcs_btnUp.png) center center no-repeat;}
+#mcsB_container .scrollDownBtn{bottom:12px; background:url(mcs_btnDown.png) center center no-repeat;}
+#mcsB_container .scrollUpBtn:hover,#mcs_container .scrollDownBtn:hover{filter:alpha(opacity=60); -moz-opacity:0.60; -khtml-opacity:0.60; opacity:0.60;}

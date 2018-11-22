@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd"> 
+
+<mapper namespace="loginCheck">
+ 	
+	<select id="selectLogin" parameterType="java.util.Map" resultType="java.util.Map" >
+		SELECT   /* loginCheck.selectLogin */
+			USER_ID, 
+			USER_NM USER_NAME, 
+			PWD PASSWORD, 
+			NVL(PWD_CHG_TIME, SYSDATE)     PWD_CHG_TIME, 
+			( CASE WHEN (SYSDATE - NVL(PWD_CHG_TIME, SYSDATE) ) >= 90.0 THEN 'Y' ELSE 'N' END ) IS_PWD_CHG_OVER,
+			NVL(LAST_LOGIN_TIME, SYSDATE)  LAST_LOGIN_TIME, 
+			( CASE WHEN (SYSDATE - NVL(LAST_LOGIN_TIME, SYSDATE) ) >= 90.0 THEN 'Y' ELSE 'N' END ) IS_LOGIN_OVER,
+			NVL(LGIN_ERR_CNT, 0)  LGIN_ERR_CNT
+		
+		FROM SYS_USER 
+		
+		WHERE USER_ID = #{USER_ID}
+		 
+		AND COMP_CD = #{COMP_CD}
+		AND USE_YN = 'Y'
+		
+	</select>
+
+ 
+ 	<select id="selectErpTrouYn" parameterType="String" resultType="String" >
+		SELECT   /* loginCheck.selectErpTrouYn */
+		  TROU_YN
+		FROM DW_SY_SYSM_TROU_I
+		WHERE COMP_CD = #{COMP_CD}
+		AND   SYSM_CD = 'ERP'
+	</select>
+ 
+ 
+ 	<select id="selectIdCheck" parameterType="java.util.Map" resultType="java.util.Map" >
+	SELECT /* loginCheck.selectIdCheck */
+			USER_ID,
+			USE_YN
+		FROM SYS_USER 					
+		WHERE USER_ID = #{USER_ID}
+		AND   COMP_CD = #{COMP_CD}
+		/* AND USE_YN = 'Y' */
+	</select>
+ 
+ 
+ 
+  	<select id="selectIdDwCheck" parameterType="java.util.Map" resultType="java.util.Map" >
+		SELECT /* loginCheck.selectIdDwCheck */
+			USR_ID,
+			USE_YN
+		FROM DW_SY_USR_M 					
+		WHERE USR_ID = #{USR_ID}
+		AND   COMP_CD = #{COMP_CD}
+	</select>
+ 
+ 
+	<update id="updateLoginErrorCnt"  parameterType="java.util.Map"  >
+		UPDATE /* loginCheck.updateLoginErrorCnt */
+			SYS_USER
+		SET
+			LGIN_ERR_CNT = NVL(LGIN_ERR_CNT,0) +1
+		WHERE 1=1						
+			AND USER_ID = #{USER_ID}
+			AND COMP_CD = #{COMP_CD}
+	</update>
+
+
+
+	<insert id="insertErpToDwUser"  parameterType="java.util.Map"  >
+ 		INSERT INTO DW_SY_USR_M (  /* loginCheck.insertErpToDwUser */
+				COMP_CD,
+				USR_ID,
+				USR_NM,
+				PWD,
+				PWD_CHG_DTTM, 
+				LGIN_ERR_CNT,
+				USE_YN,
+				BI_YN
+ 		)
+ 		VALUES (
+ 				#{COMP_CD},
+				#{USR_ID},
+				NVL(#{USR_NM},#{USR_ID}),
+				#{PWD},
+				TO_DATE(#{PWD_CHG_DTTM}, 'YYYY-MM-DD HH24:MI:SS'),
+				0,
+				#{USE_YN},
+				#{BI_YN}
+ 		)
+	</insert>
+
+
+	<update id="updateErpToDwUser"  parameterType="java.util.Map"  >
+		UPDATE   /* loginCheck.updateErpToDwUser */
+			DW_SY_USR_M
+		SET
+		
+			<if test="USR_NM != null">
+ 				USR_NM = NVL(#{USR_NM},#{USR_ID}),
+ 			</if>
+ 			<if test="USE_YN != null">
+ 				USE_YN = #{USE_YN},
+ 			</if>
+ 			<if test="BI_YN != null">
+ 				BI_YN = #{BI_YN},
+ 			</if>
+			<if test="LGIN_ERR_CNT != null">
+ 				LGIN_ERR_CNT = #{LGIN_ERR_CNT},
+ 			</if>
+ 			
+ 			<if test="PWD_CHG_DTTM != null">
+ 				PWD_CHG_DTTM = TO_DATE(#{PWD_CHG_DTTM}, 'YYYY-MM-DD HH24:MI:SS'),
+ 			</if>
+
+ 			<if test="PWD_CHG_DTTM == null">
+ 				PWD_CHG_DTTM = SYSDATE,
+ 			</if>
+ 				
+ 			PWD = #{PWD}
+
+		WHERE 1=1						
+			AND USR_ID = #{USR_ID}
+			AND COMP_CD = #{COMP_CD}
+	</update>
+
+
+	<insert id="insertErpUser"  parameterType="java.util.Map"  >
+ 		INSERT INTO SYS_USER (  /* loginCheck.insertErpUser */
+				COMP_CD,
+				USER_ID,
+				USER_NM,
+ 
+				PWD_CHG_TIME,
+				LAST_LOGIN_TIME,
+				LGIN_ERR_CNT,
+				USE_YN,
+				UPDATE_DATE,
+				UPDATE_BY,
+				CREATE_DATE,
+				CREATE_BY
+ 		)
+ 		VALUES (
+ 				#{COMP_CD},
+				#{USR_ID},
+				NVL(#{USR_NM},#{USR_ID}),
+				
+ 				TO_DATE(#{PWD_CHG_DTTM}, 'YYYY-MM-DD HH24:MI:SS'),
+				NULL,
+				0,
+				#{USE_YN},
+				TO_CHAR(SYSDATE,'YYYYMMDD'),
+				#{USR_ID},
+				TO_CHAR(SYSDATE,'YYYYMMDD'),
+				#{USR_ID}
+ 		)
+	</insert>
+	
+	<update id="updateErpUser"  parameterType="java.util.Map"  >
+		UPDATE   /* loginCheck.updateErpUser */
+			SYS_USER
+		SET
+			<if test="USR_NM != null">
+ 				USER_NM = NVL(#{USR_NM},#{USR_ID}),
+ 			</if>
+ 			<if test="USE_YN != null">
+ 				USE_YN = #{USE_YN},
+ 			</if>
+ 			<if test="PWD_CHG_DTTM != null">
+ 				PWD_CHG_TIME = TO_DATE(#{PWD_CHG_DTTM}, 'YYYY-MM-DD HH24:MI:SS'),
+ 			</if>
+ 			<if test="PWD_CHG_DTTM == null">
+ 				PWD_CHG_TIME = SYSDATE,
+ 			</if>
+ 			
+ 			LAST_LOGIN_TIME = SYSDATE,
+
+ 			UPDATE_DATE = TO_CHAR(SYSDATE,'YYYYMMDD'), 
+ 			UPDATE_BY = #{USR_ID}
+		WHERE   USER_ID = #{USR_ID}
+			AND COMP_CD = #{COMP_CD}
+	</update>
+ 
+
+	<update id="updateUserErrInit"  parameterType="java.util.Map"  >
+		UPDATE   /* loginCheck.updateErpUser */
+			SYS_USER
+		SET
+ 			LGIN_ERR_CNT = 0,
+ 			UPDATE_DATE = TO_CHAR(SYSDATE,'YYYYMMDD'), 
+ 			UPDATE_BY = #{USR_ID}
+		WHERE   USER_ID = #{USR_ID}
+			AND COMP_CD = #{COMP_CD}
+	</update>
+	
+	<select id="selectEncPasswd" resultType="String" parameterType="String">
+		 SELECT  /* loginCheck.selectEncPasswd */		 	
+		 	XX1.ENC_VARCHAR2_INS(#{PWD},10,'PASS_WD') as PWD
+           FROM DUAL	 
+	</select>
+
+	<select id="selectDwUser" parameterType="java.util.Map" resultType="java.util.Map" >
+
+		SELECT   /* loginCheck.selectDwUser */
+		    COMP_CD,
+			USR_ID,
+			USR_NM,
+			PWD,
+			TO_CHAR(PWD_CHG_DTTM, 'YYYY-MM-DD HH24:MI:SS')  PWD_CHG_DTTM,
+			BI_YN,
+			USE_YN
+		FROM DW_SY_USR_M
+		
+		WHERE COMP_CD = #{COMP_CD}
+		AND   USE_YN = 'Y'
+		AND   BI_YN = 'Y'
+		<if test="PWD != null">
+                AND PWD = #{PWD}
+        </if>
+ 		AND   USR_ID =  #{USR_ID}   /*  'P905LP' */
+ 
+	</select>
+
+	<update id="updateLastLoginDate"  parameterType="java.util.Map"  >
+		UPDATE   /* loginCheck.updateLastLoginDate */
+			SYS_USER
+		SET
+ 			LAST_LOGIN_TIME = SYSDATE,
+ 			LGIN_ERR_CNT = 0,
+ 			UPDATE_DATE = TO_CHAR(SYSDATE,'YYYYMMDD'), 
+ 			UPDATE_BY = #{USR_ID}
+		WHERE   USER_ID = #{USR_ID}
+			AND COMP_CD = #{COMP_CD}
+	</update>
+	
+</mapper>

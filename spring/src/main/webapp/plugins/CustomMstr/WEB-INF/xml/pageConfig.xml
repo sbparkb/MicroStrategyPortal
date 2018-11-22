@@ -1,0 +1,65 @@
+<framework>
+	<pages>
+		<page name="rwd">
+			<web-beans>
+				<web-bean name="accordion">
+					<init-properties>
+						<property name="defaultTabNameRWRun" source="const"
+							value="workingSet" />
+						<property name="defaultTabNameRWDesign" source="const"
+							value="workingSet" />
+					</init-properties>
+				</web-bean>
+			</web-beans>
+		</page>
+		<page name="report">
+			<web-beans>
+				<web-bean name="frame">
+					<web-beans>
+						<web-bean name="accordion">
+							<init-properties>
+								<property name="defaultTabNameReportRun" source="const"
+									value="workingSet" />
+								<property name="defaultTabNameReportDesign"
+									source="const" value="workingSet" />
+								<property name="defaultTabNameMDXReportRun"
+									source="const" value="workingSet" />
+								<property name="defaultTabNameMDXReportDesign"
+									source="const" value="workingSet" />
+							</init-properties>
+						</web-bean>
+					</web-beans>
+				</web-bean>
+			</web-beans>
+			<!-- custom prompt popup add bae -->
+ 			<templates>
+				<template>
+					<page-sections>
+						<page-section
+							file-name="/jsp/Custom_Report_Links.jsp" name="links" />
+					</page-sections>
+				</template>
+				<template
+					status="com.microstrategy.web.beans.EnumRequestStatus.WebBeanRequestWaitingForUserInput">
+					<page-sections>
+						<page-section
+							file-name="/jsp/Custom_Report_Links.jsp" name="links" />
+					</page-sections>
+				</template>
+			</templates>
+		</page>
+		<page name="Html5Vi">
+			<templates>
+				<template XMLmerge_id="2" error-title-id="mstrWeb.921"
+					iframe="false" allow-cancel="false"
+					file-name="/jsp/Mojo_Template.jsp">
+					<page-sections use-default="false">
+						<page-section
+							file-name="@CustomMstr:/jsp/HTML5VI_Content_Core.jsp"
+							name="content_core" />
+					</page-sections>
+				</template>
+			</templates>
+		</page>
+	</pages>
+</framework>

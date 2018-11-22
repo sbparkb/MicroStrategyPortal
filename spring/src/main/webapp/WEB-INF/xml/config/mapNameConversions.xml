@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nameConversions>	
+<!--
+  Scope for ESRI - 1
+  Scope for MSTR - 2
+-->	
+   
+    <elem id="1" n="Russia" scope="1">Russian Federation</elem>
+	
+</nameConversions>

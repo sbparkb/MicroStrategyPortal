@@ -1,0 +1,31 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="MojoMenubarInsertModel" inherits="MojoToolbarButtonModel">
+    <assignments>
+		<property name="n">insert</property>
+		<property name="desc">{desc:mstrWeb.2919|Insert}</property>
+		<property name="items">
+			<list>
+			    <block name="MojoToolbarButtonModel">
+					<property name="n">insertVI</property>
+					<property name="desc">{desc:mstrWeb.11693|Visualization}</property>
+					<property name="cmd">insertVisualization</property>
+				</block>
+				<block name="MojoToolbarButtonModel">
+                    <property name="n">insertImage</property>
+                    <property name="desc">{desc:mstrWeb.2922|Image}</property>
+                    <property name="cmd">insertImage</property>
+                </block>
+				<block name="MojoToolbarButtonModel">
+					<property name="n">insertText</property>
+					<property name="desc">{desc:mstrWeb.3544|Text}</property>
+					<property name="cmd">insertText</property>
+				</block>
+                <block name="MojoToolbarButtonModel">
+                    <property name="n">insertFlt</property>
+                    <property name="desc">{desc:mstrWeb.4728|Selector}</property>
+                    <property name="cmd">insertFilter</property>
+                </block>    
+   			</list>
+		</property>
+	</assignments>
+</block>

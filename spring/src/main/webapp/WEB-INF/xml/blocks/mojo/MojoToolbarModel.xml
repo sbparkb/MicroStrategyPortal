@@ -1,0 +1,193 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="MojoToolbarModel">
+    <definition>
+        <!-- An array of buttons. -->
+        <property name="items" type="List"/>
+    </definition>
+    <assignments>
+        <property name="items">
+            <list>
+            <!-- pm: 0 - Do not show in presentation mode
+                     1 - Show in presentation mode
+                     2 - Show ONLY in presentation mode
+                     undefined - Do not show in presentation mode
+             -->
+                <block name="MojoToolbarButtonModel">
+                    <property name="n">undo</property>
+                    <property name="desc">{desc:mstrWeb.3482|Undo}</property>
+                    <property name="cmd">undo</property>
+                    <property name="pm">1</property>
+                </block>
+                <block name="MojoToolbarButtonModel">
+                    <property name="n">redo</property>
+                    <property name="desc">{desc:mstrWeb.3473|Redo}</property>
+                    <property name="cmd">redo</property>
+                    <property name="pm">1</property>
+                </block>
+                <block name="MojoToolbarButtonModel">
+                    <property name="n">save</property>
+                    <property name="desc">{desc:mstrWeb.118|Save}</property>
+                    <property name="cmd">dSave</property>
+                    <property name="pm">1</property>
+                    <property name="visibleFeatures">save-analysis</property>
+                </block>
+				<block name="MojoToolbarButtonModel">
+					<property name="n">addDS</property>
+					<property name="desc">{desc:mstrWeb.11780|Add Data}</property>
+                    <property name="visibleFeatures">analysis-import-data</property>
+					<property name="items">
+						<list>
+							<block name="MojoToolbarButtonModel">
+								<property name="n">importFile</property>
+								<property name="desc">{desc:mstrWeb.13569|External Data...}</property>
+								<property name="cmd">importFile</property>
+							</block>
+							<block name="MojoToolbarButtonModel">
+								<property name="n">newDS</property>
+						        <property name="desc">{desc:mstrWeb.13572|New Report...}</property>
+								<property name="cmd">createDataset</property>
+							</block>
+							<block name="MojoToolbarButtonModel">
+								<property name="n">addDS</property>
+						        <property name="desc">{desc:mstrWeb.13573|Existing Dataset...}</property>
+								<property name="cmd">addDataset</property>
+							</block>
+						</list>
+					</property>
+				</block>
+
+				<block name="MojoToolbarButtonModel">
+					<property name="n">insertVI</property>
+					<property name="desc">{desc:mstrWeb.11500|Insert Visualization}</property>
+					<property name="cmd">insertVisualization</property>
+                    <property name="visibleFeatures">dashboard-design;edit-ive</property>
+				</block>
+
+                <block name="MojoToolbarButtonModel">
+                    <property name="n">insert</property>
+                    <property name="desc">{desc:mstrWeb.2919|Insert}</property>
+                    <property name="visibleFeatures">dashboard-design;edit-ive</property>
+                    <property name="items">
+                        <list>
+                            <block name="MojoToolbarButtonModel">
+                                <property name="n">insertVI</property>
+                                <property name="desc">{desc:mstrWeb.11693|Visualization}</property>
+                                <property name="cmd">insertVisualization</property>
+                            </block>
+                            <block name="MojoToolbarButtonModel">
+                                <property name="n">insertFlt</property>
+                                <property name="desc">{desc:mstrWeb.6189|Filter}</property>
+                                <property name="cmd">insertFilter</property>
+                            </block>
+                            <block name="MojoToolbarButtonModel">
+                                <property name="n">insertText</property>
+                                <property name="desc">{desc:mstrWeb.1013|Text}</property>
+                                <property name="cmd">insertText</property>
+                            </block>
+                            <block name="MojoToolbarButtonModel">
+                                <property name="n">insertImage</property>
+                                <property name="desc">{desc:mstrWeb.2922|Image}</property>
+                                <property name="cmd">insertImage</property>
+                            </block>
+                            <block name="MojoToolbarButtonModel">
+                                <property name="n">insertHtml</property>
+                                <property name="desc">{desc:mstrWeb.4538|HTML Container}</property>
+                                <property name="cmd">insertHtml</property>
+                                <property name="visibleFeatures">create-html-container</property>
+                            </block>
+                        </list>
+                    </property>
+                </block>
+                <block name="MojoToolbarButtonModel">
+                    <property name="n">refresh</property>
+                    <property name="desc">{desc:mstrWeb.773|Refresh}</property>
+                    <property name="cmd">refresh</property>
+                    <property name="pm">1</property>
+                    <property name="visibleFeatures">dashboard-design;edit-ive</property>
+                </block>
+                
+                 <block name="MojoToolbarButtonModel">
+                    <property name="n">refreshPulldown</property>
+                    <property name="pm">2</property>
+                    <property name="visibleFeatures">dashboard-design;edit-ive</property>
+                    <property name="items">
+                        <list>
+                            <block name="MojoToolbarButtonModel">
+                                <property name="n">refreshPM</property>
+                                <property name="desc">{desc:mstrWeb.10213|Refresh Now}</property>
+                                <property name="cmd">refresh</property>
+                            </block>
+                            <block name="MojoToolbarButtonModel">
+                                <property name="n">autoRefresh</property>
+                                <property name="desc">{desc:mstrWeb.14101|Stop Auto Refresh}</property>
+                                <property name="ttp" type="String">{desc:mstrWeb.14103|Auto refresh every ## seconds}</property>
+                                <property name="descOff" type="String">{desc:mstrWeb.14102|Start Auto Refresh}</property>
+                                <property name="ttpOff" type="String">{desc:mstrWeb.14104|Auto refresh is paused}</property>
+                                <property name="cmd">toggleAutoRefresh</property>
+                            </block>
+                        </list>
+                    </property>
+                </block>
+
+                <!--
+                Below set of buttons are float to the right end by adding cssclass fr to each of them.
+                The buttons are defined in reverse order to work with css float:right;
+                -->
+                <!--  2017-05-22 bae 닫기 버튼 삭제
+                <block name="MojoToolbarButtonModel">
+                    <property name="n">close</property>
+                    <property name="desc">{desc:mstrWeb.2102|Close}</property>
+                    <property name="cmd">close</property>
+                    <property name="pm">1</property>
+                </block>
+                 -->
+                <block name="MojoToolbarButtonModel">
+                    <property name="n">togglePathbar</property>
+                    <property name="desc">{desc:mstrWeb.13997|Hide Navigation Bar}</property>
+                    <property name="descOff" type="String">{desc:mstrWeb.13996|Show Navigation Bar}</property>
+                    <property name="cmd">togglePathbar</property>
+                    <property name="pm">1</property>
+                </block>
+                <block name="MojoToolbarButtonModel">
+                    <property name="n">help</property>
+                    <property name="desc">{desc:mstrWeb.1143|Help}</property>
+                    <property name="pm">1</property>
+                    <property name="visibleFeatures">edit-ive</property>
+                    <property name="items">
+                        <list>
+                            <block name="MojoToolbarButtonModel">
+                                <property name="n">helpLink</property>
+                                <property name="desc">{desc:mstrWeb.1143|Help}</property>
+                                <property name="cmd">showHelpTopic</property>
+                            </block>
+                            <block name="MojoToolbarButtonModel">
+                            	<property name="n">welcome</property>
+                                <property name="desc">{desc:mstrWeb.13406|Getting Started}</property>
+                                <property name="cmd">showWelcome</property>
+                            </block>
+                            <block name="MojoToolbarButtonModel">
+                                <property name="n">tips</property>
+                                <property name="desc">{desc:mstrWeb.10096|Quick Tips}</property>
+                                <property name="cmd">showTutorial</property>
+                            </block>
+                        </list>
+                    </property>
+                </block>
+                <block name="MojoToolbarButtonModel">
+                    <property name="n">share</property>
+                    <property name="desc">{desc:mstrWeb.9099|Share}</property>
+                    <property name="cmd">ShowSharingEditor</property>
+                    <property name="pm">1</property>
+                    <property name="visibleFeatures">scheduling</property>
+                </block>
+                <block name="MojoToolbarButtonModel">
+                    <property name="n">presentationMode</property>
+                    <property name="desc">{desc:mstrWeb.1088|Edit}</property>
+                    <property name="descOff" type="String">{desc:mstrWeb.11694|Presentation Mode}</property>
+                    <property name="cmd">togglePresentationMode</property>
+                    <property name="pm">1</property>
+                </block>
+			</list>
+		</property>
+	</assignments>
+</block>

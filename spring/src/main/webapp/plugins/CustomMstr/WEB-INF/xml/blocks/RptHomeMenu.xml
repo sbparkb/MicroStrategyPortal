@@ -1,0 +1,14 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="RptHomeMenu">
+  <assignments>
+  <!-- block 메뉴에 안나오게 함 -->
+    <property name="items">
+      <list>
+      <!-- 
+        <block listAction="delete" listElementKey="K1562" listItem="K1562"  name="ToolbarGraphButton"/>
+        <block listAction="delete" listElementKey="K1563" listItem="K1563"  name="ToolbarGridGraphButton"/>
+       -->
+      </list>
+    </property>
+  </assignments>
+</block>

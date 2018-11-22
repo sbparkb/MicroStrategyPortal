@@ -1,0 +1,14 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block inherits="ToolbarModel" name="RptToolbarModel">
+  <assignments>
+    <!-- block툴바에 안나오게 함 -->
+    <property name="items">
+      <list>
+      <!-- 
+        <block listAction="delete" listElementKey="K1343" listItem="K1343"  name="ToolbarGraphButton"/>
+        <block listAction="delete" listElementKey="K1344" listItem="K1344"  name="ToolbarGridGraphButton"/>
+       -->
+      </list>
+    </property>
+  </assignments>
+</block>
