@@ -1,0 +1,57 @@
+.mstrmojo-DocProps-Editor {
+  width: 495px;
+  .mstrmojo-Editor-content {
+    table {
+      width: 400px;
+      margin: 16px 0px;
+      tr {
+        height: 30px;
+        td:first-child {
+          white-space: nowrap;
+          font-weight: bold;
+        }
+        &.multiLine {
+          td {
+            height : 35px;
+          }
+        }
+        &.radioGroup {
+          td {
+            top: -9px;
+          }
+        }
+        &.topSpace {
+          td {
+            padding-top : 8px;
+          }
+        }
+      }
+      td {
+        min-height: 30px;
+        line-height: 18px;
+        padding-left: 5px;
+        position: relative;
+        .mstrmojo-ui-Checkbox{
+          margin: 6px 0 0 8px;
+        }
+        .mstrmojo-RadioButton{
+          margin: 6px 0 0 8px;
+        }
+        .mstrmojo-TextBox {
+          width: 50px;
+          margin: 0px 5px;
+        }
+        .wrap{
+          position: absolute;
+          left: 0;
+          top: 14px;
+          overflow: visible;
+        }
+      }
+    }
+    .greyline{
+      color: #a0a7ac;
+      margin-left: 12px;
+    }
+  }
+}

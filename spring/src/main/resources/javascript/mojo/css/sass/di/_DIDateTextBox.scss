@@ -1,0 +1,58 @@
+/*DI DateTextBox Css*/
+.mstrmjo-di-DateTextBox{
+  float: right;
+  width: 155px;
+
+  .mstrmojo-DateTextBox-input{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 80px;
+    height:23px;
+    padding-top: 0px;
+    padding-left: 5px;
+  }
+  .mstrmojo-DateTextBox-input:focus{
+    border: 1px solid #88c0f2;
+  }
+  .mstrmojo-DateTextBox-input.selected{
+    border: 1px solid #88c0f2;
+  }
+  /*DateTextBox Icon Css*/
+  .mstrmojo-DateTextBox-icon{
+    background: url(images/DI/calendar_enabled.png);
+    height:24px;
+    width:25px;
+    top:4px;
+    left:100px;
+  }
+  .mstrmojo-DateTextBox-icon.selected{
+    background: url(images/DI/calendar_selected.png);
+  }
+  .mstrmojo-DateTextBox-icon:hover{
+    background-position:0 0;
+  }
+
+  .mstrmojo-DateTextBox-calendar{
+    width: 460px;
+    height: 238px;
+    background: #ffffff;
+    box-shadow: rgb(128, 128, 128) 2px 2px 10px 3px;
+  }
+
+  .mstrmojo-Calendar{
+    width: 200px;
+    float: left;
+    margin: 15px;
+    border: none;
+    font-size: 9px;
+    font-weight: bold;
+  }
+
+  .mstrmojo-Calendar-left .mstrmojo-Calendar-increase{
+    display: none;
+  }
+
+  .mstrmojo-Calendar-right .mstrmojo-Calendar-decrease{
+    display: none;
+  }
+}

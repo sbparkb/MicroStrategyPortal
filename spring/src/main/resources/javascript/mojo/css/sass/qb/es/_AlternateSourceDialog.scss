@@ -1,0 +1,77 @@
+.mstrmojo-qb-ValidateAlternateSource-dialog {
+  width: 650px;
+  height: 435px;
+  .validation-note1 {
+    margin: 11px 0px 16px 0px;
+    padding: 4px 0px 5px 0px;
+  }
+  .validation-table {
+    overflow: hidden;
+    width: 612px;
+    height: 214px;
+    margin: 16px 0px 16px 0px;
+    .mstrmojo-DataGrid-headerTable {
+      tbody > tr > td {
+        padding: 0px;
+      }
+      tbody > tr > td:last-child {
+          border-right: 0px;
+      }
+      .mstrmojo-DataGrid-headerText {
+        padding: 1px 0px 1px 12px;
+        border: 0px;
+        font-size: 8pt;
+        font-weight: normal;
+        height: 22px;
+        border-bottom: 1px solid #CBCBCB;
+      }
+    }
+    .mstrmojo-DataGrid-itemsScrollBox {
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+    .mstrmojo-DataGrid-itemsContainer {
+      height: 189px;
+      .mstrmojo-itemwrap-table {
+         border-spacing: 0px;
+        tbody:last-child td {
+            border-bottom: 0px;
+        }
+        .mstrmojo-DataRow {
+          background-color: white;
+          td {
+            border-right: 1px solid #CBCBCB;
+            padding-left: 12px;
+            height: 18px;
+          }
+          td:first-child {
+            padding-left: 0px;
+            text-align:  center;
+          }
+          td:last-child {
+            border-right: 0px;
+          }
+          .matched-item {
+            background: url("images/wh/panel_icons.png") no-repeat -1px -722px;
+            margin-right: auto;
+            margin-left: auto;
+            height: 9px;
+            width: 12px;
+          }
+          .unmatched-item {
+            background: url("images/wh/panel_icons.png") no-repeat -1px -740px;
+            margin-right: auto;
+            margin-left: auto;
+            height: 9px;
+            width: 12px;
+          }
+        }
+      }
+    }
+  }
+  .validation-note2 {
+    margin: 16px 0px 11px 0px;
+    padding: 5px 0px 4px 0px;
+  }
+
+}

@@ -1,0 +1,30 @@
+.mstrmojo-di-import-option {
+
+  .mstrmojo-di-io-radio-list {
+    font-family: arial;
+    .import-options {
+      margin-left: 42px;
+      margin-top: 33px;
+      margin-bottom: 55px;
+      width: 420px;
+      .item{
+        position: relative;
+        padding: 0 0 0 29px;
+        height: 23px;
+        margin-bottom: 56px;
+      }
+
+      .mstrmojo-ListBox-cell {
+        padding-top: 38px;
+      }
+    }
+  }
+
+  .left-button-container{
+    float: left;
+    padding-top: 3px;
+    .back{
+      margin-left: 0;
+    }
+  }
+}

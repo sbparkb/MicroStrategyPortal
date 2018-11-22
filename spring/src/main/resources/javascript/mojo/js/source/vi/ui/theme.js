@@ -1,0 +1,1 @@
+(function(){mstrmojo.vi.ui.theme=mstrmojo.provide("mstrmojo.vi.ui.theme",{getThemeClass:function getThemeClass(){var ancestor=this.parent||this.opener,result="";while(ancestor){var themeClassName=ancestor.themeClassName;if(themeClassName){result=themeClassName;break;}ancestor=ancestor.parent||ancestor.opener;}return result;}});}());

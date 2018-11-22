@@ -1,0 +1,241 @@
+@mixin border-radius-one($border, $radius) {
+  -moz-border-#{$border}-radius: $radius;
+  -webkit-border-#{$border}-radius: $radius;
+  -ms-border-#{$border}-radius: $radius;
+  border-#{$border}-radius: $radius;
+}
+
+.mstrmojo-di-mapProjectAttribute-dialog {
+  width: 460px;
+  @include scrollBar;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  .mstrmojo-Editor-content {
+    padding: 0px;
+    @include scrollBar;
+    max-height: 380px;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .content-box {
+    @include box-sizing;
+    width: 100%;
+
+    &.top {
+      border-bottom: 1px solid #DEDEDE;
+      padding: 16px 18px;
+
+      .mstrmojo-di-mapProjectAttribute-searchPulldown {
+        float: left;
+        width: 315px;
+        margin-right: 5px;
+
+        .mstrmojo-ui-Pulldown-text {
+          height: 24px;
+        }
+
+        .mstrmojo-ui-Pulldown-text:after {
+          background: transparent url("images/wh/search_sprite.png") no-repeat 5px 5px;
+          border-left: none;
+        }
+        .mstrmojo-ui-Pulldown-text.clear:after {
+          background: url("vi/images/menu_icons.png") no-repeat -29px 7px;
+          margin-top: 1px;
+        }
+
+        &.wait {
+          .mstrmojo-ui-Pulldown-text:after {
+            background: url("images/DI/search.gif") no-repeat;
+            margin-top: 3px;
+          }
+        }
+
+        .item {
+          padding-left: 26px;
+          &:before {
+            content: ' ';
+            position: absolute;
+            left: 9px;
+            width: 15px;
+            height: 15px;
+            background: url("images/DI/icon_att.png") no-repeat;
+          }
+        }
+      }
+      .mstrmojo-di-mapProjectAttribute-browseButton {
+        width: 60px;
+      }
+    }
+
+    &.bottom {
+
+      // general
+      .mstrmojo-di-mapProjectAttribute-label {
+        font-family: Arial;
+        font-size: 11px;
+        color: #444649;
+        @include ellipsis-text();
+      }
+      .mstrmojo-di-mapProjectAttribute-placeholder {
+        margin-top: 12px;
+        line-height: 22px;
+        font-family: Arial;
+        font-size: 11px;
+        color: #A0A7AC;
+      }
+
+      .mstrmojo-di-mapProjectAttribute-formMapItem {
+        margin-top: 12px;
+        margin-bottom: 9px;
+
+        .mstrmojo-ui-Pulldown-text {
+          // increase pulldown text padding
+          padding: 7px 14px 5px 6px;
+
+          .text.ipa {
+            font-style: italic;
+          }
+        }
+
+        // general icon class used both for pulldown icon and project form icon
+        .icon {
+          background-image: url("images/DI/icon_att.png");
+          background-repeat: no-repeat;
+          margin-left: 3px;
+          padding-left: 15px;
+          margin-right: 6px;
+          &.form {
+            background-image: url("images/DI/icon_att_form.png");
+          }
+        }
+
+        &.caf {
+          margin-top: 0;
+          margin-bottom: 0;
+          .mstrmojo-ui-Pulldown-text {
+            border-top-width: 0;
+            @include border-radius(0);
+          }
+        }
+        &.caf.cafb {
+          margin-top: 12px;
+          .mstrmojo-ui-Pulldown-text {
+            border-top-width: 1px;
+            @include border-radius-one(top-left, 3px);
+            @include border-radius-one(top-right, 3px);
+          }
+        }
+        &.caf.cafe {
+          margin-bottom: 9px;
+          .mstrmojo-ui-Pulldown-text {
+            @include border-radius-one(bottom-left, 3px);
+            @include border-radius-one(bottom-right, 3px);
+          }
+        }
+
+        &.proj {
+
+          .proj-item-text {
+            @include ellipsis-text();
+            @include box-shadow(rgba(0, 0, 0, 0.1), 0, 1px, 1px);
+            width: 138px;
+            padding-left: 6px;
+            padding-right: 14px;
+            height: 22px;
+            border: 1px solid #B5B5B5;
+            background-color: #EAEBEB;
+            cursor: default;
+            @include border-radius(3px);
+
+            span {
+              line-height: 22px;
+            }
+
+            .text {
+              @include ellipsis-text();
+              color: #4A4A4A;
+              max-width: none;
+            }
+
+            .icon {
+              background-image: url("images/DI/icon_att_form.png");
+            }
+
+          }
+
+          &.caf {
+            margin-top: 0;
+            margin-bottom: 0;
+            .proj-item-text {
+              border-top-width: 0;
+              border-bottom-style: dashed;
+              @include border-radius(0);
+            }
+          }
+          &.caf.cafb {
+            margin-top: 12px;
+            .proj-item-text {
+              border-top-width: 1px;
+              @include border-radius-one(top-left, 3px);
+              @include border-radius-one(top-right, 3px);
+            }
+          }
+          &.caf.cafe {
+            margin-bottom: 9px;
+            .proj-item-text {
+              border-bottom-style: solid;
+              @include border-radius-one(bottom-left, 3px);
+              @include border-radius-one(bottom-right, 3px);
+            }
+          }
+        }
+      }
+
+      .content-bottom-box {
+        float: left;
+        @include box-sizing;
+        width: 50%;
+        height: 100%;
+        min-height: 250px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+
+        .mstrmojo-di-mapProjectAttribute-formMapsList {
+          width: 160px;
+        }
+
+        &.left {
+          padding-left: 18px;
+          padding-right: 12px;
+          border-right: 1px solid #DEDEDE;
+        }
+        &.right {
+          padding-left: 12px;
+          padding-right: 18px;
+        }
+      }
+    }
+  }
+
+}
+
+.mstrmojo-di-mapProjectAttribute-formMapItem-popupList {
+  .item {
+    .icon {
+      background-image: url("images/DI/icon_att.png");
+      background-repeat: no-repeat;
+      margin-left: 3px;
+      padding-left: 15px;
+      margin-right: 6px;
+      &.form {
+        background-image: url("images/DI/icon_att_form.png");
+      }
+    }
+
+    .text.ipa {
+      font-style: italic;
+    }
+  }
+}

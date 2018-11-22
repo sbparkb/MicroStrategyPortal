@@ -1,0 +1,121 @@
+@import "../../../vi/vi-global";
+
+.mstrmojo-OneTierPalettesEditor {
+    .mstrmojo-Editor-content {
+        padding: 16px 18px;
+
+        .mstrmojo-ColorPalettesEditor {
+            $border-color: #c5c5c5;
+            $left-padding: 11px;
+            $content-width: 490px;
+            background-color: #fff;
+            padding: 0;
+            border: 1px solid $border-color;
+
+            %bottom-border {
+                border-bottom: 1px solid $border-color;
+            }
+
+            .mstrmojo-Label.header {
+                @extend %bottom-border;
+                line-height: 24px;
+                background-color: #efeff0;
+                padding-left: $left-padding;
+                @include box-shadow(#f7f7f8, 0, 0, 1px, true);
+            }
+
+            .mstrmojo-PaletteList {
+                width: $content-width;
+
+                .themeMarker,
+                .mstrmojo-StateIndicator {
+                    display: none;
+                }
+
+                .item {
+                    @extend %bottom-border;
+                    padding: 6px 0 6px $left-padding;
+
+                    .paletteLabel{
+                        position: relative;
+                        float: left;
+                        display: inline-block;
+                        margin-right: 8px;
+                        line-height: 18px;
+
+                        .mstrmojo-EditableLabel{
+                            width: 112px;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+
+                            &.editable {
+                                text-overflow: clip;
+                            }
+                        }
+                    }
+                    .paletteColors {
+                        @include box-shadow(transparent);
+                        cursor: default;
+                    }
+                }
+            }
+
+            .CustomPalettesContainer {
+                overflow: hidden;
+
+                .ScrollableContainer-content {
+                    height: 216px;
+                    width: $content-width;
+
+                    &.mstrmojo-sb-show-default {
+                        overflow-x: hidden; // Hide horizontal scrollbar in Mac OneTier
+                    }
+
+                    .mstrmojo-PaletteList .item:hover {
+                        .icons {
+                            float: right;
+                            height: 18px;
+
+                            %palette-item-icon {
+                                height: 100%;
+                                width: 14px;
+                                display: inline-block;
+                                background: transparent url(#{$vi-menu-icons}) 1000px 1000px no-repeat;
+                                cursor: pointer;
+                            }
+
+                            .edit {
+                                @extend %palette-item-icon;
+                                background-position: -330px 2px;
+                                padding-right: 9px;
+                            }
+
+                            .delete {
+                                @extend %palette-item-icon;
+                                background-position: -30px 5px;
+                                padding-right: 4px;
+                            }
+                        }
+                    }
+
+                    .mstrmojo-Label.newPalette {
+                        padding-left: $left-padding;
+                        height: 30px;
+                        line-height: 30px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.OneTierPltEditor {
+    .mstrmojo-Editor-wrapper {
+        position: absolute;
+
+        .mstrmojo-Editor.mstrmojo-MultipleColorsPicker {
+            position: relative;
+        }
+    }
+}

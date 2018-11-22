@@ -1,0 +1,49 @@
+ @charset "utf-8";
+
+#gnb{width:100%;height:33px;margin:8px 0 0 0px; *zoom:1; border-bottom:1px solid #8894a2}
+#gnb h2{display:none;}
+#gnb ul{padding-top:0px;padding-left:10px;}
+#gnb li {float:left;display:block;cursor: pointer; margin-left:2px; margin-right:0px;}
+
+#gnb li.mouse_off{display:block;height:32px;text-align:center;font-size:12px;color:#434953; line-height:32px; margin-top:1px;}
+#gnb li.mouse_off a.tab{display:block;background:#cfd3dc;height:31px;text-align:center;font-size:12px;color:#767f91; line-height:31px; padding:0 15px; border-top:1px solid #b6bac4;border-left:1px solid #b6bac4;border-right:1px solid #b6bac4;border-bottom:1px solid #8894a2;margin-top:0px;}
+#gnb li.mouse_off .tap_menu.hide {display: none;}
+
+#gnb li.mouse_off.hide {display: none;}
+#gnb li.mouse_on.hide {display: none;} 
+
+#gnb li.mouse_on { position:relative;height:32px;color:#e4503a; background:#fff; font-size:12px;border-top:1px solid #8894a2; border-left:1px solid #8894a2; border-right:1px solid #8894a2;border-bottom:1px solid #fff;line-height:32px;padding:0 16px;margin-top:0px;font-weight: bold;}
+.hover { position:relative;height:32px;color:#e4503a; background:#fff; font-size:14px;border-top:1px solid #8894a2; border-left:1px solid #8894a2; border-right:1px solid #8894a2;border-bottom:1px solid #fff;line-height:32px;padding:0 20px;margin-top:0px;}
+#gnb li.mouse_on .tab_close{ position:absolute;top:0;right:0;width:20px;height:20px;}
+#gnb li.mouse_on .tab_close a{display:block;width:20px;height:20px;background:url(../images/hover_btn.gif) no-repeat; overflow:hidden; text-indent:-1000em;}
+
+#gnb li.mouse_on .tap_menu {z-index:999;position:absolute; top:20px;right:-175px; width:193px; height:111px; background: url(../images/tab_menu_bg.png) no-repeat;}
+#gnb li.mouse_on .tap_menu h2{display:none;}
+#gnb li.mouse_on .tap_menu dd {margin:0 auto; width:166px; border-bottom:1px solid #e6ebf1;}
+#gnb li.mouse_on .tap_menu dd a {display:block;width:160px;height:31px;font-size:12px;padding:0 0 0 5px;margin-left:1px; text-align: left;}
+#gnb li.mouse_on .tap_menu dd.border_none {border:none;}
+
+#gnb li.mouse_on .tap_menu {z-index:999;position:absolute; top:-3px;right:-85px; width:100px; height:45px; background:#f1f2f5; border:1px solid #8894a2;}
+#gnb li.mouse_on .tap_menu h2{display:none;}
+#gnb li.mouse_on .tap_menu dd {margin:0 auto; width:80px; border-bottom:1px solid #d2d6df;}
+#gnb li.mouse_on .tap_menu dd a {display:block;width:80px;height:21px;font-size:11px; color:#313743;padding:0;margin-left:0px; text-align: left; line-height:20px;}
+#gnb li.mouse_on .tap_menu dd a:hover {background-color:#dfe2e9; display:block;width:80px;height:21px;font-size:11px; color:#313743;padding:0;margin-left:0px; text-align: left; line-height:20px;}
+#gnb li.mouse_on .tap_menu dd.border_none {border:none; margin-bottom:2px;}
+#gnb li.mouse_on .tap_menu.hide {display: none;}
+
+#gnb a.prev{margin-top: 5px; margin-right:8px; float: right; background-image: url('images/26_26_pre.png');height: 26px; width: 26px; display: block;}
+#gnb a.prev old{margin-top: 0px; margin-right:15px; float: right; background-image: url('images/previous-track-button.png');height: 32px; width: 32px; display: block;}
+#gnb a.prev.hide{display: none;}
+#gnb a.next{margin-top: 5px; margin-right:15px; float: right; background-image: url('images/26_26_next.png');height: 26px; width: 26px; display: block;}
+#gnb a.next old{margin-top: 0px; margin-right:45px; float: right; background-image: url('images/next-track-button.png');height: 32px; width: 32px; display: block;}
+#gnb a.next.hide{display: none;}
+
+	#content-area h1 a.pdf{margin-top: 5px; margin-right:10px; float: right; background-image: url('images/18_18_print.jpg');height: 18px; width: 18px; display: block;}
+	#content-area h1 a.excel{margin-top: 5px; margin-right:10px; float: right; background-image: url('images/18_18_excel.jpg');height: 18px; width: 18px; display: block;}
+	
+	#content-area h1 { color:#000; }
+	#content-area h1 a.new-layer { display:inline-block; margin-left:8px; width:15px; height:15px; background:url(../images/icon_newlayer.png) left top no-repeat; }
+	#content-area h1 a.new-layer:hover { background-position:left -15px; }
+
+#content-area h2 a.pdf{margin-top: 5px; margin-right:10px; float: right; background-image: url('images/18_18_print.jpg');height: 18px; width: 18px; display: block;}
+#content-area h2 a.excel{margin-top: 5px; margin-right:10px; float: right; background-image: url('images/18_18_excel.jpg');height: 18px; width: 18px; display: block;}

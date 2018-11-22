@@ -1,0 +1,27 @@
+/** BEGIN: Menu Editors **/
+.mstrmojo-ui-MenuEditor {
+    .me-content {
+        border-bottom: 1px solid #333333;
+        padding: 9px 9px 9px 9px;
+    }
+
+    .me-buttons {
+        border-top: 1px solid #4E4E4E;
+        padding: 9px;
+        overflow: auto;
+        min-width: 135px;
+        text-align: center;
+        line-height: 0px;
+
+        .mstrmojo-WebButton {
+            float: none;
+            margin-top: 0px;
+            margin-left: 9px;
+
+            &:first-child {
+                margin-left: 0px;
+            }
+        }
+    }
+}
+/** END: Menu Editors **/

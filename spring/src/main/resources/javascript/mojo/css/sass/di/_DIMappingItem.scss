@@ -1,0 +1,103 @@
+.mstrmojo-di-datapreview-headerIcon{
+  background-position: 0 5px;
+  background-repeat:no-repeat;
+  height:20px;
+  display: inline-block;
+  vertical-align: middle;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+
+.mstrmojo-di-datapreview-headerIcon.t0 {
+  background-image:url(../../../style/mstr/images/archlistView.png);
+  background-position: 0px 0px;
+  .mstrmojo-InlineEditBox:hover {
+    border-color:transparent;
+  }
+}
+.mstrmojo-di-datapreview-headerIcon.t12 {background-image: url(images/DI/icon_att.png); /*attribute*/}
+.mstrmojo-di-datapreview-headerIcon.t4 {background-image: url(images/DI/icon_metric.png);/*fact*/}
+.mstrmojo-di-datapreview-headerIcon.t12.time  {background-image: url(images/DI/icon_time.png);/*time attribute*/}
+.mstrmojo-di-datapreview-headerIcon.t12.geo  {background-image: url(images/DI/icon_geo.png);/*geo attribute*/}
+.mstrmojo-di-datapreview-headerIcon.trs { background-image: url(images/DI/listView.png);
+  background-position: -20px -40px;}
+
+// mapping item style
+.mstrmojo-di-mappingitem {
+  width: 100%;
+  height: 22px;
+  overflow: hidden;
+  white-space: nowrap;
+
+  .mappingitem-icon {
+    float: left;
+    width: 20px;
+    margin-left: 5px;
+
+  }
+  .mappingitem-text {
+    float: left;
+    //max-width: 70%; //YGUO TQMS-894299 set a max width for the item text width
+    width: 60%; // TQMS 955451: set width
+    width: calc(100% - 41px);
+    width: -moz-calc(100% - 41px);
+    width: -webkit-calc(100% - 41px);
+    width: -o-calc(100% - 41px);
+    .mstrmojo-InlineEditBox{
+      border: 0px solid transparent;
+    }
+  }
+
+  .ipa {
+    font-style: italic;
+  }
+
+  .mstrmojo-InlineEditBox.edit, .mstrmojo-InlineEditBox:hover {
+    border-color: transparent;
+  }
+  .mstrmojo-InlineEditBox-text {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    line-height: 20px;
+    vertical-align: middle;
+  }
+  .mstrmojo-InlineEditBox-input {
+    background-color: transparent;
+  }
+
+  // Wang Yintian TQMS 947569 change the icon of mune
+  .mappingitem-menu {
+    width: 16px;
+    height: 16px;
+    float: right;
+    background: transparent url(images/DI/main_icons_sprite.png) no-repeat -60px 1px;
+    vertical-align: middle;
+    display: none;
+    margin-top: 3px
+  }
+
+  .mappingitem-menu:hover{
+    background-position: -60px -29px;
+  }
+
+  .mappingitem-menu:active{
+    background-position: -60px -59px;
+  }
+
+}
+.mstrmojo-di-mappingitem:hover .mappingitem-menu{
+     display: block;
+}
+
+.mstrmojo-di-mappingitem.linked .t12 .mappingitem-text-div {
+  float:left;
+}
+.mstrmojo-di-mappingitem.linked .mappingitem-linkedIcon {
+  background: url(vi/images/menu_icons.png) no-repeat -119px -84px;
+  width: 22px;
+  height: 20px;
+  cursor: default; //YGUO TQMS-912980
+  float: right;
+}

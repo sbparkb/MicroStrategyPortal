@@ -1,0 +1,195 @@
+﻿@charset "utf-8";
+
+@font-face {font-family: Malgun Gothic; src:url(./font/MalgunGothic.eot);}
+
+
+/* HTML Elements
+---------------------------------------------------------*/
+legend, #slogan h2, #footer h2 {position:absolute; overflow:hidden;	width:1px; height:1px; font-size:0;	line-height:0;}
+
+/* body 스타일 */
+html, body { height:100%; overflow:hidden;} 
+body {color:#000; font-size:12px; line-height:1.2; font-family: "Malgun Gothic", sans-serif; background: url() repeat-x 0 0;}
+
+/* 링크 */
+a, a:link {	color:#757575;	text-decoration:none;} 
+a:visited {	color:#757575;	text-decoration:none;}
+a:hover {	color:#000;	text-decoration:none;}
+a:focus {	color:#000;	text-decoration:none;}
+a:active {	color:#000;	text-decoration:none;} 
+
+/* 이미지, 폼관련 요소 */
+
+h1 { font-size:1.1em; }
+img {border:none;}
+legend { display:none; }
+fieldset { border:none; }
+.clear { clear:both; *height:0; }
+.none { display:none; }
+select { font-family:"Malgun Gothic", sans-serif; font-size:1em; padding:2px 1px; border:1px solid #a1afb8; vertical-align:middle; }
+select.multi { height:auto; }
+input.inputbox { font-family:"Malgun Gothic", sans-serif; font-size:1em; height:14px; line-height:14px; padding:2px 4px; border:1px solid #a1afb8; vertical-align:middle; }
+input.file { font-family:"Malgun Gothic", sans-serif; font-size:1em; line-height:14px; padding:2px 4px; vertical-align:middle; border:1px solid #a1afb8;}
+textarea { font-family:"Malgun Gothic", sans-serif; font-size:1em; line-height:14px; padding:2px 4px; border:1px solid #CCC; vertical-align:middle; }
+.tabletext { font-family:"Malgun Gothic", sans-serif; font-size:1em; border:none; width:99.5%; }
+.checkbox, .radio { margin:0 2px 1px; *margin:0 0 1px -4px; vertical-align:bottom; *vertical-align:middle;  }
+.contentIframe { margin:20px; min-width:400px; }
+.inline { display:inline !important; }
+
+
+
+/* -----  contents layout ------ */
+#AllWrapper {  width:100%; min-height: 100%; height: 100%; overflow:hidden;}
+
+/* contents 
+---------------------------------------------------------------------*/
+#contents { clear:both; width:100%; padding-top:0px;  background:url() no-repeat 0 0; height: 100%; overflow:hidden;background-color:#f8f8f9;}
+#contents .sectionleft  {float:left; display:inline; width:230px; position:relative; background-color:#FFF; margin-top:0px; min-height: 100%; height: 100%; overflow:hidden;}
+#contents .sectionright {float:left; margin-left:30px; }
+
+
+#leftclose { position:absolute; top:0px; width:230px; text-align:right; z-index:200;}
+#leftopen { position:absolute; left:0; top:0px; z-index:200;}
+
+
+/* Header 
+---------------------------------------------------------------------*/
+#Header { position:relative; font-family: "Malgun Gothic", sans-serif; }
+
+
+/* topInfo 
+---------------------------------------------------------------------*/
+#topLogo { position:relative; padding-top:7px; height:80px; background-color:#1d2e3e; text-align:center;}
+#topLogo .txt { top:5px; position:relative; color:#e3e5e9;letter-spacing:-1px; font-size:12px;}
+
+#LSearch {border-right:1px solid #d7d9e0; border-bottom:1px solid #d7d9e0; padding:10px 0 10px 0;}
+.search2 { width:197px; padding:0 3px 0 0;*padding:0 0 3px 0;border:1px solid #e0e0e0;margin-left:13px}
+.search2 a img{margin:0;text-align:right;vertical-align:middle}
+.search2 .top_text{width:170px;*width:170px;padding:0px 5px 3px 6px;*padding:0px 0px 0 0px;border:0;background:#FFF;color:#888; font-size:11px; height:22px;*height:18px}
+
+#QuickMenu {border-right:1px solid #d7d9e0; border-bottom:1px solid #d7d9e0; text-align:center; padding:10px 0 10px 0;}
+.icon li {display:inline; padding: 0 5px 0 5px;}
+
+	
+
+/* nav menu styles */
+.navi  { height:100%;  overflow:hidden; border-right:1px solid #d7d9e0;
+		 font-family: "Malgun Gothic", sans-serif; font-weight:nomal; color:#a0abbd; }
+
+#nav { 
+  display: block; 
+  width: 100%; 
+  margin: 0 auto; 
+}
+
+.navi::-webkit-scrollbar {
+	
+    width: 8px;
+    height: 8px;
+    /*
+    background-color: #F1F1F1;
+    width: 1em;
+    */
+    
+}
+
+.navi::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 2px rgba(0,0,0,0.3);
+}
+
+.navi::-webkit-scrollbar-thumb {
+	background-color: darkgrey;
+    outline: 1px solid slategrey;
+}
+
+#nav li { }
+
+#nav > li > a { 
+  display: block; 
+  padding: 13px 15px;
+  font-size: 1.0em;
+  font-weight: bold;
+  color: #7a8493;
+  text-decoration: none;
+  border-bottom: 1px solid #d7d9e0;
+  background: #FFF url('../images/left/navi_ico_1depth_closed.gif') center right no-repeat;
+}
+
+#nav > li > a:hover, #nav > li > a.open { 
+  color: #FFF;
+  border-bottom: 1px solid #848d95;
+  background: #1d2e3e url('../images/left/navi_ico_1depth_opened.gif') center right no-repeat;
+}
+
+#nav li ul { display: none; background: #394963; }
+
+#nav li ul li a { 
+  display: block; 
+  border-bottom: 1px solid #566887;
+  background: #394963 url('../images/left/navi_ico_2depth_closed.gif') center right no-repeat;
+  padding: 12px 0px;
+  padding-left: 25px;
+  font-size: 1.0em;
+  text-decoration: none;
+  color: #FFF;
+}
+#nav li ul li a:hover, #nav li ul li a.open {
+  background: #303e54 url('../images/left/navi_ico_2depth_opened.gif') center right no-repeat;
+  font-weight: bold;
+  color: #FFF;
+}
+
+
+/* 3뎁스메뉴가 바로 나올때 */
+#nav li ul li a.report { 
+  display: block; 
+  background: #586a89 url('../images/left/navi_ico_3depth.gif') center left 26px no-repeat;
+  padding: 8px 0px;
+  padding-left: 35px;
+  font-size: 11px;
+  color: #f2f4f7;
+  border-bottom: none;
+}
+#nav li ul li .report.open, #nav li ul li .report.open:hover, #nav li ul li .report:hover {
+  background: #627493 url('../images/left/navi_ico_3depth.gif') center left 26px no-repeat;
+  color: #FFF;
+  font-weight: bold;
+}
+/* //3뎁스메뉴가 바로 나올때 */
+
+#nav li ul li ul {padding: 1px 15px; background-color: #566887; border-bottom: 1px solid #445362;}
+
+#nav li ul li ul li a { 
+  display: block; 
+  background: #586a89 url('../images/left/navi_ico_3depth.gif') center left 26px no-repeat;
+  padding: 8px 0px;
+  padding-left: 35px;
+  font-size: 11px;
+  color: #f2f4f7;
+  border-bottom: none;
+}
+#nav li ul li ul li a:hover, #nav li ul li ul li a.open {
+  background: #627493 url('../images/left/navi_ico_3depth.gif') center left 26px no-repeat;
+  color: #FFF;
+  font-weight: bold;
+}
+
+
+/* login
+---------------------------------------------------------------------*/
+#loginbg { background:url(../images/login/login_bg.gif) repeat 0 0; font-family: "Malgun Gothic", sans-serif; }
+#login {  width:940px; top:120px; margin: 0 auto; position:relative;}
+#login .loginlogo {float:left; padding-bottom:5px; padding-left:0px;}
+#login .login_systemname {float:right; right:0; margin-top: 40px; color:#282828; font-size:14px; letter-spacing:-1px;}
+#loginbigbox { clear:both; width:940px; height:535px; margin-top:3px; background-color:#FFF; border:1px solid #d8d8d8;}
+#loginbigbox h2 { margin: 70px 0 0 200px; color:#282828; font-size:30px; letter-spacing:-1px;}
+#loginbox  {margin: 10px 0 0 200px; width:445px; height:280px; background-color:#fcfcfc; border:1px solid #d8d8d8; padding:45px 0 0 95px;}
+#loginbox h3 {color:#757474; font-size:14px; letter-spacing:-1px;}
+.loginid { margin : 20px 0 10px 0; width:348px; height:48px; background-color:#FFF; border:1px solid #d8d8d8;}
+.loginid input { font-size:14px; font-family: "Malgun Gothic", sans-serif; letter-spacing:-1px; color:#777; padding:0px 0 0 20px; width:328px; height:48px; border:none; background:none; }
+.loginpw { width:348px; height:48px; background-color:#FFF; border:1px solid #d8d8d8;}
+.loginpw input { font-size:14px; font-family: "Malgun Gothic", sans-serif; letter-spacing:-1px; color:#777; padding:0px 0 0 20px; width:328px; height:48px; border:none; background:none; }
+.btn_login  { margin-top:25px; width:350px;} 
+.idpw_search  {margin-top:10px; margin-left: 200px; width:542px; text-align:right; color:#757474;letter-spacing:-1px;}
+.color_orange  {color:#ff6a32;}
+#login_copyright { width:940px; margin: 0 auto; position:relative; font-family: "Malgun Gothic", sans-serif; margin-top: 125px; color:#989898; font-size:11px; text-align:center;}

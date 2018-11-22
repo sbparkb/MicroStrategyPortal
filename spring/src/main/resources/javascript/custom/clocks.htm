@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
+<html>
+<style>
+.mstr,
+.mstr input,
+.mstr select {
+	font-family: Tahoma, Arial, Verdana, sans-serif;
+	font-size: 8pt;
+}
+.mstr form {
+	display: inline;
+	margin: 0px;
+	padding: 0px;
+}
+
+.mstr {
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	background-color: #F0EDE5;
+}
+.mstr .pageHeader {
+	background-color: #800000;
+	border-bottom: 1px solid #ffffff;
+	height: auto;
+	width: 100%;
+	color: #ffffff;
+}
+.mstr .pageHeader .title {
+	font-size: 14pt;
+	
+	xmargin-left:36px;
+	xmargin-top: 0px;
+}
+.mstr .pageHeader .left {
+	vertical-align: top;
+	width: auto;
+}
+.mstr .pageHeader .right {
+	width: 250px;
+	text-align: left;
+	vertical-align: top;
+	white-space: nowrap;
+}
+.mstr .pageHeader .right div {
+	margin-bottom: 6px;
+}
+.mstr .pageHeader .right a {
+	margin-right: 24px;
+	color: #ffffff;
+	font-weight: bold;
+}
+.mstr .pageHeader .right a:hover {
+	color: #ffffcc;
+}
+.mstr .pageHeader .right label {
+	color: #ffcc99;
+}
+.mstr .pageBodyTable {
+	table-layout: fixed;
+}
+.mstr .pageBodyCellLeft {
+	vertical-align: top;
+	width: 280px;
+	overflow: hidden;
+}
+.mstr .pageBodyCellLeft #selObjects
+{
+	width: 275px;
+}
+.mstr .pageBodyCellRight {
+	width: auto;
+	vertical-align: top;
+}
+.mstr .pageFooter {
+	border-top: 1px solid #d4d0c8;
+	color: #808080;
+	padding: 3px;
+	padding-left: 6px;
+}
+.mstr .userProp {
+	margin-bottom: 1em;	
+}
+.mstr .logViewer {
+	border: 2px inset #ffffff;
+	background-color: #ffffff;
+/*
+	text-align: left;
+	width: auto; was 660px;
+	height: auto; washeigh: 75%;	was 100px;
+	overflow: visible;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0px;
+*/
+}
+.mstr .logViewer .scrollArea {
+	height: 425px;
+	overflow: auto;
+}
+.mstr .logEntries {
+	table-layout: fixed;
+	border-collapse: collapse;
+	border: 1px solid #d4d0c8;
+}
+.mstr .logEntries td {
+	vertical-align: top;
+	padding: 0px;
+	overflow: hidden;
+	border-right: 1px dotted #d4d0c8;
+	border-bottom: 1px dotted #808080;
+}
+.mstr .logEntries .propName,
+.mstr .logEntries .propValue {
+	padding: 3px;
+	padding-left: 6px;
+	padding-right: 6px;
+}
+.mstr .logEntries .propName {
+	color: #ffffff;
+	background-color: #404040;
+	border-bottom: 1px solid #d4d0c8;
+	font-weight: bold;
+	white-space: nowrap;
+}
+.mstr .logEntries td.category {
+	width: 75px;
+}
+.mstr .logEntries td.object {
+	width: 115px;
+}
+.mstr .logEntries td.message {
+	width: 50%;
+}
+.mstr .logEntries td.method {
+	background-color: #f5f5f5;
+	width: 25%;
+}
+.mstr .logEntries td.method .propValue {
+	overflow: hidden;
+	height: 2em;	/* was: 300px; */
+}
+.mstr .logEntries td.index {
+	background-color: #F0EDE5;
+	width: 100px;
+}
+.mstr .logEntries td.level {
+	background-color: #F0EDE5;
+	font-weight: bold;
+	width: 65px;
+}
+.mstr .logEntries tr.level1 td.level {
+	background-color: #ff0000;
+	color: #ffffff;
+}
+.mstr .logEntries tr.level2 td.level {
+	background-color: #ffff00;
+}
+</style>
+	<script language="JavaScript" src="../../javascript/custom/pageClocks.js"><!-- //--></script>
+
+<body class="mstr" onload="mstrPageClocks.onload()">
+
+<div class="pageHeader">
+	<table class="headerTable">
+	<tr>
+		<td class="left">
+			<div class="title">MicroStrategy 9<br />&nbsp;&nbsp;Clock Log</div>
+		</td>
+		<td class="right">
+			<div>
+			<a href="javascript:void(location.reload(true))">Refresh</a>
+			<a href="javascript:void(mstrPageClocks.onclickClear())">Clear Log</a>
+			<a href="javascript:void(window.close())">Close</a>
+			</div>
+		</td>
+	</tr>
+	</table>
+</div>
+
+<div class="pageBody">
+	<div id="userAgent" class="userProp">
+		<span>User Agent:</span>
+		<span><script language="javascript">document.write(navigator.userAgent);</script></span>
+	</div>
+	<div id="logViewer" class="logViewer"></div>
+</div>
+
+</body>
+</html>

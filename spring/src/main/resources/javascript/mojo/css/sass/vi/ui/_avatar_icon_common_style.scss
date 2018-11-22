@@ -1,0 +1,27 @@
+%avatar-icon-common-style {
+  content: ' ';
+  height: 15px;
+  position: absolute;
+  left: -7px;
+  top: -7px;
+  width: 15px;
+  background: transparent url(#{$vi-img-path}/unitList/drag_cursor_assets.png) 0 -50px no-repeat;
+  opacity: 1;
+  transition: none;
+  -moz-transition: none;
+  -webkit-transition: none;
+}
+
+@mixin icon-style($val) {
+  @if ($val == 'add') {
+    background-position: 0 0;
+  } @else if($val == 'replace') {
+    background-position: 0 -100px;
+  } @else if($val == 'move') {
+    background-position: 0 -200px;
+  } @else if($val == 'remove') {
+    background-position: 0 -300px;
+  } @else {
+    background-position: 0 -50;
+  }
+}

@@ -1,0 +1,1 @@
+(function(){mstrmojo.requiresCls("mstrmojo.Image","mstrmojo._TouchGestures");mstrmojo.android.ui.Image=mstrmojo.declare(mstrmojo.Image,[mstrmojo._TouchGestures],{scriptClass:"mstrmojo.android.ui.Image",touchTap:mstrmojo.emptyFn});}());

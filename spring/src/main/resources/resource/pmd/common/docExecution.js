@@ -1,0 +1,4 @@
+/**
+ * 
+ */
+document.mstrForm.submit();

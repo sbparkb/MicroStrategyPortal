@@ -1,0 +1,69 @@
+@import '../_global.scss';
+
+/** BEGIN: CheckList **/
+.mstrmojo-ui-CheckList {
+    overflow: hidden;
+
+    .scroll-container {
+        height: 100%;
+        overflow: auto;
+    }
+
+    .item {
+        background: transparent url(#{$mojo-img-path}/checkbox_sprite.png) -6px -26px no-repeat;
+        cursor: default;
+        display: block;
+        line-height: 22px;
+        padding: 0 4px 0 17px;
+        min-width: 65px;
+
+        &.selected {
+          background-position: -6px -1px;
+        }
+
+      &:last-child{
+          margin-bottom: 0 !important;
+        }
+
+        &:first-child{
+          margin-top: 0 !important;
+        }
+    }
+
+    .disableSelected .item.selected{
+        background-position: -6px -74px;
+    }
+
+    &.radio .item {
+        background-position: -6px -145px;
+
+        &:hover .only {
+            display: none;
+        }
+
+        &.selected {
+            background-position: -6px -121px;
+        }
+    }
+
+    &.horizontal {
+        .icn {
+            white-space: nowrap;
+
+            .item {
+                display: inline-block;
+                margin-right: 10px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+
+      .scroll-container.hasHorizontal {
+          min-height: 35px;
+      }
+    }
+}
+
+/** END: CheckList **/

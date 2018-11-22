@@ -1,0 +1,306 @@
+@import '../vi/vi-global';
+@import '../global-mixins';
+
+$color-hot-threshold-editor: #0C83C4;
+$color-band-border: rgba(0, 0, 0, 0.33);
+
+.mstrmojo-SimpleThresholdEditor {
+    width: 500px;
+
+    .row {
+        clear: both;
+        width: 70%;
+        margin: auto;
+        padding: 8px 0 0;
+        height: 30px;
+
+        .mstrmojo-Label {
+            float: left;
+            width: 30%;
+            line-height: 24px;
+        }
+        .mstrmojo-ui-Pulldown {
+            float: left;
+            width: 70%;
+            height: 24px;
+        }
+        .mstrmojo-PopupList {
+            z-index: 1002;
+        }
+
+        .mstrmojo-ui-CheckList {
+            float: left;
+            width: 70%;
+            line-height: 24px;
+        }
+
+        .mstrmojo-ui-Checkbox {
+            float: left;
+            margin-top: 4px;
+            margin-left: 15px;
+        }
+
+        .short {
+            width: 34%;
+            margin-right: 2%;
+        }
+        .short:last-child {
+            margin-right: 0px;
+        }
+
+        .mstrmojo-ui-Pulldown-text {
+            $height-text-pulldown: 18px;
+            height: $height-text-pulldown;
+            line-height: $height-text-pulldown;
+            border-radius: 4px;
+            padding: 2px 7px;
+            border: solid 1px #E5E5E5;
+            cursor: default;
+        }
+
+    }
+
+    .hideImage .row:first-child {
+        visibility: hidden;
+        height: 0px;
+        position: absolute;
+    }
+
+    .image-pulldown {
+
+        .mstrmojo-PopupList {
+            @include box-sizing();
+            min-width: 165px;
+        }
+
+        .item{
+            position: relative;
+            padding: 2px 5px 2px 6px;
+
+            > div {
+                float: left;
+                padding: 3px 0;
+            }
+
+            .bc {
+                width: 60px;
+                height: 12px;
+            }
+        }
+    }
+
+    .editor-buttons {
+        float: right;
+        border-top: solid 1px #F0F0F0;
+
+        .mstrmojo-WebButton {
+            margin: 0 0 0 11px;
+            float: right;
+            padding: 0px;
+            width: 60px;
+        }
+    }
+
+    .link {
+        float: left;
+        color: #007EBE;
+        line-height: 22px;
+        cursor: pointer;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .reverse {
+        width: auto;
+    }
+
+    .mstrmojo-color-slider {
+        width: 90%;
+        margin: auto;
+
+        $width-color-band: 30px;
+
+        .hidden-field {
+            opacity: 0;
+            position: absolute;
+            cursor: default;
+            width: 0;
+        }
+        .labels {
+            position: relative;
+            margin-top: 20px;
+            height: 20px;
+        }
+        .start-label,
+        .end-label {
+            height: 10px;
+            position: absolute;
+        }
+
+        .start-label {
+            left: 0;
+        }
+        .end-label {
+            right: 0;
+        }
+        .color-bands {
+            height: $width-color-band;
+            border: 1px solid #fff;
+
+            .host {
+                border: 0;
+                top: 100%;
+            }
+
+            .selected {
+                border: 2px solid $color-band-border;
+            }
+        }
+
+        &.image-mode {
+
+            .color-bands{
+                border: 1px solid hsla(0, 0%, 25%, 0.6);;
+                border-top-width: 0px;
+
+                height: 10px;
+                margin-top: 20px;
+            }
+        }
+
+        .color-band {
+            background-color: #FF670F;
+            border: 1px solid $color-band-border;
+            border-left: 0;
+            border-radius: 0;
+            position: absolute;
+            @include box-sizing();
+            height: $width-color-band;
+
+            &.no-border {
+                border: 0;
+            }
+
+            &:first-child {
+                border-left: 1px solid $color-band-border;
+                @include box-sizing();
+                height: $width-color-band;
+                z-index: 1001;
+                &.selected {
+                    border-left-width: 2px;
+                }
+            }
+        }
+
+        .mstrmojo-Image {
+            background-color: transparent;
+            position: absolute;
+            bottom: 26px;
+            height: 10px;
+            border: 0;
+            border-left: 1px solid hsla(0, 0%, 25%, 0.6);
+
+            &:first-child {
+                border-left: 0;
+            }
+
+            img {
+                position: absolute;
+                bottom: 0px;
+                width: 23px;
+                height: 28px;
+            }
+        }
+        .markers {
+            height: 20px;
+            position: relative;
+        }
+        .marker {
+            width: 15px;
+            height: 12px;
+            position: absolute;
+            margin-left: -6px;
+            background: url(#{$vi-img-path}/thresholds_handle.png) no-repeat -38px -4px;
+
+            &:active,
+            &.selected {
+                background-position: -8px -4px;
+            }
+        }
+
+        .editable-bubble {
+            position: absolute;
+            padding: 10px;
+            background: #EDEDED;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            border: #7E7F7F solid 1px;
+            bottom: 10px;
+            min-width: 60px;
+            margin-left: -30px;
+            @include box-sizing();
+            @include box-shadow(rgba(0,0,0,0.4),0,0,5px);
+            &:before, &:after {
+                content: '';
+                position: absolute;
+                border-style: solid;
+                border-width: 8px 6px;
+                display: block;
+                width: 0;
+                left: 24px;
+                border-bottom: 0px;
+            }
+            &:before {
+                border-color: #747474 transparent;
+                z-index: 0;
+                bottom: -9px;
+            }
+            &:after {
+                border-color: #EDEDED transparent;
+                z-index: 1;
+                bottom: -7px;
+            }
+        }
+    }
+
+    &.add-cursor {
+        position: absolute;
+        height: 15px;
+        width: 15px;
+        background: transparent url(#{$vi-img-path}/unitList/drag_cursor_assets.png) 0 0 no-repeat;
+        z-index: 11;
+    }
+}
+
+.marker-drag-avatar {
+    width: 15px;
+    height: 12px;
+    cursor: default;
+    margin-left: -5px;
+    background: url(#{$vi-img-path}/thresholds_handle.png) no-repeat -8px -4px;
+
+    .bar {
+        position: absolute;
+        height: 30px;
+        border-left: 1px solid rgba(64,64,64,0.6);
+        left: 7px;
+        top: -31px;
+    }
+}
+
+.mstrmojo-Editor.save-threshold-warning {
+
+    .mstrmojo-Editor-buttons {
+        tr td:first-child {
+            width: 99%;
+        }
+
+        .mstrmojo-WebButton.nosave {
+            width: 80px;
+            margin-left: 0;
+        }
+    }
+}

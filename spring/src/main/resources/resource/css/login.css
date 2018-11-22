@@ -1,0 +1,65 @@
+@charset "utf-8";
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {margin:0; border:0; padding:0;}
+body { font-family:'Malgun Gothic','����',Dotum; line-height:18px; font-size:13px; color:#333; word-break:break-all; }
+ol, ul { list-style:none; }
+button { }
+.hidden, legend, caption { width:0; height:0; line-height:0; font-size:0px; float:left; position:absolute; visibility:hidden; overflow:hidden; display:none; }
+p { }
+strong{ font-weight:bold; }
+address { font-style:normal; }
+img { vertical-align:middle; }
+
+html3, body3 { height:100%; min-height:100%; background:url(../../iupload/login_bg.jpg) center top no-repeat; }
+body { height:100%; min-height:100%; background:url(../images/login2/login_bg.jpg) center top no-repeat; }
+
+#wrap { height:auto; position:relative; *zoom:1; }
+#wrap:after { content:""; display:block; clear:both; }
+
+
+.dimdBg { display:none; position:absolute; top:0; left:0; width:100%; background:url(../images/login/layer_ppbg.png) left top repeat; z-index:900; }
+
+/* ��й�ȣ �˸� ���̾� */
+#layer-pw { display:none; position:absolute; z-index:990; }
+#layer-pw .alert-pw { position:relative; width:300px; height:216px; background:#fff; }
+#layer-pw .alert-pw h4 { font-size:20px; line-height:24px; padding:12px 20px; color:#282828; border-bottom:2px solid #282828; }
+#layer-pw .alert-pw p { padding:46px 20px; border-bottom:1px solid #efefef; }
+#layer-pw .alert-pw a#btn-complete { display:block; width:80px; height:30px; line-height:30px; margin:12px auto 0; color:#fff; background:#282828; text-align:center; text-decoration:none; }
+#layer-pw .alert-pw a#btn-close { position:absolute; right:16px; top:16px; display:block; width:17px; height:17px; background:url(../images/login/btn_close.png) left top no-repeat; }
+
+
+
+#vi-wrap { position:relative; }
+#vi-wrap .vi-txt { position:absolute; left:50%; top:40%; width:518px; height:156px; margin-left:-580px;  }
+
+
+/* Login */
+#login-wrap { position:absolute; right:0; top:0; width:420px; background:#fff; }
+#logo { margin:107px auto 0; z-index:1; width:188px; height:134px;  z-index:90; }
+#logo a { display:block; width:188px; height:134px; }
+
+#login-form { width:100%; position:absolute; z-index:80; }
+.login-box { margin:94px 50px 0;   }
+.login-box input { border:0; margin:2px 0; font-size:17px; }
+.login-box label.tit { color:#a1a1a1; margin:8px 0 4px 0; display:block; }
+.login-box input[type="text"] { width:308px; height:46px; padding-left:10px; border:1px solid #e0e0e0; }
+.login-box input[type="password"] { width:308px; height:46px; padding-left:10px; border:1px solid #e0e0e0; }
+.login-box input[type="submit"] { margin:16px 0 8px 0; cursor:pointer; width:320px; height:60px; font-size:0; background:url(../images/login/btn_login.png) left top no-repeat; }
+
+.login-box input[type="checkbox"] { display:none; }
+.login-box input[type="checkbox"] + label { vertical-align:middle; cursor:pointer; background:url(../images/login/checkbox.png) no-repeat; width:18px; height:16px; display:inline-block; padding:0; }
+.login-box input[type="checkbox"]:checked + label { background:url(../images/login/checkbox_on.png) no-repeat; width:18px; height:16px; display:inline-block; padding:0; }
+.login-box .save-txt { color:#666; padding-left:6px; }
+
+.login-txt { position:absolute; left:34px; bottom:24px; }
+.login-txt p { font-size:11px; color:#a1a1a1; line-height:24px; }
+
+
+
+#copy { width:100%; position:absolute; left:0; bottom:52px; text-align:center; color:#a1a1a1; z-index:70; }
+#copy p { z-index:71;}
+#copy .copyright { width:320px; margin:10px auto 0; padding-top:10px; font-size:11px; color:#999; border-top:1px solid #e0e0e0; z-index:72; }
+
+
+

@@ -1,0 +1,113 @@
+.mstrmojo-di-source-item{
+  height: 113px;
+  width: 120px;
+  cursor: pointer;
+  float: left;
+  padding: 10px 19px 25px;
+  border: solid 1px transparent;
+  border-radius: 1px;
+  color: #444649;// source name color
+  &:hover{
+    border: solid 1px #d5d5d5;
+    color: #000000;
+  }
+  &:hover .mstrmojo-di-Icons{
+  	display: none;
+  }
+  &:hover .mstrmojo-di-source-link {
+  	display: block;
+  }
+  &:hover .mstrmojo-di-source-desc {
+  	display: block;
+  }
+  &:hover .mstrmojo-di-source-pulldown {
+  	display: block;
+  }
+  &:hover .mstrmojo-di-source-pulldown {
+  	display: block;
+  }
+}
+
+.mstrmojo-di-Icons {
+//  display: block;
+//  float: left;
+  cursor:pointer;
+  vertical-align: top;
+  background-repeat:no-repeat;
+  //left: 21px;
+  height:80px;
+  width:80px;
+  position:relative;
+  margin: 0 20px;
+}
+
+
+.mstrmojo-di-source-name {
+  display: table;
+  font: 12px arial;
+  height: 28px;
+  width: 122px;
+  text-align: center;
+  margin-bottom: 7px;
+  word-wrap: break-word;
+  line-height: 28px;
+}
+
+.mstrmojo-di-source-name-span {
+  display: table-cell;
+  vertical-align: middle;
+  line-height: normal;
+}
+
+.mstrmojo-di-source-below{
+  height: 80px;
+  width: 122px;
+}
+.mstrmojo-di-source-desc {
+  display: none;
+  font: 11px arial;
+  color: #444649;
+  width: 122px;
+  margin-top: 0px;
+  text-align: left;
+  word-wrap: break-word;
+}
+
+.mstrmojo-di-source-link {
+  display: none;
+  text-align: center;
+  text-decoration: underline;
+  color: #007ebe;
+  .source-sub-list {
+    color: #515151;
+    width: 140px;
+    padding: 10px 20px 20px 20px;
+    tbody{
+      height: 286px;
+    }
+  }
+}
+
+.mstrmojo-di-source-link-paddingtop{
+  padding-top: 10px;
+}
+.mstrmojo-di-source-pulldown {
+  display: none;
+  .mstrmojo-ui-Pulldown .mstrmojo-PopupList {
+    width: auto;
+    .mstrmojo-popupList-scrollBar {
+      overflow-y: scroll !important;
+      max-height: 220px;
+    }
+  }
+}
+
+.mstrmojo-di-source-item.disabled{
+  opacity: 0.5;
+  -ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=50);//YGUO TQMS-933423 For IE8 and IE9
+  filter: alpha(opacity=50);
+}
+.mstrmojo-di-source-item.disabled .mstrmojo-di-Icons{
+  -ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=50);//YGUO TQMS-933423 For IE8 and IE9
+  filter: alpha(opacity=50);
+}

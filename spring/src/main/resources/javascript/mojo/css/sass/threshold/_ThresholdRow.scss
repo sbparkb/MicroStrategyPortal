@@ -1,0 +1,307 @@
+@import '../global';
+@import '../vi/vi-global';
+
+/** Start AdvancedThresholdEditor **/
+.mstrmojo-thresholdRow {
+    %img-base-thresholdRow {
+        width: 15px;
+        height: 15px;
+        margin: 7px 5px 6px 5px;
+    }
+
+    $border-highlight-dnd: #32B4F4;
+
+    border-bottom: solid 1px #E5E5E5;
+    min-height: 30px;
+
+    & > div {
+        position: relative;
+        float: left;
+
+        &.draggable-icon {
+            @extend %img-base-thresholdRow;
+            background: url(#{$mojo-img-path}/drag_icon.png) no-repeat 2px 3px;
+            // DE20283, hide reusable thresholds GUI for 10.2
+            //margin-left: 5px;
+            //margin-right: 5px;
+            margin-left: 10px;
+            margin-right: 10px;
+
+        }
+
+        &.container {
+            // DE20283, hide reusable thresholds GUI for 10.2
+            //width: 570px;
+            width: 560px;
+
+            & > div {
+                position: relative;
+                float: left;
+
+                // DE20283, hide reusable thresholds GUI for 10.2
+                /*&.mstrmojo-ui-Checkbox {
+                  margin-top: 4px;
+                }*/
+
+                &.mstrmojo-Label {
+                    line-height: 30px;
+                    // DE20283, hide reusable thresholds GUI for 10.2
+                    //width: 30px;
+                    //text-align: center;
+                    width: 20px;
+                }
+
+                &.mstrmojo-ThresholdExprTree {
+                    // DE20283, hide reusable thresholds GUI for 10.2
+                    //width: 510px;
+                    width: 530px;
+                    padding: 1px 0px;
+                    // DE20283, hide reusable thresholds GUI for 10.2
+					//margin-left: 10px;
+
+                    .mstrmojo-ConditionNode .mstrmojo-textset.mstrmojo-cond-text {
+                        color: #000;
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+
+        &.hasTarget {
+        	& > div {
+        		&.mstrmojo-ThresholdExprTree {
+        			width: 435px;
+        		}
+        	}
+        }
+
+        &.previewWrap {
+            width: 100px;
+            height: 30px;
+
+            .preview {
+                height: 22px;
+                line-height: 20px;
+                margin: 4px;
+                cursor: pointer;
+                border: 1px dotted #e1e1e1;
+                overflow: hidden;
+                text-align: center;
+                white-space: nowrap;
+
+                &.hasImage {
+                    padding: 0px;
+                }
+
+                .replaceImg {
+                    line-height: normal;
+                    max-height: 21px;
+                    max-width: 90px;
+                }
+            }
+        }
+
+
+        &.menu {
+            @extend %img-base-thresholdRow;
+            background: url(#{$vi-img-path}/menu_icons.png) no-repeat -59px 1px;
+
+            &:hover {
+                background: url(#{$vi-img-path}/menu_icons.png) no-repeat -59px -29px;
+            }
+        }
+
+        &.delete {
+            @extend %img-base-thresholdRow;
+            background: url(#{$mojo-img-path}/d1.png) no-repeat 2px 6px;
+            margin-left: 0px;
+
+            &:hover {
+                background: url(#{$mojo-img-path}/d2.png) no-repeat 2px 6px;
+            }
+        }
+    }
+
+    &.bottom {
+        border-bottom-color: $border-highlight-dnd;
+    }
+
+    &.top {
+        border-top: 1px solid $border-highlight-dnd;
+    }
+
+    /** BEGIN: Expression Node **/
+    $border-node-group: 1px dotted #b3e1f8;
+    %border-cond-contents {
+        background-color: #dff1fc;
+        border: 1px solid #c3e7f9;
+        border-radius: 2px;
+    }
+    %size-cond-contents {
+        padding: 4px 1px;
+        line-height: 12px;
+        margin-left: 0;
+    }
+
+    .mstrmojo-ConditionNode,
+    .mstrmojo-AndOrNode {
+        border: 1px dotted transparent;
+    }
+
+    .upgroup {
+        border: $border-node-group;
+        border-bottom-color: transparent;
+    }
+
+    .downgroup {
+        border: $border-node-group;
+        border-top-color: transparent;
+    }
+
+    // Clear defailt condition node CSS.
+    .mstrmojo-ConditionNode {
+
+        .mstrmojo-cond-prefix {
+            // Don't expose create set in advanced threshold editor now.
+            .mstrmojo-create-set-text {
+                display: none;
+            }
+        }
+
+        .mstrmojo-cond-contents:hover,
+        .mstrmojo-cond-contents {
+            @extend %size-cond-contents;
+
+            background-color: transparent;
+            border: 0;
+
+            // Change the delete icon.
+            .mstrmojo-del {
+                background: url(#{$mojo-img-path}/d1.png) no-repeat 2px 6px;
+
+                &:hover {
+                    background: url(#{$mojo-img-path}/d2.png) no-repeat 2px 6px;
+                }
+            }
+
+            .mstrmojo-add-cond {
+                display: none;
+            }
+        }
+    }
+
+    .mstrmojo-AndOrNode {
+
+        .mstrmojo-andor-contentsWrapper {
+            border: 1px dotted transparent;
+        }
+
+        &.upgroup {
+            > .mstrmojo-andor-contentsWrapper {
+                border: 1px dotted #b3e1f8;
+                border-bottom-color: transparent;
+            }
+        }
+
+        &.downgroup {
+            border: 1px dotted #b3e1f8;
+            border-top-color: transparent;
+        }
+
+        .mstrmojo-andor-prefix,
+        .mstrmojo-cond-prefix {
+            padding-left: 2px;
+
+            &:hover {
+                background-color: #eeeeee;
+            }
+        }
+
+        .mstrmojo-cond-contents.adv-threshold {
+            border: 1px solid transparent;
+            &:hover {
+                @extend %border-cond-contents;
+
+                .mstrmojo-add-cond {
+                    display: inline;
+                    float: right;
+                    width: auto;
+                    color: #007ebe;
+                    line-height: 12px;
+                    padding: 0 8px;
+                    margin-right: 12px;
+                    &:hover {
+                        cursor: pointer;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+
+        .mstrmojo-andor-prefix-text,
+        .mstrmojo-cond-prefix-text {
+            vertical-align: top;
+            padding-right: 18px;
+
+            .mstrmojo-andor {
+                vertical-align: top;
+                &:after {
+                    background: transparent url(#{$vi-img-path}/menu_icons.png) -60px 2px no-repeat;
+                    content: '';
+                    width: 14px;
+                    top: -2px;
+                    vertical-align: top;
+                    position: absolute;
+                    height: 15px;
+                    margin-left: 3px;
+                }
+            }
+        }
+    }
+
+    .mstrmojo-onhover-in.mstrmojo-andor-tools {
+        .mstrmojo-indent,
+        .mstrmojo-outdent {
+            float: right;
+        }
+
+        .mstrmojo-outdent,
+        .mstrmojo-indent {
+            width: auto;
+            background-image: none;
+            color: #007ebe;
+            line-height: 14px;
+            padding: 0 8px;
+            &:hover {
+                cursor: pointer;
+                text-decoration: underline;
+                color: #007ebe;
+            }
+        }
+    }
+
+    .mstrmojo-cond-text .mstrmojo-text {
+        padding: 2px 3px 1px 3px;
+    }
+    /** END: Expression Node **/
+
+    &.hasOwnAvatar {
+        margin: 10px;
+        border: 1px solid #E5E5E5;
+        background-color: #FFFFFF;
+
+        .mstrmojo-cond-contents {
+            width: 500px;
+
+            @extend %border-cond-contents;
+
+            @extend %size-cond-contents;
+
+            .mstrmojo-add-cond {
+                display: none;
+            }
+        }
+    }
+}
+
+/** End AdvancedThresholdEditor **/

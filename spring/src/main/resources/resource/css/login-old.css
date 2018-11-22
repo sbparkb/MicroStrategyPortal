@@ -1,0 +1,53 @@
+@charset "utf-8";
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {margin:0; border:0; padding:0;}
+body { font-family:'Malgun Gothic','돋움',Dotum; line-height:18px; font-size:13px; color:#333; word-break:break-all; }
+ol, ul { list-style:none; }
+button { }
+.hidden, legend, caption { width:0; height:0; line-height:0; font-size:0px; float:left; position:absolute; visibility:hidden; overflow:hidden; display:none; }
+p { }
+strong{ font-weight:bold; }
+address { font-style:normal; }
+img { vertical-align:middle; }
+
+html, body { height:100%; min-height:100%; background:url(../images/login/login_bg.jpg) left top no-repeat; }
+
+#wrap { height:auto; position:relative; *zoom:1; }
+#wrap:after { content:""; display:block; clear:both; }
+
+
+#vi-wrap { position:relative; }
+#vi-wrap .vi-txt { position:absolute; left:50%; top:40%; width:518px; height:156px; margin-left:-580px;  }
+
+
+/* Login */
+#login-wrap { position:absolute; right:0; top:0; width:642px; background:#fff; }
+#logo { margin:87px auto 0; z-index:1; width:256px; height:167px; }
+#logo a { display:block; width:256px; height:167px; }
+
+#login-form { width:354px; margin:124px auto 0; }
+.login-box {  }
+.login-box input { border:0; margin:2px 0; }
+
+
+.login-box .login_id { width:286px; height:50px; padding-left:68px; background:url(../images/login/login_idbg.png) left top no-repeat; }
+.login-box .login_pw { width:286px; height:50px; padding-left:68px; background:url(../images/login/login_pwbg.png) left top no-repeat; }
+
+/*
+.login-box input[type="text"] { width:286px; height:50px; padding-left:68px; background:url(../images/login/login_idbg.png) left top no-repeat; }
+.login-box input[type="password"] { width:286px; height:50px; padding-left:68px; background:url(../images/login/login_pwbg.png) left top no-repeat; }
+*/
+
+.login-box input[type="submit"] { margin-top:10px; cursor:pointer; width:354px; height:60px; font-size:0; background:url(../images/login/btn_login.png) left top no-repeat; }
+.login-box .btn-pwreset { text-align:right; margin-top:8px; }
+
+.login-txt { position:absolute; left:34px; bottom:24px; }
+.login-txt p { font-size:11px; color:#a0a0a0; line-height:24px; }
+
+ 
+
+#copy { width:100%; position:absolute; left:0; bottom:52px; text-align:center; color:#6a6a6a; }
+#copy .copyright { margin-top:4px; font-size:11px; color:#999; }
+#copy .copyright span { color:#e2231a; }
+

@@ -1,0 +1,58 @@
+@import '../wh-global';
+
+/* Namespace Pulldown */
+
+.mstrmojo-wh-NameSpacePullDown {
+  display: -webkit-flex !important;
+  display: -moz-flex !important;
+  display: -ms-flex !important;
+  display: -o-flex !important;
+  display: flex !important;
+
+  .mstrmojo-ui-SearchablePulldown {
+      width: 100%
+  }
+
+  .mstrmojo-wh-btnRefreshNS {
+    width: 24px !important;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-left: 5px;
+    background: #fff url(#{$wh-image-path}/panel_icons.png) no-repeat 2px 4px;
+    &:hover {
+      background-color: #eee;
+    }
+  }
+
+  // DE16847: Fix for IE8/IE9.
+  &.ie9 {
+    &:after {
+      content: "";
+      display: block;
+      visibility: hidden;
+      clear: both;
+    }
+    .mstrmojo-ui-SearchablePulldown {
+      float: left;
+    }
+
+    .mstrmojo-wh-btnRefreshNS {
+      float: left;
+      height: 21px;
+    }
+  }
+
+  .mojo-theme-light {
+    .mstrmojo-wh-btnRefreshNS {
+      border-color: #B5B5B5 !important;
+    }
+  }
+
+  .mojo-theme-dark{
+    .mstrmojo-wh-btnRefreshNS {
+      border-color: #0f0f10 !important;
+    }
+  }
+
+}

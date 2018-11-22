@@ -1,0 +1,21 @@
+.mstrmojo-DI-DIResourceAdmin {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  padding-left: 18px;
+  //padding-right: 18px;
+
+  .mstrmojo-DI-DIResourceAdmin-Label {
+    line-height: 24px;
+    font-weight: bold;
+  }
+
+  .mstrmojo-DI-DIResourceAdmin-Content {
+    margin-top: 12px;
+    margin-bottom: 16px;
+    min-height: 100px;
+  }
+
+}
