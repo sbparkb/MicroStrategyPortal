@@ -52,6 +52,8 @@ public class SeExceptionResolver extends SimpleMappingExceptionResolver {
         } else {
           logger.info("### SystemException_else : " + CmmUtil.exMessage(ex));          
         }        
+        
+        ex.printStackTrace();
 
         return super.resolveException(request, response, handler, ex);
     }

@@ -74,15 +74,6 @@ function reportSearch(){
 	    ftn_linkReport_notice();	
 	}
 	
-	//공지사항 리스트 페이지 이동
-	var fncMoveNotice	= function(){
-		var form		= $("<form></form>");
-		form.attr("action", URL_WEB_SERVER + "/service/bbs/bbsList.do");
-		form.append("<input type='hidden' name='bbsId' value='"+bbsId+"' />")
-		form.attr("method", "post");
-		$("body").append(form);
-		form.submit();
-	}
 	function fncPopNotice(){
 		 var form = $("<form></form>");
 		 var url = URL_WEB_SERVER + "/service/bbs/bbsList.do";
@@ -112,6 +103,16 @@ function reportSearch(){
 			 $("body").append(form);
 			 form.submit();
 		}
+	}
+	
+	//공지사항 리스트 페이지 이동
+	var fncMoveNotice	= function(){
+		var form		= $("<form></form>");
+		form.attr("action", URL_WEB_SERVER + "/service/bbs/bbsList.do");
+		form.append("<input type='hidden' name='bbsId' value='"+bbsId+"' />")
+		form.attr("method", "post");
+		$("body").append(form);
+		form.submit();
 	}
 	 
 	//비정형 분석

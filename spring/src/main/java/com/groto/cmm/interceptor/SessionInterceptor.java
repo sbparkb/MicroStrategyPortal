@@ -63,7 +63,7 @@ public class SessionInterceptor extends HandlerInterceptorAdapter {
 	        	
 	        	MSTRSessionUserImpl user = (MSTRSessionUserImpl)((HttpServletRequest)request).getSession().getAttribute(MSTRSessionUserImpl.ATTRIBUTE_NAME);	        	
 	        	if(user == null || "".equals(user.getUserId())) {	
-	        	      //request.getRequestDispatcher(rtnUrl).forward(request, response);
+System.out.println("세션 유실");
 	        		((HttpServletResponse)response).sendRedirect("/login/login.do");
 	        	  return false;
 	          }else{

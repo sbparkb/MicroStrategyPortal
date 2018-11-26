@@ -368,7 +368,7 @@ public class LoginController extends AbstractSessionUserService{
       }  
       
       loginstat = loginService.isValidUser(request, response, userInfo);  // mstr 사용자 존재여부
-
+      
       if(loginstat == 0){
             mav = loginSuccess(request, response, mav, userInfo, adminId, loginType, ra);
         }else{
@@ -411,26 +411,28 @@ public class LoginController extends AbstractSessionUserService{
       }
 
       user.setUserName(userBean.getDisplayName());  //user name bae 2017-08-28
-      user.setExcelAuth(loginCheckService.isExcelAuth(user.getMstrGroupId())); 
+      //user.setExcelAuth(loginCheckService.isExcelAuth(user.getMstrGroupId())); 
 
       if(!adminId.equals(userInfo.getMstrUserID()) && "erp".equals(loginType)) {   // admin아니고 erp 연동일경우 
         // : 로그인시간 저장
-        int ret = loginCheckService.updateLastLoginDate(userInfo.getMstrUserID());
-        logger.debug(String.valueOf(ret));
+        loginCheckService.updateLastLoginDate(userInfo.getMstrUserID());        
       }
 
-      request.setAttribute(MSTRSessionUserImpl.ATTRIBUTE_NAME, user);
-
+      request.getSession().setAttribute(MSTRSessionUserImpl.ATTRIBUTE_NAME, user);
+System.out.println("userName:"+user.getUserName());
       server.closeSession();
       mav.setViewName("redirect:/login/main.do");
     } catch (WebBeanException e) {
       mav = loginErrorMsg(ra, mav);
+      e.printStackTrace();
       return mav;
     } catch (WebObjectsException e) {
       mav = loginErrorMsg(ra, mav);
+      e.printStackTrace();
       return mav;
     } catch (SQLException e) {
       mav = loginErrorMsg(ra, mav);
+      e.printStackTrace();
       return mav; 
     }
 
@@ -840,7 +842,9 @@ public class LoginController extends AbstractSessionUserService{
       ){
     
       ModelAndView mav      = new ModelAndView();
+System.out.println("menu1");      
       menuService.lnbMenuList(request, response, userInfo);
+System.out.println("menu2");
       mav.setViewName("/mstr/main");
       return mav;
     }

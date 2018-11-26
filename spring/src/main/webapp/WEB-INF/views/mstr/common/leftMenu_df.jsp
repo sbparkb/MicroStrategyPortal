@@ -10,7 +10,6 @@
 <%@ taglib prefix="fn" uri = "http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="sep" uri="/sepMstrTL.tld"%>
 <sep:script message=""/>
-<sep:def notiSeq="${fn:escapeXml(notiSeq)}"/>
 <script src="${fn:escapeXml(pageContext.request.contextPath)}/resource/pmd/common/leftMenu_df.js"></script>
        <div class="fixed_menu_left close">
             <h1><img src="../df/images/DBI_Main_Title_B.png" alt="BI PORTAL"></h1>

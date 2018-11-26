@@ -15,7 +15,6 @@ import java.util.List;
 import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -70,11 +69,8 @@ public class ReportController
   {
     response.setHeader("P3P", "CP='CAO PSA CONi OTR OUR DEM ONL'");
     request.setAttribute("isBiWeb", "Y");
-    
-    String notiSeq = "";
-    MSTRSessionUserImpl user = (MSTRSessionUserImpl)request.getSession().getAttribute("MSTRSessionUser");
-    
-    request.setAttribute("notiSeq", notiSeq);
+        
+    MSTRSessionUserImpl user = (MSTRSessionUserImpl)request.getSession().getAttribute("MSTRSessionUser");    
     request.setAttribute("user", user);
     
     ModelAndView mav = new ModelAndView();
