@@ -419,20 +419,17 @@ public class LoginController extends AbstractSessionUserService{
       }
 
       request.getSession().setAttribute(MSTRSessionUserImpl.ATTRIBUTE_NAME, user);
-System.out.println("userName:"+user.getUserName());
+
       server.closeSession();
       mav.setViewName("redirect:/login/main.do");
     } catch (WebBeanException e) {
       mav = loginErrorMsg(ra, mav);
-      e.printStackTrace();
       return mav;
     } catch (WebObjectsException e) {
       mav = loginErrorMsg(ra, mav);
-      e.printStackTrace();
       return mav;
     } catch (SQLException e) {
       mav = loginErrorMsg(ra, mav);
-      e.printStackTrace();
       return mav; 
     }
 
@@ -842,9 +839,7 @@ System.out.println("userName:"+user.getUserName());
       ){
     
       ModelAndView mav      = new ModelAndView();
-System.out.println("menu1");      
       menuService.lnbMenuList(request, response, userInfo);
-System.out.println("menu2");
       mav.setViewName("/mstr/main");
       return mav;
     }

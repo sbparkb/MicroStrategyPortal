@@ -62,8 +62,7 @@ public class SessionInterceptor extends HandlerInterceptorAdapter {
           if(!isPatternMatch(noCheckUri, requestURI)) {
 	        	
 	        	MSTRSessionUserImpl user = (MSTRSessionUserImpl)((HttpServletRequest)request).getSession().getAttribute(MSTRSessionUserImpl.ATTRIBUTE_NAME);	        	
-	        	if(user == null || "".equals(user.getUserId())) {	
-System.out.println("세션 유실");
+	        	if(user == null || "".equals(user.getUserId())) {        		
 	        		((HttpServletResponse)response).sendRedirect("/login/login.do");
 	        	  return false;
 	          }else{
@@ -113,8 +112,8 @@ System.out.println("세션 유실");
         String usrSmgr1 = serverSession.saveState(EnumWebPersistableState.MAXIMAL_STATE_INFO);
         user.setMstrSessionState(usrSmgr1);
         
-        request.setAttribute("usrSmgr1", usrSmgr1);
-        request.setAttribute(MSTRSessionUserImpl.ATTRIBUTE_NAME, user);
+        request.getSession().setAttribute("usrSmgr1", usrSmgr1);
+        request.getSession().setAttribute(MSTRSessionUserImpl.ATTRIBUTE_NAME, user);
       }
       return true;
     }      

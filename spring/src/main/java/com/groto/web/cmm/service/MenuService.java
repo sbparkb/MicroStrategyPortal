@@ -90,7 +90,7 @@ public class MenuService extends AbstractSessionUserService implements Serializa
 
       WebObjectSource wos = serverSession.getFactory().getObjectSource();
       WebObjectInfo objInfo = wos.getObject(folderId, EnumDSSXMLObjectTypes.DssXmlTypeFolder, true);
-
+            
       int objTypes1[] =
         {EnumDSSXMLObjectTypes.DssXmlTypeReportDefinition, EnumDSSXMLObjectTypes.DssXmlTypeDocumentDefinition,
           EnumDSSXMLObjectTypes.DssXmlTypeShortcut, EnumDSSXMLObjectTypes.DssXmlTypeFolder};
@@ -117,7 +117,7 @@ public class MenuService extends AbstractSessionUserService implements Serializa
       result.put("lnbMenuList", menuList);
       result.put("forderId1", folderId);
       
-      request.setAttribute("lnbMenuParam", result);
+      request.getSession().setAttribute("lnbMenuParam", result);
 
     } catch (WebObjectsException ex) {
       LOGGER.error("[ " + this.getClass().getName().replaceAll("[\r\n]","") + " , ERROR METHOD : " + ex.getStackTrace()[1].getMethodName().replaceAll("[\r\n]","") + " ]");

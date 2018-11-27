@@ -78,6 +78,7 @@ public class LeftMenuTag extends BodyTagSupport implements Serializable {
 		
 		if(request.getSession().getAttribute("lnbMenuParam") != null){
 			ArrayList<TreeBean> list = (ArrayList<TreeBean>)(((Map<String, Object>)request.getSession().getAttribute("lnbMenuParam")).get("lnbMenuList"));
+			
 			String folderId = (String)(((Map<String, Object>)request.getSession().getAttribute("lnbMenuParam")).get("forderId"));
 			this.sideMenuHtml = "";
 		 
@@ -115,7 +116,7 @@ public class LeftMenuTag extends BodyTagSupport implements Serializable {
 				}else{
 					this.sideMenuHtml += "<a href='javascript:ftn_linkReport2(\""+tb.getId().replaceAll(" ", "")+ "\", \""+tb.getType()+"\", \""+tb.getSubType()+"\", \"" + tb.isShortcut() + "\",";
 					this.sideMenuHtml += " \"" + tb.getTargetId() + "\", \"" + tb.getTargetType() + "\", \"" + tb.getTargetSubType() + "\", \"" + tb.getMenuName();
-					if(tb.getDescription().contains(SystemMessage.getMessage("mstr.config.execTypeTxt"))) {
+					if(!tb.getDescription().contains(SystemMessage.getMessage("mstr.config.execTypeTxt"))) {
 						this.sideMenuHtml += "\", \"portal\"";
 					}else {
 						this.sideMenuHtml += "\", \"mstr\"";

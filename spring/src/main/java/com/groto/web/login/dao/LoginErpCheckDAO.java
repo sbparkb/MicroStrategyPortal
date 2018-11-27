@@ -88,21 +88,18 @@ public class LoginErpCheckDAO extends SqlSessionDaoSupportERP {
 	public int insertSmsOtp(Map<String, Object> params) {
 
 		int rtn = getSqlSession().insert("erp.insertSmsOtp", params);
-		// System.out.println("rtn :" + rtn);
 		return rtn;
 	}
 
 	public int insertUserToErpHis(Map<String, Object> params) throws SQLException {
 
 		int rtn = getSqlSession().insert("erp.insertUserToErpHis", params);
-		// System.out.println("rtn :" + rtn);
 		return rtn;
 	}
 
 	public int updateUserToErp(Map<String, Object> params) throws SQLException {
 
 		int rtn = getSqlSession().update("erp.updateUserToErp", params);
-		// System.out.println("rtn :" + rtn);
 		return rtn;
 	}
 

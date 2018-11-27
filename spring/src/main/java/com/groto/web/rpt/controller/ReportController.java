@@ -91,22 +91,6 @@ public class ReportController
   {
     ModelAndView mav = new ModelAndView();
     
-    Map<String, String> ret = commonService.selectRptUseYn(objectId);
-    
-    String execYn = "Y";
-    String noResn = "";
-    
-    if (ret != null) {
-      execYn = StringUtil.defaultIfEmpty((String)ret.get("EXEC_YN"), "Y");
-      noResn = StringUtil.defaultIfEmpty((String)ret.get("NON_USE_RESN"), "");
-    }
-    
-    if ("N".equals(execYn)) {
-      request.setAttribute("msg", noResn);
-      mav.setViewName("/mstr/common/noExec");
-      return mav;
-    }
-    
     if ("portal".equals(execType)) {
       model.addAttribute("executeUrl", "reportExecution.do");
     } else {
@@ -153,7 +137,7 @@ public class ReportController
     response.setHeader("P3P", "CP='CAO PSA CONi OTR OUR DEM ONL'");
     response.setCharacterEncoding("UTF-8");
     request.setCharacterEncoding("UTF-8");
-    String strPromptXML = (String)request.getAttribute("strPromptXML");
+    String strPromptXML = (String)request.getSession().getAttribute("strPromptXML");
     
     if ((null != strPromptXML) && (!"".equals(strPromptXML))) {
       strPromptXML = strPromptXML.replaceAll("&", "&amp;");

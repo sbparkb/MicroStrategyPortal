@@ -3,50 +3,48 @@ package com.groto.session;
 import java.io.Serializable;
 
 /**
- *  Class Name  :  MSTRSessionUserImpl
- *  Description :  MSTR 세션 유저 
+ * Class Name : MSTRSessionUserImpl Description : MSTR 세션 유저
  *
- *  Modification Information
+ * Modification Information
  *
- *  Mod Date      Modifier Description
- *  -----------   -------- ---------------------------
- *  2015. 9. 23.  lastpice Generation
+ * Mod Date Modifier Description ----------- --------
+ * --------------------------- 2015. 9. 23. lastpice Generation
  *
- *  @author lastpice
- *  @since  2015. 9. 23. 오후 1:33:07
- *  @version 1.0
+ * @author lastpice
+ * @since 2015. 9. 23. 오후 1:33:07
+ * @version 1.0
  */
 
 public class MSTRSessionUserImpl implements MSTRSessionUser, Serializable {
 
 	private static final long serialVersionUID = 2994940876335363962L;
-	
+
 	private String mstrUserID;
 
 	private String mstrUserPW;
 
 	private String mstrSessionState;
-	
+
 	private String mstrServerName;
-	
+
 	private String mstrProjectName;
-	
+
 	private String gnbMenuId;
-	
+
 	private String portalId;
-	
+
 	private String userId;
-	
+
 	private String userName;
-	
+
 	private String mstrGroupId;
-	
+
 	private String webAdminGrp;
-	
-	private transient boolean  isExcelAuth;
-	
-	private String notiSeq;   // 공지사항 팝업 seq 
-	
+
+	private transient boolean isExcelAuth;
+
+	private String notiSeq; // 공지사항 팝업 seq
+
 	public boolean isExcelAuth() {
 		return isExcelAuth;
 	}
@@ -63,8 +61,7 @@ public class MSTRSessionUserImpl implements MSTRSessionUser, Serializable {
 	}
 
 	/**
-	 * @param mstrUserID
-	 *        the mstrUserID to set
+	 * @param mstrUserID the mstrUserID to set
 	 */
 	public void setMstrUserID(String mstrUserID) {
 		this.mstrUserID = mstrUserID;
@@ -78,8 +75,7 @@ public class MSTRSessionUserImpl implements MSTRSessionUser, Serializable {
 	}
 
 	/**
-	 * @param mstrUserPW
-	 *        the mstrUserPW to set
+	 * @param mstrUserPW the mstrUserPW to set
 	 */
 	public void setMstrUserPW(String mstrUserPW) {
 		this.mstrUserPW = mstrUserPW;
@@ -93,8 +89,7 @@ public class MSTRSessionUserImpl implements MSTRSessionUser, Serializable {
 	}
 
 	/**
-	 * @param mstrSessionState
-	 *        the mstrSessionState to set
+	 * @param mstrSessionState the mstrSessionState to set
 	 */
 	public void setMstrSessionState(String mstrSessionState) {
 		this.mstrSessionState = mstrSessionState;
@@ -172,8 +167,17 @@ public class MSTRSessionUserImpl implements MSTRSessionUser, Serializable {
 		this.notiSeq = notiSeq;
 	}
 
-  public static long getSerialversionuid() {
-    return serialVersionUID;
-  }
-	
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	@Override
+	public String toString() {
+		return "MSTRSessionUserImpl [mstrUserID=" + mstrUserID + ", mstrUserPW=" + mstrUserPW + ", mstrSessionState="
+				+ mstrSessionState + ", mstrServerName=" + mstrServerName + ", mstrProjectName=" + mstrProjectName
+				+ ", gnbMenuId=" + gnbMenuId + ", portalId=" + portalId + ", userId=" + userId + ", userName="
+				+ userName + ", mstrGroupId=" + mstrGroupId + ", webAdminGrp=" + webAdminGrp + ", notiSeq=" + notiSeq
+				+ "]";
+	}
+
 }

@@ -23,7 +23,6 @@
 	String Scheme  = request.getScheme();  // http, https, ftp...
 	String ServerName  = request.getServerName();  // 서버네임
 	int Port        = request.getServerPort() ;   // port
-System.out.println("main:" + sessionid);	
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>

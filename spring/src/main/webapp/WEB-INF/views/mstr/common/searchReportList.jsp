@@ -16,7 +16,6 @@
 	String context 				= request.getContextPath();
 	String sessionid			= (String) request.getSession().getAttribute( "usrSmgr" );
 	ArrayList<ReportInfo> list			= (ArrayList<ReportInfo>)(request.getAttribute("list"));
-	//System.out.println("list size = " + list.size());
 	
 %>
 
