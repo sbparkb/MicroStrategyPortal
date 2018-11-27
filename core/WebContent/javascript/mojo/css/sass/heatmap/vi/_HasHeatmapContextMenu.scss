@@ -1,0 +1,23 @@
+@import '../../vi/vi-global';
+
+.single-operator-plus {
+  background-repeat: no-repeat;
+  width: 25px;
+  height: 23px;
+  background-image: url(#{$vi-img-path}/plus_hover.png);
+}
+
+//.single-operator-plus:hover {
+//  background-image: url(#{$vi-img-path}/plus_hover.png);
+//}
+
+.single-operator-minus {
+  background-repeat: no-repeat;
+  width: 25px;
+  height: 23px;
+  background-image: url(#{$vi-img-path}/minus_hover.png);
+}
+
+//.single-operator-minus:hover {
+//  background-image: url(#{$vi-img-path}/minus_hover.png);
+//}

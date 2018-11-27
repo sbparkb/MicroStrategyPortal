@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../plugins/LandingPage/images/favicon.ico">
+    <title>MicroStrategy Secure Enterprise</title>
+    <!-- Bootstrap core CSS -->
+    <link href="../plugins/LandingPage/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Custom styles for this template -->
+    <link href="../plugins/LandingPage/stylesheets/style.css" rel="stylesheet">
+    <link href="../plugins/LandingPage/stylesheets/carousel.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="navbar-wrapper product-wrapper">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="http://www.microstrategy.com/us/analytics/technology#cloud-platform">
+                    <img alt="Brand" src="../plugins/LandingPage/images/logo.png">
+                </a>
+            </div>
+            <div class="navbar-collapse navbar-right">
+                <!--<a id="signout" class="logout">Sign Out</a>-->
+            </div>
+        </div>
+    </nav>
+</div>
+<div class="container">
+    <div class="container welcome">
+        <div>
+			<br />
+    		<h2 style="display:inline;">Welcome to the MicroStrategy Secure Enterprise!</h2><p style="display:inline;">&nbsp;&nbsp; Version&nbsp;</p><p id="mstrVersion" style="display:inline;"></p>
+			<br />
+			<br />
+    		<p class="text-muted">MicroStrategy is your one-stop shop for building and deploying agile analytics, security, and mobile applications that scale for the enterprise.</p>
+    	</div>
+    </div>
+    <div class="container usher">
+    	<img class="usherLogin" src="../plugins/LandingPage/images/Usher-computer.png">
+    		<div class="usherSecurity">
+				<div class="col-lg-9">
+					<h2>New to MicroStrategy?</h2>
+					<p class="text-muted">Check out tutorial projects to learn MicroStrategy Analytics, Security and Mobile.</p>
+				</div>
+				<div class="col-lg-3">
+					<a href="#" id= "mstrTutorial" class = "btn btn-default btn-xlarge mstr-button btn-open-tutorial" type="button">Open Tutorial</a>
+				</div>
+    		</div>
+    </div>
+
+    <div class="container marketing mstr-products">
+        <div class="row mstr-products-list">
+            <div class="col-lg-4 mstr-analytics">
+    			<img class="analytics" src="../plugins/LandingPage/images/analytics.png">
+                <h2>Enterprise Analytics</h2>
+                <p class="text-muted">Access, analyze, and deploy insights gained from your enterprise data using MicroStrategy’s comprehensive analytics platform.</p>
+                <div class="btn-group btn-group-default" role="group" aria-label="...">
+                    <div class="btn-group" role="group">
+    					<a id="mstrWeb" href="#">
+                        <button type="button" class="btn btn-default mstr-link">MicroStrategy Web</button>
+    					</a>
+                    </div>
+                </div>
+                <p class="text-muted">Access MicroStrategy Web to build anything from analytical reports to mobile applications.</p>
+                <div class="btn-group btn-group-default" role="group" aria-label="...">
+                    <div class="btn-group" role="group">
+    					<a id="webAdmin" href="#">
+                        <button type="button" class="btn btn-default mstr-link">MicroStrategy Web Administration *</button>
+    					</a>
+                    </div>
+                </div>
+                <p class="text-muted">Administrate the MicroStrategy Web governing, access, and preferences settings.</p>
+                <div class="btn-group btn-group-default" role="group" aria-label="...">
+                    <div class="btn-group" role="group">
+    					<a id="mstrDesktop" href="#">
+                        <button type="button" class="btn btn-default mstr-link">Download MicroStrategy Desktop</button>
+    					</a>
+                    </div>
+                </div>
+                <p class="text-muted">Download the standalone desktop application to generate insights offline or when connected to the server.</p>
+              <div id='RDC' style="display:none; visibility:hidden">
+                <div class="btn-group btn-group-default" role="group" aria-label="...">
+                    <div class="btn-group" role="group">
+                      <a id="mstrDev" href="#" class="mstrDev">
+                        <button type="button" class="btn btn-default mstr-link">MicroStrategy Developer & Tools Suite</button>
+                      </a>
+                    </div>
+                </div>
+                <p class="text-muted">Access the comprehensive administrative tools suite. A remote desktop client will be required to access this machine.</p>
+                <p id="IPAddress">IP address: </p>
+                <p id="MachineName">Machine name: </p>
+              </div>
+            </div>
+            <div class="col-lg-4 mstr-security">
+    			<img class="security" src="../plugins/LandingPage/images/identity.png">
+                <h2>Enterprise Security</h2>
+                <p  class="text-muted">Leverage cutting-edge Usher technology to grant or revoke system access, as well as report on system usage.</p>
+                <div class="btn-group btn-group-default" role="group" aria-label="...">
+                        <div class="btn-group" role="group">
+                        <a id="networkMgr" href="#">
+                            <button type="button" class="btn btn-default mstr-link">Network Manager</button>
+    						</a>
+                        </div>
+                </div>
+                <p class="text-muted">Provision Usher badges for new system users. Grant or revoke system access.</p>
+                <div class="btn-group btn-group-default" role="group" aria-label="...">
+                        <div class="btn-group" role="group">
+    					<a id="usherAnalytics" href="#">
+                            <button type="button" class="btn btn-default mstr-link">Usher Analytics</button>
+    						</a>
+                        </div>
+                </div>
+                <p class="text-muted">Analyze system access data to identify usage trends and exceptions.</p>
+                <div class="mstr-security-row">
+                    <div class="btn-group btn-group-default" role="group" aria-label="...">
+                        <div class="btn-group" role="group">
+                            <a id="usherMobile" href="#">
+                            <button type="button" class="btn btn-default mstr-link">Usher Professional</button>
+                            </a>
+                        </div>
+                    </div>
+                    <p class="text-muted">Monitor system access statistics from your mobile devices.</p>
+                    <div class="mstr-buttons-group">
+                        <a id="mstr-security-dl" href="#">
+                            <img class="mstr-dl" src="../plugins/LandingPage/images/badge_appstore-lrg.svg" />
+                        </a>
+                        <!-- <button class="btn btn-default mstr-button btn-sec" type="button" id="mstr-security-cfg-button"><a id= "mstr-security-cfg" href="#">Configure</a></button> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mstr-mobility">
+    			<img class="mobility" src="../plugins/LandingPage/images/mobility.png">
+                <h2>Enterprise Mobile</h2>
+                <p class="text-muted">Empower users to consume enterprise data insights while on the move. Enable administrators to monitor system access remotely.</p>
+                <div class="mstr-mobility-row">
+                    <div class="btn-group btn-group-default" role="group" aria-label="...">
+                        <div class="btn-group" role="group">
+                            <a id="mstrMobile" href="#">
+        					<button type="button" class="btn btn-default mstr-link">MicroStrategy Mobile</button>
+        					</a>
+                        </div>
+                    </div>
+                    <p class="text-muted">Deploy insights built on top of your enterprise data sources to end users worldwide.</p>
+                    <div class="mstr-buttons-group">
+                        <div class="row">
+                            <a id= "mstr-mobility-dl-ios" href="#">
+                                <img class="mstr-dl" src="../plugins/LandingPage/images/badge_appstore-lrg.svg" />
+                            </a>
+                            <a id= "mstr-mobility-dl-android" href="http://www.google.com">
+                                <img class="mstr-dl" src="../plugins/LandingPage/images/Get_it_on_Google_play.svg" />
+                            </a>
+                        </div>
+						<button class="btn btn-default btn-mob" type="button" id="mstr-mobility-cfg-button" disabled="true"><a id= "mstr-mobility-cfg" href="#">Configure</a></button>
+                    </div>
+                </div>
+                <div class="btn-group btn-group-default" role="group" aria-label="...">
+                    <div class="btn-group" role="group">
+                        <a id="mobileAdmin" href="#">
+                        <button type="button" class="btn btn-default mstr-link">MicroStrategy Mobile Administration *</button>
+    					</a>
+                    </div>
+                </div>
+                <p class="text-muted">Administrate the MicroStrategy Mobile configuration, governing, and preferences settings.</p>
+            </div>
+        </div>
+        <!-- /END THE FEATURETTES -->
+
+        <!-- FOOTER -->
+        <footer style="text-align: center;padding-top: 15px;">
+            <hr />
+            <p>* For information on how to access the Web Admin, Mobile Admin or MySQL, please refer to <a id="installGuide" href="#">Installation and Configuration Guide</a></p>
+            <p>The default password is located at <i id="passwordFile"></i></p>
+            <p>&copy;2016 MicroStrategy Inc.</p>
+            <p style="text-align: right;"><a href="#">Back to top</a></p>
+        </footer>
+    </div>
+</div>
+
+<script src="../plugins/LandingPage/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../plugins/LandingPage/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../plugins/LandingPage/javascripts/main.js"></script>
+</body>
+</html>

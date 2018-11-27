@@ -1,0 +1,267 @@
+body {
+  font: 14px "Helevetica Neue", Helvetica, Arial, sans-serif;
+  color: #4C4C4F;
+  font-weight: 100;
+}
+
+a {
+  color: #00B7FF;
+}
+
+p span {
+  display: block;
+}
+
+.btn-group-default {
+  padding-top: 5px;
+}
+.navbar {
+  border-radius: 0 !important;
+}
+.navbar .navbar-brand {
+  padding: 5px 0;
+}
+.navbar .navbar-brand > img {
+  height: 40px;
+}
+
+.mstr-product-icon {
+  font-size: 5em;
+  padding: 40px;
+}
+
+.marketing.mstr-products {
+  width:100%;
+  padding-top:20px;
+}
+
+.mstr-products .mstr-product-icon {
+  opacity: 0.3;
+}
+.mstr-products .col-lg-4 .btn-group button {
+  border: none;
+}
+.mstr-products .col-lg-4 .btn-group button:hover {
+  background: none;
+  color: #1a0dab;
+}
+
+.mstr-security .mstr-product-icon {
+  color: #00B7FF;
+}
+.mstr-security.col-lg-4 .btn-group button:hover {
+  color: #1a0dab;
+}
+
+.mstr-analytics .mstr-product-icon {
+  color: #F32532;
+}
+.mstr-analytics.col-lg-4 .btn-group button:hover {
+  color: #F32532;
+}
+
+.mstr-mobility .mstr-product-icon {
+  color: #FFA733;
+}
+.mstr-mobility.col-lg-4 .btn-group button:hover {
+  color: #FFA733;
+}
+
+.analytics{
+  padding-top: 1%;
+  padding-bottom: 1%;
+  height: 100px;
+  width: 100px;
+}
+
+.security{
+  padding-top: 1%;
+  padding-bottom: 1%;
+  height: 100px;
+  width: 100px;
+}
+
+.mobility{
+  padding-top: 1%;
+  padding-bottom: 1%;
+  height: 100px;
+  width: 100px;
+}
+
+.welcome {
+  width: 100%;
+  padding-top: 5%;
+  padding-bottom:2%;
+}
+
+.usher {
+  width:100%;
+  background-color: #f2f2f2;
+}
+    
+.usherSecurity {
+  float: right;
+  width: calc(100% - 200px);
+  padding-top: 1%;
+  padding-bottom: 2%;
+  padding-right: 3%;
+}	
+	
+.usherLogin {
+  height: 100px;
+  width: 100px;
+  position: relative;
+  left: 40px;
+  top: 20px;
+}
+
+.navbar-right {
+  padding-top: 15px;
+}
+
+.get-started {
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 8%;
+  color: red;
+}
+
+.featurette {
+  padding-top: 8%;
+  padding-bottom: 8%;
+}
+
+.mstr-button {
+  display: none;
+  margin: 15px;
+}
+.mstr-mobile-only-security{
+  display: none;
+}
+
+.mstr-buttons-group {
+  display: inline-block;
+}
+
+.mstr-button {
+  display: block;
+}
+
+.mstr-link{
+  font-weight: bold;
+  color: #00B7FF;
+}
+.btn-mob{
+  background-color: orange;
+  margin: 15px;
+}
+.btn-mob[disabled] {
+  display: none;
+}
+
+.btn-sec{
+  background-color: #028482;
+}
+
+.mstr-buttons-group a{
+  color : white;
+  text-decoration: none;
+}
+.mstrDev {
+  pointer-events: none;
+}
+.mstrDev .mstr-link {
+  color: #333;
+}
+.rdc.demo {
+  visibility: hidden;
+  height: 25px;
+}
+
+.logout {
+  color: #d22d2d;
+  font-size: 10pt;
+  cursor: pointer;
+}
+.logout:hover {
+  text-decoration: none;
+}
+
+.mstr-dataSources-list-header{
+  width: 100%;
+  height: 50px;
+}
+.mstr-ds-holder{
+
+}
+
+.mstr-ds-item-list-container-outer{
+  margin-top: 15px;
+}
+.mstr-ds-label{
+
+}
+.mstr-ds-item-list-container{
+  display: block;
+}
+.mstr-ds-item-container-link{
+  cursor: pointer;
+  color: #333;
+}
+.mstr-ds-item-container{
+  display: inline-table;
+  position: relative;
+  border: 1px solid gray;
+  height: 70px;
+  width: 200px;
+  vertical-align: middle;
+  margin: 10px;
+  border: 1px solid #d7d7d7;
+  border-radius: 2px;
+  box-shadow: 0 2px 2px #e3e3e3;
+}
+.mstr-ds-image{
+  height: 68px;
+  width: 68px;
+  position: relative;
+  display: inline-block;
+  background-color: #f2f2f2;
+}
+.mstr-ds-item-label{
+  text-align: center;
+  vertical-align: middle;
+  position: relative;
+  display: inline-block;
+  width: calc(100% - 70px);
+  left: 0px;
+  vertical-align: middle;
+}
+
+.btn-open-tutorial {
+	background-color: #d22d2d;
+	color: #fff;
+}
+.btn-open-tutorial:hover {
+	background-color: #d22d2d;
+	color: #fff;
+}
+.btn-open-tutorial:focus {
+	background-color: #d22d2d;
+	color: #fff;
+}
+
+.mstr-dl {
+  height: 34px;
+}
+
+/**
+ * Extra large button extensions. Extends `.btn`.
+ */
+.btn-xlarge {
+    padding: 18px 28px;
+    font-size: 16px;
+    line-height: normal;
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
+}

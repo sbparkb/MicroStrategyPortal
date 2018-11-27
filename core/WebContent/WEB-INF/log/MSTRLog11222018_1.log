@@ -1,0 +1,72 @@
+<record reset="true">
+  <package>com.microstrategy.webapi</package>
+  <level>SEVERE</level>
+  <miliseconds>1542844027925</miliseconds>
+  <timestamp>11/22/2018 08:47:07:988</timestamp>
+  <thread>0</thread>
+  <class>Connection</class>
+  <method>newSocket</method>
+  <message>Connection refused: connect (com.microstrategy.webapi.MSTRWebAPIException)</message>
+  <exception>com.microstrategy.webapi.MSTRWebAPIException: Connection refused: connect&#x0D;&#x0A;&#x09;at com.microstrategy.webapi.Connection.newSocket(Unknown Source)&#x0D;&#x0A;&#x09;at com.microstrategy.webapi.CDSSXMLClusterNode.CreateConnection(Unknown Source)&#x0D;&#x0A;&#x09;at com.microstrategy.webapi.CDSSXMLClusterNode.InitConnection(Unknown Source)&#x0D;&#x0A;&#x09;at com.microstrategy.webapi.CDSSXMLAdmin.AddDSSXMLClusterNode(Unknown Source)&#x0D;&#x0A;&#x09;at com.microstrategy.webapi.CDSSXMLAdmin.InitConnection(Unknown Source)&#x0D;&#x0A;&#x09;at com.microstrategy.webapi.CDSSXMLAdmin.Connect(Unknown Source)&#x0D;&#x0A;&#x09;at com.microstrategy.web.objects.WebClusterAdminImpl.connect(Unknown Source)&#x0D;&#x0A;&#x09;at com.microstrategy.web.admin.beans.AdminServersHelper.connectIServers(Unknown Source)&#x0D;&#x0A;&#x09;at com.microstrategy.web.admin.beans.AdminServersHelper.connectIServers(Unknown Source)&#x0D;&#x0A;&#x09;at com.microstrategy.web.admin.beans.AdminServersHelper$ServerConnectionsUpdateTask.run(Unknown Source)&#x0D;&#x0A;&#x09;at java.util.TimerThread.mainLoop(Timer.java:555)&#x0D;&#x0A;&#x09;at java.util.TimerThread.run(Timer.java:505)&#x0D;&#x0A;Caused by: java.net.ConnectException: Connection refused: connect&#x0D;&#x0A;&#x09;at java.net.DualStackPlainSocketImpl.connect0(Native Method)&#x0D;&#x0A;&#x09;at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)&#x0D;&#x0A;&#x09;at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)&#x0D;&#x0A;&#x09;at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)&#x0D;&#x0A;&#x09;at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)&#x0D;&#x0A;&#x09;at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)&#x0D;&#x0A;&#x09;at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)&#x0D;&#x0A;&#x09;at java.net.Socket.connect(Socket.java:589)&#x0D;&#x0A;&#x09;at java.net.Socket.connect(Socket.java:538)&#x0D;&#x0A;&#x09;at java.net.Socket.&lt;init&gt;(Socket.java:434)&#x0D;&#x0A;&#x09;at java.net.Socket.&lt;init&gt;(Socket.java:211)&#x0D;&#x0A;&#x09;... 12 more&#x0D;&#x0A;</exception>
+</record>
+<record>
+  <package>com.microstrategy.webapi</package>
+  <level>SEVERE</level>
+  <miliseconds>1542844028003</miliseconds>
+  <timestamp>11/22/2018 08:47:08:003</timestamp>
+  <thread>0</thread>
+  <class>CDSSXMLClusterNode</class>
+  <method>CreateConnection</method>
+  <message>EXCEPTION</message>
+  <parameters>
+    <parameter>JUNE-PC</parameter>
+    <parameter>34952</parameter>
+  </parameters>
+</record>
+<record>
+  <package>com.microstrategy.webapi</package>
+  <level>SEVERE</level>
+  <miliseconds>1542844028003</miliseconds>
+  <timestamp>11/22/2018 08:47:08:003</timestamp>
+  <thread>0</thread>
+  <class>CDSSXMLClusterNode</class>
+  <method>CreateConnection</method>
+  <message>The connection failed. Possible causes are a) Server is not running, b) Server is loading project, c)  Network problem, or d) Server reached maximum connection limit. (com.microstrategy.webapi.MSTRWebAPIException)</message>
+  <exception>com.microstrategy.webapi.MSTRWebAPIException: The connection failed. Possible causes are a) Server is not running, b) Server is loading project, c)  Network problem, or d) Server reached maximum connection limit.&#x0D;&#x0A;&#x09;at com.microstrategy.webapi.CDSSXMLClusterNode.CreateConnection(Unknown Source)&#x0D;&#x0A;&#x09;at com.microstrategy.webapi.CDSSXMLClusterNode.InitConnection(Unknown Source)&#x0D;&#x0A;&#x09;at com.microstrategy.webapi.CDSSXMLAdmin.AddDSSXMLClusterNode(Unknown Source)&#x0D;&#x0A;&#x09;at com.microstrategy.webapi.CDSSXMLAdmin.InitConnection(Unknown Source)&#x0D;&#x0A;&#x09;at com.microstrategy.webapi.CDSSXMLAdmin.Connect(Unknown Source)&#x0D;&#x0A;&#x09;at com.microstrategy.web.objects.WebClusterAdminImpl.connect(Unknown Source)&#x0D;&#x0A;&#x09;at com.microstrategy.web.admin.beans.AdminServersHelper.connectIServers(Unknown Source)&#x0D;&#x0A;&#x09;at com.microstrategy.web.admin.beans.AdminServersHelper.connectIServers(Unknown Source)&#x0D;&#x0A;&#x09;at com.microstrategy.web.admin.beans.AdminServersHelper$ServerConnectionsUpdateTask.run(Unknown Source)&#x0D;&#x0A;&#x09;at java.util.TimerThread.mainLoop(Timer.java:555)&#x0D;&#x0A;&#x09;at java.util.TimerThread.run(Timer.java:505)&#x0D;&#x0A;Caused by: com.microstrategy.webapi.MSTRWebAPIException: Connection refused: connect&#x0D;&#x0A;&#x09;at com.microstrategy.webapi.Connection.newSocket(Unknown Source)&#x0D;&#x0A;&#x09;... 11 more&#x0D;&#x0A;Caused by: java.net.ConnectException: Connection refused: connect&#x0D;&#x0A;&#x09;at java.net.DualStackPlainSocketImpl.connect0(Native Method)&#x0D;&#x0A;&#x09;at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)&#x0D;&#x0A;&#x09;at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)&#x0D;&#x0A;&#x09;at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)&#x0D;&#x0A;&#x09;at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)&#x0D;&#x0A;&#x09;at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)&#x0D;&#x0A;&#x09;at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)&#x0D;&#x0A;&#x09;at java.net.Socket.connect(Socket.java:589)&#x0D;&#x0A;&#x09;at java.net.Socket.connect(Socket.java:538)&#x0D;&#x0A;&#x09;at java.net.Socket.&lt;init&gt;(Socket.java:434)&#x0D;&#x0A;&#x09;at java.net.Socket.&lt;init&gt;(Socket.java:211)&#x0D;&#x0A;&#x09;... 12 more&#x0D;&#x0A;</exception>
+</record>
+<record>
+  <package>com.microstrategy.webapi</package>
+  <level>SEVERE</level>
+  <miliseconds>1542844327256</miliseconds>
+  <timestamp>11/22/2018 08:52:07:256</timestamp>
+  <thread>0</thread>
+  <class>Connection</class>
+  <method>newSocket</method>
+  <message>Connection refused: connect (com.microstrategy.webapi.MSTRWebAPIException)</message>
+  <exception>com.microstrategy.webapi.MSTRWebAPIException: Connection refused: connect&#x0D;&#x0A;&#x09;at com.microstrategy.webapi.Connection.newSocket(Unknown Source)&#x0D;&#x0A;&#x09;at com.microstrategy.webapi.CDSSXMLClusterNode.CreateConnection(Unknown Source)&#x0D;&#x0A;&#x09;at com.microstrategy.webapi.CDSSXMLClusterNode.InitConnection(Unknown Source)&#x0D;&#x0A;&#x09;at com.microstrategy.webapi.CDSSXMLAdmin.AddDSSXMLClusterNode(Unknown Source)&#x0D;&#x0A;&#x09;at com.microstrategy.webapi.CDSSXMLAdmin.InitConnection(Unknown Source)&#x0D;&#x0A;&#x09;at com.microstrategy.webapi.CDSSXMLAdmin.Connect(Unknown Source)&#x0D;&#x0A;&#x09;at com.microstrategy.web.objects.WebClusterAdminImpl.connect(Unknown Source)&#x0D;&#x0A;&#x09;at com.microstrategy.web.admin.beans.AdminServersHelper.connectIServers(Unknown Source)&#x0D;&#x0A;&#x09;at com.microstrategy.web.admin.beans.AdminServersHelper.connectIServers(Unknown Source)&#x0D;&#x0A;&#x09;at com.microstrategy.web.admin.beans.AdminServersHelper$ServerConnectionsUpdateTask.run(Unknown Source)&#x0D;&#x0A;&#x09;at java.util.TimerThread.mainLoop(Timer.java:555)&#x0D;&#x0A;&#x09;at java.util.TimerThread.run(Timer.java:505)&#x0D;&#x0A;Caused by: java.net.ConnectException: Connection refused: connect&#x0D;&#x0A;&#x09;at java.net.DualStackPlainSocketImpl.connect0(Native Method)&#x0D;&#x0A;&#x09;at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)&#x0D;&#x0A;&#x09;at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)&#x0D;&#x0A;&#x09;at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)&#x0D;&#x0A;&#x09;at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)&#x0D;&#x0A;&#x09;at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)&#x0D;&#x0A;&#x09;at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)&#x0D;&#x0A;&#x09;at java.net.Socket.connect(Socket.java:589)&#x0D;&#x0A;&#x09;at java.net.Socket.connect(Socket.java:538)&#x0D;&#x0A;&#x09;at java.net.Socket.&lt;init&gt;(Socket.java:434)&#x0D;&#x0A;&#x09;at java.net.Socket.&lt;init&gt;(Socket.java:211)&#x0D;&#x0A;&#x09;... 12 more&#x0D;&#x0A;</exception>
+</record>
+<record>
+  <package>com.microstrategy.webapi</package>
+  <level>SEVERE</level>
+  <miliseconds>1542844327257</miliseconds>
+  <timestamp>11/22/2018 08:52:07:257</timestamp>
+  <thread>0</thread>
+  <class>CDSSXMLClusterNode</class>
+  <method>CreateConnection</method>
+  <message>EXCEPTION</message>
+  <parameters>
+    <parameter>JUNE-PC</parameter>
+    <parameter>34952</parameter>
+  </parameters>
+</record>
+<record>
+  <package>com.microstrategy.webapi</package>
+  <level>SEVERE</level>
+  <miliseconds>1542844327257</miliseconds>
+  <timestamp>11/22/2018 08:52:07:257</timestamp>
+  <thread>0</thread>
+  <class>CDSSXMLClusterNode</class>
+  <method>CreateConnection</method>
+  <message>The connection failed. Possible causes are a) Server is not running, b) Server is loading project, c)  Network problem, or d) Server reached maximum connection limit. (com.microstrategy.webapi.MSTRWebAPIException)</message>
+  <exception>com.microstrategy.webapi.MSTRWebAPIException: The connection failed. Possible causes are a) Server is not running, b) Server is loading project, c)  Network problem, or d) Server reached maximum connection limit.&#x0D;&#x0A;&#x09;at com.microstrategy.webapi.CDSSXMLClusterNode.CreateConnection(Unknown Source)&#x0D;&#x0A;&#x09;at com.microstrategy.webapi.CDSSXMLClusterNode.InitConnection(Unknown Source)&#x0D;&#x0A;&#x09;at com.microstrategy.webapi.CDSSXMLAdmin.AddDSSXMLClusterNode(Unknown Source)&#x0D;&#x0A;&#x09;at com.microstrategy.webapi.CDSSXMLAdmin.InitConnection(Unknown Source)&#x0D;&#x0A;&#x09;at com.microstrategy.webapi.CDSSXMLAdmin.Connect(Unknown Source)&#x0D;&#x0A;&#x09;at com.microstrategy.web.objects.WebClusterAdminImpl.connect(Unknown Source)&#x0D;&#x0A;&#x09;at com.microstrategy.web.admin.beans.AdminServersHelper.connectIServers(Unknown Source)&#x0D;&#x0A;&#x09;at com.microstrategy.web.admin.beans.AdminServersHelper.connectIServers(Unknown Source)&#x0D;&#x0A;&#x09;at com.microstrategy.web.admin.beans.AdminServersHelper$ServerConnectionsUpdateTask.run(Unknown Source)&#x0D;&#x0A;&#x09;at java.util.TimerThread.mainLoop(Timer.java:555)&#x0D;&#x0A;&#x09;at java.util.TimerThread.run(Timer.java:505)&#x0D;&#x0A;Caused by: com.microstrategy.webapi.MSTRWebAPIException: Connection refused: connect&#x0D;&#x0A;&#x09;at com.microstrategy.webapi.Connection.newSocket(Unknown Source)&#x0D;&#x0A;&#x09;... 11 more&#x0D;&#x0A;Caused by: java.net.ConnectException: Connection refused: connect&#x0D;&#x0A;&#x09;at java.net.DualStackPlainSocketImpl.connect0(Native Method)&#x0D;&#x0A;&#x09;at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)&#x0D;&#x0A;&#x09;at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)&#x0D;&#x0A;&#x09;at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)&#x0D;&#x0A;&#x09;at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)&#x0D;&#x0A;&#x09;at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)&#x0D;&#x0A;&#x09;at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)&#x0D;&#x0A;&#x09;at java.net.Socket.connect(Socket.java:589)&#x0D;&#x0A;&#x09;at java.net.Socket.connect(Socket.java:538)&#x0D;&#x0A;&#x09;at java.net.Socket.&lt;init&gt;(Socket.java:434)&#x0D;&#x0A;&#x09;at java.net.Socket.&lt;init&gt;(Socket.java:211)&#x0D;&#x0A;&#x09;... 12 more&#x0D;&#x0A;</exception>
+</record>

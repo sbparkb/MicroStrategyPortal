@@ -1,0 +1,222 @@
+/** Catalog SQL Editor Start**/
+
+.mstrmojo-ar-catSQL {
+  width: 1010px;
+  &.mstrmojo-Editor > .mstrmojo-Editor-content {
+    padding: 0 18px;
+  }
+}
+
+table.catsql-hbox {
+  width: 100%;
+  tbody tr td:first-child {
+    width: 182px;
+  }
+  .mstrmojo-wh-NameSpacePullDown {
+    float:right;
+  }
+
+  table.sqlSection-box, .mstrmojo-ar-catSQL-preview table{
+    width: 100%;
+    tbody tr td:first-child {
+      width: 100%;
+    }
+  }
+}
+
+.mstrmojo-ar-catSQL-leftPanel {
+  height: 448px;
+  width: 182px;
+  border-right: 1px solid #DEDEDE;
+}
+
+.mstrmojo-ar-catSQL-rightPanel {
+  height: 448px;
+  border-left: 1px solid #ffffff
+}
+
+.mstrmojo-ar-catSQL-sectionTitle {
+  padding: 16px 0 0 0;
+  font-weight: bold;
+}
+
+.mstrmojo-ar-catSQL-sectionBox {
+  padding-left: 9px;
+}
+
+.mstrmojo-ar-catSQL-option {
+  display: block !important;
+  padding-top: 10px;
+  label {
+    margin-left: 5px;
+  }
+}
+
+
+
+
+.mstrmojo-ar-catSQL-check {
+  display: block !important;
+  margin-top: 10px;
+  float: right;
+  white-space: nowrap;
+  label {
+    margin-left: 6px;
+  }
+}
+
+.mstrmojo-ar-catSQL-sqlBox {
+   padding-left: 12px;
+
+  .mstrmojo-ui-SearchablePulldown .mstrmojo-ui-Pulldown-text:after{
+    border-top: #B5B5B5 1px solid;
+    height: 21px;
+  }
+
+  .mstrmojo-wh-TablesTree {
+    //width: 768px; //need change for responsive, width(1010) - 201 (left panel) - 12(margin-left-panel) - 16(margin-right) - 2(border)
+    border: solid 1px #b5b5b5;
+    height: 105px;
+    padding: 9px 0 0 9px;
+    background-color: #ffffff;
+    .item:hover .item-mn {
+      opacity: 0;
+    }
+
+
+    li.userSel { //select css style
+      background-color: #e5e5e5;
+      >ul {
+        background-color: #ffffff;
+      }
+    }
+    ul>li:hover { //hover css style
+      background-color: #f6f6f6;
+      >ul {
+       background-color: #ffffff;
+      }
+    }
+  }
+
+  .mstrmojo-ar-catSQL-dbTablesTree-none.mstrmojo-wh-TablesTree {
+    height: 385px;
+  }
+
+  .mstrmojo-ar-catSQL-button {
+    float: right;
+    margin-left: 12px;
+  }
+}
+
+.mstrmojo-ar-catSQL-sqlLabel {
+ // padding: 20px 0 5px 0;
+  padding-top: 16px;
+  line-height: 22px;
+}
+
+.mstrmojo-MEBox.mstrmojo-ar-sqlInput-inputbox.visible.mstrmojo-ar-catSQL {
+  height: 100px;
+  width: 100%;
+  margin-top: 0;
+  &.full {
+    height: 238px;
+
+    .mstrmojo-ar-sqlInput-tokenbox {
+        height: 232px;
+    }
+  }
+}
+
+.mstrmojo-ar-catSQL .mstrmojo-MEBox-status{
+  display: none;
+}
+
+.mstrmojo-MEBox.mstrmojo-ar-sqlInput-inputbox.visible.mstrmojo-ar-catSQL.full div.mstrmojo-TokenInputBox-edit {
+  height: 237px;
+}
+
+.mstrmojo-ar-catSQL .mstrmojo-ar-sqlInput-tokenbox {
+ /* border: solid 1px #aaa !important;*/
+  border: none;
+  padding: 6px 0 0 6px;
+  height: 94px; //94 + 6(padding) = 100px
+}
+
+.mstrmojo-ar-catSQL-curtain {
+  border: 0;
+  position: absolute;
+  background-color: lightgray;
+  opacity: 0.3;
+  -moz-opacity: 0.3;
+  filter: alpha(opacity=30); // IE8
+}
+
+
+
+
+
+.mstrmojo-ar-catSQL {
+  .mstrmojo-sqlInput-gridCell {
+    height: 20px;
+    line-height: 20px;
+    color: darkblue;
+  }
+  .mstrmojo-Architect-TablePreviewGrid {
+    height: 150px;
+  }
+}
+
+.mstrmojo-WebButton.mstrmojo-ar-catSQL-closeBtn {
+ /* float: right;
+  margin-top: 20px;*/
+  margin-right: 0px;
+}
+
+.mstrmojo-ar-catSQL-sqlPreviewLabel {
+  margin-right: 10px;
+}
+
+.mstrmojo-ar-catSQL-preview {
+  padding-top: 16px;
+  //height: 30px;
+  table {
+    width: 100%;
+  }
+
+  .mstrmojo-ui-Pulldown {
+    display: block !important;
+    margin-right: 3px;
+    width: 300px;
+
+    .mstrmojo-PopupList .item {
+      max-width: 100%;
+    }
+  }
+
+  .mstrmojo-ui-Pulldown-text {
+    height: 20px;
+    line-height: 10px;
+    max-width: 100%;
+    margin-top: 2px;
+    border: 1px solid #AAA;
+    outline: none;
+    background: white url(#{$image-path}/arrow-down.png) no-repeat 98% center;
+  }
+  .mstrmojo-ui-Pulldown.locked div.mstrmojo-ui-Pulldown-text {
+    background: none;
+  }
+  .mstrmojo-InlineEditBox {
+    font-style: italic;
+  }
+  & > table{
+    margin-bottom: 5px;
+  }
+
+  .mstrmojo-wh-NameSpacePullDown {
+    .mstrmojo-wh-btnRefreshNS {
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      background-position:4px 4px;
+    }
+  }
+}

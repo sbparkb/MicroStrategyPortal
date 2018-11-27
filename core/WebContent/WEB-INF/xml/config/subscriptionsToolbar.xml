@@ -1,0 +1,6 @@
+<shortcut-list-set name="subscriptionsToolbar" version="1.0">
+  <attributes>
+    <attribute name="class" source="const" type="string" value="mstrMenuExtraToolbar mstrToolbar"/>
+    <attribute name="nowrap" value="1"/>
+  </attributes>
+</shortcut-list-set>

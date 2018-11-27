@@ -1,0 +1,13 @@
+<!DOCTYPE block SYSTEM "../dtds/blockLibrary.dtd">
+<block name="ResultWindow" inherits="BaseBlock">
+	<definition>
+            <!-- Block Begin  -->
+			<property name="bb" type="Integer" />
+
+            <!-- Block Count -->
+			<property name="bc" type="Integer" />
+
+            <!-- Total Count -->
+			<property name="tc" type="Integer" />
+	</definition>
+</block>

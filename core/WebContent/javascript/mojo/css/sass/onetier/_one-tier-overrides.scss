@@ -1,0 +1,27 @@
+@import '../vi/vi-global';
+
+/* Start: OneTier Overrides */
+
+/* Start: scroller */
+.none-mac {
+    $dimension: 0; //avoid scrolling by dragging
+    .mstrmojo-scrollbar-host.hasVertical .mstrmojo-scrollNode.hasVertical {
+        &::-webkit-scrollbar {
+            width: $dimension;
+            height: $dimension;
+        }
+
+        margin-right: $dimension;
+        padding-right: $dimension;
+    }
+}
+/* End: scroller */
+
+/* Start: curtain for shutdown */
+#ShutDownWait .mstrmojo-Editor-curtain {
+    opacity: 0.9;
+    background: gray;
+}
+/* End: curtain for shutdown */
+
+/* End: OneTier Overrides */

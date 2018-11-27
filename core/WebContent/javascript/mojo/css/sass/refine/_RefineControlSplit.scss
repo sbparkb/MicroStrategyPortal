@@ -1,0 +1,125 @@
+@import "RefineVariables";
+
+.refine-transformations.short .refine-controls .mstrmojo-Button.mstrmojo-WebButton {
+  min-width: 46px;
+}
+
+.refine-transformations .refine-controls .mstrmojo-Button.mstrmojo-WebButton {
+  margin: 15px 12px 5px 0px;
+  min-width: 66px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+
+.refine-transformations .refine-controls .mstrmojo-DropDownButton {
+  margin: 7px 5px;
+  max-width: 175px;
+}
+
+.refine-transformations .refine-controls .mstrmojo-DropDownButton-iconNode {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.refine-transformations.short .refine-controls .mstrmojo-TextBox {
+  width: 60px;
+  &.refine-extract-fromto {
+    width: 120px;
+  }
+  &.refine-split-fromto {
+    width: 200px;
+  }
+}
+
+.refine-transformations .refine-controls .mstrmojo-TextBox {
+  width: 80px;
+  padding: 3px 3px 3px 3px;
+  border-radius: 3px;
+  border: 1px solid #b5b5b5;
+  margin: 16px 5px 6px 0px;
+  font-size: 9pt;
+  font-family: Arial;
+  color: $fontColor;
+  height: 22px;
+  &.refine-extract-fromto {
+    width: 120px;
+  }
+  &.refine-split-fromto {
+    width: 200px;
+  }
+}
+
+.refine-transformations .refine-controls .mstrmojo-TextBox.Date {
+  width: 100px;
+}
+
+.refine-transformations .refine-controls .mstrmojo-TextBox.mstrmojo-empty {
+  color: $fontColorDisable;
+}
+
+.refine-transformations .refine-controls .mstrmojo-Label {
+  margin: 16px 5px 6px 0px;
+}
+
+.refine-transformations.short .refine-transformations-top .refine-controls .mstrmojo-ui-Pulldown.refine-pulldown {
+  width: 80px;
+}
+
+.refine-transformations-top .refine-controls .mstrmojo-ui-Pulldown.refine-pulldown {
+  width: 90px;
+  .mstrmojo-ui-Pulldown-text {
+    max-width: 90px;
+    color: $fontColor;
+  }
+  .mstrmojo-PopupList {
+    width: auto;
+    max-width: initial;
+    background: $popupContainerFillColor;
+  }
+}
+
+.refine-transformations.short .refine-transformations-top .refine-controls .mstrmojo-ui-Pulldown.refine-pulldown.refine-other-columns {
+  width: 150px;
+}
+
+.refine-transformations-top .refine-controls .mstrmojo-ui-Pulldown.refine-pulldown.refine-other-columns {
+  width: 150px;
+  .mstrmojo-ui-Pulldown-text {
+    color: $fontColorDisable;
+    max-width: 150px;
+  }
+  .mstrmojo-PopupList {
+    background: $popupContainerFillColor;
+    .item {
+      max-width: 250px;
+    }
+  }
+}
+
+.refine-transformations-top .refine-controls .mstrmojo-ui-Pulldown.refine-pulldown.refine-other-columns.selected {
+  .mstrmojo-ui-Pulldown-text {
+    color: $fontColor;
+  }
+}
+
+.refine-transformations .mstrmojo-refine-help {
+  margin: 16px 5px 6px 0px;
+}
+
+.refine-transformations-top .refine-controls.delete .mstrmojo-ui-Pulldown.refine-pulldown {
+  width: 110px;
+  .mstrmojo-ui-Pulldown-text {
+    max-width: 110px;
+  }
+  .mstrmojo-PopupList {
+    .item {
+      max-width: 110px;
+    }
+  }
+}
+
+.refine-controls-remove-text-box {
+  height: 44px;
+}

@@ -1,0 +1,38 @@
+// Style for DISourceObjectsDnD
+
+// title widget
+.DISourceObjectsDnd-titleWidget {
+  height: 20px;
+  color: #000000;
+  //width: 450px;  // TQMS 947306: set width for the title widget so in IE8, we don't increase the width of whole left panel
+ /* margin-bottom: 5px;
+  margin-top: 16px;*/
+  padding: 16px 0 5px;
+  border-bottom: 1px solid #dedede;
+
+  .userInfo {
+    margin-top: 4px;
+    float: left;
+    max-width: 350px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .signOut {
+    margin-top: 4px;
+    float: right;
+    color: #007ebe;
+    margin-right: 20px;
+    cursor: pointer;
+  }
+
+  .refresh {
+    float: right;
+    background: url(images/DI/main_icons_sprite.png) no-repeat -425px 0px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+  }
+
+}

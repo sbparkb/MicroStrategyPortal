@@ -1,0 +1,48 @@
+/*Data Import application exit options page style */
+
+// Exit options container box
+.mstrmojo-di-DIExitOptions {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 28px 38px 28px;
+  margin: auto;
+
+  .title-one {
+    font: 11px arial;
+    color: #00a554;
+    overflow: hidden;
+    white-space: nowrap; // show one line
+    line-height: 22px;
+  }
+
+  .title-two {
+    font: 11px arial;
+    color: #444649;
+    line-height: 22px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: 15px;
+  }
+
+  .mstrmojo-Button.mstrmojo-di-button {
+    width: 100%;
+    height: 45px;
+    margin-left: 0px;
+
+    .mstrmojo-Button-text {
+      line-height: 45px;
+      font-weight: bold;
+    }
+  }
+
+  .mstrmojo-Button.mstrmojo-di-button.cnt3 {
+    margin-top: 13px;
+  }
+
+  .mstrmojo-Button.mstrmojo-di-button.cnt2 {
+    margin-top: 39px;
+  }
+}
+

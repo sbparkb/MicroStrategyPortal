@@ -1,0 +1,16 @@
+@import '_global.scss';
+
+/** Begin SimpleObjectInputBox Style */
+.mstrmojo-SimpleObjectInputBox {
+  &.mstrmojo-scrollbar-host{
+    overflow: hidden; /* TQMS 916395 to prevent double scroll bar*/
+  }
+  input {
+    /*Remove the default clear button for all input in IE10+*/
+    &::-ms-clear {
+      display: none;
+    }
+  }
+}
+
+/** End SimpleObjectInputBox Style */

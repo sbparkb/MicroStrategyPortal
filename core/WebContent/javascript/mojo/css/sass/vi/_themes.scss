@@ -1,0 +1,58 @@
+/** BEGIN: Light Theme **/
+$theme-light-color: #444649;
+$theme-light-background-color: #ccc;
+$theme-light-border-color: #9b9b9b;
+
+$theme-light-panel-header: $theme-light-color;
+$theme-light-panel-background-color: #f2f2f2;
+$theme-light-panel-border-color: #fff;
+$theme-light-panel-divider-border-color: #fff;
+$theme-light-panel-hover-background-color: #dadada;
+
+$theme-light-action-box-background-color: #eaebeb;
+$theme-light-action-box-border-color: #b5b5b5;
+
+$theme-light-drop-box-background-color: #fff;
+$theme-light-drop-box-border-color: #c5c5c5;
+$theme-light-drop-box-shadow-color: #F6F6F7;
+
+$theme-light-menu-item-hover-color: #dadada;
+$theme-light-menu-background-color : rgba(237, 237, 237, 0.96);
+
+// Colors for divider items.
+$theme-light-base-highlight-color: #ededed;
+$theme-light-offset-highlight-color: #fff;
+
+/** END: Light Theme **/
+
+
+/** BEGIN: Dark Theme **/
+$theme-dark-color: #cdcdcd;
+$theme-dark-background-color: #191919;
+
+$theme-dark-panel-header: #cdcdcd;
+$theme-dark-panel-header-background-color: #252526;
+$theme-dark-panel-background-color: #37383a;
+
+$theme-dark-viz-panel-background-color: #1f1f1f;
+$theme-dark-panel-border-color: #4b5057;
+
+$theme-dark-panel-divider-border-color: #595959;
+$theme-dark-panel-hover-background-color: $theme-dark-panel-divider-border-color;
+
+$theme-dark-field-container-bg-color: #353739;
+
+$theme-dark-action-box-background-color: #28282a;
+$theme-dark-action-box-border-color: #4a484c;
+
+$theme-dark-drop-box-background-color: $theme-dark-action-box-background-color;
+$theme-dark-drop-box-border-color: $theme-dark-action-box-border-color;
+$theme-dark-drop-box-shadow-color: #4c4d50;
+
+// Colors for divider items.
+$theme-dark-base-highlight-color: #2b2b2e;
+$theme-dark-offset-highlight-color: #3d3e42;
+
+$theme-dark-panel-shadow-color: rgba(0,0,0,0.3);
+$theme-dark-panel-shadow-blur: 4px;
+/** END: Dark Theme **/

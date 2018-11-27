@@ -1,0 +1,91 @@
+.mstrmojo-DI-DIDBRoleAdmin {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  padding-left: 18px;
+  padding-right: 18px;
+
+
+  .mstrmojo-DI-DIDBRoleAdmin-Label {
+    line-height: 24px;
+    font-weight: bold;
+    font-size: 11px;
+    color: #444649;
+
+    &.top {
+
+      .mstrmojo-DI-DIDBRoleAdmin-Label-Text {
+        float: left;
+      }
+
+      .mstrmojo-ui-Pulldown {
+        float: left;
+        font-weight: normal;
+        margin-left: 12px;
+        margin-top: 2px;
+        min-width: 120px;
+      }
+    }
+  }
+
+  .mstrmojo-DI-DIDBRoleAdmin-Content {
+    min-height: 26px;
+    margin-left: 12px;
+    margin-top: 12px;
+    margin-bottom: 16px;
+  }
+
+  .mstrmojo-DI-DIDBRoleAdmin-Item {
+    float: left;
+    margin: 0px 8px 6px 0;
+    width: 179px;
+    border: solid 1px transparent;
+
+    .mstrmojo-DI-DIDBRoleAdmin-Item-Text {
+      float: left;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      margin-left: 6px;
+      line-height: 24px;
+      font-size: 11px;
+      color: #444649;
+      max-width: 154px;
+    }
+
+    .mstrmojo-DI-DIDBRoleAdmin-Item-Img {
+      float: right;
+      width: 10px;
+      height: 10px;
+      margin: 7px 6px 7px 0;
+      cursor: pointer;
+    }
+
+    &.remove {
+      border: solid 1px #aeddf7;
+      border-radius: 3px;
+      background-color: #dff1fc;
+
+      .mstrmojo-DI-DIDBRoleAdmin-Item-Img {
+        margin: 8px 6px 6px 0;
+        background: url("images/DI/delete_dbrole.png") no-repeat;
+      }
+    }
+
+    &:hover {
+      &.add {
+        border: solid 1px #aeddf7;
+        border-radius: 3px;
+        background-color: #dff1fc;
+        cursor: pointer;
+
+        .mstrmojo-DI-DIDBRoleAdmin-Item-Img {
+          background: url("images/DI/add_dbrole.png") no-repeat;
+        }
+      }
+    }
+
+  }
+}

@@ -1,0 +1,1 @@
+(function(){mstrmojo.requiresCls("mstrmojo.vi.models.MapDropZones","mstrmojo.vi.viz.ESRIMapHelper");mstrmojo.vi.models.ESRIMapDropZones=mstrmojo.declare(mstrmojo.vi.models.MapDropZones,null,{scriptClass:"mstrmojo.vi.models.ESRIMapDropZones",zonesCfg:mstrmojo.vi.viz.ESRIMapHelper.zonesCfg,getAvatarIconClass:function getAvatarIconClass(){return"viESRIMap";}});}());

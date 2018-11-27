@@ -1,0 +1,216 @@
+@import '../vi-global';
+@import 'unit-list-props';
+.mstrmojo-VIDatasetEditor {
+  width: 520px;
+  .mstrmojo-VIDatasetEditorContents {
+    width: 482px;
+    .objbrowserContainer {
+      display: inline-block;
+      position: relative;
+      vertical-align: top;
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: -5px;
+        bottom: -7px;
+        right: 0;
+        border-right: 1px solid #fff;
+        box-shadow: -1px 0 0 0 #dedede;
+      }
+      .datasetEditorobjbrowser {
+        border: none;
+        padding-left: 0;
+        margin-right: 9px;
+        height: 324px;
+        width: 153px;
+        overflow: hidden;
+        background: none;
+        &:before {
+          display: none;
+        }
+        .mstrmojo-VIPanel-titlebar {
+          display: none;
+        }
+        .mstrmojo-VIPanel-content {
+          height: 250px;
+        }
+        .filter {
+          margin-top: 11px;
+        }
+        .search-box {
+          margin-top: 8px;
+          margin-bottom: 9px;
+          .mstrmojo-ui-sb-input {
+            width: 128px;
+          }
+        }
+        .horizontal-line {
+          display: none;
+        }
+      }
+    }
+
+    .datasetEditorContainer {
+      height: 324px;
+      width: 300px;
+      padding-left: 9px;
+      overflow: hidden;
+      display: inline-block;
+
+      .datasetEditorTopContainer {
+        margin-bottom: 10px;
+        overflow: hidden;
+        width: 100%;
+
+        .filterLink {
+          width: 100%;
+
+          .filterButton {
+            margin-top: 10px;
+            float: right;
+            color: #34abeb;
+
+            &:hover {
+                cursor: pointer;
+                text-decoration: underline;
+            }
+          }
+        }
+      }
+      .datasetEditorContent {
+        border: 1px solid #c5c5c5;
+        width: 298px;
+        height: 289px;
+        overflow: hidden;
+        &.entered > .mstrmojo-scrolltrack .mstrmojo-scrollbar {//because a bug in chrome, we need to use js to do something like hover
+          opacity: 0.5;
+          -webkit-transition-delay: 0;
+        }
+        .mstrmojo-scrollNode {
+          overflow: auto;
+          height: 289px;
+        }
+        .datasetEditorUnitlistContainer {
+          background-color: #FFFFFF;
+          box-shadow: 0 0 1px 1px #f6f6f7;
+          min-height: 289px;
+          width: 298px;
+
+          &.noFilter {
+            height: 307px;
+          }
+
+          &.objectAllowDragIn {
+            border: 1px solid #23A3D3;
+          }
+
+          .dragObjectMsg {
+            width: 100%;
+            font: 11px Arial;
+            color: #b2b2b2;
+            text-align: center;
+            background: url(images/DI/plus.png) no-repeat center;
+            margin-top: 70px;
+            padding-top: 96px;
+          }
+
+          .attUnitlist, .mxUnitlist {
+            width: 149px;
+            vertical-align: top;
+            .item.unit {
+              padding-left: 24px;
+              margin: 5px;
+              border-radius: 3px;
+
+              &:before {
+                left: 5px;
+              }
+            }
+          }
+          .attUnitlist {
+            .item.unit {
+              @extend %light-color-unit-attribute;
+
+              &:hover {
+                background-color: $light-color-bg-attribute-hover;
+              }
+              &.selected {
+                background-color: $light-color-bg-attribute;
+              }
+            }
+
+            .hilight {
+              @include animation(atthighlight 1.5s);
+            }
+          }
+          .mxUnitlist {
+            .item.unit {
+              @extend %light-color-unit-metric;
+
+              &:hover {
+                background-color: $light-color-bg-metric-hover;
+              }
+              &.selected {
+                background-color: $light-color-bg-metric;
+              }
+            }
+
+            .hilight {
+              @include animation(mxhighlight 1.5s);
+            }
+          }
+
+          .attUnitlist,
+          .mxUnitlist {
+            .item.unit.selected {
+              &.selected {
+                border-color: $color-unit-selected-border;
+                @include box-shadow($color-unit-selected-border, 0, 0, 0, false, 1px);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.mstrmojo-ui-CheckList {
+  .item.selected.disableOption {
+    background-position: -6px -74px;
+    color: grey;
+  }
+}
+.mojo-theme-dark {
+  .mstrmojo-ui-CheckList {
+    .item.selected.disableOption {
+      background-position: -6px -289px;
+      color: grey;
+    }
+  }
+}
+
+@include keyframes(atthighlight) {
+  0% {
+    background-color: $light-color-bg-attribute;
+  }
+  50% {
+    background-color: #AEEFC0;
+  }
+  100% {
+    background-color: $light-color-bg-attribute;
+  }
+}
+
+@include keyframes(mxhighlight) {
+  0% {
+    background-color: $light-color-bg-metric;
+  }
+  50% {
+    background-color: #FFE4B4;
+  }
+  100% {
+    background-color: $light-color-bg-metric;
+  }
+}

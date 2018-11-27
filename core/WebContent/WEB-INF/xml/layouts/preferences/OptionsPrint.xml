@@ -1,0 +1,195 @@
+<!DOCTYPE mstrlayout:layout SYSTEM "mstrlayout.dtd">
+<mstrlayout:layout>
+  <div class="mstrPanelPortrait">
+    <div class="mstrPanelTitleBar">
+        <span class="mstrPanelTitle">
+            <mstrlayout:render name="title"/>
+        </span>
+    </div>
+    <div class="mstrPanelBody">
+      <table cellspacing="0" cellpadding="0" class="preferenceList">
+        <tr>
+          <td>
+              	<span class="prefs-content-text">
+                  <mstrlayout:render name="descriptor"> <!-- Header and Footer: -->
+                    <mstrlayout:argument type="String" value="mstrWeb.1927"/>
+                  </mstrlayout:render>
+              	</span>
+              	<br/>
+              	&nbsp;
+              	<mstrlayout:render name="HeaderAndFooterButton">
+                  <mstrlayout:argument value="printHeaderFooter"/>
+              	</mstrlayout:render>     
+          </td>
+        </tr>
+
+        <mstrlayout:if name="isGridOptions"><mstrlayout:then>
+          <mstrlayout:if name="isGridGraphOptions"><mstrlayout:then>
+            <tr>
+              <td>
+                <mstrlayout:render name="GridGraphSamePage"/>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <span class="prefs-content-text">
+                  <mstrlayout:render name="descriptor"> <!-- If you choose to display the grid and graph on separate pages, please select from the options below for your grid: -->
+                    <mstrlayout:argument type="String" value="mstrWeb.2521"/>
+                  </mstrlayout:render>:
+                </span>
+              </td>
+            </tr>
+          </mstrlayout:then></mstrlayout:if>
+
+          <mstrlayout:if name="isDhtmlPrintingEnabled"><mstrlayout:then>
+            <tr>
+              <td>
+                <mstrlayout:render name="Scaling"/>
+              </td>
+            </tr>
+          </mstrlayout:then><mstrlayout:else>
+            <tr>
+              <td>
+                <mstrlayout:render name="GridRowsPerPrintedPage"/>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <mstrlayout:render name="GridColsPerPrintedPage"/>
+              </td>
+            </tr>
+          </mstrlayout:else></mstrlayout:if>
+        </mstrlayout:then></mstrlayout:if>
+
+        <tr>
+          <td>
+            <mstrlayout:render name="CoverPageFilterDetails"/>
+          </td>
+        </tr>
+
+        <mstrlayout:if name="isFeatureAvailable">
+          <mstrlayout:argument type="String" value="switch-pageby-element"/>
+          <mstrlayout:then>
+          <mstrlayout:if name="isReportPageByNotEmpty"><mstrlayout:then>
+            <tr>
+              <td>
+                <mstrlayout:render name="ExpandPageBy"/>
+              </td>
+            </tr>
+          </mstrlayout:then></mstrlayout:if>
+        </mstrlayout:then></mstrlayout:if>
+
+        <tr>
+          <td>
+            <hr />
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <mstrlayout:render name="AdvancedPrintButton"/>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <div id="divPrintAdvancedOptions">
+              <mstrlayout:if name="canShowPaperOptions"><mstrlayout:then>
+                <table border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td>
+                      <span class="prefs-content-text">
+                        <mstrlayout:render name="descriptor"> <!-- Paper size and orientation should correspond to the browser settings. -->
+                          <mstrlayout:argument type="String" value="mstrWeb.22"/>
+                        </mstrlayout:render>:
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <mstrlayout:render name="Orientation"/>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <mstrlayout:render name="PaperSize"/>
+                    </td>
+                  </tr>
+                </table>
+              </mstrlayout:then></mstrlayout:if>
+
+              <mstrlayout:if name="isDhtmlPrintingEnabled"><mstrlayout:then>
+                <table border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td>
+                      <mstrlayout:render name="MarginTitle"/>
+
+                      <table border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td>&nbsp;&nbsp;&nbsp;</td>
+                          <td align="center">
+                            <mstrlayout:render name="MarginLeft"/>
+                          </td>
+                          <td>&nbsp;&nbsp;&nbsp;</td>
+                          <td align="center">
+                            <mstrlayout:render name="MarginRight"/>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>&nbsp;&nbsp;&nbsp;</td>
+                          <td align="center">
+                            <mstrlayout:render name="MarginTop"/>
+                          </td>
+                          <td>&nbsp;&nbsp;&nbsp;</td>
+                          <td align="center">
+                            <mstrlayout:render name="MarginBottom"/>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>
+                      <table border="0" cellspacing="0" cellpadding="0" id="max-header-footer">
+                        <tr>
+                          <td><mstrlayout:render name="MaxHeaderSize"/></td>
+                        </tr>
+                        <tr>
+                          <td><mstrlayout:render name="MaxFooterSize"/></td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </mstrlayout:then></mstrlayout:if>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="mstrPanelButtonBar">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <colgroup>
+          <col width="70%"/>
+          <col width="30%"/>
+        </colgroup>
+        <tr>
+          <td align="left" valign="top">
+            <mstrlayout:if name="isFeatureAvailable">
+              <mstrlayout:argument type="string" value="preferences"/>
+              <mstrlayout:then>
+                <mstrlayout:render name="DoNotPrompt"/>
+              </mstrlayout:then>
+            </mstrlayout:if>            
+          </td>
+          <td align="right" valign="top">
+            <mstrlayout:render name="PrintButton"/>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</mstrlayout:layout>

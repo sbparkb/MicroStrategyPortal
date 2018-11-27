@@ -1,0 +1,68 @@
+/***
+ * A wait box contains a load spinner and wait message.
+ */
+.mstrmojo-Editor.mstrWaitBox {
+  width: 248px;
+  height: 24px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  padding: 11px;
+  background-color: rgba(63, 63, 63, 0.96);
+  border: 0px;
+  -webkit-box-shadow: #000000 0 2px 4px !important;
+  -moz-box-shadow: #000000 0 2px 4px !important;
+  box-shadow: #000000 0 2px 4px !important;
+  color: #e4e4e4;
+
+  // reset margin in fsm.css
+  margin-left: 0;
+  margin-top: 0;
+
+  .mstrmojo-Editor-content {
+    width: 248px;
+    height: 24px;
+    padding: 0;
+    position: absolute;
+    border: 0px;
+        box-shadow: none;
+
+    &::after {
+      content: none;
+    }
+
+    .mstrIcon-wait {
+      float: left;
+      width: 24px;
+      height: 24px;
+      background: url(#{$vi-img-path}/spinner_dark.gif) no-repeat;
+    }
+
+    .mstrWaitMsg {
+      float: left;
+      margin-left: 10px;
+      height: 22px;
+      top: 1px;
+      font-size: 11px;
+      line-height: 22px;
+      max-width: 140px;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space: nowrap;
+    }
+
+    .mstrWaitCancel {
+      float: right;
+      height: 22px;
+      top: 1px;
+      font-size: 11px;
+    }
+
+  }
+
+  // Make the curtain transparent
+  &+.mstrmojo-Editor-curtain {
+    background: transparent;
+  }
+}

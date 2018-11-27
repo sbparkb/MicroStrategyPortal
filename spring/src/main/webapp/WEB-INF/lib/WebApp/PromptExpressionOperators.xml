@@ -1,0 +1,120 @@
+<prompt_expression_operators version="1.0">
+  <!--
+		This file defines the operators used by MicroStrategy Web Prompt Runtime display.
+		To customize the display, user can remove operator from this list, which will make that
+		operator not display in corresponding prompt page. NOTE: user can NOT add any new 
+		operator into this list, since we must have backend support for these operators before they 
+		take effect. 
+		User also can make the same operator display differently by using another descriptor. How to 
+		use a different descriptor in MicroStrategy Web, please refer to other document.
+	-->
+  <!-- operators used for metric qualification -->
+  <operator_category type="metric">
+    <operator func="6" funcType="1" descriptor="mstrWeb.2795" /> <!-- Equals -->
+    <operator func="7" funcType="1" descriptor="mstrWeb.2796" /> <!-- Does not Equal -->
+    <operator func="8" funcType="1" descriptor="mstrWeb.521" /> <!-- Greater than -->
+    <operator func="10" funcType="1" descriptor="mstrWeb.522" /> <!-- Greater than or equal to -->
+    <operator func="9" funcType="1" descriptor="mstrWeb.523" /> <!-- Less than -->
+    <operator func="11" funcType="1" descriptor="mstrWeb.524" /> <!-- Less than or equal to -->
+    <operator func="17" funcType="1" descriptor="mstrWeb.294" /> <!-- Between -->
+    <!--		<operator func="17" funcType="1" descriptor="mstrWeb.519"/> --> <!-- Between (enter value1 ; value2) --> <!-- pre orion -->
+    <operator func="44" funcType="1" descriptor="mstrWeb.746" /> <!-- Not between  -->
+    <!--		<operator func="44" funcType="1" descriptor="mstrWeb.614"/> --> <!-- Not between (enter value1 ; value2) --> <!-- pre orion -->
+    <operator func="54" funcType="1" descriptor="mstrWeb.2202" /> <!-- Is Null -->
+    <operator func="55" funcType="1" descriptor="mstrWeb.2203" /> <!-- Is Not Null -->
+    <operator func="22" funcType="1" descriptor="mstrWeb.587" /> <!-- In -->
+    <!--		<operator func="22" funcType="1" descriptor="mstrWeb.898"/> --> <!-- In (enter value1; value2; ...; valueN)--> <!-- pre orion -->
+    <operator func="57" funcType="1" descriptor="mstrWeb.2204" /> <!-- Not In -->
+    <!--		<operator func="57" funcType="1" descriptor="mstrWeb.2394"/> --> <!-- Not In (enter value1; value2; ...; valueN)--> <!-- pre orion -->
+    <operator func="1" funcType="2" descriptor="mstrWeb.529" /> <!-- Highest -->
+    <operator func="2" funcType="2" descriptor="mstrWeb.530" /> <!-- Lowest -->
+    <operator func="1" funcType="3" descriptor="mstrWeb.529" /> <!-- Highest --> <!-- percentage -->
+    <operator func="2" funcType="3" descriptor="mstrWeb.530" /> <!-- Lowest -->  <!-- percentage -->
+  </operator_category>
+  <!-- operators used for attribute qualification -->
+  <operator_category type="attribute">
+    <operator func="6" funcType="1" descriptor="mstrWeb.2795" /> <!-- Equals -->
+    <operator func="7" funcType="1" descriptor="mstrWeb.2796" /> <!-- Does not Equal -->
+    <operator func="8" funcType="1" descriptor="mstrWeb.521" /> <!-- Greater than -->
+    <operator func="10" funcType="1" descriptor="mstrWeb.522" /> <!-- Greater than or equal to -->
+    <operator func="9" funcType="1" descriptor="mstrWeb.523" /> <!-- Less than -->
+    <operator func="11" funcType="1" descriptor="mstrWeb.524" /> <!-- Less than or equal to -->
+    <operator func="17" funcType="1" descriptor="mstrWeb.294" /> <!-- Between -->
+    <!--		<operator func="17" funcType="1" descriptor="mstrWeb.519"/> --> <!-- Between (enter value1 ; value2) --> <!-- pre orion -->
+    <operator func="44" funcType="1" descriptor="mstrWeb.746" /> <!-- Not between  -->
+    <!--		<operator func="44" funcType="1" descriptor="mstrWeb.614"/> --> <!-- Not between (enter value1 ; value2) --> <!-- pre orion -->
+    <operator func="76" funcType="1" descriptor="mstrWeb.686" /> <!-- Contains -->
+    <operator func="79" funcType="1" descriptor="mstrWeb.2784" /> <!-- Does not contain -->
+    <operator func="77" funcType="1" descriptor="mstrWeb.687" /> <!-- Begins With -->
+    <operator func="80" funcType="1" descriptor="mstrWeb.2785" /> <!-- Does not begins with -->
+    <operator func="78" funcType="1" descriptor="mstrWeb.688" /> <!-- End with -->
+    <operator func="81" funcType="1" descriptor="mstrWeb.2786" /> <!-- Does not end with -->
+    <operator func="18" funcType="1" descriptor="mstrWeb.525" /> <!-- LIke -->
+    <operator func="43" funcType="1" descriptor="mstrWeb.526" /> <!-- Not like -->
+    <operator func="54" funcType="1" descriptor="mstrWeb.2202" /> <!-- Is Null -->
+    <operator func="55" funcType="1" descriptor="mstrWeb.2203" /> <!-- Is Not Null -->
+    <operator func="22" funcType="1" descriptor="mstrWeb.587" /> <!-- In -->
+    <!--		<operator func="22" funcType="1" descriptor="mstrWeb.898"/> --> <!-- In (enter value1; value2; ...; valueN)--> <!-- pre orion -->
+    <operator func="57" funcType="1" descriptor="mstrWeb.2204" /> <!-- Not In -->
+    <!--		<operator func="57" funcType="1" descriptor="mstrWeb.2394"/> --> <!-- Not In (enter value1; value2; ...; valueN)--> <!-- pre orion -->
+  </operator_category>
+  <!-- common metric operators for all MDX reports -->
+  <operator_category type="MDX_metric">
+    <operator func="6" funcType="1" descriptor="mstrWeb.2795" /> <!-- Equals -->
+    <operator func="7" funcType="1" descriptor="mstrWeb.2796" /> <!-- Does not Equal -->
+    <operator func="8" funcType="1" descriptor="mstrWeb.521" /> <!-- Greater than -->
+    <operator func="10" funcType="1" descriptor="mstrWeb.522" /> <!-- Greater than or equal to -->
+    <operator func="9" funcType="1" descriptor="mstrWeb.523" /> <!-- Less than -->
+    <operator func="11" funcType="1" descriptor="mstrWeb.524" /> <!-- Less than or equal to -->
+    <operator func="17" funcType="1" descriptor="mstrWeb.294" /> <!-- Between -->
+    <!--		<operator func="17" funcType="1" descriptor="mstrWeb.519"/> --> <!-- Between (enter value1 ; value2) --> <!-- pre orion -->
+  </operator_category>
+  <!-- common attribute operators for all MDX reports -->
+  <operator_category type="MDX_attribute">
+    <operator func="6" funcType="1" descriptor="mstrWeb.2795" /> <!-- Equals -->
+    <operator func="7" funcType="1" descriptor="mstrWeb.2796" /> <!-- Does not Equal -->
+    <operator func="8" funcType="1" descriptor="mstrWeb.521" /> <!-- Greater than -->
+    <operator func="10" funcType="1" descriptor="mstrWeb.522" /> <!-- Greater than or equal to -->
+    <operator func="9" funcType="1" descriptor="mstrWeb.523" /> <!-- Less than -->
+    <operator func="11" funcType="1" descriptor="mstrWeb.524" /> <!-- Less than or equal to -->
+    <operator func="17" funcType="1" descriptor="mstrWeb.294" /> <!-- Between -->
+    <operator func="44" funcType="1" descriptor="mstrWeb.746" /> <!-- Not between  -->
+    <operator func="22" funcType="1" descriptor="mstrWeb.587" /> <!-- In -->
+    <operator func="57" funcType="1" descriptor="mstrWeb.2204" /> <!-- Not In -->
+  </operator_category>
+  <!-- SAP specific expression operator -->
+  <operator_category type="SAP_attribute">
+    <operator func="6" funcType="1" descriptor="mstrWeb.2795" /> <!-- Equals -->
+    <operator func="7" funcType="1" descriptor="mstrWeb.2796" /> <!-- Does not Equal -->
+    <operator func="22" funcType="1" descriptor="mstrWeb.587" /> <!-- In -->
+    <!--		<operator func="22" funcType="1" descriptor="mstrWeb.898"/> --> <!-- In (enter value1; value2; ...; valueN)--> <!-- pre orion -->
+    <operator func="57" funcType="1" descriptor="mstrWeb.2204" /> <!-- Not In -->
+    <!--		<operator func="57" funcType="1" descriptor="mstrWeb.2394"/> --> <!-- Not In (enter value1; value2; ...; valueN)--> <!-- pre orion -->
+    <operator func="8" funcType="1" descriptor="mstrWeb.521" /> <!-- Greater than -->
+    <operator func="10" funcType="1" descriptor="mstrWeb.522" /> <!-- Greater than or equal to -->
+    <operator func="9" funcType="1" descriptor="mstrWeb.523" /> <!-- Less than -->
+    <operator func="11" funcType="1" descriptor="mstrWeb.524" /> <!-- Less than or equal to -->
+    <operator func="17" funcType="1" descriptor="mstrWeb.294" /> <!-- Between -->
+    <!--		<operator func="17" funcType="1" descriptor="mstrWeb.519"/> --> <!-- Between (enter value1 ; value2) --> <!-- pre orion -->
+  </operator_category>
+  <!-- operators used for attribute qualification using element selection  -->
+  <operator_category type="attribute_list">
+    <operator func="22" funcType="1" descriptor="mstrWeb.2219" /> <!-- In List -->
+    <operator func="57" funcType="1" descriptor="mstrWeb.2220" /> <!-- Not In List -->
+  </operator_category>
+    <!-- operators used for metric ranking/percentage  -->
+  <operator_category type="metric_RP">
+    <!-- Highest -->
+    <operator func="13" funcType="2" descriptor="mstrWeb.13897" /> <!-- Between Decending --> <!-- Rank -->
+    <operator func="4" funcType="2" descriptor="mstrWeb.1101" /> <!-- Exculde Top --> <!-- Rank -->
+    <!-- Lowest -->
+    <operator func="3" funcType="2" descriptor="mstrWeb.13896" /> <!-- Between --> <!-- Rank -->
+    <operator func="5" funcType="2" descriptor="mstrWeb.1102" /> <!-- Exculde Bottom --> <!-- Rank -->
+    <!-- Highest --> <!-- percentage -->
+    <operator func="13" funcType="3" descriptor="mstrWeb.13890" /> <!-- Between Decending --> <!-- percentage -->
+    <operator func="4" funcType="3" descriptor="mstrWeb.1101" /> <!-- Exculde Top --> <!-- percentage -->
+    <!-- Lowest -->  <!-- percentage -->
+    <operator func="3" funcType="3" descriptor="mstrWeb.13889" /> <!-- Between --> <!-- percentage -->
+    <operator func="5" funcType="3" descriptor="mstrWeb.1102" /> <!-- Exculde Bottom --> <!-- percentage -->
+  </operator_category>
+</prompt_expression_operators>

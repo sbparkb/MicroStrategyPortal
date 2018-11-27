@@ -1,0 +1,153 @@
+/** beginning of SaveAs Editor */
+%input-panel-common {
+    tr td:first-child {
+        width: 66px;
+    }
+
+    .mstrmojo-TextBox,
+    .mstrmojo-TextArea {
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -ms-border-radius: 3px;
+        border-radius: 3px;
+        @include box-sizing(content-box);
+        height: 20px;
+        line-height: 20px !important;
+        padding: 0 3px;
+    }
+
+    .mstrmojo-TextBox.mstrmojo-SaveAsEditor-nameInput {
+        margin-top: 0;
+        margin-bottom: 4px;
+    }
+
+    .mstrmojo-TextArea.mstrmojo-SaveAsEditor-descInput {
+        margin-top: 4px;
+        margin-bottom: 0;
+        height: 38px;
+        resize: none;
+    }
+
+    .mstrmojo-Name-Label {
+        margin-bottom: 8px;
+        line-height: 22px;
+    }
+
+    .mstrmojo-Desc-Label {
+        height: 40px;
+        line-height: 22px;
+    }
+}
+
+.mstrmojo-SaveAsEditor {
+	&.mstrmojo-ViProjectBrowser {
+		.mstrmojo-Editor-content {
+			.mstrmojo-ObjectBrowser {
+				.mstrmojo-OB-titleTable {
+					.msrmojo-save-label {
+						width: 70px;
+						text-align: left;
+					}
+				}
+			}
+		}
+	}
+    .mstrmojo-Editor-content {
+        width: 365px;
+        padding-bottom: 16px;
+
+        .mstrmojo-ObjectBrowser {
+            padding-bottom: 0;
+
+            .mstrmojo-OB-titleTable {
+                width: 100%;
+
+              .msrmojo-save-label {
+                width: 50px;
+                text-align: center;
+              }
+            }
+
+            .mstrmojo-Pulldown, .mstrmojo-FormatEditor-DropDownButton {
+                max-width: 280px;
+            }
+
+            .mstrmojo-SearchBox {
+                padding-left: 58px;
+
+                .mstrmojo-SearchBox-input {
+                    width: 250px;
+                }
+            }
+
+            .mstrmojo-Booklet {
+                width: 100%;
+
+                .mstrmojo-ListBase2-itemsContainer {
+                    width: 354px;
+                }
+            }
+        }
+        .mstrmojo-Input-Panel {
+            @extend %input-panel-common;
+
+            .mstrmojo-TextBox.mstrmojo-SaveAsEditor-nameInput,
+            .mstrmojo-TextArea.mstrmojo-SaveAsEditor-descInput {
+                width: 292px;
+            }
+
+            margin-top: 6px;
+        }
+
+        .mstrmojo-createfolder {
+            padding: 10px 0;
+            color: #007EBE;
+            text-decoration: underline;
+        }
+    }
+    .mstrmojo-Editor-buttons {
+        width: auto !important;
+    }
+
+    .mstrmojo-WebButton {
+        min-width: 66px;
+        font-weight: normal;
+    }
+
+  &.saveAsThemeEditor {
+    .mstrmojo-ObjectBrowser {
+      .mstrmojo-FormatEditor-DropDownButton {
+        max-width: 330px;
+        width: 325px;
+      }
+    }
+  }
+}
+
+.mstrmojo-NewFolderEditor {
+    .mstrmojo-Editor-content {
+        width: auto;
+        padding-top: 14px;
+        padding-bottom: 14px;
+
+        .mstrmojo-Input-Panel {
+            @extend %input-panel-common;
+
+            .mstrmojo-TextBox.mstrmojo-SaveAsEditor-nameInput,
+            .mstrmojo-TextArea.mstrmojo-SaveAsEditor-descInput {
+                width: 230px;
+            }
+        }
+    }
+
+    .mstrmojo-Editor-buttons {
+        width: auto;
+
+        .mstrmojo-WebButton {
+            min-width: 66px;
+            font-weight: normal;
+        }
+    }
+}
+
+/** end of SaveAs Editor */

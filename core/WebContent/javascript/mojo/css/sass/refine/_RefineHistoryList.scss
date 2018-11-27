@@ -1,0 +1,199 @@
+@import "RefineVariables";
+
+.refine-history-list-box {
+  position: relative;
+  overflow: hidden;
+  position: relative;
+  float: left;
+}
+
+.refine-history-box {
+  margin: 0px 0px 12px 12px;
+  background-color: #ffffff;
+  border: $widgetBorder;
+  overflow: hidden;
+  float: left;
+}
+
+.refine-history-header {
+  line-height: 22px;
+  padding: 16px 0 0 9px;
+}
+
+.refine-history-label {
+  float: left;
+  height: 28px;
+}
+
+.refine-history-inner-box {
+  overflow: hidden;
+  margin-bottom: 3px;
+}
+
+.refine-history-inner-box:hover {
+  overflow-y: auto;
+}
+
+.refine-history-box td {
+  vertical-align: top;
+}
+
+.refine-history-vs {
+  -webkit-appearance: slider-vertical;
+  -webkit-transform: rotate(180deg);
+  width: 20px;
+  margin: 5px 0px;
+}
+.refine-history-list {
+}
+
+.list-item {
+  display: block;
+  padding: 0px 3px;
+  margin: 0px 2px;
+  border-radius: 2px;
+  line-height: 22px;
+  cursor: default;
+  font-family: Arial;
+  font-size: $fontSizeNormal;
+  white-space: pre;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.list-item:hover {
+  background: #f6f6f6;
+}
+
+.list-item.future {
+  color: #aaa;
+}
+
+.list-item.selected {
+  background: #e5e5e5;
+}
+
+.refine-history-reset {
+  float: right;
+  color: $fontColorDisable;
+  height: 28px;
+}
+
+.mstrmojo-Label.refine-history-reset:hover,
+.mstrmojo-Label.refine-history-import:hover,
+.mstrmojo-Label.refine-history-export:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.mstrmojo-Label.refine-history-reset.enable {
+  color: $fontColor;
+}
+
+.refine-history-import {
+  float: right;
+  margin: 4px 4px 0px 0px;
+}
+
+.mstrmojo-Button.refine-history-import {
+  height: 14px;
+  width: 14px;
+  background: transparent url(images/Refine/refine-history.png) 0 0 no-repeat;
+  background-position: -130px -0px;
+  opacity: 1;
+}
+
+.mstrmojo-Button.refine-history-import:hover {
+  background-position: -130px -30px;
+}
+
+.mstrmojo-Button.refine-history-import:active {
+  background-position: -130px -60px;
+}
+
+.refine-history-export {
+  float: right;
+  margin: 4px 4px 0px 0px;
+}
+
+.mstrmojo-Button.refine-history-export {
+  height: 14px;
+  width: 14px;
+  background: transparent url(images/Refine/refine-history.png) 0 0 no-repeat;
+  background-position: 0px -0px;
+  opacity: 1;
+}
+
+.mstrmojo-Button.refine-history-export:hover {
+  background-position: 0px -30px;
+}
+
+.mstrmojo-Button.refine-history-export:active {
+  background-position: 0px -60px;
+}
+
+.refine-history-undo {
+  float: left;
+}
+
+.mstrmojo-Button.refine-history-undo {
+  height: 21px;
+  width: 24px;
+  background: transparent url(images/Refine/refine-history.png) 0 0 no-repeat;
+  background-position: -60px -0px;
+  opacity: 1;
+}
+
+.mstrmojo-Button.refine-history-undo.disabled {
+  background-position: -60px -90px;
+}
+
+.mstrmojo-Button.refine-history-undo.disabled:hover {
+  background-position: -60px -90px;
+}
+
+.mstrmojo-Button.refine-history-undo.disabled:active {
+  background-position: -60px -90px;
+}
+
+.mstrmojo-Button.refine-history-undo:hover {
+  background-position: -60px -30px;
+}
+
+.mstrmojo-Button.refine-history-undo:active {
+  background-position: -60px -60px;
+}
+
+
+
+.refine-history-redo {
+  float: left;
+}
+
+.mstrmojo-Button.refine-history-redo {
+  height: 21px;
+  width: 24px;
+  background: transparent url(images/Refine/refine-history.png) 0 0 no-repeat;
+  background-position: -90px -0px;
+  opacity: 1;
+}
+
+.mstrmojo-Button.refine-history-redo.disabled {
+  background-position: -90px -90px;
+}
+
+.mstrmojo-Button.refine-history-redo.disabled:hover {
+  background-position: -90px -90px;
+}
+
+.mstrmojo-Button.refine-history-redo.disabled:active {
+  background-position: -90px -90px;
+}
+
+.mstrmojo-Button.refine-history-redo:hover {
+  background-position: -90px -30px;
+}
+
+.mstrmojo-Button.refine-history-redo:active {
+  background-position: -90px -60px;
+}

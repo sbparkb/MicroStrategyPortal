@@ -1,0 +1,451 @@
+<groups version="1.0">
+  <group-set name="user" desc="User Preferences" desc-id="mstrWeb.284" level="user_project">
+    <group name="general" desc="General" desc-id="mstrWeb.295" style="GeneralUserPreferencesStyle" >
+		<pr n="startPage"/> <!-- dynamic-->
+		<pr n="colorTheme"/>    
+		<pr n="locale"/>   <!-- dynamic-->
+		<pr n="localeMD"/> <!-- dynamic-->
+		<pr n="localeWHD"/><!-- dynamic-->
+		<pr n="sLoc"/>     <!-- dynamic-->
+		<pr n="localeMsgs"/><!-- dynamic-->
+		<pr n="units"/>
+		<pr n="timeZone"/>
+		<pr n="useDHTML"/>
+		<pr n="accessibility"/>
+		<pr n="ddMenu"/>
+		<pr n="fontFamilyOption"/>
+		<pr n="fontFamily"/>
+		<pr n="fontSizeOption"/>
+		<pr n="fontSize"/>
+		<pr n="pdfPrint"/>
+		<pr n="exportReuseNewWindow"/>
+		<pr n="fullScreenModeReports"/>  
+		<pr n="fullScreenModeDocuments"/> 
+		<pr n="cartItemKeptInCartAvailable"/>
+		<pr n="MQDefaultOperator"/>    <!-- dynamic-->
+		<pr n="AQHQDefaultOperator"/>  <!-- dynamic-->
+		<pr n="promptsPreserveWhiteSpace"/>
+		<pr n="autoExpandAttributeInHierarchy"/>
+		<pr n="showAdvancedSaveOptions"/>
+		<pr n="saveAsAdvKeepPrompt1"/>
+		<pr n="saveAsKeepPromptAnswers1"/>
+		<pr n="copyNameTranslations"/>
+        <pr n="askBeforeLinkedDEsChanges"/>
+        <pr n="askBeforeSaveChanges"/>
+      	<pr n="enableGridViewSearch"/>
+	</group>
+    <group name="folder" desc="Folder Browsing" desc-id="mstrWeb.3231" style="FolderUserPreferencesStyle" feature-id="new-report" >
+	</group>
+    <group name="grid" desc="Grid Display" desc-id="mstrWeb.240" style="GridUserPreferencesStyle" >
+      <pr n="useBuiltInFormat"/>
+      <pr n="defGridStyleID"/>
+      <pr n="maxRow"/>
+      <pr n="maxCol"/>
+      <pr n="showSubtitle"/>
+      <pr n="showPivot"/>
+      <pr n="sSrt"/>
+      <pr n="showUnusedAttributes"/>
+      <pr n="showEmptyGridAxesInViewMode"/>
+      <pr n="enableWSFormsSorting"/>
+      <pr n="autoPageBy"/>
+      <pr n="showPageBy"/>
+      <pr n="useImagesForOutlineMode"/>
+    </group>
+    <group name="graph" desc="Graph Display" desc-id="mstrWeb.268" style="GraphUserPreferencesStyle" >
+      <pr n="graphSize"/>
+      <pr n="graphWidth"/>
+      <pr n="graphHeight"/>
+      <pr n="graphShowGridGraph"/>
+    </group>
+    <group name="print" desc="Print Reports" desc-id="mstrWeb.5177" style="PrintUserPreferencesStyle" feature-id="print;!pdf-print" event="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenPrintOptions" >
+      <pr n="printPaperOrientationOption"/>
+      <pr n="printPaperSize"/>
+      <pr n="printGridRowsPerPage"/>
+      <pr n="printGridColsPerPage"/>
+      <pr n="printDisableDHTMLPrinting"/>
+      <pr n="printCoverPageFilterDetails"/>
+      <pr n="printGridGraphSamePage"/>
+      <pr n="printExpandPagebyFields"/>
+      <pr n="printShowOptionsOnPrint"/>
+    </group>
+    <group name="printHeaderFooter" desc="printHeaderFooter" desc-id="mstrWeb.1931" visible="false" style="HeaderFooterOptionsStyle" >
+      <pr n="PDFHeaderLeftSection"/>
+      <pr n="PDFHeaderCenterSection"/>
+      <pr n="PDFHeaderRightSection"/>
+      <pr n="PDFFooterLeftSection"/>
+      <pr n="PDFFooterCenterSection"/>
+      <pr n="PDFFooterRightSection"/>
+    </group>
+    <group name="excelHeaderFooter" desc="Excel Sheet Header and Footer" desc-id="mstrWeb.5102" visible="false" style="ExcelHeaderFooterStyle" >
+      <pr n="excelReportHeader"/>
+      <pr n="excelReportHeaderLocation"/>
+      <pr n="excelReportFooter"/>
+    </group>
+    <group name="pdfReportHeaderFooter" desc="PDF Report Header" desc-id="mstrWeb.5162" visible="false" style="PDFReportHeaderFooterStyle" >
+      <pr n="PDFReportHeader"/>
+    </group>
+    <group name="export" desc="Export Reports" desc-id="mstrWeb.5176" feature-id="export" style="ExportUserPreferencesStyle" event="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenExportOptions" >
+		<pr n="exportSection"/>
+		<pr n="exportFormatGrids"/>    <!-- dynamic-->
+		<pr n="exportPlaintextDelimiter"/>
+		<pr n="exportFormatGraphs"/>     <!-- dynamic-->
+		<pr n="exportFormatDocuments"/>  <!-- dynamic-->
+		<pr n="exportReportTitle"/>
+		<pr n="exportPageByInfo"/>
+		<pr n="exportFilterDetails"/>
+		<pr n="exportOverlapGridTitles"/>                 
+		<pr n="exportExpandPageByFields"/>        
+		<pr n="exportExcelVersion"/>           <!-- dynamic-->
+		<pr n="exportMetricValuesAsText"/>
+		<pr n="exportHeadersAsText"/>
+		<pr n="exportUseSeparateSheets"/>  
+		<pr n="exportUseLiveChartGraphs"/>
+		<pr n="excelEmbedImages"/>
+		<pr n="exportReportOfficeRefresh"/>
+		<pr n="exportShowOptions"/>		
+	</group>
+    <group name="pdf" desc="PDF Reports" desc-id="mstrWeb.5178" feature-id="pdf;!pdf-print" style="PDFUserPreferencesStyle" event="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenPDFOptions" >
+      <pr n="PDFExportSection"/>
+      <pr n="PDFScalingOption"/>
+      <pr n="PDFShrinkFontPercentage"/>
+      <pr n="PDFFitToPagesWide"/>
+      <pr n="PDFFitToPagesTall"/>
+      <pr n="PDFGridGraphSamePage"/>
+      <pr n="PDFPaperOrientationOption"/>
+      <pr n="PDFCoverPageFilterDetails"/>
+      <pr n="PDFCoverPageDetailsContents"/>
+      <pr n="PDFCoverPageLocation"/>
+      <pr n="PDFExpandPageByFields"/>
+      <pr n="PDFPaperSize"/>
+      <pr n="PDFMarginSizeLeft"/>
+      <pr n="PDFMarginSizeRight"/>
+      <pr n="PDFMarginSizeTop"/>
+      <pr n="PDFMarginSizeBottom"/>
+      <pr n="PDFMaxHeaderSize"/>
+      <pr n="PDFMaxFooterSize"/>
+      <pr n="PDFUseBMPGraphs"/>
+      <pr n="PDFDraftQualityGraphs"/>
+      <pr n="PDFEmbedFonts"/>
+      <pr n="PDFShowOptions"/>
+    </group>
+    <group name="pdfPrint" desc="Print Reports (PDF)" desc-id="mstrWeb.5179" feature-id="pdf;pdf-print" style="PDFUserPreferencesStyle" event="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenPDFOptions" >
+      <pr n="PDFExportSection"/>
+      <pr n="PDFScalingOption"/>
+      <pr n="PDFShrinkFontPercentage"/>
+      <pr n="PDFFitToPagesWide"/>
+      <pr n="PDFFitToPagesTall"/>
+      <pr n="PDFGridGraphSamePage"/>
+      <pr n="PDFPaperOrientationOption"/>
+      <pr n="PDFCoverPageFilterDetails"/>
+      <pr n="PDFCoverPageDetailsContents"/>
+      <pr n="PDFCoverPageLocation"/>
+      <pr n="PDFExpandPageByFields"/>
+      <pr n="PDFPaperSize"/>
+      <pr n="PDFMarginSizeLeft"/>
+      <pr n="PDFMarginSizeRight"/>
+      <pr n="PDFMarginSizeTop"/>
+      <pr n="PDFMarginSizeBottom"/>
+      <pr n="PDFMaxHeaderSize"/>
+      <pr n="PDFMaxFooterSize"/>
+      <pr n="PDFUseBMPGraphs"/>
+      <pr n="PDFDraftQualityGraphs"/>
+      <pr n="PDFEmbedFonts"/>
+      <pr n="PDFShowOptions"/>
+    </group>
+    <group name="drill" desc="Drill Mode" desc-id="mstrWeb.692" feature-id="change-drill-preferences" style="DrillUserPreferencesStyle" >
+      <pr n="drillRetainParent"/>
+      <pr n="drillRetainThresholds"/>
+      <pr n="drillOpenInNewWindow"/>
+      <pr n="rwDrillWithinMode"/>
+    </group>
+    <group name="prompts" desc="Prompts" desc-id="mstrWeb.326" style="PromptsUserPreferencesStyle" >
+      <pr n="promptsMode"/>
+    </group>
+    <group name="document" desc="Report Services" desc-id="mstrWeb.3553" feature-id="report-services" style="DocumentUserPreferencesStyle" >
+      <pr n="dpiConversion"/>
+      <pr n="gridDensity"/>
+      <pr n="marqueeSelectionStyle"/>
+      <pr n="documentWidthMode"/>
+      <pr n="documentSectionHeightMode"/>
+      <pr n="embedFontsIVEFlash"/>
+      <pr n="defaultThemeForAnalysis"/>
+      <pr n="enableFlashViewMode"/>
+      <pr n="officeExportRefresh"/>
+      <pr n="floatingApplySelectorButton"/>
+    </group>
+    <group name="security" desc="Security" desc-id="mstrWeb.2696" feature-id="show-logout-options" style="SecurityUserPreferencesStyle" >
+      <pr n="cr"/>
+      <pr n="rj"/>
+    </group>
+    <group name="emailAddress" desc="Email Address" desc-id="mstrWeb.3127" feature-id="create-email-address" event="com.microstrategy.web.app.beans.EnumServletEvents.WebEventNCAddresses"/>
+    <group name="fileAddress" desc="File Locations" desc-id="mstrWeb.3128" feature-id="create-file-location" event="com.microstrategy.web.app.beans.EnumServletEvents.WebEventNCFileAddresses"/>
+    <group name="printAddress" desc="Printer Locations" desc-id="mstrWeb.5208" feature-id="create-print-location" event="com.microstrategy.web.app.beans.EnumServletEvents.WebEventNCPrintAddresses"/>
+    <group name="ftpAddress" desc="FTP Locations" desc-id="mstrWeb.11774" feature-id="create-ftp-location" event="com.microstrategy.web.app.beans.EnumServletEvents.WebEventNCFTPAddresses"/>
+    <group name="drl" desc="Dynamic Address Lists" desc-id="mstrWeb.9079" feature-id="create-dynamic-address-list" event="com.microstrategy.web.app.beans.EnumServletEvents.WebEventPrefDynamicAddresseList"/>
+    <group name="office" desc="Office" desc-id="mstrWeb.3734" feature-id="useOffice" style="OfficeUserPreferencesStyle" >
+      <pr n="officeExportRefresh"/>
+      <pr n="exportReportOfficeRefresh"/>
+    </group>
+  </group-set>
+
+  <group-set name="project" desc="Project Defaults" desc-id="mstrWeb.266" level="project" feature-id="administrator">
+    <group name="general" desc="General" desc-id="mstrWeb.295" style="GeneralAdminPreferencesStyle" >
+      <pr n="startPage"/> <!-- dynamic-->
+      <pr n="colorTheme"/>         
+      <pr n="locale"/>   <!-- dynamic-->
+      <pr n="localeMD"/> <!-- dynamic-->
+      <pr n="localeWHD"/><!-- dynamic-->
+      <pr n="sLoc"/>     <!-- dynamic-->
+      <pr n="localeMsgs"/><!-- dynamic-->
+      <pr n="units"/>
+      <pr n="timeZone"/>
+      <pr n="useDHTML"/>
+		  <pr n="allowUseDHTML"/>
+      <pr n="accessibility"/>
+      <pr n="ddMenu"/>
+      <pr n="trimWarehouseData"/>
+      <pr n="maxSort"/>
+      <pr n="maxSearchResults"/>
+      <pr n="searchWorkingSet"/>
+      <pr n="enableQuickSearch"/>
+      <pr n="enableSearchAutoComplete"/>
+      <pr n="searchAutoCompleteDelay"/>
+      <pr n="searchObjectTypes"/>
+      <pr n="reportReexecute"/>
+      <pr n="createDSCachesOnRWExecution"/>
+      <pr n="elementsBlockCount"/>
+      <pr n="objectsBlockCount"/>
+      <pr n="maxWaitTime"/>
+      <pr n="adminInfo"/>
+      <pr n="fontFamilyOption"/>
+      <pr n="fontFamily"/>
+      <pr n="fontSizeOption"/>
+      <pr n="fontSize"/>
+      <pr n="pdfPrint"/>
+      <pr n="exportReuseNewWindow"/>
+      <pr n="fullScreenModeReports"/>
+      <pr n="fullScreenModeDocuments"/>
+      <pr n="ReportSaveAs8iWarning"/>
+      <pr n="cartItemKeptInCartAvailable"/>
+      <pr n="MQDefaultOperator" />    <!-- dynamic-->
+      <pr n="AQHQDefaultOperator"/>  <!-- dynamic-->
+      <pr n="promptsPreserveWhiteSpace"/>
+      <pr n="autoExpandAttributeInHierarchy"/>
+      <pr n="enableVisEditor"/>
+      <pr n="showAdvancedSaveOptions"/>
+      <pr n="saveAsAdvKeepPrompt1"/>
+      <pr n="saveAsKeepPromptAnswers1"/>
+      <pr n="copyNameTranslations"/>
+      <pr n="allowOMDLinksAncestorsBrowse"/>
+      <pr n="askBeforeLinkedDEsChanges"/>
+      <pr n="askBeforeSaveChanges"/>
+      <pr n="enableGridViewSearch"/>
+      <pr n="enableEmbeddedImages"/>
+    </group>
+    <group name="colorPalette" desc="Color Palette" desc-id="mstrWeb.13811" event="com.microstrategy.web.app.beans.EnumServletEvents.WebEventPrefColorPalette"/>
+    <group name="folder" desc="Folder Browsing" desc-id="mstrWeb.3231" style="FolderAdminPreferencesStyle" >
+      <pr n="hideMyReports"/>
+    </group>
+    <group name="grid" desc="Grid Display" desc-id="mstrWeb.240" style="GridAdminPreferencesStyle" >
+      <pr n="useBuiltInFormat"/>
+      <pr n="defGridStyleID"/>
+      <pr n="maxRow"/>
+      <pr n="maxCol"/>
+      <pr n="showSubtitle"/>
+      <pr n="showPivot"/>
+      <pr n="sSrt"/>
+      <pr n="showEmptyGridAxesInViewMode"/>
+      <pr n="enableWSFormsSorting"/>
+      <pr n="autoPageBy"/>
+      <pr n="useImagesForOutlineMode"/>
+      <pr n="wrapRowHeader"/>
+      <pr n="wrapMetricValue"/>
+      <pr n="showDescriptionAsTooltip"/>
+    </group>
+    <group name="graph" desc="Graph Display" desc-id="mstrWeb.268" style="GraphAdminPreferencesStyle" >
+      <pr n="graphSize"/>
+      <pr n="graphWidth"/>
+      <pr n="graphHeight"/>
+      <pr n="graphImageFormat"/>
+      <pr n="graphShowGridGraph"/>
+    </group>
+    <group name="inbox" desc="History List" desc-id="mstrWeb.4" style="InboxAdminPreferencesStyle" >
+      <pr n="inboxMode"/>
+      <pr n="workingSetSize"/>
+      <pr n="inboxReuseMessage"/>
+      <pr n="scheduledRWDFormat"/>
+      <pr n="newHistoryListMessageUponReprompt"/>
+    </group>
+    <group name="print" desc="Print Reports" desc-id="mstrWeb.5177" style="PrintAdminPreferencesStyle" feature-id="print;!pdf-print" event="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenPrintOptions" >
+      <pr n="printPaperOrientationOption"/>
+      <pr n="printPaperSize"/>
+      <pr n="printGridRowsPerPage"/>
+      <pr n="printGridColsPerPage"/>
+      <pr n="printDisableDHTMLPrinting"/>
+      <pr n="printCoverPageFilterDetails"/>
+      <pr n="printGridGraphSamePage"/>
+      <pr n="printExpandPagebyFields"/>
+      <pr n="printShowOptionsOnPrint"/>
+      <pr n="printMaxRowsPerPage"/>
+      <pr n="printMaxColsPerPage"/>
+      <pr n="printMaxCellsPerBlock"/>
+      <pr n="printMaxGraphsPerBlock"/>
+      <pr n="printAdminHeaderFile"/>
+      <pr n="printAdminFooterFile"/>
+    </group>
+    <group name="printHeaderFooter" desc="printHeaderFooter" desc-id="mstrWeb.1931" visible="false" style="HeaderFooterOptionsStyle" >
+      <pr n="PDFHeaderLeftSection"/>
+      <pr n="PDFHeaderCenterSection"/>
+      <pr n="PDFHeaderRightSection"/>
+      <pr n="PDFFooterLeftSection"/>
+      <pr n="PDFFooterCenterSection"/>
+      <pr n="PDFFooterRightSection"/>
+    </group>
+    <group name="excelHeaderFooter" desc="Excel Sheet Header and Footer" desc-id="mstrWeb.5102" visible="false" style="ExcelHeaderFooterStyle" >
+      <pr n="excelReportHeader"/>
+      <pr n="excelReportHeaderLocation"/>
+      <pr n="excelReportFooter"/>
+    </group>
+    <group name="pdfReportHeaderFooter" desc="PDF Report Header" desc-id="mstrWeb.5162" visible="false" style="PDFReportHeaderFooterStyle" >
+      <pr n="PDFReportHeader"/>
+    </group>
+    <group name="exportAdminHeaderFooter" desc="Export Admin Header and Footer" desc-id="mstrWeb.1931" visible="false" style="ExportAdminHeaderFooterStyle" >
+      <pr n="AdminHeader" desc_id="mstrWeb.4397"/>   <!-- special case -->
+      <pr n="AdminFooter" desc_id="mstrWeb.4398"/>   <!-- special case -->
+    </group>
+    <group name="export" desc="Export Reports" desc-id="mstrWeb.5176" feature-id="export" style="ExportAdminPreferencesStyle" event="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenExportOptions" >
+      <pr n="exportSection"/>
+		  <pr n="exportFormatGrids"/>    <!-- dynamic-->
+      <pr n="exportPlaintextDelimiter"/>
+      <pr n="exportFormatGraphs"/>  <!-- dynamic-->
+      <pr n="exportFormatDocuments"/>  <!-- dynamic-->
+      <pr n="exportReportTitle"/>
+      <pr n="exportPageByInfo"/>
+      <pr n="exportFilterDetails"/>
+      <pr n="useHeaderFooterInSubscriptions"/>
+      <pr n="exportOverlapGridTitles"/>
+      <pr n="exportExpandPageByFields"/>
+      <pr n="exportExcelVersion"/>           <!-- dynamic-->
+      <pr n="exportMetricValuesAsText"/>
+      <pr n="exportHeadersAsText"/>
+      <pr n="exportUseSeparateSheets"/>
+      <pr n="exportUseLiveChartGraphs"/>
+      <pr n="excelEmbedImages"/>
+      <pr n="exportReportOfficeRefresh"/>
+      <pr n="exportMaxCellsPlainText"/>
+      <pr n="exportMaxCellsHTML"/>
+
+      <pr n="encodeCSVForExportingToExcel"/>
+      <pr n="exportShowOptions"/>
+    </group>
+    <group name="pdf" desc="PDF Reports" desc-id="mstrWeb.5178" feature-id="pdf;!pdf-print" style="PDFAdminPreferencesStyle" event="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenPDFOptions" >
+      <pr n="PDFExportSection"/>
+      <pr n="PDFScalingOption"/>
+      <pr n="PDFShrinkFontPercentage"/>
+      <pr n="PDFFitToPagesWide"/>
+      <pr n="PDFFitToPagesTall"/>
+      <pr n="PDFGridGraphSamePage"/>
+      <pr n="PDFPaperOrientationOption"/>
+      <pr n="PDFCoverPageFilterDetails"/>
+      <pr n="PDFCoverPageDetailsContents"/>
+      <pr n="PDFCoverPageLocation"/>
+      <pr n="PDFExpandPageByFields"/>
+      <pr n="PDFPaperSize"/>
+      <pr n="PDFMarginSizeLeft"/>
+      <pr n="PDFMarginSizeRight"/>
+      <pr n="PDFMarginSizeTop"/>
+      <pr n="PDFMarginSizeBottom"/>
+      <pr n="PDFMaxHeaderSize"/>
+      <pr n="PDFMaxFooterSize"/>
+      <pr n="PDFUseBMPGraphs"/>
+      <pr n="PDFDraftQualityGraphs"/>
+      <pr n="PDFEmbedFonts"/>
+      <pr n="PDFShowOptions"/>
+    </group>
+    <group name="pdfPrint" desc="Print Reports (PDF)" desc-id="mstrWeb.5179" feature-id="pdf;pdf-print" style="PDFAdminPreferencesStyle" event="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenPDFOptions" >
+      <pr n="PDFExportSection"/>
+      <pr n="PDFScalingOption"/>
+      <pr n="PDFShrinkFontPercentage"/>
+      <pr n="PDFFitToPagesWide"/>
+      <pr n="PDFFitToPagesTall"/>
+      <pr n="PDFGridGraphSamePage"/>
+      <pr n="PDFPaperOrientationOption"/>
+      <pr n="PDFCoverPageFilterDetails"/>
+      <pr n="PDFCoverPageDetailsContents"/>
+      <pr n="PDFCoverPageLocation"/>
+      <pr n="PDFExpandPageByFields"/>
+      <pr n="PDFPaperSize"/>
+      <pr n="PDFMarginSizeLeft"/>
+      <pr n="PDFMarginSizeRight"/>
+      <pr n="PDFMarginSizeTop"/>
+      <pr n="PDFMarginSizeBottom"/>
+      <pr n="PDFMaxHeaderSize"/>
+      <pr n="PDFMaxFooterSize"/>
+      <pr n="PDFUseBMPGraphs"/>
+      <pr n="PDFDraftQualityGraphs"/>
+      <pr n="PDFEmbedFonts"/>
+      <pr n="PDFShowOptions"/>
+    </group>
+    <group name="drill" desc="Drill Mode" desc-id="mstrWeb.692" style="DrillAdminPreferencesStyle" >
+      <pr n="groupContextMenuDrillPathsByType"/>
+      <pr n="sortSetNamesAndDrillPaths"/>
+      <pr n="drillDisableHyperlinkDrill"/>
+      <pr n="drillShowMetricValueLink"/>
+      <pr n="drillShowMetricValueRMC"/>
+      <pr n="drillRetainParent"/>
+      <pr n="drillRetainThresholds"/>
+      <pr n="drillOpenInNewWindow"/>
+      <pr n="drillOption"/>
+      <pr n="drillEnableContextMenuDrill"/>
+      <pr n="advancedDrillingContextMenuDisplay"/>
+      <pr n="rwDrillOption"/>
+      <pr n="rwDrillWithinMode"/>
+    </group>
+    <group name="prompts" desc="Prompts" desc-id="mstrWeb.326" style="PromptsAdminPreferencesStyle" >
+      <pr n="promptsMode"/>
+      <pr n="promptsRequiredFirst"/>
+      <pr n="showPromptDetails"/>
+      <pr n="promptsMatchCaseSensitivity"/>
+      <pr n="promptsRenameReport"/>
+      <pr n="promptsUploadFileExtensions"/>
+      <pr n="promptsMaxUploadFileSize"/>
+      <pr n="promptsMaxElementsToImport"/>
+      <pr n="showObjectDescription"/>
+		  <pr n="ProjectAnswerRestriction" desc_id="mstrWeb.5697"/>  <!-- special case -->
+		  <!--custom style need to add-->
+    </group>
+    <group name="document" desc="Report Services" desc-id="mstrWeb.3553"  feature-id="report-services" style="DocumentAdminPreferencesStyle" >
+      <pr n="dpiConversion"/>
+      <pr n="gridDensity"/>
+      <pr n="marqueeSelectionStyle"/>
+      <pr n="documentWidthMode"/>
+      <pr n="documentSectionHeightMode"/>
+      <pr n="documentExecMode"/>
+      <pr n="documentLayoutAlignMode"/>
+      <pr n="embedFontsIVEFlash"/>
+      <pr n="defaultThemeForAnalysis"/>
+      <pr n="enableFlashViewMode"/>
+      <pr n="officeExportRefresh"/>
+      <pr n="floatingApplySelectorButton"/>
+      <pr n="keepAlive"/>
+    </group>
+    <group name="security" desc="Security" desc-id="mstrWeb.2696" style="SecurityAdminPreferencesStyle" >
+      <!--login mode need to add-->
+      <pr n="cr"/>
+      <pr n="promptCancelRequests"/>
+      <pr n="rj"/>
+      <pr n="promptRemoveRequests"/>
+    </group>
+    <group name="project" desc="Project Display" desc-id="mstrWeb.3390" style="ProjectAdminPreferencesStyle" all-projects="false" >
+      <pr n="projectAlias"/>
+      <pr n="projectIndex" desc_id="mstrWeb.4479"/>   <!-- special case -->
+      <pr n="projectHeader"/>
+    </group>
+    <group name="office" desc="Office" desc-id="mstrWeb.3734" feature-id="useOffice" style="OfficeAdminPreferencesStyle" >
+      <pr n="officeExportRefresh"/>
+      <pr n="exportReportOfficeRefresh"/>
+    </group>
+    <group name="schedule" desc="Schedule" desc-id="mstrWeb.1085" feature-id="WebFeatureAnySubscriptions" event="com.microstrategy.web.app.beans.EnumServletEvents.WebEventOpenSchedule" style="ScheduleAdminPreferencesStyle"/>
+  </group-set>
+</groups>
+

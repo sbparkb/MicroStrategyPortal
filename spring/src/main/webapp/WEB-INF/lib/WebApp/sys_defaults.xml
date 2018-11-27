@@ -1,0 +1,143 @@
+<prs version="1.0">
+  <srcs n="default">
+    <src scp="system" cache="prf.uns.sys"/>
+    <src scp="server" cache="prf.uns.svr"/>
+    <src scp="project" cache="prf.uns.prj"/>
+  </srcs>
+  <pr des="" n="changePwd" scp="server" v="0"/>
+  <pr des="" n="connectmode" scp="server" v="manual"/>
+  <pr des="" n="useSessionCookie" scp="server" v="0"/>
+  <pr des="" n="allowHTMLOnPrintHeaders" scp="server" v="0"/>
+  <pr des="" n="allowHTMLOnObjectDesc" scp="server" v="0"/>
+  <pr des="" n="allowHTMLOnMetricValues" scp="server" v="0"/>
+  <pr des="" n="allowHTMLOnProjectDesc" scp="server" v="0"/>
+  <pr des="" n="allowHTMLOnPromptDesc" scp="server" v="0"/>
+  <pr des="" n="encodeExportResults" scp="server" v="0"/>
+  <pr des="" n="encodeTooltips" scp="server" v="0"/>
+  <pr des="" n="diagnosticFileLocation" scp="server" v=""/>
+  <pr des="" n="defaultloginmode" scp="project" v="1" class="com.microstrategy.web.app.preferences.PreferenceValidationForDefaultLoginMode"/>
+  <pr des="" n="defaultwebloginmode" scp="project" v="0" class="com.microstrategy.web.app.preferences.PreferenceValidationForDefaultLoginMode"/>
+  <pr des="" n="max_pool" scp="server" mn="0" mx="1024" v="50" dt="integer" class="com.microstrategy.web.app.preferences.PreferenceDefinitionMinMax" clusterPropagate="false"/>
+  <pr des="" n="allowSeamlessLogin" scp="server" v="0"/>
+  <pr des="" n="enabledloginmode" scp="project" v="1"/>
+  <pr des="" n="enabledwebloginmode" scp="project" v="0"/>
+  <pr des="" n="requestTimeOut" scp="server" v="40" mn="0" dt="integer" class="com.microstrategy.web.app.preferences.PreferenceDefinitionMinMax"/>
+  <pr des="" n="loginFirst" scp="server" v="0"/>
+  <pr des="" n="ini_pool" scp="server" v="5" dt="integer" mn="0" class="com.microstrategy.web.app.preferences.PreferenceDefinitionMinMax" clusterPropagate="false"/>
+  <pr des="" n="useCookies" scp="server" v="4"/>
+  <pr des="" n="saveTempSettingsInCookies" scp="server" v="false" />
+  <pr des="" n="iframe" scp="server" v="false"/>
+  <pr des="" n="port" scp="server" mn="0" v="0" dt="integer" class="com.microstrategy.web.app.preferences.PreferenceDefinitionMinMax" clusterPropagate="false"/>
+  <pr des="" n="diagnosticType" scp="server" v="0"/>
+  <pr des="" n="includeSessionUrl" scp="server" v="1"/>
+  <pr des="" n="serverBusyTimeOut" scp="server" mn="0" v="10" dt="integer" class="com.microstrategy.web.app.preferences.PreferenceDefinitionMinMax"/>
+  <pr des="" n="load_balance_factor" scp="server" mn="0" v="1" dt="integer" class="com.microstrategy.web.app.preferences.PreferenceDefinitionMinMax" clusterPropagate="false"/>
+  <pr des="" n="keep_alive" scp="server" v="false"/>
+  <pr des="" n="preventBrowserCaching" scp="server" v="0"/>
+  <pr des="Encryption mode to use between Web and Intelligence server. 0=no encryption, 1=AES, 2=SSL (note that SSL may require additional setup depending on the Intelligence Server certificate)" n="useEncryption" scp="server" v="0"/>
+  <pr des="Whether to perform SSL validation during the handshake. Only meaningful when 'useEncryption' is set to '2' (i.e. SSL). 1=validate, 0=no validation." n="sslValidate" scp="server" v="0"/>
+  <pr des="Version of TLS protcol to use when encryption between Web and Intelligence Server is enabled." n="defaultHTTPSProtocol" scp="server" v="TLSv1.2"/>
+  <pr des="" n="statisticsFile" scp="server" v=""/>
+  <pr des="" n="statisticsMode" scp="server" v="8"/>
+  <pr des="Statistics will only be collated for the matching user name. Note that this is the full user name - not the login. By default this is omitted, i.e. statistics from all users are collated." n="statisticsUser" scp="server" v=""/>
+  <pr des="This preference is now deprecated from sys_defaults.xml - see user preferences sys_definitions.xml" n="projectAlias" scp="project" v="" class="com.microstrategy.web.app.preferences.PreferenceValidationForStrings"/>
+  <pr des="" n="projectIndex" scp="project" v="" class="com.microstrategy.web.app.preferences.EmptyNumericStringPreferenceDefinition"/>
+  <pr des="" n="autocomplete" scp="server" v="0"/>
+  <pr des="" n="officeLocation" scp="server" v=""/>
+  <pr des="" n="showOfficeLink" scp="server" v="1"/>
+  <pr des="" n="appendLocalePath" scp="server" v="1"/>
+  <pr des="" n="advLogger" scp="server" v="0"/>
+  <pr des="" n="observeDuplicate" scp="system" v="false"/>
+  <pr des="" n="showLoginPageAfterLogout" scp="server" v="true"/>
+  <pr des="" n="allowAdminApplyAllProjects" scp="system" v="1"/>
+  <pr des="" n="maxServerAutoConnectionWaitTime" scp="system" v="5000"/>
+  <pr des="" n="allowRSDHyperlinkJavaScript" scp="server" v="0"/>
+  <pr des="" n="renderExceptionInfo" scp="system" v="0"/>
+  <pr des="" n="renderRequestInfo" scp="server" v="0"/>
+  <pr des="" n="redirectOnLogin" scp="system" v="1"/>
+  <pr des="" n="createNewSession" scp="server" v="1"/>
+  <pr des="" n="reLoginWhenSwitchProjs" scp="server" v="0"/>
+  <pr des="" n="showAggFromBaseOnMetricEditor" scp="server" v="1"/>
+  <pr des="" n="lookupNameForTempClient" scp="system" v="0"/>
+  <pr des="" n="useOivm" scp="server" v="1"/>
+  <pr des="" n="defaultMaxWaitInTask" scp="system" v="10000"/>
+  <pr des="" n="projectSorting" scp="server" v="1"/>
+  <pr des="" n="serverSorting" scp="server" v="0"/>
+  <pr des="Used to decide whether to bypass the uid/pwd in the URL" n="allowLoginByUrl" scp="server" v="1" />
+  <pr des="Used to decide we show the version information to all users" n="showAboutPageInfo" scp="server" v="1" />
+  <pr des="Used to show if we use random token check before process request" n="validateRandNum" scp="server" v="0"/>
+  <pr des="Used to allow users to authorize a request when the random token check fails" n="allowRandNumUserOverride" scp="server" v="0"/>
+  <pr des="Used to enforce that the random token is not visible on the URL" n="allowRandNumOnURL" scp="server" v="1"/>
+  <pr des="Variable used to enable/disable metadata internationlization features. Usage: v=0 to disable, v=1 to enable." n="mdi" scp="server" v="1"/>
+  <pr des="Determines the size of the page history" n="pageHistoryCapacity" scp="system" v="10"/>
+  <pr des="Trusted Authentication Provider" n="trustedAuthProvider" v="2"/>
+  <pr des="Auto Expand First entry point in Hierarchy (no matter how many entry points it has) in Hierarchy prompt behavior" n="autoExpandHierarchyPreOrionBehavior" scp="system" v="0"/>
+  <pr des="Show prompt backwards compatibility Switch in prompt editor" n="showBackwardsCompatibilitySwitch" scp="system" v="0"/>
+  <pr des="" n="enableAES" scp="system" v="1"/>
+  <pr des="" n="overrideProjectLoginModes" scp="system" v="false"/>
+  <pr des="" n="isAliveCheckIntervalMillis" scp="system" v="30000"/>
+  <pr des="Governs transmission protocol between IServer and Web. Leave as blank for auto-detect. Other options: UnicodeLittleUnmarked,UTF8" n="serverEncoding" scp="server" v=""/>
+  <pr des="Show check boxes for filter on selections and drill instead of highlights on the grid" n="showFilterOnSelectionCheckBox" scp="system" v="false"/>
+  <pr des="Minimum version of Flash Player required" n="flashMajorVersion" scp="system" v="10"/>
+  <pr des="Maximum failure tolerance for initializing connection pool" n="initConnectionPoolFailureTolerance" scp="server" v="-1"/>
+  <pr des="Timeout for creating new connections to an Intelligence Server" n="newConnectionTimeout" scp="system" v="0"/>
+  <pr des="Number of redirects to attempt for Intelligence Server affinity redirect exceptions" n="serverAffinityRetries" scp="system" v="5"/>
+  <pr des="Help online URL" n="helpUrl" scp="system" v="http://www2.microstrategy.com/producthelp/10.4/"/>
+  <pr des="User Help Page" n="userHelpPage" scp="system" v="MicroStrategy_Web_Help.htm#"/>
+  <pr des="Automatically select a connected IServer with the relevant project" n="automaticallyFindIServer" scp="server" v="0"/>
+  <pr des="" n="sfClientID" scp="system" v=""/>
+  <pr des="" n="sfClientSecret" scp="system" v=""/>
+  <pr des="" n="sfRedirectURL" scp="system" v=""/>
+  <pr n="useWebserverOAuthParameters" scp="system" v="0" des="Used to decide whether use above clientID clientSecret and RedirectURL or not. Default to user these paramters configed in MD. Enable this to overwrite config in MD" />
+  <pr n="cancelPromptBehavior" scp="system" v="0"
+  	des="Determines how cancelling prompted messages are handled. 0=always delete (default), 1=retain/never delete, 2=retain if in inbox and is prompted (legacy behavior)"/>
+  <pr des="Profile Analysis and Documents in Flash Mode. Used for debugging" n="profileFlashDocs" scp="server" v="0"/>
+  <pr des="" n="enableQB" scp="system" v="1"/>
+  <pr des="" n="enableWA" scp="system" v="1"/>
+  <pr des="Help location" n="helpLocation" scp="system" v="1"/>
+  <pr des="" n="xFrameOptions" scp="server" v="0" dt="integer"/>
+  <pr des="" n="enableFrameBreaking" scp="server" v="0" dt="boolean"/>
+  <pr des="" n="mobileEnabledLoginMode" scp="project" v="499"/>
+  <pr des="" n="iOSClientMinCompatibleVersion" scp="system" v="10.4.0000.0000"/>
+  <pr des="" n="androidClientMinCompatibleVersion" scp="system" v="10.4.0000.0000"/>
+  <pr des="" n="xFrameOptions" scp="server" v="0" dt="integer"/>
+  <pr des="" n="enableFrameBreaking" scp="server" v="0" dt="boolean"/>  
+  <pr des="" n="enableHttpProxy" scp="system" v="0" dt="boolean"/>
+  <pr des="" n="httpProxyServerAddress" scp="system" v="" />
+  <pr des="" n="httpProxyServerPort" scp="system" v="0" dt="integer" mn="0" mx="65535" class="com.microstrategy.web.app.preferences.PreferenceDefinitionMinMax"/>  
+  <pr des="" n="subtotalInOutlineMode" scp="system" dt="Integer" v="0"/>
+  <pr des="" n="enableGridline" scp="system" dt="Integer" v="0"/>
+  <pr des="" n="enableUsherAuthenticationOption" v="true"/>
+  <!--<pr des="" n="xmlDumpOnError" scp="system" v="0"/>-->
+  <!--<pr des="" n="mobileServer" scp="system" v="1"/>-->
+  <pr des="App version string. Currently is used with OOTB web version for javascript and css files, to prevent client side caching." n="appVersion" scp="server" v=""/>
+  <pr des="Used to decide whether to enable Facebook login mode" n="enableFacebookLogin" scp="project" v="0"/>
+  <pr des="Used to decide whether to enforce parameter validation for events and tasks." n="forceParameterValidation" scp="server" v="1"/>
+  <pr des="" n="overrideIServerErrorMessage" scp="server" v="0"/>
+  <pr des="Set IE 8+ browser to run in highest Document Mode (edge mode)." n="useIEEdgeMode" scp="server" v="1" dt="boolean"/>
+  <pr des="" n="customErrorMessage" scp="server" v=""/>
+  <pr des="" n="includeTimeStamp" scp="server" v="0"/>
+  <pr des="Whether to prefix resource paths used in ServletContainerServices with a slash" n="prependSlashToResource" scp="system" v="0"/>
+  <pr des="Whether to disable running html documents" n="disableHTMLDoc" scp="server" v="1"  dt="boolean"/>
+  <pr des="Controls whether output from task requests is compressed if size exceeds compressionThreshold KB." n="compressionEnabled" scp="system" dt="boolean" v="1" />
+  <pr des="Minimum size of output before compression is applied if enableCompression=TRUE." n="compressionThreshold" scp="system" dt="integer" v="8" />
+  <pr des="Whether to expose allow offline manipulation on filter selector based on cube setting" n="enableOfflineUCOnCubeConfig" scp="server" v="0" dt="boolean"/>
+  <pr des="The alternative session request timeout value for Data Import tasks that take longer time to complete to override the default settings.(in milliseconds)" n="DIAlternativeSessionRequestTimeout" scp="server" v="600000" dt="integer"/>
+  <pr des="Flag to show/hide empty page-by section with no data inside" n="generateEmptyPageBySection" scp="system" v="1" dt="boolean"/>
+  <pr des="Check the project name against internal cache prior to displaying it on the login page" n="checkProjectCacheAtLogin" scp="system" v="0" dt="boolean"/>
+  <pr des="Request timeout to check IServer alive" n="isAliveRequestTimeoutMillis" scp="system" v="3000"/>
+  <pr des="URL pattern for DI Public Data suggestion, {@enkeyword} will be replaced by encoded keyword" n="publicDataSuggestionURL" scp="system" v="https://en.wikipedia.org/w/api.php?action=opensearch&amp;format=json&amp;namespace=0&amp;suggest&amp;search={@enkeyword}" />
+  <pr des="URL pattern for DI Public Data search, {@enkeyword} will be replaced by encoded keyword" n="publicDataSearchURL" scp="system" v="https://en.wikipedia.org/w/api.php?action=query&amp;list=search&amp;format=json&amp;srlimit=50&amp;srprop=scope&amp;srsearch={@enkeyword}"/>
+  <pr des="URL pattern for DI Public Data page detail scrap, {@enpage} will be replaced by encode page title" n="publicDataPageURL" scp="system" v="https://en.wikipedia.org/wiki/{@enpage}"/>
+  <pr des="Whether to use last dataSource instead of all dataSources to get elements" n="useLastDataSourceToGetElements" scp="system" v="0" dt="boolean"/>
+  <pr des="The maximum number of message ids to be stored in cookie for recovery" n="MaxMessageIdsInCookie" scp="system" v="10"/>
+  <pr n="showHeaderBar" v="0"/>  
+  <pr n="webTestAuto" scp="system" v="false" des="Web Test Automation switch"/>
+  <pr des="Append ;uxtsTimeStamp to the URL path to prevent caching" n="addTimeStampToPreventCaching" scp="server" v="0"/>  
+  <pr des="The number of layouts that should be cached in VI." n="viLayoutsCacheSize" scp="system" v="10"/>
+  <pr n="kerberosMode" des="Configures Kerberos authentication to work by delegation or impersonation or attempt to automatically detect. AUTO detection only works in the MicroStrategy Web application, and will default to DELEGATION for non-MicroStrategy Web, SDK-based applications. Modes: AUTO, DELEGATION, IMPERSONATION" v="AUTO" />  
+  <pr des="Whether to disable login editor after session time out" n="disableLoginEditor" scp="system" v="0" dt="boolean"/> 
+  <pr des="Whether to resolve host name when connecting to Iserver using ip address" n="resolveHostNameWhenConnectingToIServer" scp="system" v="1" dt="boolean"/>
+  <pr des="whether to allow partial execution of personal views" n="allowPartialPVExecution" scp="system" v="1" dt="boolean"/>
+  <pr des="whether to enable multiple projects sessions with Single Sign On" n="enableMultiProjectsSessionsWithSSO" scp="system" v="0" dt="boolean"/>
+</prs>

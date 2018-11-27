@@ -1,0 +1,122 @@
+@import "RefineVariables";
+
+.refine-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+
+.refine-cell-editor {
+  position: absolute;
+}
+
+.refine-menu-container {
+  border: $dataPreviewDarkBorder;
+  background-color: $popupContainerFillColor;
+  position: absolute;
+  z-index: 1000;
+  padding: 3px;
+}
+
+.refine-cell-editor-text {
+  display: block;
+  padding: 2px 2px 3px 9px;
+  background-color: white;
+  font-family: monospace;
+  border: $widgetBorder;
+  float: left;
+}
+
+.refine-cell-editor-action {
+  float: right;
+}
+
+.mstrmojo-Button.refine-cell-editor-apply {
+  height: 21px;
+  width: 24px;
+  background: transparent url(images/Refine/refine-cell-editor.png) 0 0 no-repeat;
+  background-position: 0px 0px;
+  opacity: 1;
+}
+
+.mstrmojo-Button.refine-cell-editor-apply:hover {
+  background-position: 0px -30px;
+}
+
+.mstrmojo-Button.refine-cell-editor-apply:active {
+  background-position: 0px -60px;
+}
+
+.mstrmojo-Button.refine-cell-editor-apply-to-all {
+  height: 21px;
+  width: 24px;
+  background: transparent url(images/Refine/refine-cell-editor.png) 0 0 no-repeat;
+  background-position: -30px 0px;
+  opacity: 1;
+}
+
+.mstrmojo-Button.refine-cell-editor-apply-to-all:hover {
+  background-position: -30px -30px;
+}
+
+.mstrmojo-Button.refine-cell-editor-apply-to-all:active {
+  background-position: -30px -60px;
+}
+
+.mstrmojo-Button.refine-cell-editor-cancel {
+  height: 21px;
+  width: 24px;
+  background: transparent url(images/Refine/refine-cell-editor.png) 0 0 no-repeat;
+  background-position: -60px 0px;
+  opacity: 1;
+}
+
+.mstrmojo-Button.refine-cell-editor-cancel:hover {
+  background-position: -60px -30px;
+}
+
+.mstrmojo-Button.refine-cell-editor-cancel:active {
+  background-position: -60px -60px;
+}
+
+.facet {
+  .refine-menu-container {
+    padding: 0px;
+  }
+  
+  .refine-cell-editor-text {
+    padding: 0px;
+    border: none;
+  }
+  
+  .mstrmojo-Button.refine-cell-editor-apply-to-all {
+    height: 14px;
+    width: 20px;
+    background-position: -32px -4px;
+  }
+
+  .mstrmojo-Button.refine-cell-editor-apply-to-all:hover {
+    background-position: -32px -34px;
+  }
+
+  .mstrmojo-Button.refine-cell-editor-apply-to-all:active {
+    background-position: -32px -64px;
+  }
+
+  .mstrmojo-Button.refine-cell-editor-cancel {
+    height: 14px;
+    width: 20px;
+    background-position: -62px -4px;
+  }
+
+  .mstrmojo-Button.refine-cell-editor-cancel:hover {
+    background-position: -62px -34px;
+  }
+
+  .mstrmojo-Button.refine-cell-editor-cancel:active {
+    background-position: -62px -64px;
+  }
+}

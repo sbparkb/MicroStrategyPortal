@@ -1,0 +1,54 @@
+@import '../wh-global';
+
+.mstrmojo-wh-DBRoleEditor {
+  background: #f9f9f9;
+  width: 500px;
+  .mstrmojo-Editor-content{
+    padding: 16px 18px;
+  }
+  .mstrmojo-Editor-help,.mstrmojo-Editor-close {
+    display: block;
+  }
+}
+
+.mstrmojo-wh-DBRoleEditor-container{
+  margin: 0 10px 0 10px;
+}
+
+.mstrmojo-wh-DBRoleEditor-info{
+  font-weight:bold;
+  margin-bottom: 10px;
+  padding: 0px;
+}
+
+.mstrmojo-wh-DBRoleEditor-infoCheckbox{
+  //font-weight: bold;
+  //margin-left: -5px; /*adjust for the radio button itself in the widget*/
+}
+
+.mstrmojo-wh-DSNSelector{
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+.mstrmojo-wh-DSNSelector-radio{
+  //font-weight: bold;
+  margin-left: -5px; /*adjust for the radio button itself in the widget*/
+  margin-right: 45px;
+}
+
+.mstrmojo-wh-DBRoleEditor-catSQL {
+  color: #007EBE;
+  padding-left: 25px;
+  background: url(#{$wh-image-path}/panel_icons.png) no-repeat center center;
+  background-position: 8px -569px;
+
+  &.hidden {
+    display: none !important;
+  }
+
+  &:hover{
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}

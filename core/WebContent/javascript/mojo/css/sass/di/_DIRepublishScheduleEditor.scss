@@ -1,0 +1,172 @@
+// style for schedule EMMA editor
+
+@import "../ui/srEditor";
+
+.mstrmojo-di-scheduleEMMA {
+  //width:650px;
+
+  .advanceOpsLink {
+    margin: 10px;
+    padding-left: 2px;
+    color: #469AD1;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  .advanceOpsCheckbox {
+    margin: 10px;
+    padding-left: 2px;
+  }
+
+  .firstBox {
+    border-top: 1px solid;
+    padding-top: 5px;
+    width: calc(100% - 20px);
+    width: -moz-calc(100% - 20px);
+    width: -webkit-calc(100% - 20px);
+    width: -o-calc(100% - 20px);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 10px;
+
+    .text {
+      float: left;
+      height: 30px;
+      line-height: 30px;
+      margin-right: 10px;
+    }
+
+    .chooseSchedPulldown {
+      float: left;
+      width: 185px; // TQMS 947409: set default width for IE7 which does not support css calc
+      width: calc(70% - 230px);
+      width: -moz-calc(70% - 230px);
+      width: -webkit-calc(70% - 230px);
+      width: -o-calc(70% - 230px);
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+
+    .new {
+      float: left;
+      margin: 3px 10px 0px 10px;
+      height: 20px;
+      line-height: 20px;
+    }
+  }
+
+  .secondBox {
+    //border-bottom: 1px solid;
+    padding-bottom: 5px;
+    width: calc(100% - 20px);
+    width: -moz-calc(100% - 20px);
+    width: -webkit-calc(100% - 20px);
+    width: -o-calc(100% - 20px);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 10px;
+
+    .text {
+      height: 30px;
+      line-height: 30px;
+      float: left;
+    }
+
+    .inputName {
+      margin-left: 5px;
+      float: left;
+      width: 238px; // TQMS 947409: set default width
+      width: calc(60% - 110px);
+      width: -moz-calc(60% - 110px);
+      width: -webkit-calc(60% - 110px);
+      width: -o-calc(60% - 110px);
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+  }
+
+  .mstrmojo-di-button {
+    float: right;
+  }
+
+  .simpleProgress-label {
+    margin: 5px;
+  }
+
+  .simpleProgress-progress {
+    margin: auto;
+    width: 90%;
+    height: 20px;
+
+    .bar {
+      width: 100%;
+      height: 20px;
+      border: 1px solid lightgray;
+
+      .indicator {
+        height: 20px;
+        background: #808080;
+      }
+    }
+  }
+}
+
+.republish-success-label {
+  height: 40px;
+  line-height: 40px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.republish-success-label.color {
+  margin-left: 10px;
+  color: rgba(114, 187, 83, 1);
+}
+
+.mstrmojo-di-scheduleEMMA.createMode {
+  width: 450px;
+}
+
+.mstrmojo-di-scheduleEMMA.subscribeMode {
+  width: 700px;
+}
+
+.mstrmojo-di-scheduleEMMA-SREditor {
+  .mstrmojo-SREditor-note {
+  }
+  .mstrmojo-SREditor-tzPrev {
+    display: none; // no preview in platform
+    visibility: collapse;
+    padding: 0;
+    border: 0;
+
+    tbody {
+      display: none;
+    }
+  }
+
+  .mstrmojo-DayLightLabel {
+    display: none;
+    visibility: hidden;
+  }
+
+  .mstrmojo-WebButton {
+    margin-left: 10px;
+    float: right;
+  }
+}
+
+.mstrmojo-di-republishSchedule-chooseSched-hosted {
+  .mstrmojo-PopupList {
+    width: 185px;
+  }
+}
+
+.mstrmojo-di-republishSchedule-chooseSched-hosted.mstrmojo-ui-Pulldown {
+  z-index: 9999;
+}

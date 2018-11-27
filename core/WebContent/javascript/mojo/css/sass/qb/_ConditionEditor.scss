@@ -1,0 +1,89 @@
+/* QueryBuilder Condition Editor */
+.mstrmojo-qb-expr-tools {
+  margin: 3px 24px 1px 20px;
+  visibility: visible;
+  display: block;
+}
+
+/*
+.mstrmojo-qb-filterEditor .mstrmojo-Editor-content{
+  background-color:#dcdcdc;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#dcdcdc));
+  background: -webkit-linear-gradient(top, #ffffff, #dcdcdc);
+  background: -moz-linear-gradient(top, #ffffff, #dcdcdc);
+}
+*/
+
+.mstrmojo-CustomGroupEl.mstrmojo-qb-filterTreeBox {
+  position: relative;
+  top: 3px;
+  width: 348px;
+  height: 310px;
+  overflow: hidden; //ljing 940034
+  &:hover{
+    overflow: auto;
+  }
+  border: 1px solid #CCC;
+  background-color: white;
+  .mstrmojo-CGE-addCondition {
+    float:left;
+    margin-top: 6px;
+    margin-bottom: 6px;
+  }
+  .mstrmojo-qb-deleteAll {
+    float:right;
+    margin-top: 6px;
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+  .mstrmojo-del {
+    background: url(vi/images/menu_icons.png) no-repeat -29px 7px;
+    width: 10px;
+    height: 20px;
+  }
+  .mstrmojo-cond-contents {
+    line-height: 18px;
+    &.selected {
+      background-color: #cecece;
+    }
+    &:hover {
+      background-color: #dadada;
+    }
+  }
+
+}
+
+.mstrmojo-CustomGroupEl-expr.mstrmojo-qb-filterTreeBox {
+  clear:both;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.mstrmojo-Editor.mstrmojo-CGE-andOrPopup.mstrmojo-ConditionWalk  .mstrmojo-Editor-buttons {
+  margin: 0px;
+}
+
+// DE11967: Group Conditions/Ungroup Conditions
+.mstrmojo-qb-filterEditor {
+  .mstrmojo-andor-tools {
+    .mstrmojo-outdent,
+    .mstrmojo-indent {
+      float: right;
+      width: auto;
+      background-image: none;
+      // color: #007EBE;
+      padding: 0 8px;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .mstrmojo-andor-prefix,
+  .mstrmojo-cond-prefix {
+    white-space: normal; // Fix for Firefox bug: otherwise Group Conditions/Ungroup Conditions go to next line.
+  }
+}
+/* END: Condition editor */

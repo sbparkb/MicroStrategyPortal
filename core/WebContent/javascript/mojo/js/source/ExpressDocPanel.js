@@ -1,0 +1,1 @@
+(function(){mstrmojo.requiresCls("mstrmojo.DocPanel","mstrmojo.css");var $CSS=mstrmojo.css;mstrmojo.ExpressDocPanel=mstrmojo.declare(mstrmojo.DocPanel,null,{scriptClass:"mstrmojo.ExpressDocPanel",preBuildRendering:function preBuildRendering(){if(this.getFormats().overflow==="auto"){$CSS.addWidgetCssClass(this,"scroll");}return this._super();}});}());

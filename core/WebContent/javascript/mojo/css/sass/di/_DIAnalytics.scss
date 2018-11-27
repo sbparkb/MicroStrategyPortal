@@ -1,0 +1,164 @@
+.mstrmojo-di-ga{
+  padding-left: 18px;
+
+  .mstrmojo-di-ga-date-label, .mstrmojo-di-ga-account-label {
+    width: 100px;
+  }
+
+  .cf.sf-options {
+    margin-top: 16px;
+  }
+
+  .mstrmjo-di-DateTextBox{
+     float: none;
+    &.fromDate .mstrmojo-DateTextBox-calendar {
+      top: -35px;
+      left: 150px;
+    }
+    &.toDate .mstrmojo-DateTextBox-calendar {
+      top: -70px;
+      left: 150px;
+    }
+  }
+
+}
+.mstrmojo-di-ga-label{
+  color: black;
+  font-size: 12px;
+  font-family: Arial;
+  float: left;
+}
+
+
+.mstrmojo-di-ga-label.link{
+  color: #007ebe;
+  float: right;
+  cursor: pointer;
+  font-size: 10pt;
+  margin-right: 20px;
+
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+.mstrmojo-di-ga-label.link.left{
+  float: left;
+}
+.mstrmojo-di-ga-dateLabel{
+  margin-top:10px;
+  margin-left:20px;
+  color:black;
+  padding-right: 5px;
+  float: left;
+}
+
+.mstrmojo-di-ga-options{
+ // border: 1px solid #B3B3B3;
+  width: 270px;
+  height: 103px;
+  border-radius: 15px;
+  margin-left: 18px;
+}
+
+.mstrmojo-di-ga-collapsed{
+ /* margin: 10px;
+  background-image: url(images/DI/edit_query.png);
+  background-repeat: no-repeat;*/
+  width: 50px;
+  height: 15px;
+  float: left;
+  color: #3C79AF;
+  margin-left: 9px;
+  font-size: 12px;
+  cursor: pointer;
+  /*.mstrmojo-Button-text {
+    font-size: 12px;
+    color: #3C79AF;
+    margin-left: 20px;
+  }*/
+}
+
+.mstrmojo-di-ga-dropDownList{
+  color: black;
+  //padding-left: 20px;
+  cursor: pointer;
+}
+.mstrmojo-di-ga-dropDownList-select{
+  margin-top: 4px;
+  margin-bottom: 4px;
+ // margin-left:30px;
+  padding-left: 3px;
+  height: 23px;
+  width: 130px;
+  color:balck;
+  cursor: pointer;
+}
+
+.mstrojo-di-ga-upload-options-item{
+  color: black;
+  font-size: 12px;
+  font-family: Arial;
+  margin-right:20px;
+}
+
+//YGUO TQMS-829239 Add margin to the radio button
+.mstrojo-di-ga-upload-options-item INPUT[type="radio"] {
+  margin: 0px 5px 3px 5px;
+}
+
+.mojo-di-sourceobjectsga .source-objects-browser {
+  margin-top: 8px;
+  .mstrmojo-di-so-list-header {
+    border-bottom: 0;
+  }
+  /*Table CSS*/
+  .mstrmojo-di-ga-table {
+    background-color: #ffffff;
+    .mstrmojo-itemwrap {
+      border-top: 1px solid #bbbbbb;
+    }
+  }
+}
+
+.mojo-di-sourceobjectsga .mstrmojo-TextArea {
+  margin-top: 3px;
+}
+
+
+.mstrmojo-di-ga-list-report,
+.mstrmojo-di-ga-list-report-selected {
+  background-color: #ffffff;
+  background-image:url(images/DI/ga_document_icon.png);
+  background-position: 15px 3px;
+  background-repeat:no-repeat;
+  border-bottom: 1px solid #bbbbbb;
+  border-left: 1px solid #bbbbbb;
+  border-right: 1px solid #bbbbbb;
+  font-family: Tahoma, Arial;
+  font-size: 8pt;
+  padding: 5px 0px 5px 35px;
+}
+
+/*Tree Table CSS*/
+.mstrmojo-di-tree-node-desc{
+  position: absolute;
+  left: 30%;
+  padding-left: 10px;
+  border-left: 1px solid #bbbbbb;
+  height: 19px;
+  width: 58%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;//YGUO TQMS 826655
+}
+.mstrmojo-di-tree-node-file:hover .mstrmojo-di-ga-tree-node-edit-icon{
+  background: url(images/DI/edit_query.png);
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
+  float: right;
+  position: relative;
+  left: -71%;
+  cursor: pointer;
+}

@@ -1,0 +1,145 @@
+.mstrmojo-di-mappingpreview {
+  overflow: hidden;   //TQMS 998942
+  &.mstrmojo-scrollbar-host {
+    .mstrmojo-scrolltrack.vertical {
+      right: 1px;
+    }
+
+    .mstrmojo-scrolltrack.horizontal {
+      bottom: 1px;
+    }
+  }
+
+  .mstrmojo-DataGrid-headerContainer {
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+
+  &.mstrmojo-DataGrid.lockHeader .mstrmojo-DataGrid-itemsScrollBox{
+    @include scrollBar();
+//    overflow: hidden; //YGUO TQMS-975095
+    width: auto;
+    &:hover{
+      overflow-y: auto;
+    }
+  }
+  &.mstrmojo-DataGrid td {
+    border-bottom: 1px solid #CBCBCB;
+    border-right: 1px solid #cbcbcb;
+    padding: 0;
+    &.NotImported{
+      border-bottom:none;
+    }
+  }
+
+  .mstrmojo-DataGrid-headerTable td {
+    vertical-align: middle;
+    border-right: 1px solid #cbcbcb;
+    background-color: #efeff0;
+    .mstrmojo-DataGrid-headerText {
+      height: 22px;
+      line-height: 22px;
+      border: 0;
+      min-width: 22px;
+    }
+  }
+
+  .mapping-header-icon {
+    background-image: url(../../../style/mstr/images/archlistView.png);
+    background-repeat: no-repeat;
+    border: 0px;
+    color: $preiviewFontColor;
+    height: 20px;
+    cursor: default;
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-left: 35px;
+    padding-right: 4px;
+    background-color: transparent;
+  }
+
+  .mapping-header-icon.t0 {
+    background-image: url(../../../style/mstr/images/archlistView.png);
+    background-position: 0px 0px;
+  }
+
+  .mapping-header-icon.t12 {
+    background-position: 9px -1196px; /*attribute*/
+  }
+  .mapping-header-icon.t4 {
+    background-position: 7px -1220px; /*fact*/
+  }
+  .mapping-header-icon.t12.time {
+    background-position: 10px -1174px; /*time attribute*/
+  }
+  .mapping-header-icon.t12.geo {
+    background-position: 10px -1150px; /*geo attribute*/
+  }
+
+  .mapping-column {
+    height: 21px;
+    line-height: 21px;
+    padding-left: 10px;
+    background-color: #e8e8e8;
+  }
+
+  .mapping-column.Attribute {
+    height: 20px;
+    width: 100%;
+    line-height: 20px;
+    padding-left: 10px;
+    background-color: #defbe6;
+    /* TQMS 934262 show ellipsis instead of simple word break*/
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .mapping-column.Attribute.even.selected {
+    background-color: #A9A9A9;
+  }
+
+  .mapping-column.Attribute.odd.selected {
+    background-color: #A9A9A9;
+  }
+
+  .mapping-column.Metric {
+    height: 20px;
+    width: 100%;
+    line-height: 20px;
+    padding-left: 10px;
+    background-color: #fdf4d3;
+    /* TQMS 934262 show ellipsis instead of simple word break*/
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .mapping-column.Metric.even.selected {
+    background-color: #A9A9A9;
+  }
+
+  .mapping-column.Metric.odd.selected {
+    background-color: #A9A9A9;
+  }
+
+  .mapping-column.Form {
+    height: 20px;
+    line-height: 20px;
+    padding-left: 10px;
+    background-color: white;
+  }
+  .mapping-column.Form.selected {
+    background-color: #A9A9A9;
+  }
+  .mstrmojo-DataGrid-itemsContainer table{
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+   &.mstrmojo-scrollbar-host .mstrmojo-scrolltrack .mstrmojo-scrollbar {
+     min-height: 5px;
+   }
+}

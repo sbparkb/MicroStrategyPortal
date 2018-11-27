@@ -1,0 +1,19 @@
+{
+  "name": "MSTRSecureCloud",
+  "version": "0.0.1",
+  "authors": [
+    "Luis Carrillo <lcarrillo@microstrategy.com>"
+  ],
+  "description": "MicroStrategy's Secure Cloud landing page",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5"
+  }
+}

@@ -1,0 +1,522 @@
+/* QueryBuilder Main Layout */
+.mstrmojo-qb-layout {
+  .mstrmojo-wh-Panel {
+    border: none;
+  }
+}
+
+/* QueryBuilder,EmmaSingleTable/MDX the whole panel */
+.mstrmojo-qb-whole-panel, .mstrmojo-qb-es-whole-panel {
+  margin-right: 18px;
+  margin-left: 18px;
+  background-color: #F6F6F6;
+
+  .mstrmojo-SplitterHandle {
+    //divider line
+    background-color: #DEDEDE;
+    width: 1px;
+    border-right: 1px solid #ffffff;
+  }
+
+  /* TQMS 956068: hide option menu button for table*/
+  .mstrmojo-wh-TablesTree .item-mn{
+    display: none;
+  }
+}
+
+.mstrmojo-qb-main-panel {
+  margin-left: 12px;
+  background-color: #F6F6F6;
+  .mstrmojo-di-datapreview {
+    .mstrmojo-DataGrid-headerText {
+      height: 24px;
+        .mstrmojo-qb-simplegrid-headertext {
+          line-height: 24px;
+        }
+      }
+    .mstrmojo-DataRow {
+      &.even, &.odd {
+        background-color: #FFFFFF;
+      }
+    }
+    .mstrmojo-qb-preview-info {
+      padding: 7px 0 12px 12px;
+      height: 14px;
+    }
+  }
+}
+
+/*QueryBuilder the warehouse panel*/
+.mstrmojo-qb-whole-panel {
+  .mstrmojo-SplitterHandle {
+    //divider line
+    background-color: #DEDEDE !important; //override the default style
+    background-image: none !important;
+  }
+
+  .mstrmojo-wh-TablesTree {
+    padding-left: 0;
+  }
+
+  //mizhang TQMS 942676
+  .mstrmojo-wh-Panel {
+    .mstrmojo-wh-pn-header {
+      border: none;
+      box-shadow: none;
+      line-height: 14px;
+      height: 14px;
+      margin: 12px 0;
+      .mstrmojo-wh-pn-title {
+        height: 15px;
+        line-height: 15px;
+        padding-left: 17px;
+      }
+      .mstrmojo-wh-pn-ttl-icons {
+        margin-right: 12px;
+        cursor: default;
+
+        span {
+          height: 14px;
+          width: 15px;
+          margin-top: 0;
+          &:hover {
+            background-color: transparent !important;
+            text-decoration: underline;
+          }
+
+          &.mstrmojo-wh-refresh {
+            background-position: 0px 1px;
+            cursor: pointer;
+            &.hidden {
+              visibility: hidden;
+              cursor: default;
+            }
+          }
+          &.mstrmojo-wh-addDB {
+            background-position: 2px -61px;
+            cursor: pointer;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+          }
+          &.mstrmojo-wh-catalogSQL {
+            background-position: 0px -568px;
+            cursor: pointer;
+            &.hidden {
+              visibility: hidden;
+              cursor: default;
+            }
+          }
+        }
+      }
+    }
+    &.DBConnections {
+      margin: 0 0 9px 0;
+      .mstrmojo-wh-pn-title {
+        background-position: 0 2px;
+      }
+      .mstrmojo-wh-pn-header {
+        .mstrmojo-wh-pn-ttl-icons {
+          span {
+            width: 35px;
+            background: none;
+            color: #007EBE;
+            font-size: 9pt;
+            font-family: Arial;
+            opacity: 1;
+            &:hover {
+              background-color: transparent !important;
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+      .mstrmojo-wh-dbConnectionslist {
+        @include scrollBar();
+        overflow: hidden; //ljing 940034
+        margin-right: 2px;
+        &:hover {
+          overflow-y: auto;
+        }
+        padding-right: 10px;
+        padding-left: 0;
+        .item.tp29 {
+          .item-ic {
+            background-position-x: 0;
+          }
+        }
+        .item {
+          padding: 4px 20px 4px 9px;
+          &.selected {
+            background-color: #CECECE;
+            border-radius: 2px;
+          }
+          &:hover {
+            background-color: #DADADA;
+            border-radius: 2px;
+            .item-mn {
+              right: 0px;
+              top: 2px;
+            }
+          }
+          .item-mn {
+            background: transparent url(images/main_icons_sprite_02.png) no-repeat 2px 2px;
+            right: 0px;
+            top: 2px;
+          }
+          &.primary {
+            .item-n {
+              font-weight: normal;
+            }
+          }
+        }
+      }
+    }
+    &.AvailableTables {
+      margin: 0 0 16px 0;
+      .mstrmojo-wh-pn-title {
+        background-position: 0px -76px;
+      }
+      .mstrmojo-wh-NameSpacePullDown {
+        margin: 0 12px 9px 0px;
+      }
+      .mstrmojo-wh-SearchBox {
+        padding-right: 12px;
+      }
+      .mstrmojo-ui-SearchablePulldown {
+        margin: 0;
+
+        .mstrmojo-ui-Pulldown-text {
+          height: 21px;
+          line-height: 14px;
+          &:after {
+            border-top: #B5B5B5 1px solid;
+            height: 20px;
+          }
+        }
+      }
+      .mstrmojo-wh-TablesTree {
+        @include scrollBar();
+        margin-right: 2px;
+        padding-right: 10px;
+        .item-mn {
+          display: none;
+        }
+        &.mstrmojo-SimpleTree ul {
+          margin: 0;
+          padding: 0;
+
+          & > li {
+            padding: 0;
+            &.userSel {
+              background-color: #CECECE;
+              border-radius: 2px;
+            }
+            &.open {
+              background-position: 4px 10px;
+            }
+            &:hover {
+              background-color: #DADADA;
+              border-radius: 2px;
+            }
+            /*TQMS 961304: specific only the item*/
+            &:hover > ul{
+              background-color: #F6F6F6;
+            }
+            .item.tp0,
+            .item.tp15 {
+              margin-left: 18px;
+            }
+            .item.tp26 {
+              margin-left: 27px;
+            }
+          }
+        }
+      }
+    }
+    &.bigquery-projects {
+      .mstrmojo-wh-pn-header {
+        margin: 4px 0 13px 0;
+        .mstrmojo-wh-pn-title {
+          background: none;
+          padding-left: 0px;
+        }
+      }
+    }
+
+    &.bigquery-datasets {
+      .mstrmojo-wh-pn-title {
+        background: none;
+        padding-left: 0px;
+      }
+    }
+  }
+}
+
+
+/**MDX style*/
+.mstrmojo-qb-es-whole-panel .mdx-panel .mstrmojo-wh-Panel.AvailableTables .mstrmojo-wh-TablesTree.mstrmojo-SimpleTree {
+   ul > li:hover {
+     background-color: #F6F6F6;
+   }
+   ul > li > ul > li:hover {
+     background-color: #DADADA !important;
+   }
+}
+
+
+/* Individual Table/Single Table */
+.mstrmojo-qb-es-whole-panel {
+  //mizhang TQMS 949332
+  .mstrmojo-wh-Panel {
+    .mstrmojo-wh-pn-header {
+      border: none;
+      box-shadow: none;
+      line-height: 14px;
+      height: 14px;
+      margin: 0 0 16px 0;
+      .mstrmojo-wh-pn-title {
+        height: 15px;
+        line-height: 15px;
+        padding-left: 17px;
+      }
+      .mstrmojo-wh-pn-ttl-icons {
+        margin-right: 12px;
+        cursor: default;
+
+        span {
+          height: 15px;
+          width: 15px;
+          margin-top: 0;
+          &.mstrmojo-wh-refresh {
+            background-position: 0px 1px;
+            cursor: pointer;
+            &.hidden {
+              visibility: hidden;
+              cursor: default;
+            }
+          }
+          &.mstrmojo-wh-addDB {
+            background-position: 2px -61px;
+            cursor: pointer;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+          }
+          &.mstrmojo-wh-catalogSQL {
+            background-position: 0px -568px;
+            cursor: pointer;
+            &.hidden {
+              visibility: hidden;
+              cursor: default;
+            }
+          }
+        }
+      }
+    }
+    //big query single table
+    &.AvailableTables.bigquery-datasets {
+      .mstrmojo-wh-pn-title {
+        padding-left: 12px;
+        background: none;
+      }
+    }
+    &.AvailableTables {
+      margin: 16px 0;
+      .mstrmojo-wh-pn-title {
+        background-position: 12px -76px;
+        padding-left: 29px;
+      }
+      .mstrmojo-wh-NameSpacePullDown {
+        margin: 0 12px 10px 12px;
+      }
+      .mstrmojo-ui-SearchablePulldown {
+        margin: 0;
+
+        .mstrmojo-ui-Pulldown-text {
+          height: 22px;
+          line-height: 12px;
+          &:after {
+            border-top: #B5B5B5 1px solid;
+            height: 21px;
+          }
+        }
+      }
+      .mstrmojo-wh-SearchBox {
+        padding: 0 12px 5px 12px;
+      }
+      .mstrmojo-wh-TablesTree {
+        @include scrollBar();
+        margin-left: 16px;
+        margin-right: 2px;
+        padding-right: 10px;
+        .item-mn {
+          display: none;
+        }
+        &.mstrmojo-SimpleTree ul {
+          margin: 0;
+          padding: 0;
+
+          & > li {
+            padding: 0;
+            &.userSel {
+              background-color: #CECECE;
+              border-radius: 2px;
+            }
+            &.open {
+              background-position: 4px 10px;
+            }
+            &:hover {
+              background-color: #DADADA;
+              border-radius: 2px;
+            }
+            /*TQMS 961304: specific only the item*/
+            &:hover > ul{
+              background-color: #F6F6F6;
+            }
+            .item.tp0,
+            .item.tp15 {
+              margin-left: 18px;
+            }
+            .item.tp26 {
+              margin-left: 27px;
+            }
+          }
+        }
+      }
+    }
+    //big query single table
+    &.bigquery-projects {
+      .mstrmojo-wh-pn-title {
+        padding-left: 0px;
+        background: none;
+      }
+    }
+    &.DBConnections {
+      margin: 16px 0;
+      .mstrmojo-wh-pn-title {
+        background-position: 0 2px;
+      }
+      .mstrmojo-wh-pn-header {
+        .mstrmojo-wh-pn-ttl-icons {
+          span {
+            width: 35px;
+            background: none;
+            color: #007EBE;
+            font-size: 9pt;
+            font-family: Arial;
+            opacity: 1;
+            &:hover {
+              background-color: transparent !important;
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+      .mstrmojo-wh-dbConnectionslist {
+        @include scrollBar();
+        overflow: hidden; //ljing 940034
+        &:hover {
+          overflow-y: auto;
+        }
+        padding-right: 10px;
+        padding-left: 0;
+        .item.tp29 {
+          .item-ic {
+            background-position-x: 0;
+          }
+        }
+        .item {
+          padding: 4px 20px 4px 9px;
+          border-bottom-width: 0px;
+          &.primary,
+          &.selected {
+            background-color: #CECECE;
+            border-radius: 2px;
+          }
+          &:hover {
+            background-color: #DADADA;
+            border-radius: 2px;
+            .item-mn {
+              right: 0px;
+              top: 2px;
+            }
+          }
+          .item-mn {
+            background: transparent url(images/main_icons_sprite_02.png) no-repeat 2px 2px;
+            margin-right: 5px;
+            right: 0px;
+            top: 2px;
+          }
+          &.primary {
+            .item-n {
+              font-weight: normal;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/**Google Big Query Styles*/
+.mstrmojo-qb-es-whpanel {
+  .mstrmojo-qb-bigquery-signout {
+    //google big query single table
+    .username {
+      max-width: 150px;
+    }
+  }
+}
+
+.bigquery-projects  .item:hover .item-mn {
+  opacity: 0; //chnie DE5714
+}
+
+/* Buttons of Function Wizard */
+.mstrmojo-FW-buttonBox {
+  .mstrmojo-HTMLButton.mstrmojo-Editor-button {
+    float: right;
+  }
+}
+
+/*text and suggestion icons in FunctionWidzard */
+.mstrmojo-FunctionWidzard {
+  .mstrmojo-ObjectInputBox {
+    .mstrmojo-ObjectItem-text {
+      margin-right: 35px;
+    }
+  }
+}
+
+.mstrmojo-qb-bigquery-signout {
+  position: relative;
+
+  .username, .signout {
+    font-weight: bold;
+    font-family: Arial;
+    margin: 12px 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .username {
+    float: left;
+    max-width: 200px;
+  }
+
+  .signout {
+    float: right;
+    color: #007EBE;
+    position: absolute;
+    right: 0;
+    padding-right: 10px;
+  }
+
+  .signout:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}

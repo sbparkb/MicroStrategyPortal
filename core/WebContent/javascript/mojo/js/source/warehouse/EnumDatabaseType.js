@@ -1,0 +1,1 @@
+mstrmojo.warehouse.EnumDatabaseType={SAP:1200,MSAS:1500,EssBase:1600,TM1:2900,SAPHana:4000,BDE:5400,SearchEngineSOLR:5500,SearchEngineSPLUNK:5600};

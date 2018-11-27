@@ -1,0 +1,180 @@
+.mstrmojo-di-url-options {
+  margin: 20px auto;
+  width: 260px;
+}
+
+.mstrmojo-di-fu .upload-url {
+  @include box-sizing(content-box);
+  margin: 12px 0 12px 245px;
+  padding: 0px;
+  width: 434px;
+  height: 22px;
+  line-height: 20px !important; //YGUO TQMS-956020
+  font: 12px arial;
+  border: 1px solid #B5B5B5;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2), 0 1px 0 0 rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2), 0 1px 0 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2), 0 1px 0 0 rgba(0, 0, 0, 0.1);
+  padding-left: 6px;
+}
+
+//DE6744 chnie
+/*.mstrmojo-di-fu .upload-url:hover {
+  border-color: #666666;
+}
+
+.mstrmojo-di-fu .upload-url:active {
+  border-color: #3579DC;
+}
+
+.mstrmojo-di-fu .upload-url:focus {
+  border-color: #3579DC;
+}*/
+
+.mstrmojo-di-fu {
+  .drag-drop-box-hadoop {
+    width: 480px;
+    height: 406px;
+    border: 1px solid #CCCCCC;
+  }
+}
+
+.mstrmojo-di-add-url-button {
+  position: relative;
+  top: 12px;
+  left: -245px;
+}
+
+.mstrmojo-di-add-url-browse-button {
+  position: relative;
+  top: 16px;
+  left: -425px;
+}
+
+@mixin url-capsule-font-style() {
+  font: 11px Arial;
+  color: #444649;
+  height: 24px;
+}
+.mstrmojo-url-list {
+  margin-bottom: 5px;
+  margin-left: 11px;
+  width: 260px;
+  height: 26px;
+  background-color: #DFF1FC;
+  border: 1px solid #AEDDF7;
+  border-radius: 2px;
+  .urlItem-text-div {
+    width: 205px;
+    line-height: 24px;
+    @include url-capsule-font-style();
+    input {
+      @include url-capsule-font-style();
+    }
+  }
+}
+
+.mstrmojo-url-list.fake {
+  background: #DDDDDD;
+  border: 1px solid #CDCDCD;
+
+}
+
+.mstrmojo-di-url-box.mstrmojo-di-fileHolder {
+  border: 1px solid #B5B5B5;
+  width: 520px;
+  padding: 11px 0;
+  margin: 12px 0 12px 245px;
+  .mstrmojo-FileDragDropBox-content {
+     overflow: hidden;
+     max-height: 140px;
+     @include scrollBar();
+     &:hover {
+       overflow-y: auto;
+     }
+  }
+}
+
+
+.mstrmojo-di-url-browse-input {
+  margin-left: 18px;
+  margin-top: 16px;
+  width: 380px;
+  border-radius: 3px;
+  border: 1px solid #AAAAAA;
+  height: 22px;
+  padding: 0;
+}
+
+//mizhang TQMS 934964
+.mstrmojo-di-fileUpload.mstrmojo-di-fu {
+  .mstrmojo-di-URLUpload-networkBrowser {
+    .mstrmojo-di-fu-link {
+      margin-top: 8px;
+      position: relative;
+      z-index: 100;
+    }
+  }
+  .mstrmojo-di-URLUpload-urlInput {
+    .mstrmojo-di-url-browse-input {
+      margin-top: 37px;
+      width: 360px;
+      height: 24px;
+      float: left;
+      position: relative;
+      z-index: 100;
+      padding-left: 6px;
+    }
+    .mstrmojo-di-add-url-browse-button {
+      top: 38px;
+      left: 0;
+      float: left;
+      z-index: 100;
+      margin-left: 10px;
+    }
+  }
+  .mstrmojo-di-URLUpload-urlList {
+    .di-connector-panel {
+      height: 448px;
+      position: absolute;
+      z-index: 10;
+      .di-connector-left-panel {
+        height: 394px;
+        margin: 38px 0 0; //YGUO TQMS-969794
+        border: none;
+        > tbody > tr > td {
+          padding: 32px 9px 16px 18px;
+        }
+        .di-object-browser {
+          height: 362px;
+          margin: 0;
+          width: 100%;
+        }
+        .mstrmojo-di-ga-table {
+          height: 362px;
+          padding-top: 0;
+          border-top: none;
+          width: 100%;
+        }
+      }
+      .di-connector-right-panel {
+        padding: 38px 18px 16px 9px;
+        border: none;
+        .mstrmojo-di-fileHolder {
+          width: 492px;
+          height: 390px;
+        }
+      }
+    }
+  }
+  .mstrmojo-di-URLUpload-info {
+    text-align: center;
+    position: relative;
+    z-index: 100;
+  }
+}
+
+
+
+
