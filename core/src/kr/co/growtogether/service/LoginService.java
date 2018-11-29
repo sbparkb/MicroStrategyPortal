@@ -9,7 +9,7 @@ import com.microstrategy.webapi.*;
 
 public class LoginService {
 
-	public String getServerSession(HttpServletRequest request,
+	public WebIServerSession getServerSession(HttpServletRequest request,
 			HttpServletResponse response,
 			String serverName, 
 			String projectName, 
@@ -24,8 +24,8 @@ public class LoginService {
 	    serverSession.setLogin(userId);
 	    serverSession.setPassword(userPw);
 	    serverSession.setApplicationType(EnumDSSXMLApplicationType.DssXmlApplicationCustomApp);
-	    serverSession.setAuthMode(EnumDSSXMLAuthModes.DssXmlAuthStandard);	 
-	    String usrSmgr = serverSession.saveState();
-	    return usrSmgr;
+	    serverSession.setAuthMode(EnumDSSXMLAuthModes.DssXmlAuthStandard);
+	    	    
+	    return serverSession;
 	}
 }
