@@ -1,41 +1,21 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<web-app xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:jsp="http://java.sun.com/xml/ns/javaee/jsp" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.4">
   <display-name>Web Tier</display-name>
   <context-param>
-  	<!--
-  		This value is only used if you meet all of the following deployment criteria:
-  		1) J2EE
-  		2) unexploded deployments
-  		3) more than one deployment
-  		
-  		Each deployment must have a unique contextPath. Required
-  		as an interim measure until our baseline is Servlet API 2.5.
-  	-->
-  	<param-name>contextPath</param-name>
-  	<param-value/>
+    <param-name>contextPath</param-name>
+    <param-value></param-value>
   </context-param>
-  <!-- filter>      
-    <display-name>SpnegoFilter</display-name>
-    <filter-name>SpnegoFilter</filter-name>
-    <filter-class>com.microstrategy.web.filter.SpnegoFilter</filter-class> 
-  </filter>
-  <filter-mapping>
-  	<filter-name>SpnegoFilter</filter-name>
-  	<servlet-name>mstrWeb</servlet-name>
-	<servlet-name>MobileServlet</servlet-name>    	
-    <servlet-name>TaskProcessorServlet</servlet-name>
-  </filter-mapping-->   
   <filter>
-      <filter-name>ExpireHeader</filter-name>
-      <filter-class>com.microstrategy.web.filter.ExpireHeaderFilter</filter-class>
+    <filter-name>ExpireHeader</filter-name>
+    <filter-class>com.microstrategy.web.filter.ExpireHeaderFilter</filter-class>
   </filter>
   <filter-mapping>
-      <filter-name>ExpireHeader</filter-name>
-      <url-pattern>*.js</url-pattern>
+    <filter-name>ExpireHeader</filter-name>
+    <url-pattern>*.js</url-pattern>
   </filter-mapping>
   <filter-mapping>
-      <filter-name>ExpireHeader</filter-name>
-      <url-pattern>*.css</url-pattern>
+    <filter-name>ExpireHeader</filter-name>
+    <url-pattern>*.css</url-pattern>
   </filter-mapping>
   <servlet>
     <servlet-name>mstrDocumentImages</servlet-name>
@@ -58,7 +38,7 @@
   <servlet>
     <display-name>Web Administration Servlet</display-name>
     <servlet-name>mstrWebAdmin</servlet-name>
-    <servlet-class>com.microstrategy.web.servlets.MainServlet</servlet-class> 
+    <servlet-class>com.microstrategy.web.servlets.MainServlet</servlet-class>
     <security-role-ref>
       <role-name>ADMIN</role-name>
       <role-link>admin</role-link>
@@ -90,14 +70,12 @@
     <servlet-class>com.microstrategy.web.servlets.TaskAdminServlet</servlet-class>
     <load-on-startup>30</load-on-startup>
   </servlet>
-  
   <servlet>
     <display-name>ResourceFeed</display-name>
     <servlet-name>ResourceFeed</servlet-name>
     <servlet-class>com.microstrategy.web.servlets.ResourceFeed</servlet-class>
     <load-on-startup>11</load-on-startup>
   </servlet>
-  
   <servlet-mapping>
     <servlet-name>TaskProcessorServlet</servlet-name>
     <url-pattern>/servlet/taskProc</url-pattern>
@@ -153,20 +131,19 @@
     <extension>css</extension>
     <mime-type>text/css</mime-type>
   </mime-mapping>
-  <jsp-config>  
-  <taglib>
-    <taglib-uri>/webUtilTL.tld</taglib-uri>
-    <taglib-location>/WEB-INF/tlds/webUtilTL.tld</taglib-location>
-  </taglib>
+  <jsp-config>
+    <taglib>
+      <taglib-uri>/webUtilTL.tld</taglib-uri>
+      <taglib-location>/WEB-INF/tlds/webUtilTL.tld</taglib-location>
+    </taglib>
   </jsp-config>
   <security-constraint>
     <web-resource-collection>
       <web-resource-name>Administrator</web-resource-name>
       <url-pattern>/servlet/mstrWebAdmin</url-pattern>
-      <!-- TQMS 245539: The following url-patterns are to prevent IBM WebSphere 6.0.2 security hole being exploited.  -->
       <url-pattern>/servlet/mstrWebAdmin/*</url-pattern>
       <url-pattern>/servlet/mstrWeb/mstrWebAdmin</url-pattern>
-      <url-pattern>/servlet/mstrWeb/mstrWebAdmin/*</url-pattern>     
+      <url-pattern>/servlet/mstrWeb/mstrWebAdmin/*</url-pattern>
     </web-resource-collection>
     <auth-constraint>
       <role-name>admin</role-name>
@@ -179,7 +156,7 @@
     <web-resource-collection>
       <web-resource-name>TaskAdministrator</web-resource-name>
       <url-pattern>/servlet/taskAdmin</url-pattern>
-      <url-pattern>/servlet/taskAdmin/*</url-pattern>        
+      <url-pattern>/servlet/taskAdmin/*</url-pattern>
     </web-resource-collection>
     <auth-constraint>
       <role-name>admin</role-name>
@@ -192,7 +169,7 @@
     <web-resource-collection>
       <web-resource-name>TaskDeveloper</web-resource-name>
       <url-pattern>/servlet/taskViewer</url-pattern>
-      <url-pattern>/servlet/taskViewer/*</url-pattern>           
+      <url-pattern>/servlet/taskViewer/*</url-pattern>
     </web-resource-collection>
     <auth-constraint>
       <role-name>taskDeveloper</role-name>
@@ -201,26 +178,25 @@
       <transport-guarantee>NONE</transport-guarantee>
     </user-data-constraint>
   </security-constraint>
-  <!-- TQMS #859156 -->
   <security-constraint>
-		<web-resource-collection>
-			<web-resource-name>No HTTP access</web-resource-name>
-			<url-pattern>/jsp/*</url-pattern>
-			<url-pattern>/plugins/_Interface/jsp/*</url-pattern>
-			<url-pattern>/plugins/_Interface/WEB-INF/*</url-pattern>
-		</web-resource-collection>
-		<auth-constraint/>
+    <web-resource-collection>
+      <web-resource-name>No HTTP access</web-resource-name>
+      <url-pattern>/jsp/*</url-pattern>
+      <url-pattern>/plugins/_Interface/jsp/*</url-pattern>
+      <url-pattern>/plugins/_Interface/WEB-INF/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint/>
     <user-data-constraint>
       <transport-guarantee>NONE</transport-guarantee>
     </user-data-constraint>
   </security-constraint>
-    <security-constraint>
-        <web-resource-collection>
-            <web-resource-name>esri access</web-resource-name>
-            <url-pattern>/jsp/esriproxy.jsp</url-pattern>           
-        </web-resource-collection>
-         <auth-constraint>
-        <role-name>*</role-name>
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>esri access</web-resource-name>
+      <url-pattern>/jsp/esriproxy.jsp</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>*</role-name>
     </auth-constraint>
     <user-data-constraint>
       <transport-guarantee>NONE</transport-guarantee>
