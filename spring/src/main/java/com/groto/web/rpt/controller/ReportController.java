@@ -121,7 +121,7 @@ public class ReportController
   }
   
 
-  @RequestMapping(value={"/reportExecution"}, method={org.springframework.web.bind.annotation.RequestMethod.GET})
+  @RequestMapping(value={"/reportExecution1"}, method={org.springframework.web.bind.annotation.RequestMethod.GET})
   public ModelAndView reportExcutionGet(HttpServletRequest request, HttpServletResponse response, @ModelAttribute("mstrParam") MstrParam param, @RequestParam(value="objectID", required=true) String objectID, @RequestParam(value="displayUnitType", required=true) int displayUnitType, @RequestParam(value="isShortcut", required=false) String isShortcut, @RequestParam(value="pop", required=false) String popYn, @RequestParam(value="newWeb", required=false) String newWeb, @RequestParam(value="targetID", required=false) String targetID, @RequestParam(value="targetType", required=false) String targetType, @RequestParam(value="execType", required=false) String execType)
     throws UnsupportedEncodingException
   {
@@ -129,7 +129,7 @@ public class ReportController
   }
   
   
-  @RequestMapping(value={"/reportExecution"}, method={org.springframework.web.bind.annotation.RequestMethod.POST})
+  @RequestMapping(value={"/reportExecution1"}, method={org.springframework.web.bind.annotation.RequestMethod.POST})
   public ModelAndView reportExcutionPost(HttpServletRequest request, HttpServletResponse response, @ModelAttribute("mstrParam") MstrParam param, @RequestParam(value="objectID", required=true) String pObjectID, @RequestParam(value="displayUnitType", required=true) int pDisplayUnitType, @RequestParam(value="isShortcut", required=false) String isShortcut, @RequestParam(value="pop", required=false) String popYn, @RequestParam(value="newWeb", required=false) String newWeb, @RequestParam(value="targetID", required=false) String targetID, @RequestParam(value="targetType", required=false) String targetType, @RequestParam(value="execType", required=false) String execType)
     throws UnsupportedEncodingException
   {
@@ -211,7 +211,7 @@ public class ReportController
   }
 
 
-  @RequestMapping(value={"/reportRun"}, method={org.springframework.web.bind.annotation.RequestMethod.POST})
+  @RequestMapping(value={"/reportExecution"}, method={org.springframework.web.bind.annotation.RequestMethod.POST})
   public ModelAndView reportRunPost(HttpServletRequest request, HttpServletResponse response, @ModelAttribute("mstrParam") MstrParam param, @RequestParam(value="objectID", required=true) String pObjectID, @RequestParam(value="displayUnitType", required=true) int pDisplayUnitType, @RequestParam(value="isShortcut", required=false) String isShortcut, @RequestParam(value="pop", required=false) String popYn, @RequestParam(value="newWeb", required=false) String newWeb, @RequestParam(value="targetID", required=false) String targetID, @RequestParam(value="targetType", required=false) String targetType, @RequestParam(value="execType", required=false) String execType)
     throws UnsupportedEncodingException
   {

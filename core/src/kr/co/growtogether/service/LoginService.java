@@ -1,16 +1,13 @@
 package kr.co.growtogether.service;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import com.microstrategy.web.objects.WebIServerSession;
 import com.microstrategy.web.objects.WebObjectsFactory;
-import com.microstrategy.webapi.*;
+import com.microstrategy.webapi.EnumDSSXMLApplicationType;
+import com.microstrategy.webapi.EnumDSSXMLAuthModes;
 
 public class LoginService {
 
-	public WebIServerSession getServerSession(HttpServletRequest request,
-			HttpServletResponse response,
+	public WebIServerSession getServerSession(
 			String serverName, 
 			String projectName, 
 			String userId,

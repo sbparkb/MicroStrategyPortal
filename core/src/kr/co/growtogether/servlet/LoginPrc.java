@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.microstrategy.utils.serialization.EnumWebPersistableState;
 import com.microstrategy.web.objects.WebFolder;
 import com.microstrategy.web.objects.WebIServerSession;
 import com.microstrategy.web.objects.WebObjectInfo;
@@ -52,8 +53,8 @@ public class LoginPrc extends HttpServlet {
 		request.getSession().invalidate();
 		
 		LoginService loginService = new LoginService();
-		WebIServerSession serverSession = loginService.getServerSession(request, response, serverName, projectName, userId, passWd);
-		String sessionId = serverSession.saveState();
+		WebIServerSession serverSession = loginService.getServerSession(serverName, projectName, userId, passWd);
+		String sessionId = serverSession.saveState(EnumWebPersistableState.MAXIMAL_STATE_INFO);
 		
 		request.getSession().setAttribute("usrSmgr", sessionId);
 		request.getSession().setAttribute("serverName", serverName);

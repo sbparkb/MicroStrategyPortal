@@ -9,7 +9,7 @@
 <script src="/custom/jquery.3.3.1.js"></script>
 <script>
 	$(document).ready(function() {
-		//$('#mstrForm').submit();
+		$('#mstrForm').submit();
 	}); //ready
 </script>
 </head>
@@ -33,7 +33,6 @@
 			<input type='hidden' name='hiddenSections' value='dockTop,dockLeft,path,header,footer,toolbar' />
  		</c:otherwise>
  	</c:choose>
- 	<input type="submit" value="RUN"> 		
 </form>
 </body>
 </html>

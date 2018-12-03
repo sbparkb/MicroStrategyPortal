@@ -46,7 +46,9 @@ public class SessionInterceptor extends HandlerInterceptorAdapter {
     
     public void setNoCheckUri(Map<String, String> noCheckUri) {
         this.noCheckUri = noCheckUri;
-    } 
+    }
+    
+    public static int sessionCnt = 0;
     
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
@@ -114,6 +116,9 @@ public class SessionInterceptor extends HandlerInterceptorAdapter {
         
         request.getSession().setAttribute("usrSmgr1", usrSmgr1);
         request.getSession().setAttribute(MSTRSessionUserImpl.ATTRIBUTE_NAME, user);
+        
+        sessionCnt++;
+        System.out.println("session intercepter counter:" + sessionCnt + usrSmgr1);
       }
       return true;
     }      
