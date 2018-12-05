@@ -8,9 +8,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix = "fn" uri = "http://java.sun.com/jsp/jstl/functions" %>
 <script src="${fn:escapeXml(pageContext.request.contextPath)}/resource/javascript/jquery-1.8.3.min.js"></script>
-<script>
-alert('${usrSmgr1}');
-</script>
 <form action="<spring:message code='URL.WEB.SERVER' />/servlet/mstrWeb" id="mstrForm" name="mstrForm" method="post" accept-charset="utf-8">
  	<c:choose>
  		<c:when test="${fn:escapeXml(popYn) eq 'Y' and fn:escapeXml(execType) eq 'mstr'}">
