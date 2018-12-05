@@ -121,7 +121,7 @@ public class ReportController
   }
   
 
-  @RequestMapping(value={"/reportExecution1"}, method={org.springframework.web.bind.annotation.RequestMethod.GET})
+  @RequestMapping(value={"/reportExecution"}, method={org.springframework.web.bind.annotation.RequestMethod.GET})
   public ModelAndView reportExcutionGet(HttpServletRequest request, HttpServletResponse response, @ModelAttribute("mstrParam") MstrParam param, @RequestParam(value="objectID", required=true) String objectID, @RequestParam(value="displayUnitType", required=true) int displayUnitType, @RequestParam(value="isShortcut", required=false) String isShortcut, @RequestParam(value="pop", required=false) String popYn, @RequestParam(value="newWeb", required=false) String newWeb, @RequestParam(value="targetID", required=false) String targetID, @RequestParam(value="targetType", required=false) String targetType, @RequestParam(value="execType", required=false) String execType)
     throws UnsupportedEncodingException
   {
@@ -129,7 +129,7 @@ public class ReportController
   }
   
   
-  @RequestMapping(value={"/reportExecution1"}, method={org.springframework.web.bind.annotation.RequestMethod.POST})
+  @RequestMapping(value={"/reportExecution"}, method={org.springframework.web.bind.annotation.RequestMethod.POST})
   public ModelAndView reportExcutionPost(HttpServletRequest request, HttpServletResponse response, @ModelAttribute("mstrParam") MstrParam param, @RequestParam(value="objectID", required=true) String pObjectID, @RequestParam(value="displayUnitType", required=true) int pDisplayUnitType, @RequestParam(value="isShortcut", required=false) String isShortcut, @RequestParam(value="pop", required=false) String popYn, @RequestParam(value="newWeb", required=false) String newWeb, @RequestParam(value="targetID", required=false) String targetID, @RequestParam(value="targetType", required=false) String targetType, @RequestParam(value="execType", required=false) String execType)
     throws UnsupportedEncodingException
   {
@@ -157,16 +157,13 @@ public class ReportController
     if (!"Y".equals(newWebReq)) {
       request.setAttribute("newWeb", newWeb);
     }
+    
     executionTask(request, displayUnitType, objectID, strPromptXML, popYn, execType);
     
     ModelAndView mav = new ModelAndView();
     mav.setViewName("/mstr/common/docExecution");
     mav.addAllObjects(reportService.reportExcution(request, response, objectID, displayUnitType));
-    return mav;
-  }
-  
-  private void executionTask(HttpServletRequest request, int displayUnitType, String objectID, String strPromptXML, String popYn, String execType)
-  {
+    
     String objectName = "";
     String evt = "";
     String src = "";
@@ -178,6 +175,7 @@ public class ReportController
       if ("true".equals(strVi)) {
         evt = "3140";
         src = "mstrWeb.3140";
+        request.setAttribute("strPromptXML", "");
       } else {
         evt = "2048001";
         src = "mstrWeb.2048001";
@@ -187,6 +185,16 @@ public class ReportController
       evt = "4001";
       src = "mstrWeb.4001";
     }
+    
+    request.setAttribute("objectName", objectName);
+    request.setAttribute("evt", evt);
+    request.setAttribute("src", src);
+    
+    return mav;
+  }
+  
+  private void executionTask(HttpServletRequest request, int displayUnitType, String objectID, String strPromptXML, String popYn, String execType)
+  {
     
     String repUrl = "/servlet/mstrWeb?Server=" + SystemMessage.getMessage("mstr.config.default.server-name") + "&Project=" + SystemMessage.getMessage("mstr.config.default.project-name");
     
@@ -199,9 +207,6 @@ public class ReportController
     }
     
     request.setAttribute("objectID", objectID);
-    request.setAttribute("objectName", objectName);
-    request.setAttribute("evt", evt);
-    request.setAttribute("src", src);
     request.setAttribute("repUrl", repUrl);
     request.setAttribute("strPromptXML", strPromptXML);
     request.setAttribute("usrSmgr1", usrSmgr1);
@@ -211,7 +216,7 @@ public class ReportController
   }
 
 
-  @RequestMapping(value={"/reportExecution"}, method={org.springframework.web.bind.annotation.RequestMethod.POST})
+  @RequestMapping(value={"/reportRun"}, method={org.springframework.web.bind.annotation.RequestMethod.POST})
   public ModelAndView reportRunPost(HttpServletRequest request, HttpServletResponse response, @ModelAttribute("mstrParam") MstrParam param, @RequestParam(value="objectID", required=true) String pObjectID, @RequestParam(value="displayUnitType", required=true) int pDisplayUnitType, @RequestParam(value="isShortcut", required=false) String isShortcut, @RequestParam(value="pop", required=false) String popYn, @RequestParam(value="newWeb", required=false) String newWeb, @RequestParam(value="targetID", required=false) String targetID, @RequestParam(value="targetType", required=false) String targetType, @RequestParam(value="execType", required=false) String execType)
     throws UnsupportedEncodingException
   {
