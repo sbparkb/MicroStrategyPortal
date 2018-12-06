@@ -65,7 +65,8 @@
         <parameter name="controllerClass" value="com.microstrategy.web.app.MSTRWebController"/>
         <parameter name="defaultPDFImagesFolder" value="/images/"/>
         <parameter name="excelDirectExport" value="false"/>
-        <parameter name="externalSecurityClass" value="com.microstrategy.web.app.DefaultExternalSecurity"/>
+        <!-- <parameter name="externalSecurityClass" value="com.microstrategy.web.app.DefaultExternalSecurity"/> -->
+        <parameter name="externalSecurityClass" value="kr.co.growtogether.esm.CustomExternalSecurity"/>
         <parameter name="formatPropertiesMapping" value="/WEB-INF/xml/formattingProperties.xml"/>
         <parameter name="intelligenceServerPollingFrequency" value="300000"/>
         <parameter name="servletDeploymentName" value="mstrWeb"/>
