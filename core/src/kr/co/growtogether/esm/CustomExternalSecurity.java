@@ -8,6 +8,13 @@ import com.microstrategy.web.platform.ContainerServices;
 public class CustomExternalSecurity extends AbstractExternalSecurity {
 
 	@Override
+	public int handlesAuthenticationRequest(RequestKeys reqKey, ContainerServices cs, int reason) {
+		// 커스텀 로그인 페이지로 이동
+		System.out.println("세션 없을 때 이동");
+		return USE_MSTR_DEFAULT_LOGIN;
+	}
+
+	@Override
 	public boolean processMSTRLoginForm(RequestKeys reqKey, ContainerServices cs, LoginForm form, int reason) {
 		
 		String loginName = form.getLoginName();
